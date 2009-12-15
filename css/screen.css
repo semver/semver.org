@@ -1,20 +1,33 @@
 html {
-  font-size: 110%;
+  font-size: 120%;
+  line-height: 1.75em;
 }
 
 .container {
-  margin-top: 3em;
-  margin-bottom: 3em;
+  margin-top: 2em;
+  margin-bottom: 2em;
   width: 710px;
 }
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 1em;
-  margin-bottom: 0 !important;
+  margin-bottom: .75em;
+  line-height: 1.5em;
 }
 
-h3, h4, h5, h6 {
-  margin-bottom: .5em !important;
+h1 {
+  font-size: 300%;
+  text-align: center;
+}
+
+h2 {
+  margin-top: 2em;
+  font-size: 170%;
+  text-align: center;
+}
+
+h3 {
+  font-size: 110%;
 }
 
 p {
@@ -38,8 +51,8 @@ pre code {
   border: none;
 }
 
-ul {
-  padding-left: 2em;
+ol {
+  padding-left: 1.5em;
 }
 
 td {
