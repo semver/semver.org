@@ -72,6 +72,10 @@ It is your responsibility as a professional developer to properly document softw
 
 As soon as you realize that you've broken the Semantic Versioning spec, fix the problem and release a new minor version that corrects the problem and restores backwards compatibility. Remember, it is unacceptable to modify versioned releases, even under this circumstance. If it's appropriate, document the offending version and inform your users of the problem so that they are aware of the offending version.
 
+### What should I do if I update my own dependencies without changing the public API?
+
+That would be considered compatible since it does not affect the public API. Software that explicitly depends on the same dependencies as your package should have their own dependency specifications and the author will notice any conflicts. Determining whether the change is a patch level or minor level modification depends on whether you updated your dependencies in order to fix a bug or introduce new functionality. I would usually expect additional code for the latter instance, in which case it's obviously a minor level increment.
+
 
 About
 -----
