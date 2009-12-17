@@ -1,0 +1,26 @@
+/*
+CSS for semver.org
+@author Mathias Bynens
+@link http://mathiasbynens.be/
+*/
+
+h1, h2, ol { margin: 0; padding: 0; }
+
+html { font: 14.4px/1.5 Arial; }
+body { width: 710px; margin: 0 auto; }
+
+h1, h2, h3 { text-align: center; font-weight: normal; }
+ h1 { font-size: 43px; margin: 1.1em 0 .7em; }
+ h2 { margin: 2.1em 0 .7em; font-size: 24px; }
+ h3 { text-align: left; font-size: 15.8px; margin-bottom: .6em; }
+
+a { color: #009; }
+a:hover, a:focus { color: #000; }
+ol { padding-left: 1.5em; }
+p { margin: 0 0 1em; }
+
+@media print { 
+ body { width: 100%; }
+ h1, h2, h3 { font-weight: bold; }
+ a:after { content: ' <' attr(href) '>'; font-size: 90%; }
+}
