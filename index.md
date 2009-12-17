@@ -15,14 +15,12 @@ As a solution to this problem, I propose a simple set of rules and requirements 
 I call this system "Semantic Versioning." Under this scheme, version numbers and the way they change convey meaning about the underlying code and what has been modified from one version to the next.
 
 
-Semantic Versioning Specification
----------------------------------
+Semantic Versioning Specification (SemVer)
+------------------------------------------
 
-1. Software using Semantic Versioning must declare a public API. This API could be declared in the code itself or exist strictly in documentation. However it is done, it should be precise and comprehensive.
+1. Software using Semantic Versioning MUST declare a public API. This API could be declared in the code itself or exist strictly in documentation. However it is done, it should be precise and comprehensive.
 
 1. A version number takes the form X.Y.Z where X, Y, and Z are integers. X is the major version, Y is the minor version, and Z is the patch version. Each element increases numerically such that version 1.0.10 follows 1.0.9.
-
-1. When tagging releases in a version control system, the tag for a version MUST be "vX.Y.Z" e.g. "v3.1.0".
 
 1. Once a versioned package has been released, the contents of that version MUST never be modified. Any modifications MUST be released as a new version.
 
@@ -35,6 +33,16 @@ Semantic Versioning Specification
 1. Minor version Y (x.Y.z | x > 0) MUST be incremented if new, backwards compatible functionality is introduced to the public API. It MAY be incremented if substantial new functionality or improvements are introduced within the private code. It MAY include patch level changes.
 
 1. Major version X (X.y.z | X > 0) MUST be incremented if any backwards incompatible changes are introduced to the public API. It MAY include minor and patch level changes.
+
+
+Tagging Specification (SemVerTag)
+---------------------------------
+
+This sub-specification is optional and SHOULD be used if you use a version control system (Git, Mercurial, SVN, etc) to store your code. Using this system allows automated tools to inspect your package and determine SemVer compliance and released versions.
+
+1. When tagging releases in a version control system, the tag for a version MUST be "vX.Y.Z" e.g. "v3.1.0".
+
+1. The first revision that introduces SemVer compliance SHOULD be tagged "semver". This allows pre-existing projects to assume compliance at any arbitrary point and for automated tools to discover this fact.
 
 
 Why Use Semantic Versioning?
