@@ -18,11 +18,19 @@ I call this system "Semantic Versioning." Under this scheme, version numbers and
 Semantic Versioning Specification (SemVer)
 ------------------------------------------
 
-1. Software using Semantic Versioning MUST declare a public API. This API could be declared in the code itself or exist strictly in documentation. However it is done, it should be precise and comprehensive.
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
+"SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
+interpreted as described in RFC 2119.
 
-1. A version number takes the form X.Y.Z where X, Y, and Z are integers. X is the major version, Y is the minor version, and Z is the patch version. Each element increases numerically such that version 1.0.10 follows 1.0.9.
+1. Software using Semantic Versioning MUST declare a public API. This API
+could be declared in the code itself or exist strictly in documentation.
+However it is done, it should be precise and comprehensive.
 
-1. Once a versioned package has been released, the contents of that version MUST never be modified. Any modifications MUST be released as a new version.
+1. A normal version number MUST take the form X.Y.Z where X, Y, and Z are integers. X is the major version, Y is the minor version, and Z is the patch version. Each element MUST increase numerically. For instance: 1.9.0 < 1.10.0 < 1.11.0.
+
+1. A special version number MAY be denoted by appending an arbitrary string immediately following the patch version. The string MUST be comprised of only alphanumerics plus dash [0-9A-Za-z-] and MUST begin with an alpha character [A-Za-z]. Special versions satisfy but have a lower precedence than the associated normal version. Precedence SHOULD be determined by lexicographic ASCII sort order. For instance: 1.0.0beta1 < 1.0.0beta2 < 1.0.0.
+
+1. Once a versioned package has been released, the contents of that version MUST NOT be modified. Any modifications must be released as a new version.
 
 1. Major version zero (0.y.z) is for initial development. Anything may change at any time. The public API should not be considered stable.
 
@@ -38,7 +46,7 @@ Semantic Versioning Specification (SemVer)
 Tagging Specification (SemVerTag)
 ---------------------------------
 
-This sub-specification is optional and SHOULD be used if you use a version control system (Git, Mercurial, SVN, etc) to store your code. Using this system allows automated tools to inspect your package and determine SemVer compliance and released versions.
+This sub-specification is OPTIONAL and SHOULD be used if you use a version control system (Git, Mercurial, SVN, etc) to store your code. Using this system allows automated tools to inspect your package and determine SemVer compliance and released versions.
 
 1. When tagging releases in a version control system, the tag for a version MUST be "vX.Y.Z" e.g. "v3.1.0".
 
