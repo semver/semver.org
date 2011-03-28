@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Semantic Versioning
+title: Semantic Versioning 1.0.0
 ---
 
-Semantic Versioning
-===================
+Semantic Versioning 1.0.0
+=========================
 
 In the world of software management there exists a dread place called
 "dependency hell." The bigger your system grows and the more packages you
@@ -51,6 +51,11 @@ However it is done, it should be precise and comprehensive.
 integers. X is the major version, Y is the minor version, and Z is the patch
 version. Each element MUST increase numerically. For instance: 1.9.0 < 1.10.0
 < 1.11.0.
+
+1. When a major version number is incremented, the minor version and patch
+version MUST be reset to zero. When a minor version number is incremented, the
+patch version MUST be reset to zero. For instance: 1.1.3 -> 2.0.0 and 2.1.7 ->
+2.2.0.
 
 1. A special version number MAY be denoted by appending an arbitrary string
 immediately following the patch version. The string MUST be comprised of only
