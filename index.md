@@ -72,7 +72,8 @@ MUST NOT be modified. Any modifications must be released as a new version.
 at any time. The public API should not be considered stable.
 
 1. Version 1.0.0 defines the public API. The way in which the version number
-is incremented is now dependent on this public API and how it changes.
+is incremented after this release is dependent on this public API and how it
+changes.
 
 1. Patch version Z (x.y.Z | x > 0) MUST be incremented if only backwards
 compatible bug fixes are introduced. A bug fix is defined as an internal
