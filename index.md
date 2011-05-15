@@ -54,10 +54,11 @@ version. Each element MUST increase numerically. For instance: 1.9.0 < 1.10.0
 
 1. A special version number MAY be denoted by appending an arbitrary string
 immediately following the patch version. The string MUST be comprised of only
-alphanumerics plus dash [0-9A-Za-z-] and MUST begin with an alpha character
-[A-Za-z]. Special versions satisfy but have a lower precedence than the
-associated normal version. Precedence SHOULD be determined by lexicographic
-ASCII sort order. For instance: 1.0.0beta1 < 1.0.0beta2 < 1.0.0.
+alphanumerics plus dash [0-9A-Za-z-] and MUST begin with either an alpha 
+character [A-Za-z] or the '.' character. Special versions satisfy but have 
+a lower precedence than the associated normal version. Precedence SHOULD be 
+determined by lexicographic ASCII sort order. For instance: 
+1.0.0beta1 < 1.0.0beta2 < 1.0.0.
 
 1. Once a versioned package has been released, the contents of that version
 MUST NOT be modified. Any modifications must be released as a new version.
