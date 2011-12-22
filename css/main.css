@@ -24,3 +24,23 @@ p { margin: 0 0 1em; }
  h1, h2, h3 { font-weight: bold; }
  a:after { content: ' <' attr(href) '>'; font-size: 90%; }
 }
+
+/* Nav */
+
+ol.nav {
+  background-color: #333;
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+  overflow: hidden;
+}
+
+ol.nav li {
+  display: inline;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+ol.nav li a {
+  color: white;
+}
