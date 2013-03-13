@@ -212,6 +212,12 @@ are important to your users, use the version number to inform them.
 
 Deprecating existing functionality is a normal part of software development and is often required to make forward progress. When you deprecate part of your public API, you should do two things: (1) update your documentation to let users know about the change, (2) issue a new minor release with the deprecation in place. Before you completely remove the functionality in a new major release there should be at least one minor release that contains the deprecation so that users can smoothly transition to the new API.
 
+Semantic Versioning In Other Languages
+-----
+
+[semver.ir](http://semver.ir) - Persian
+
+
 
 About
 -----
