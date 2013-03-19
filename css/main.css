@@ -7,7 +7,10 @@ CSS for semver.org
 h1, h2, ol { margin: 0; padding: 0; }
 
 html { font: 14.4px/1.5 Arial; }
-body { width: 710px; margin: 0 auto; }
+body { margin: 0 auto; padding: 0 10%; max-width: 710px; }
+
+@-ms-viewport { width: device-width; } 
+html { -webkit-text-size-adjust: 100%; }
 
 h1, h2, h3 { text-align: center; font-weight: normal; }
  h1 { font-size: 43px; margin: 1.1em 0 .7em; }
