@@ -47,3 +47,11 @@ ol.nav li {
 ol.nav li a {
   color: white;
 }
+
+ol.lang {
+  background-color: white;
+}
+
+ol.lang li a {
+  color: black;
+}
