@@ -1,0 +1,288 @@
+﻿---
+layout: french
+title: Le versionnement sémantique 2.0.0
+---
+
+Le versionnement sémantique 2.0.0
+==============================
+
+En bref
+-------
+
+Etant donné un numéro de version MAJEURE.MINEURE.PATCH, il faut incrémenter :
+
+1. la version MAJEURE quand il y a des changements rétro-incompatibles,
+1. la version MINEURE quand il y a des changements rétro-compatibles,
+1. la version de PATCH quand il y a des corrections d’anomalies rétro-compatibles
+
+Les libellés supplémentaires pour les versions admissibles et de construction
+sont une extension du format MAJEURE.MINEURE.PATCH.
+
+Introduction
+------------
+
+Dans le monde de la gestion des logiciels, il existe un endroit redouté appelé
+"l'enfer des dépendances" (de l'anglais *dependency hell*). Plus votre système se
+développe et plus vous intégrez de composants dans votre logiciel, plus vous êtes
+susceptible de vous trouver un jour dans cette abîme de désespoir.
+
+Dans les systèmes comportant de nombreuses dépendances, publier une nouvelle
+version d'un composant peut vite devenir un cauchemar. Si les règles de
+dépendance sont trop strictes, vous risquez de verrouiller les versions
+(incapacité de mettre à jour un composant sans avoir à publier une nouvelle
+version de chaque composant qui en dépend). Si les règles de dépendances sont
+trop lâches, vous allez inévitablement subir la promiscuité de version (supposer
+une compatibilité avec plus de futures versions que raisonnable). L'enfer des
+dépendances est l'endroit où vous vous trouvez lorsque les verrous de versions ou
+la promiscuité de versions vous empêchent d'avancer sans risque dans votre
+projet.
+
+Comme solution à ce problème, je propose un ensemble de règles et exigences
+simples qui dictent la façon dont les numéros de version sont attribués et
+incrémentés. Ces règles sont basées mais pas nécessairement limitées aux
+pratiques courantes en application dans les domaines du logiciel privé et open
+source. Pour que ce système fonctionne, vous devez d'abord déclarer une API
+publique. Il peut s'agir d'un document ou de règles appliquées par le code lui-
+même. Quoiqu'il en soit, il est important que cette API soit claire et précise.
+Une fois qu’elle est prête, vous communiquez ses modifications avec les
+incrémentations spécifiques à votre numéro de version. Considérons le format de
+version X.Y.Z (Majeure.Mineure.Patch). Les correctifs n'affectant pas l'API
+incrémentent la version de patch, des ajouts ou modifications rétro-compatibles
+incrémentent la version mineure et les modifications rétro-incompatibles
+incrémentent la version majeure.
+
+J'appelle ce système "versionnement sémantique". Avec ce système, les numéros de
+version et la façon dont ils changent donnent du sens au code sous-jacent et à ce
+qui a été modifié d'une version à l'autre.
+
+
+Spécifications du versionnement sémantique (SemVer)
+---------------------------------------------------
+
+Les mots clés "DOIT", "NE DOIT PAS", "OBLIGATOIRE", "DEVRAIT", "NE DEVRAIT PAS",
+"RECOMMANDÉ", "PEUT", et "OPTIONNEL" dans ce document doivent être interprétés
+comme décrit dans la [RFC 2119](http://tools.ietf.org/html/rfc2119).
+
+1. Tout logiciel utilisant le versionnement sémantique DOIT déclarer une API
+publique. Cette API peut être déclarée dans le code lui-même ou dans un document.
+Dans tous les cas, elle doit être précise et claire.
+
+1. Un numéro de version standard DOIT prendre la forme X.Y.Z où X, Y et Z sont
+des entiers non négatifs et NE DOIVENT PAS être préfixés par des zéros. X est la
+version majeure, Y est la version mineure, et Z est la version de patch. Chaque
+élément DOIT augmenter numériquement par incréments d'une unité. Par exemple :
+1.9.0 -> 1.10.0 -> 1.11.0.
+
+1. Quand un numéro de version majeure est incrémenté, la version mineure et la
+version de patch DOIVENT être remises à zéro. Quand un numéro de version mineure est
+incrémenté, la version de patch DOIT être remise à zéro. Par exemple: 1.1.3 -> 2.0.0
+et 2.1.7 -> 2.2.0.
+
+1. Une fois qu'une version d'un composant est publiée, le contenu de cette
+version NE DOIT PAS être modifié. Toute modification DOIT être publiée comme une
+nouvelle version.
+
+1. La version majeure zéro (0.y.z) sert au développement initial. Tout peut
+changer à tout moment. L'API publique ne devrait pas être considérée comme
+stable.
+
+1. La version 1.0.0 définit l'API publique. La façon dont le numéro de version
+est incrémenté après la publication est dépendante de cette API publique.
+
+1. La version de patch Z (x.y.Z | x > 0) DOIT être incrémentée si des corrections
+d'anomalies rétro-compatibles sont effectuées. Une correction d'anomalie est définie comme un changement interne qui corrige un comportement incorrect.
+
+1. La version mineure Y (x.Y.z | x > 0) DOIT être incrémentée si une nouvelle
+fonctionnalité rétro-compatible est introduite dans l'API publique. Elle DOIT
+être incrémentée si une fonctionnalité de l'API publique est marquée comme
+obsolète. Elle PEUT être incrémentée si une nouvelle fonctionnalité ou
+amélioration est introduite dans le code privé. Elle PEUT inclure des changements de niveau de patch. La version de patch DOIT être remise à 0 lorsque la version
+mineure est incrémentée.
+
+1. La version majeure X (X.y.z | X > 0) DOIT être incrémentée si des changements
+rétro-incompatibles sont introduits à l'API publique. Elle PEUT inclure des
+changements mineurs et de patch. Les numéros de version de patch et mineurs
+DOIVENT être remis à 0 lorsque la version majeure est incrémentée.
+
+1. Une version admissible (de l'anglais *pre-release*) PEUT être notée par l'ajout
+d'un tiret et une série d'identifiants séparés par des points suivant
+immédiatement la version de patch. Les identifiants DOIVENT être composés
+uniquement de caractères alphanumériques ASCII et de tirets [0-9A-Za-z-]. Les
+identifiants NE DOIVENT PAS être vides. Les identifiants numériques NE DOIVENT
+PAS être préfixés par des zéros. Des versions admissibles précèdent la version
+normale associée (version admissible < version normale). Une version admissible
+n’est pas stable et ne satisfait pas forcément les spécifications de
+compatibilité associées à une version normale. Exemples : 1.0.0-alpha,
+1.0.0-alpha.1, 1.0.0-0.3.7, 1.0.0-x.7.z.92.
+
+1. Une version de construction PEUT être représentée par l'ajout d'un signe
+"plus" et d'une série d'identifiants séparés par des points suivant immédiatement
+la version de patch ou admissible. Les identifiants DOIVENT être composés
+uniquement de caractères alphanumériques ASCII et de tirets [0-9A-Za-z-]. Les
+identifiants NE DOIVENT PAS être vides. Les informations de construction
+DEVRAIENT être ignorées lors d’une comparaison de versions. Autrement dit, deux versions qui diffèrent seulement par leur information de construction, sont
+équivalentes. Exemples : 1.0.0-alpha+001, 1.0.0+20130313144700,
+1.0.0-beta+exp.sha.5114f85.
+
+1. La priorité spécifie la façon dont sont ordonnées les versions entre elles. La
+priorité DOIT être calculée en séparant les numéros de version en identifiants
+majeur, mineur, patch et admissible dans cet ordre (les informations de
+construction n’entrent pas en jeu dans la comparaison). La priorité est
+déterminée par la première différence apparaissant dans la comparaison de chacun
+des identifiants dans cet ordre : majeur, mineur et patch. Ces identifiants sont
+toujours comparés numériquement. Exemple : 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1. Lorsque
+ces identifiants sont identiques, une version admissible est moins prioritaire
+qu’une version normale. Exemple : 1.0.0-alpha < 1.0.0. La priorité pour deux
+versions admissibles ayant les mêmes versions majeure, mineure et de patch DOIT
+être déterminée en comparant chaque identifiant séparé par un point de la gauche
+vers la droite jusqu’à ce qu’une différence soit trouvée, comme suit : les
+identifiants composés de chiffres seulement sont comparés numériquement et
+les identifiants contenant des lettres ou des tirets sont comparés dans l'ordre
+de tri ASCII. Les identifiants numériques sont toujours moins prioritaires que
+les identifiants non numériques (identifiants numériques < identifiants
+non-numériques). Un ensemble de champs plus long est prioritaire par rapport à
+un ensemble de champs plus court, si tous les identifiants précédents sont
+identiques. Exemple : 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 
+1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
+
+Pourquoi utiliser le versionnement sémantique ?
+-----------------------------------------------
+
+Cette idée n'est ni nouvelle ni révolutionnaire. Vous utilisez déjà probablement
+un système similaire. Le problème est que "similaire" n'est pas suffisant. Seul
+le respect d'une certaine forme de spécification peut garantir que les numéros
+de version soient une information utile pour la gestion des dépendances. En
+donnant un nom et une définition claire aux idées ci-dessus, il devient facile
+de communiquer vos intentions pour les utilisateurs de votre logiciel. Une fois
+que ces intentions sont claires et souples (mais pas trop) les spécifications de
+dépendances peuvent être posées.
+
+Voici un exemple simple pour montrer comment le versionnement sémantique peut faire de
+l'enfer des dépendances une chose du passé. Considérons une bibliothèque appelée
+"CamionDePompier". Elle nécessite un composant sémantiquement versionné nommé
+"Échelle". Au moment où CamionDePompier est créé, Échelle est à la version 3.1.0.
+Puisque CamionDePompier utilise des fonctionnalités de la version 3.1.0, vous
+pouvez spécifier une dépendance avec Échelle comme supérieure ou égale à 3.1.0,
+mais inférieure à 4.0.0. Maintenant, quand la version 3.1.1 et 3.2.0 d'Échelle
+deviennent disponibles, vous pouvez les communiquer à votre système de gestion de
+composants et savoir qu'ils seront compatibles avec les logiciels existants
+dépendants.
+
+En tant que développeur responsable, vous voudrez bien sûr vérifier que toute
+mise à jour de composant fonctionne comme annoncée. Le monde réel étant ce qu'il
+est, il n'y a rien que nous puissions faire, sinon d'être vigilant. Ce que vous
+pouvez faire est de laisser le versionnement sémantique vous offrir une façon
+saine de publier et mettre à niveau des composants, sans avoir à publier une
+nouvelle version pour tous les composants dépendants, vous permettant ainsi
+d'économiser du temps et des complications.
+
+Si tout cela vous semble intéressant, tout ce que vous avez à faire pour
+commencer à utiliser le versionnement sémantique est de déclarer que vous le
+faites, puis suivre les règles. Ajoutez un lien vers ce site dans vos fichiers
+README pour que les autres connaissent les règles et puissent en bénéficier.
+
+
+FAQ
+---
+
+### Comment dois-je gérer les révisions dans la phase initiale de développement 0.y.z ?
+
+La chose la plus simple à faire est de commencer votre version de développement
+initial à 0.1.0 puis d'incrémenter la version mineure pour chaque version
+ultérieure.
+
+### Comment puis-je savoir quand publier la version 1.0.0 ?
+
+Si votre logiciel est utilisé en production, il devrait probablement déjà être
+en 1.0.0. Si vous avez une API stable dont les utilisateurs dépendent, vous
+devriez être en 1.0.0. Si vous vous inquiétez beaucoup sur la
+rétro-compatibilité, vous devriez probablement déjà être en 1.0.0.
+
+### N'est-ce pas décourager le développement rapide et des itérations courtes ?
+
+La version majeure zéro est faite pour le développement rapide. Si vous décidez
+de changer l'API tous les jours, vous devez soit être encore en version 0.y.z ou
+sur une branche de développement distincte de la prochaine version majeure.
+
+### Si même le plus petit changement incompatible à l'API publique nécessite une montée de version majeure, ne vais-je pas me retrouver à la version 42.0.0 très rapidement ?
+
+C'est une question de développement responsable et de prévoyance. Les changements
+rétro-incompatibles ne doivent pas être introduits à la légère dans un logiciel
+qui a beaucoup de code dépendant. Le coût qui doit être engagé pour monter de
+version peut être important. Avoir besoin de monter de version majeure pour
+publier des changements incompatibles signifie que vous devriez réfléchir à
+l'impact de vos modifications et évaluer le rapport coût/bénéfice.
+
+### Documenter l'ensemble de l'API publique est trop de travail !
+
+Il est de votre responsabilité en tant que développeur professionnel de bien
+documenter tout logiciel qui est destiné à être utilisé par d'autres. Gérer la
+complexité du logiciel est une partie très importante pour garder un projet
+efficace, et c'est difficile à faire si personne ne sait comment utiliser votre
+logiciel ou ne connait pas les bonnes méthodes à appeler. À long terme, le
+versionnement sémantique et l'effort sur une API publique bien définie peut faire
+fonctionner tout et tout le monde sans problème.
+
+### Que dois-je faire si j'ai accidentellement publié un changement rétro-incompatible dans une version mineure ?
+
+Dès que vous réalisez que vous avez cassé la spécification du versionnement
+sémantique, réglez le problème et sortez une nouvelle version mineure qui corrige
+le problème et restaure la rétro-compatibilité. Même dans ce cas, il est
+inacceptable de modifier une version publiée. Documentez éventuellement la
+version en erreur et informez vos utilisateurs de ce problème.
+
+### Que dois-je faire si je mets à jour mes propres dépendances sans changer l'API publique ?
+
+Cela peut être considéré comme compatible, dans la mesure où cela n'affecte pas
+l'API publique. Un logiciel qui a les mêmes dépendances que votre composant
+devrait avoir ses propres dépendances et l'auteur remarquera s'il y a un conflit.
+Déterminer si le changement est de niveau patch ou mineur dépend de la raison
+pour laquelle vous avez actualisé vos dépendances : était-ce pour corriger une
+anomalie ou introduire une nouvelle fonctionnalité ? On peut plutôt s'attendre à
+du code supplémentaire pour ce dernier cas, auquel cas c'est évidemment une
+version mineure.
+
+### Et si par mégarde je modifie l’API publique d’une façon qui ne correspond pas au changement de numéro de version (exemple : le code introduit un changement rétro-incompatible dans une publication de patch) ?
+
+A vous de décider. Si vous avez un large public qui va être considérablement
+affecté en revenant à ce que l'API publique prévoyait, alors il peut être
+préférable de publier une version majeure, même si le correctif est considéré
+comme une version de patch. Rappelez-vous : le versionnement sémantique consiste
+essentiellement à transmettre du sens dans la façon dont le numéro de version
+change. Si ces changements sont importants pour vos utilisateurs, utilisez le
+numéro de version pour les en informer.
+
+### Comment dois-je traiter les fonctionnalités obsolètes ?
+
+Les fonctionnalités obsolètes sont une part normale du développement de logiciels
+et il est souvent nécessaire d'aller de l'avant. Lorsque vous dépréciez une
+partie de votre API publique, vous devez faire deux choses :
+(1) mettre à jour la documentation pour tenir les utilisateurs au courant du
+changement,
+(2) publier une nouvelle version mineure avec la dépréciation en place. Avant de
+supprimer complètement la fonctionnalité dans une nouvelle version majeure, il
+devrait y avoir au moins une version mineure qui contient la dépréciation de
+sorte que les utilisateurs puissent effectuer la transition en douceur.
+
+### Est-ce que le versionnement sémantique spécifie une limite de taille pour un numéro de version ?
+
+Non, mais faites preuve de bon sens. Un numéro de version de 255 caractères est
+absurde, par exemple. De plus, certains systèmes peuvent imposer leurs propres
+limites sur cette taille.
+
+À propos
+--------
+
+La spécification du versionnement sémantique a été écrite par [Tom
+Preston-Werner](http://tom.preston-werner.com), l'inventeur des Gravatars et cofondateur de GitHub.
+
+La version française a été traduite par [Pascal Crouzet](https://github.com/DudePascalou).
+
+Si vous souhaitez laisser des commentaires, veuillez [ouvrir un sujet sur GitHub](https://github.com/mojombo/semver.org/issues).
+
+
+Licence
+-------
+
+Creative Commons - CC BY 3.0
+http://creativecommons.org/licenses/by/3.0/
