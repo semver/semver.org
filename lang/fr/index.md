@@ -44,15 +44,16 @@ pratiques très répandues aussi bien dans les domaines du logiciel privé que d
 logiciel libre. Pour que ce système fonctionne, vous devez d'abord déclarer une API
 publique. Il peut s'agir d'un document ou de règles imposées par le code lui-
 même. Quoiqu'il en soit, il est important que cette API soit claire et précise.
-Une fois qu’elle est prête, vous communiquez ses modifications par les
-incrémentations successives de votre numéro de version. Considérons le format de
-version X.Y.Z (Majeur.Mineur.Correctif). Les correctifs n'affectant pas l'API
-incrémentent l'identifiant de version de correction, des ajouts ou modifications
-rétro-compatibles incrémentent l'identifiant de version mineure et les modifications
-rétro-incompatibles incrémentent l'identifiant de version majeure.
+Une fois prête, vous communiquez ses modifications par des incrémentations 
+successives de son numéro de version. Considérons le format de version X.Y.Z 
+où X, Y et Z identifient la version (Majeure.Mineure.Corrective). Les corrections qui
+n'affectent pas l'API incrémentent le dernier identifiant qui est l'identifiant de 
+version de correction. Lors d'ajouts ou de modifications rétro-compatibles de l'API,
+il faut incrémenter l'identifiant de version mineure. Enfin, pour des modifications
+rétro-incompatibles, il faut incrémenter l'identifiant de version majeure.
 
 J'appelle ce système "gestion sémantique de version". Avec ce système, les numéros de
-version et la façon dont ils changent donnent du sens au code sous-jacent et à ce
+version, et la façon dont ils changent, donnent du sens au code sous-jacent et à ce
 qui a été modifié d'une version à l'autre.
 
 
@@ -61,7 +62,7 @@ Spécification de la gestion sémantique de version (SemVer)
 
 Les mots clés "DOIT", "NE DOIT PAS", "OBLIGATOIRE", "DEVRA", "NE DEVRA PAS", 
 "DEVRAIT", "NE DEVRAIT PAS", "RECOMMANDÉ", "PEUT", et "OPTIONNEL" dans ce 
-document doivent être interprétés comme décrit dans la [RFC 2119](http://tools.ietf.org/html/rfc2119).
+document doivent être interprétés comme décrit dans la [RFC 2119](http://microformats.org/wiki/rfc-2119-fr).
 
 1. Tout logiciel utilisant la gestion sémantique de version DOIT déclarer une API
 publique. Cette API peut être déclarée dans le code lui-même ou dans un document.
@@ -71,8 +72,8 @@ Dans tous les cas, elle doit être précise et claire.
 des entiers non négatifs et NE DOIVENT PAS être préfixés par des zéros. X 
 représente l'identifiant de version majeure, Y représente l'identifiant de version mineure 
 et Z l'identifiant de version de correction. Chaque élément DOIT s'incrémenter 
-numériquement. Par exemple :
-1.9.0 -> 1.10.0 -> 1.11.0.
+numériquement. 
+Exemple : 1.9.0 -> 1.10.0 -> 1.11.0.
 
 1. Une fois qu'un composant est publié, le contenu de sa version NE DOIT PAS 
 être modifié. Toute modification DOIT être publiée dans une nouvelle version.
@@ -100,7 +101,7 @@ DOIT être remis à zéro lorsque l'identifiant de version mineure est incrémen
 1. L'identifiant de version majeur X (X.y.z | X > 0) DOIT être incrémenté si des 
 changements rétro-incompatibles sont introduits dans l'API publique. Cela PEUT 
 inclure dans le même temps des changements mineurs et des corrections. Les 
-identifiants de version mineure et de correction DOIVENT être remis à zéro quand  
+identifiants de version mineure et de correction DOIVENT être remis à zéro quand 
 l'identifiant de version majeure est incrémenté.
 
 1. Une version de pré-livraison PEUT être notée par l'ajout d'un trait d'union et d'une 
@@ -111,8 +112,8 @@ alphanumériques ASCII et de traits d'union [0-9A-Za-z-]. Les identifiants NE DO
 Les versions de pré-livraison précèdent la version normale associée (version de 
 pré-livraison < version normale). Une version de pré-livraison indique que la version 
 n’est pas stable et ne satisfait pas forcément les exigences de compatibilité 
-associées à une version normale. Exemples : 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7, 
-1.0.0-x.7.z.92.
+associées à une version normale. 
+Exemples : 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7, 1.0.0-x.7.z.92.
 
 1. Les méta-données de construction PEUVENT être notées par l'ajout d'un signe 
 "plus" et d'une série d'identifiants séparés par des points suivant immédiatement 
@@ -129,11 +130,13 @@ majeures, mineures, de correction et de pré-livraison, en suivant cet ordre
 (les informations de construction n’entrent pas en compte dans la comparaison). 
 La priorité est déterminée par la première différence apparaissant dans la comparaison 
 de chacun de ces identifiants dans l'ordre : majeur, mineur et correctif. Ces 
-identifiants sont toujours comparés numériquement. Exemple : 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1. 
+identifiants sont toujours comparés numériquement. 
+Exemple : 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1
 Lorsque ces identifiants sont identiques, une version de pré-livraison est moins 
-prioritaire qu’une version normale. Exemple : 1.0.0-alpha < 1.0.0. La priorité 
-pour deux versions de pré-livraison ayant les mêmes identifiants de version 
-majeure, mineure et de correction DOIT être déterminée en comparant chaque 
+prioritaire qu’une version normale.
+Exemple : 1.0.0-alpha < 1.0.0. 
+La priorité pour deux versions de pré-livraison ayant les mêmes identifiants de 
+version majeure, mineure et de correction DOIT être déterminée en comparant chaque 
 identifiant séparé par un point de la gauche vers la droite jusqu’à ce qu’une 
 différence soit trouvée, comme suit : les identifiants composés uniquement de 
 chiffres sont comparés numériquement et les identifiants contenant des lettres 
@@ -141,8 +144,8 @@ ou des traits d'union sont comparés dans l'ordre ASCII. Les identifiants numér
 sont toujours moins prioritaires que les identifiants non numériques (identifiants 
 numériques < identifiants non-numériques). Un ensemble de champs plus long est 
 prioritaire par rapport à un ensemble de champs plus court si tous les identifiants 
-précédents sont identiques. Exemple : 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta 
-< 1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
+précédents sont identiques. 
+Exemple : 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
 
 
 Pourquoi utiliser la gestion sémantique de version ?
@@ -169,8 +172,8 @@ pourrez les publier dans votre système de gestion de dépendances en sachant qu
 seront compatibles avec les logiciels existants qui en dépendent.
 
 En tant que développeur responsable, bien entendu, vous voudrez vérifier que toute 
-mise à jour de composant fonctionne comme annoncé. Dans la réalité, les choses ne 
-sont pas forcément toujours très cohérentes ; Il n'y a donc rien d'autre à faire que 
+mise à jour de composant fonctionne comme annoncée. Dans la réalité, les choses ne 
+sont pas forcément toujours très cohérentes ; il n'y a donc rien d'autre à faire que 
 de rester vigilant. Ce que vous pouvez cependant faire est de laisser la gestion 
 sémantique de version vous fournir une manière saine de publier et mettre à jour vos 
 composants et ainsi ne pas avoir besoin de déployer de nouvelles versions de vos 
@@ -191,7 +194,7 @@ La chose la plus simple à faire est de commencer vos développements avec
 une version initiale à 0.1.0 puis d'incrémenter l'identifiant de version mineure 
 pour chaque nouvelle publication.
 
-### Comment savoir quand publier la version 1.0.0?
+### Comment savoir quand publier la version 1.0.0 ?
 
 Si votre logiciel est utilisé en environnement de production ou que vous avez
 une API stable de laquelle des utilisateurs ont commencé à dépendre, vous devriez
@@ -200,7 +203,7 @@ pour la rétro-compatibilité, vous devriez également avoir dépassé la 1.0.0.
 
 ### N'est-ce pas décourager le développement rapide et les itérations courtes ?
 
-La version majeure zéro est fait pour un développement
+La version majeure zéro est faite pour un développement
 rapide. Si vous changez votre API tous les jours, vous devriez toujours être
 en version 0.y.z ou sur une branche de développement séparée en préparant la
 prochaine version majeure.
