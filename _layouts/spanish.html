@@ -1,20 +1,21 @@
 <!doctype html>
 <html>
- <head>
-  <meta charset="utf-8">
-  <title>{{ page.title }}</title>
-  <meta name="author" content="Tom Preston-Werner">
-  <link rel="stylesheet" href="/css/main.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
-</head>
- <body>
-   <ol class="nav lang">
-     <li><a href="/">english</a></li>
-     <li><a href="/lang/es">spanish</a></li>
-   </ol>
-   <ol class="nav">
-     <li><a href="/lang/es">v2.0.0-rc.2</a></li>
-   </ol>
-   {{ content }}
- </body>
+    <head>
+        <meta charset="utf-8" lang="es" dir="ltr">
+        <title>{{ page.title }}</title>
+        <meta name="author" content="Tom Preston-Werner">
+        <link rel="stylesheet" href="/css/main.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    </head>
+    <body>
+        <ol class="nav lang">
+            <li><a lang="en" rel="alternate" hreflang="en-GB" href="/">english</a></li>
+            <li><a href="/lang/es">espa&ntilde;ol</a></li>
+            <li><a lang="it" rel="alternate" hreflang="it-IT" href="/lang/it">italiano</a></li>
+        </ol>
+        <ol class="nav">
+            <li><a href="/lang/es">v2.0.0-rc.2</a></li>
+        </ol>
+        {{ content }}
+    </body>
 </html>
