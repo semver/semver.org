@@ -1,6 +1,6 @@
 ---
-layout: default
-title: Semantic Versioning 2.0.0
+layout: italian
+title: Versionamento Semantico 2.0.0
 ---
 
 Versionamento Semantico 2.0.0
