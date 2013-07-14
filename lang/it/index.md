@@ -280,12 +280,11 @@ La specifica di Versionamento Semantico è scritta da [Tom
 Preston-Werner](http://tom.preston-werner.com), inventore di Gravatars e
 cofondatore di GitHub.
 
+Tradotto da [Tarin Gamberini](http://www.taringamberini.com), membro del Java 
+User Group Padova e creatore della lista di parole Diceware in Italiano.
+
 Se ti piacerebbe lasciare un commento, per favore [apri una segnalazione su 
 GitHub](https://github.com/mojombo/semver/issues).
-
-Tradotto da [Tarin Gamberini](http://www.taringamberini.com), membro del [Java 
-User Group Padova](http://www.jugpadova.it/) e creatore della [lista di parole
-Diceware in italiano](http://www.taringamberini.com/italiano/diceware_it_IT.shtml#Lista_di_parole_Diceware_in_Italiano).
 
 
 Licenza
