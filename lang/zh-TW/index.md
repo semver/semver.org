@@ -187,7 +187,7 @@ API 時，你應該做兩件事：（1）更新你的文件讓使用者知道這
 關於
 ----
 
-語意化版本控制的規範是由 Gravatars 創辦者兼 Github 共同創辦者 [Tom
+語意化版本控制的規範是由 Gravatars 創辦者兼 GitHub 共同創辦者 [Tom
 Preston-Werner](http://tom.preston-werner.com) 所建立。
 
 如果您有任何建議，請[到 GitHub
