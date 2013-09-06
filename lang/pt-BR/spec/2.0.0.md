@@ -22,7 +22,7 @@ Introdução
 
 No mundo da gestão de software existe um lugar pavoroso chamado "inferno das dependências". Quanto mais cresce o seu sistema e mais pacotes você integra nele, é mais provável que você se encontre, um dia, no poço do desespero.
 
-Em sistemas com muitas dependências, a liberação de novas versões de pacotes podem rápidamente se tornar um pesadelo. Se as especificações de dependência forem muito apertadas, você corre o risco de travar a versão (a incapacidade de atualizar um pacote sem ter de lançar novas versões de todos os pacotes que dependem dele). Se as dependências estão especificadas muito vagamente, você inevitávelmente será mordido pela promiscuidade entre versões (isso assumindo que a compatibilidade com outras versões fututas é razoável). Inferno das dependências é o lugar onde você está quando o bloqueio e/ou promiscuidade da versão vai impedi-lo, de forma fácil e segura, de mover o projeto adiante.
+Em sistemas com muitas dependências, a liberação de novas versões de pacotes podem rápidamente se tornar um pesadelo. Se as especificações de dependência forem muito apertadas, você corre o risco de travar a versão (a incapacidade de atualizar um pacote sem ter de lançar novas versões de todos os pacotes que dependem dele). Se as dependências estão especificadas muito vagamente, você inevitávelmente será mordido pela promiscuidade entre versões (isso assumindo que a compatibilidade com outras versões futuras é razoável). Inferno das dependências é o lugar onde você está quando o bloqueio e/ou promiscuidade da versão vai impedi-lo, de forma fácil e segura, de mover o projeto adiante.
 
 Como solução para este problema, eu proponho um simples conjunto de regras e requisitos que ditam como os números de versão são atribuídos e incrementados. Estas regras são baseadas, mas não necessáriamente limitadas as bem difundidas práticas comumente em uso tanto nos softwares de código aberto quanto nos de código fechado. Para este sistema funcionar, você primeiramente precisa declarar uma API pública. Isso pode consistir de documentação ou ser executada pelo próprio código. Independentemente disso, é importante que esta API ser clara e precisa. Uma vez que você identifique sua API pública, você comunica as trocas efetuadas com incrementos específicos no seu número de versão. Considere uma versão no formato X.Y.Z (maior.menor.patch). Consertos de erros que não afetam a API incrementam a versão patch, inclusões/modificações que não afetam a compatibilidade entre versões da API incrementam a versão menor e modificações que quebrem a compatibilidade entre versões da API incrementam o valor da versão maior.
 
@@ -49,83 +49,18 @@ As palavras chave "PRECISA", "NÃO PRECISA", "REQUERIDO", "DEVE", "NÃO DEVE", "
 
 1. A versão maior X (X.y.z | X > 0) PRECISA ser incrementada se alguma modificação levou à incompatibilidade entre versões da API pública. PODE também incluir alterações de versão menor ou patch. Patch e a versão menor PRECISAM ser reiniciadas para 0 quando a versão maior é incrementada.
 
-1. Uma versão pre-release PODE ser indicada anexando um hífen e uma série de identificadores separados por pontos imediatamente após o número de versão patch. Identificadores PRECISAM abranger somente alfanuméricos ASCII e hífen [0-9A-Za-z-]. Identificadores NÃO PRECISAM estar vazios. Identificadores numéricos NÃO PRECISA incluir zeros à esquerda. Versões de pre-release tem uma precedência menor que a verão normal associada. Uma versão pre-release indica que a versão é instável e pode não satisfazer os requisitos de compatibilidade desejados, como indicado pelas suas versões normais associadas. Exemplos: 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7, 1.0.0-x.7.z.92.
+1. Uma versão pre-release PODE ser indicada anexando um hífen e uma série de identificadores separados por pontos imediatamente após o número de versão patch. Identificadores PRECISAM abranger somente alfanuméricos ASCII e hífen [0-9A-Za-z-]. Identificadores NÃO PRECISAM estar vazios. Identificadores numéricos NÃO PRECISA incluir zeros à esquerda. Versões de pre-release tem uma precedência menor que a versão normal associada. Uma versão pre-release indica que a versão é instável e pode não satisfazer os requisitos de compatibilidade desejados, como indicado pelas suas versões normais associadas. Exemplos: 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7, 1.0.0-x.7.z.92.
 
-1. Metadado de build PODE ser indicado ao anexar um sinal de mais e uma série de identificadores separados por pontos imediatamente após o número de versão patch ou o de pre-release. Identificadores PRECISAM abranger somente alfanuméricos ASCII e hífen [0-9A-Za-z-]. Identificadores NÃO PRECISAM estar vazios. Metadados de build PRECISAM ser ignorados quando determinando a precedência de versão. Assim, duas versões que diferem apenas nos metadados de construção, têm a mesma precedência. Exemplos: 1.0.0-alpha+001, 1.0.0+20130313144700, 1.0.0-beta+exp.sha.5114f85.
+1. Metadado de build PODE ser indicado ao anexar um sinal de mais e uma série de identificadores separados por pontos imediatamente após o número de versão patch ou o de pre-release. Identificadores PRECISAM abranger somente alfanuméricos ASCII e hífen [0-9A-Za-z-]. Identificadores NÃO PODEM ser vazios. Metadados de build PRECISAM ser ignorados quando determinando a precedência de versão. Assim, duas versões que diferem apenas nos metadados de construção, têm a mesma precedência. Exemplos: 1.0.0-alpha+001, 1.0.0+20130313144700, 1.0.0-beta+exp.sha.5114f85.
 
 1. A precedência refere-se a como versões são comparadas umas com as outras quando solicitado. A precedência PRECISA ser calculada separando a versão em maior, menor, patch e pre-release, nesta ordem (metadado de build não figura na precedência). A precedência é dererminada pela primeira diferença quando comparando cada um destes identificadores, da esquerda para a direita, como segue: As versões maior, menor e patch são sempre comparadas numéricamente. Exemplo: 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1. Quando maior, menor e patch são iguais, um pre-release tem sempre menor precedência do que uma versão normal. Exemplo: 1.0.0-alpha < 1.0.0. A precedência entre duas versões pre-release com os mesmos valores para as versões maior, menor e patch PRECISAM ser determinada comparando cada identificador separado por pontos, da esquerda para a direita, até encontrar uma diferença, como segue: identificadores consistindo somente de dígitos são comparados numéricamente e identificadores com letras ou hífens são comparados lexicamente usando a ordenação de caracteres ASCII. Identificadores numéricos sempre tem precedência inferior do que os identificadore não numéricos. Um grande conjunto de campos de pre-release tem uma precedência maior do que um conjunto menor, se todos os identificadores precedentes forem iguais. Exemplo: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
-
-Backus–Naur Form Grammar para versões SemVer válidas
-----------------------------------------------------
-
-    <semver válido> ::= <versão core>
-                     | <versão core> "-" <pre-release>
-                     | <versão core> "+" <build>
-                     | <versão core> "-" <pre-release> "+" <build>
-
-    <versão core> ::= <maior> "." <menor> "." <patch>
-
-    <maior> ::= <identificador numérico>
-
-    <menor> ::= <identificador numérico>
-
-    <patch> ::= <identificador numérico>
-
-    <pre-release> ::= <identificadores pre-release separados-por-ponto>
-
-    <identificadores pre-release separados-por-ponto> ::= <pre-release identifier>
-                                              | <pre-release identifier> "." <identificadores pre-release separados-por-ponto>
-
-    <build> ::= <identificadores build separados-por-ponto>
-
-    <identificadores build separados-por-ponto> ::= <identificador build>
-                                        | <identificador build> "." <identificadores build separados-por-ponto>
-
-    <pre-release identifier> ::= <identificadores alfanuméricos>
-                               | <numeric identifier>
-
-    <identificador build> ::= <identificadores alfanuméricos>
-                         | <dígitos>
-
-    <identificadores alfanuméricos> ::= <não-dígitos>
-                                | <não-dígitos> <identificador caracteres>
-                                | <identificador caracteres> <não-dígitos>
-                                | <identificador caracteres> <não-dígitos> <identificador caracteres>
-
-    <identificador numérico> ::= "0"
-                           | <dígitos positivos>
-                           | <dígitos positivos> <dígitos>
-
-    <identificador caracteres> ::= <identificador caracter>
-                              | <identificador caracter> <identificador caracteres>
-
-    <identificador caracter> ::= <dígito>
-                             | <não-dígitos>
-
-    <não-dígitos> ::= <letras>
-                  | "-"
-
-    <dígitos> ::= <dígito>
-               | <dígito> <dígitos>
-
-    <dígito> ::= "0"
-              | <dígitos positivos>
-
-    <dígitos positivos> ::= "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
-
-    <letras> ::= "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J"
-               | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T"
-               | "U" | "V" | "W" | "X" | "Y" | "Z" | "a" | "b" | "c" | "d"
-               | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n"
-               | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x"
-               | "y" | "z"
 
 Porque usar o Versionamento Semântico?
 ----------------------------
 
 Esta não é uma idéia nova ou revolucionária. Na verdade, você provavelmente já faz algo mais ou menos assim. O problema é que "mais ou menos" não é o suficiente. Sem observância a algum tipo formal de especificação, os números de versão são essencialmente inúteis para a gestão de dependências. Ao dar um nome e uma definição clara para as idéias acima, fica mais fácil comunicar as suas intenções aos usuários do seu software. Uma vez que estas intenções são claras, pode-se fazer especificações de dependencias flexíveis (mas não muito flexíveis).
 
-Um simples exemplo demonstrará como o Versionamento Semântico pode transformar o inferno das dependências algo do passado. Considere uma biblioteca chamada "Firetruck". Ela requer um pacote semânticamente versionado chamado "Ladder". No momento em que Firetruck está sendo criado, Ladder está na versão 3.1.0. Já que Firetruck usa algumas funcionalidades que foram introduzidas na versão 3.1.0, você pode seguramente especificar a dependência de Ladder em uma versão sendo maior ou igual a 3.1.0 mas menor que 4.0.0. Agora, quando Ladder versão 3.1.1 e 3.2.0 estiverem disponíveis, você pode utilizá-las no ser sistema de gestão de pacotes sabendo que elas serão compatíveis com o seu software.
+Um simples exemplo demonstrará como o Versionamento Semântico pode transformar o inferno das dependências algo do passado. Considere uma biblioteca chamada "Firetruck". Ela requer um pacote semânticamente versionado chamado "Ladder". No momento em que Firetruck está sendo criado, Ladder está na versão 3.1.0. Já que Firetruck usa algumas funcionalidades que foram introduzidas na versão 3.1.0, você pode seguramente especificar a dependência de Ladder em uma versão sendo maior ou igual a 3.1.0 mas menor que 4.0.0. Agora, quando Ladder versão 3.1.1 e 3.2.0 estiverem disponíveis, você pode utilizá-las no seu sistema de gestão de pacotes sabendo que elas serão compatíveis com o seu software.
 
 Como um desenvolvedor responsável você irá, claro, querer verificar que qualquer atualização de pacotes funciona como anunciado. O mundo real é bem bagunçado e não podemos fazer nada além de estarmos sempre vigilantes e atentos. O que você pode fazer é deixar o Versionamento Semântico prover como uma forma sã de liberar atualizações de pacotes sem ter de lançar novas versões de pacotes dependentes, poupando tempo e aborrecimentos.
 
@@ -144,9 +79,9 @@ Se o seu software já está sendo usado em produção, então provavelmente ele 
 
 ### Isto não desencoraja o desenvolvimento ágil e iterações rápidas?
 
-A verão maior em zero é estar falando sobre desenvolvimento ágil. Se você está trocando a API todo o dia, então você precisa ou estar na versão 0.y.z ou em um outro branch de desenvolvimento, trabalhando na próxima versão maior.
+A versão maior em zero é estar falando sobre desenvolvimento ágil. Se você está trocando a API todo o dia, então você precisa ou estar na versão 0.y.z ou em um outro branch de desenvolvimento, trabalhando na próxima versão maior.
 
-### Se as menores alterações que quebram a compatibilidade entre versões da API pública requerem o lançamento de uma versão maior, eu não vou acabar chegando na verão 42.0.0 muito rapidamente?
+### Se as menores alterações que quebram a compatibilidade entre versões da API pública requerem o lançamento de uma versão maior, eu não vou acabar chegando na versão 42.0.0 muito rapidamente?
 
 Esta é uma questão de desenvolvimento responsável e previsão. Alterações que gerem incompatibilidade entre versões não devem ser introduzidas aos poucos em um software que tem muitos consumidores, afinal, o custo de fazer um upgrade pode ser significativo. Ser obrigado a liberar versões maiores para as alterações que geram quebras de compatibilidade significa que você terá de pensar nos impactos gerados pelas suas modificações e avaliar o custo/benefício envolvido.
 
