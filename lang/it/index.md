@@ -15,7 +15,7 @@ Dato un numero di versione MAJOR.MINOR.PATCH, incrementa la:
 1. versione MINOR quando aggiungi funzionalità in modo retrocompatibile, e
 1. versione PATCH quando correggi bug in modo retrocompatibile.
 
-Sono disponibili etichette aggiuntive per pre-release e metadati di build come
+Sono disponibili etichette aggiuntive per il pre-release e i metadati di build come
 estensioni al formato MAJOR.MINOR.PATCH.
 
 Introduzione
@@ -271,7 +271,7 @@ siano in grado di migrare tranquillamente alla nuova API.
 
 No, ma usa il buon senso. Per esempio, una stringa di versione di 255 caratteri 
 è eccessiva. Inoltre, sistemi specifici possono imporre i loro limiti sulla 
-dimensione della stringa.
+dimensione.
 
 A riguardo
 ----------
@@ -284,6 +284,7 @@ Traduzione a cura del [Java User Group Padova](http://www.jugpadova.it/):
 * [Tarin Gamberini](http://www.taringamberini.com) autore
 * [Enrico Mezzato](https://github.com/mezzato) revisore
 * [Emanuele Gesuato](http://nonsolojava.blogspot.it/) revisore
+* [Anicet Togue](https://github.com/atogue) revisore
 
 Se ti piacerebbe lasciare un commento, per favore [apri una segnalazione su 
 GitHub](https://github.com/mojombo/semver/issues).
