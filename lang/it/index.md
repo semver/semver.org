@@ -11,9 +11,9 @@ Sommario
 
 Dato un numero di versione MAJOR.MINOR.PATCH, incrementa la:
 
-1. versione MAJOR quando modifichi l'API in modo non retrocompatibile;
-1. versione MINOR quando aggiungi funzionalità in modo retrocompatibile;
-1. versione PATCH quando correggi bachi in modo retrocompatibile.
+1. versione MAJOR quando modifichi l'API in modo non retrocompatibile,
+1. versione MINOR quando aggiungi funzionalità in modo retrocompatibile, e
+1. versione PATCH quando correggi bug in modo retrocompatibile.
 
 Sono disponibili etichette aggiuntive per pre-release e metadati di build come
 estensioni al formato MAJOR.MINOR.PATCH.
@@ -30,11 +30,11 @@ Nei sistemi con molte dipendenze, rilasciare nuove versioni di pacchetti può
 diventare rapidamente un incubo. Se le specifiche di dipendenza sono troppo 
 stringenti, sei a rischio di blocco di versione (l'impossibilità di aggiornare
 un pacchetto senza dover rilasciare nuove versioni di ogni pacchetto 
-dipendente). Se le dipendenze sono specificate in modo troppo lasco, sarai 
-inevitabilmente colpito da promisquità di versione (l'ipotizzare compatibilità 
+dipendente). Se le dipendenze sono specificate in modo troppo permissivo, sarai 
+inevitabilmente afflitto da promiscuità di versione (l'ipotizzare compatibilità 
 con versioni future più di quanto sia ragionevole). L'inferno della dipendenza 
-è dove sei quando blocco di versione e/o promisquità di versione ti impediscono 
-di far avanzare il tuo progetto in modo semplice e sicuro.
+è dove sei quando blocco di versione e/o promiscuità di versione ti impediscono 
+di far avanzare il tuo progetto in modo facile e sicuro.
 
 Come soluzione a questo problema, propongo un semplice insieme di regole e 
 requisiti che stabiliscono come i numeri di versione siano assegnati ed 
@@ -46,14 +46,14 @@ pubblica. Quest'ultima può consistere di documentazione o essere imposta tramit
 il codice stesso. In ogni caso, è importante che tale API sia chiara e precisa. 
 Una volta identificata la tua API pubblica, comunicane le modifiche con 
 incrementi specifici del numero di versione. Considera un formato di 
-versione X.Y.Z (Major.Minor.Patch). La correzione di bachi, non influenzando
-l'API, incrementa la versione Patch, aggiunte/modifiche retrocompatibili all'API
-incrementano la versione Minor, e modifiche non retrocompatibili all'API
+versione X.Y.Z (Major.Minor.Patch). La correzione di bug, non influenzando
+l'API, incrementa la versione Patch, aggiunte/modifiche retrocompatibili alla API
+incrementano la versione Minor, e modifiche non retrocompatibili alla API
 incrementano la versione Major.
 
-Chiamo questo sistema "Versionamento Semantico". Sotto questo schema, i numeri di 
+Chiamo questo sistema "Versionamento Semantico". Con queste convenzioni i numeri di 
 versione ed il modo con cui essi cambiano comunicano significato relativamente
-al codice sottostante e a cosa è stato modificato da una versione alla successiva.
+al codice sottostante e a cosa è stato modificato da una versione all'altra.
 
 
 Specifica di Versionamento Semantico (SemVer)
@@ -88,7 +88,7 @@ versione è incrementato dopo questo rilascio dipende da questa API pubblica
 e da come quest'ultima cambia.
 
 1. La versione Patch Z (x.y.Z | x > 0) DEVE essere incrementata solo se sono
-introdotte correzioni retrocompatibili di bachi. Una correzione di un baco è
+introdotte correzioni retrocompatibili di bug. Una correzione di un bug è
 definita come una modifica interna che corregge un comportamento errato.
 
 1. La versione Minor Y (x.Y.z | x > 0) DEVE essere incrementata se nell'API 
@@ -206,7 +206,7 @@ modificando l'API ogni giorno o dovresti essere già nella versione 0.y.z o
 dovresti essere su un ramo di sviluppo separato lavorando alla prossima
 versione major.
 
-### Se perfino la più piccola modifica non retrocompatibile all'API pubblica comporta un colpo alla versione major, non finirei alla versione 42.0.0 molto rapidamente?
+### Se perfino la più piccola modifica non retrocompatibile alla API pubblica comporta un colpo alla versione major, non finirei alla versione 42.0.0 molto rapidamente?
 
 Questa è una questione di sviluppo responsabile e lungimiranza. Modifiche
 incompatibili non dovrebbero essere introdotte con leggerezza al software che
@@ -240,7 +240,7 @@ Ciò sarebbe considerato compatibile poiché non interessa l'API pubblica.
 I software che dipendono esplicitamente dalle stesse dipendenze del tuo 
 pacchetto dovrebbero avere le loro proprie specifiche di dipendenza e l'autore 
 noterà qualsiasi conflitto. Determinare se la modifica sia di livello patch o
-minor dipende se hai aggiornato le tue dipendenze per correggere un baco o
+minor dipende se hai aggiornato le tue dipendenze per correggere un bug o
 per introdurre una nuova funzionalità. In quest'ultimo caso solitamente mi 
 aspetto del codice aggiuntivo, ed ovviamente un incremento della versione
 minor.
@@ -253,7 +253,7 @@ potrebbe essere meglio eseguire un rilascio di una versione major, perfino se
 la correzione potrebbe strettamente essere considerata il rilascio di una patch.
 Ricorda, Versionamento Semantico, è finalizzato alla comunicazione di 
 significato attraverso il cambiamento del numero di versione. Se tali 
-modifiche sono importanti per i tuoi utenti utenti, usa il numero di versione
+modifiche sono importanti per i tuoi utenti, usa il numero di versione
 per informarli.
 
 ### Come dovrei gestire la deprecazione di funzionalità?
@@ -280,8 +280,10 @@ La specifica di Versionamento Semantico è scritta da [Tom
 Preston-Werner](http://tom.preston-werner.com), inventore di Gravatars e
 cofondatore di GitHub.
 
-Tradotto da [Tarin Gamberini](http://www.taringamberini.com), membro del Java 
-User Group Padova e creatore della lista di parole Diceware in Italiano.
+Traduzione a cura del [Java User Group Padova](http://www.jugpadova.it/):
+* [Tarin Gamberini](http://www.taringamberini.com) autore
+* [Enrico Mezzato](https://github.com/mezzato) revisore
+* [Emanuele Gesuato](http://nonsolojava.blogspot.it/) revisore
 
 Se ti piacerebbe lasciare un commento, per favore [apri una segnalazione su 
 GitHub](https://github.com/mojombo/semver/issues).
