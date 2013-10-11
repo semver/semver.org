@@ -65,8 +65,8 @@ e "OPTIONAL" in questo documento sono da interpretarsi come descritto nella
 [RFC 2119](http://tools.ietf.org/html/rfc2119).
 
 1. Il software che usa Versionamento Semantico DEVE dichiarare una API pubblica. 
-Questa API potrebbe essere dichiarata nel codice stesso oppure esistere
-come documentazione rigorosa. Indipendentemente da come è dichiarata, dovrebbe
+Questa API potrebbe essere dichiarata nel codice stesso oppure essere definita 
+rigorosamente nella documentazione. Indipendentemente da come è dichiarata, dovrebbe
 essere precisa a completa.
 
 1. Un numero di versione normale DEVE essere nella forma X.Y.Z, dove X, Y, e Z 
