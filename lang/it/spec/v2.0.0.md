@@ -9,11 +9,11 @@ Versionamento Semantico 2.0.0
 Sommario
 --------
 
-Dato un numero di versione MAJOR.MINOR.PATCH, incrementa la:
+Dato un numero di versione MAJOR.MINOR.PATCH, incremente la:
 
-1. versione MAJOR quando modifichi l'API in modo non retrocompatibile,
-1. versione MINOR quando aggiungi funzionalità in modo retrocompatibile, e
-1. versione PATCH quando correggi bug in modo retrocompatibile.
+1. versione MAJOR quando modificate l'API in modo non retrocompatibile,
+1. versione MINOR quando aggiungete funzionalità in modo retrocompatibile, e
+1. versione PATCH quando correggete bug in modo retrocompatibile.
 
 Sono disponibili etichette aggiuntive per il pre-release e i metadati di build come
 estensioni al formato MAJOR.MINOR.PATCH.
@@ -22,37 +22,37 @@ Introduzione
 ------------
 
 Nel mondo della gestione del software esiste un luogo terrificante chiamato
-"inferno della dipendenza". Quanto più cresce il tuo sistema e quanti più 
-pacchetti integri nel tuo software, tanto più facilmente ti ritroverai, un 
+"inferno della dipendenza". Quanto più cresce il vostro sistema e quanti più 
+pacchetti integrate nel vostro software, tanto più facilmente vi ritroverete, un 
 giorno, in questa valle di lacrime.
 
 Nei sistemi con molte dipendenze, rilasciare nuove versioni di pacchetti può 
 diventare rapidamente un incubo. Se le specifiche di dipendenza sono troppo 
-stringenti, sei a rischio di blocco di versione (l'impossibilità di aggiornare
+stringenti, siete a rischio di blocco di versione (l'impossibilità di aggiornare
 un pacchetto senza dover rilasciare nuove versioni di ogni pacchetto 
-dipendente). Se le dipendenze sono specificate in modo troppo permissivo, sarai 
-inevitabilmente afflitto da promiscuità di versione (l'ipotizzare compatibilità 
+dipendente). Se le dipendenze sono specificate in modo troppo permissivo, sarete
+inevitabilmente afflitti da promiscuità di versione (l'ipotizzare compatibilità 
 con versioni future più di quanto sia ragionevole). L'inferno della dipendenza 
-è dove sei quando blocco di versione e/o promiscuità di versione ti impediscono 
-di far avanzare il tuo progetto in modo facile e sicuro.
+è dove siete quando blocco di versione e/o promiscuità di versione vi impediscono 
+di far avanzare il vostro progetto in modo facile e sicuro.
 
 Come soluzione a questo problema, propongo un semplice insieme di regole e 
 requisiti che stabiliscono come i numeri di versione siano assegnati ed 
 incrementati.
 Queste regole sono basate su, ma non necessariamente limitate a, diffuse
 pratiche comuni adottate sia in software proprietario che open source.
-Affinché questo sistema funzioni, hai prima bisogno di dichiarare una API 
+Affinché questo sistema funzioni, avete prima bisogno di dichiarare una API 
 pubblica. Quest'ultima può consistere di documentazione o essere imposta tramite
 il codice stesso. In ogni caso, è importante che tale API sia chiara e precisa. 
-Una volta identificata la tua API pubblica, comunicane le modifiche con 
-incrementi specifici del numero di versione. Considera un formato di 
+Una volta identificata la vostra API pubblica, comunicatene le modifiche con 
+incrementi specifici del numero di versione. Considerate un formato di 
 versione X.Y.Z (Major.Minor.Patch). La correzione di bug, non influenzando
 l'API, incrementa la versione Patch, aggiunte/modifiche retrocompatibili alla API
 incrementano la versione Minor, e modifiche non retrocompatibili alla API
 incrementano la versione Major.
 
 Chiamo questo sistema "Versionamento Semantico". Con queste convenzioni i numeri di 
-versione ed il modo con cui essi cambiano comunicano significato relativamente
+versione, ed il modo in cui essi cambiano, comunicano significato relativamente
 al codice sottostante e a cosa è stato modificato da una versione all'altra.
 
 
@@ -150,12 +150,12 @@ uguali. Esempio: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta <
 Perché usare Versionamento Semantico?
 -------------------------------------
 
-Questa non è un'idea rivoluzionaria. Infatti, probabilmente fai già qualcosa di
+Questa non è un'idea rivoluzionaria. Infatti, probabilmente fate già qualcosa di
 simile a questo. Il problema è che quel "simile" non è abbastanza buono.
 Senza la conformità a qualche tipo di specifica formale, i numeri di versione
 sono essenzialmente inutili per una gestione delle dipendenze. Dando un nome
-ed una chiara definizione alle idee sopra, diventa semplice comunicare le tue
-intenzioni agli utenti del tuo software. Quando queste intenzioni sono chiare,
+ed una chiara definizione alle idee sopra, diventa semplice comunicare le vostre
+intenzioni agli utenti del vostro software. Quando queste intenzioni sono chiare,
 flessibili (ma non troppo flessibili) le specifiche di dipendenza possono
 finalmente essere realizzate.
 
@@ -164,22 +164,22 @@ l'inferno della dipendenza una cosa del passato. Considera una libreria
 chiamata "CamionDeiPompieri". Essa richiede un pacchetto Semanticamente 
 Versionato di nome "Scala". All'istante in cui è creato, Scala è alla versione 
 3.1.0. Poiché CamionDeiPompieri utilizza alcune funzionalità che furono 
-inizialmente introdotte in 3.1.0, puoi specificare con sicurezza la dipendenza 
+inizialmente introdotte in 3.1.0, potete specificare con sicurezza la dipendenza 
 da Scala come maggiore o uguale a 3.1.0 ma minore di 4.0.0. Ora, quando Scala 
-versione 3.1.1 e 3.2.0 diventano disponibili, puoi rilasciarle al tuo sistema 
+versione 3.1.1 e 3.2.0 diventano disponibili, potete rilasciarle al vostro sistema 
 di gestione dei pacchetti e sapere che esse saranno compatibili con il software 
 dipendente esistente.
 
-In qualità di sviluppatore responsabile vorrai, naturalmente, verificare che
+In qualità di sviluppatore responsabile vorrete, naturalmente, verificare che
 qualsiasi aggiornamento di pacchetto funzioni come descritto. Il mondo reale è
-un luogo caotico; non possiamo farci nulla se non essere vigili. Ciò che puoi
+un luogo caotico; non possiamo farci nulla se non essere vigili. Ciò che potete
 fare è consentire a Versionamento Semantico di fornirti un modo sano di 
 rilasciare ed aggiornare i pacchetti senza dover propagare le nuove versioni
-ai pacchetti dipendenti, risparmiandoti tempo e fastidio.
+ai pacchetti dipendenti, risparmiandovi tempo e fastidio.
 
-Se tutto questo ti suona desiderabile, tutto ciò che ti serve fare per iniziare 
-ad usare Versionamento Semantico è dichiarare che stai facendo così e poi 
-seguire le regole. Rimanda a questo sito web dal tuo LEGGIMI (README) così altri
+Se tutto questo vi suona desiderabile, tutto ciò che vi serve fare per iniziare 
+ad usare Versionamento Semantico è dichiarare che state facendo così e poi 
+seguire le regole. Rimandate a questo sito web dal vostro LEGGIMI (README) così altri
 conosceranno le regole e potranno beneficiarne.
 
 
@@ -193,17 +193,17 @@ iniziale e poi incrementare la versione minor per ogni successivo rilascio.
 
 ### Come so quando rilasciare la 1.0.0?
 
-Se il tuo software è usato in produzione, dovrebbe probabilmente già essere
-alla 1.0.0. Se hai una API stabile sulla quale gli utenti hanno iniziato a 
-dipendere, dovresti essere alla 1.0.0. Se ti stai preoccupando molto 
-relativamente alla retrocompatibilità, dovresti probabilmente già essere alla 
+Se il vostro software è usato in produzione, dovrebbe probabilmente già essere
+alla 1.0.0. Se avete una API stabile sulla quale gli utenti hanno iniziato a 
+dipendere, dovreste essere alla 1.0.0. Se vi state preoccupando molto 
+relativamente alla retrocompatibilità, dovreste probabilmente già essere alla 
 1.0.0.
 
 ### Questo non scoraggia lo sviluppo rapido e le iterazioni veloci?
 
-La versione Major zero riguarda completamente lo sviluppo rapido. Se stai 
-modificando l'API ogni giorno o dovresti essere già nella versione 0.y.z o
-dovresti essere su un ramo di sviluppo separato lavorando alla prossima
+La versione Major zero riguarda completamente lo sviluppo rapido. Se state 
+modificando l'API ogni giorno o dovreste essere già nella versione 0.y.z o
+dovreste essere su un ramo di sviluppo separato lavorando alla prossima
 versione major.
 
 ### Se perfino la più piccola modifica non retrocompatibile alla API pubblica comporta un colpo alla versione major, non finirei alla versione 42.0.0 molto rapidamente?
@@ -212,55 +212,55 @@ Questa è una questione di sviluppo responsabile e lungimiranza. Modifiche
 incompatibili non dovrebbero essere introdotte con leggerezza al software che
 ha molto codice dipendente. Il costo in cui si potrebbe incorrere per aggiornare
 potrebbe essere significativo. Dover dar colpi alla versione major per 
-rilasciare modifiche incompatibili significa che penserai all'impatto delle tue 
-modifiche, e valuterai il rapporto costi/benefici coinvolto.
+rilasciare modifiche incompatibili significa che penserete all'impatto delle vostre 
+modifiche, e valuterete il rapporto costi/benefici coinvolto.
 
 ### Documentare l'intera API pubblica è troppo lavoro!
 
-E' tua responsabilità come sviluppatore professionista documentare 
+E' vostra responsabilità come sviluppatori professionisti documentare 
 appropriatamente il software il cui uso è destinato ad altri. Gestire la
 complessità del software è una parte enormemente importante per mantenere
-un progetto efficiente, e ciò e difficile da fare se nessuno sa come usare il
-tuo software, o nessuno sa con sicurezza quali metodi sono invocabili. Nel lungo 
+un progetto efficiente, e ciò è difficile da fare se nessuno sa come usare il
+vostro software, o nessuno sa con sicurezza quali metodi sono invocabili. Nel lungo 
 periodo, Versionamento Semantico, ed il perseverare su un'API pubblica ben 
 documentata è in grado di far andare tutto liscio.
 
 ### Cosa faccio se rilascio accidentalmente una modifica non retrocompatibile come versione minor?
 
-Non appena realizzi di aver infranto le specifiche di Versionamento Semantico,
-correggi il problema e rilascia una nuova versione minor che corregge il 
+Non appena realizzate di aver infranto le specifiche di Versionamento Semantico,
+correggete il problema e rilasciate una nuova versione minor che corregge il 
 problema e ripristina la retrocompatibilità. Perfino in tali circostanze,
 non è accettabile modificare una versione rilasciata. Se è appropriato,
-documenta la versione illecita ed informa i tuoi utenti del problema cosicché
+documentate la versione illecita ed informate i vostri utenti del problema cosicché
 siano consapevoli della versione illecita.
 
 ### Cosa dovrei fare se aggiorno le mie dipendenze senza modificare l'API pubblica?
 
 Ciò sarebbe considerato compatibile poiché non interessa l'API pubblica.
-I software che dipendono esplicitamente dalle stesse dipendenze del tuo 
+I software che dipendono esplicitamente dalle stesse dipendenze del vostro 
 pacchetto dovrebbero avere le loro proprie specifiche di dipendenza e l'autore 
 noterà qualsiasi conflitto. Determinare se la modifica sia di livello patch o
-minor dipende se hai aggiornato le tue dipendenze per correggere un bug o
+minor dipende se avete aggiornato le vostre dipendenze per correggere un bug o
 per introdurre una nuova funzionalità. In quest'ultimo caso solitamente mi 
 aspetto del codice aggiuntivo, ed ovviamente un incremento della versione
 minor.
 
 ### Cosa faccio se inavvertitamente altero l'API pubblica in un modo non conforme con la modifica al numero di versione (per esempio il codice introduce erroneamente una modifica che rompe la major in un rilascio di una patch).
 
-Utilizza il buon senso. Se hai un platea immensa che sarebbe drasticamente
+Utilizzate il buon senso. Se avete un platea immensa che sarebbe drasticamente
 impattata dal ripristinio del comportamento atteso dell'API pubblica, allora
 potrebbe essere meglio eseguire un rilascio di una versione major, perfino se
 la correzione potrebbe strettamente essere considerata il rilascio di una patch.
-Ricorda, Versionamento Semantico, è finalizzato alla comunicazione di 
+Ricordate, Versionamento Semantico, è finalizzato alla comunicazione di 
 significato attraverso il cambiamento del numero di versione. Se tali 
-modifiche sono importanti per i tuoi utenti, usa il numero di versione
+modifiche sono importanti per i vostri utenti, usate il numero di versione
 per informarli.
 
 ### Come dovrei gestire la deprecazione di funzionalità?
 
 Deprecare funzionalità esistenti fa parte del normale sviluppo di software ed è
-spesso necessario per fare progressi in avanti. Quando deprechi parte della
-tua API pubblica, dovresti fare due cose: (1) aggiornare la tua documentazione
+spesso necessario per fare progressi in avanti. Quando deprecate parte della
+vostra API pubblica, dovreste fare due cose: (1) aggiornare la vostra documentazione
 per consentire agli utenti di essere consapevoli della modifica, (2) distribuire
 un nuovo rilascio minor con la deprecazione all'interno. Prima di rimuovere
 completamente la funzionalità nel rilascio di una nuova major dovrebbe esserci 
@@ -269,7 +269,7 @@ siano in grado di migrare tranquillamente alla nuova API.
 
 ### Versionamento Semantico ha un limite alla dimensione della stringa della versione?
 
-No, ma usa il buon senso. Per esempio, una stringa di versione di 255 caratteri 
+No, ma usate il buon senso. Per esempio, una stringa di versione di 255 caratteri 
 è eccessiva. Inoltre, sistemi specifici possono imporre i loro limiti sulla 
 dimensione.
 
@@ -286,7 +286,7 @@ Traduzione a cura del [Java User Group Padova](http://www.jugpadova.it/):
 * [Emanuele Gesuato](http://nonsolojava.blogspot.it/) revisore
 * [Anicet Togue](https://github.com/atogue) revisore
 
-Se ti piacerebbe lasciare un commento, per favore [apri una segnalazione su 
+Se vi piacerebbe lasciare un commento, per favore [aprite una segnalazione su 
 GitHub](https://github.com/mojombo/semver/issues).
 
 
