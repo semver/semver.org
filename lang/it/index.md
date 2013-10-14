@@ -191,19 +191,19 @@ FAQ
 La cosa più semplice da fare è cominciare da 0.1.0 con il rilascio di sviluppo 
 iniziale e poi incrementare la versione minor per ogni successivo rilascio.
 
-### Come so quando rilasciare la 1.0.0?
+### Come faccio a sapere quando rilasciare la 1.0.0?
 
 Se il vostro software è usato in produzione, dovrebbe probabilmente già essere
-alla 1.0.0. Se avete una API stabile sulla quale gli utenti hanno iniziato a 
-dipendere, dovreste essere alla 1.0.0. Se vi state preoccupando molto 
+alla 1.0.0. Se avete una API stabile dalla quale gli utenti sono diventati 
+dipendenti, dovreste essere alla 1.0.0. Se vi state preoccupando molto 
 relativamente alla retrocompatibilità, dovreste probabilmente già essere alla 
 1.0.0.
 
 ### Questo non scoraggia lo sviluppo rapido e le iterazioni veloci?
 
 La versione Major zero riguarda completamente lo sviluppo rapido. Se state 
-modificando l'API ogni giorno o dovreste essere già nella versione 0.y.z o
-dovreste essere su un ramo di sviluppo separato lavorando alla prossima
+modificando l'API ogni giorno dovreste o essere già nella versione 0.y.z oppure 
+essere su un ramo di sviluppo separato lavorando alla prossima
 versione major.
 
 ### Se perfino la più piccola modifica non retrocompatibile alla API pubblica comporta un colpo alla versione major, non finirei alla versione 42.0.0 molto rapidamente?
@@ -247,7 +247,7 @@ minor.
 
 ### Cosa faccio se inavvertitamente altero l'API pubblica in un modo non conforme con la modifica al numero di versione (per esempio il codice introduce erroneamente una modifica che rompe la major in un rilascio di una patch).
 
-Utilizzate il buon senso. Se avete un platea immensa che sarebbe drasticamente
+Utilizzate il buon senso. Se avete una platea immensa che sarebbe drasticamente
 impattata dal ripristinio del comportamento atteso dell'API pubblica, allora
 potrebbe essere meglio eseguire un rilascio di una versione major, perfino se
 la correzione potrebbe strettamente essere considerata il rilascio di una patch.
