@@ -64,7 +64,7 @@ Le parole chiave "DEVE" ("MUST"), "NON DEVE" ("MUST NOT"), "REQUIRED", "SHALL",
 e "OPTIONAL" in questo documento sono da interpretarsi come descritto nella 
 [RFC 2119](http://tools.ietf.org/html/rfc2119).
 
-1. Il software che usa Versionamento Semantico DEVE dichiarare un'API pubblica. 
+1. Software che usa Versionamento Semantico DEVE dichiarare un'API pubblica. 
 Questa API potrebbe essere dichiarata nel codice stesso oppure essere definita 
 rigorosamente nella documentazione. Indipendentemente da come è dichiarata, dovrebbe
 essere precisa a completa.
@@ -167,7 +167,7 @@ Versionato di nome "Scala". All'istante in cui è creato, Scala è alla versione
 inizialmente introdotte in 3.1.0, potete specificare con sicurezza la dipendenza 
 da Scala come maggiore o uguale a 3.1.0 ma minore di 4.0.0. Ora, quando Scala 
 versione 3.1.1 e 3.2.0 diventano disponibili, potete rilasciarle al vostro sistema 
-di gestione dei pacchetti e sapere che esse saranno compatibili con il software 
+di gestione dei pacchetti e sapere che esse saranno compatibili con software 
 dipendente esistente.
 
 In qualità di sviluppatore responsabile vorrete, naturalmente, verificare che
@@ -209,7 +209,7 @@ versione major.
 ### Se perfino la più piccola modifica non retrocompatibile all'API pubblica comporta un colpo alla versione major, non finirei alla versione 42.0.0 molto rapidamente?
 
 Questa è una questione di sviluppo responsabile e lungimiranza. Modifiche
-incompatibili non dovrebbero essere introdotte con leggerezza al software che
+incompatibili non dovrebbero essere introdotte con leggerezza a software che
 ha molto codice dipendente. Il costo in cui si potrebbe incorrere per aggiornare
 potrebbe essere significativo. Dover dar colpi alla versione major per 
 rilasciare modifiche incompatibili significa che penserete all'impatto delle vostre 
@@ -218,7 +218,7 @@ modifiche, e valuterete il rapporto costi/benefici coinvolto.
 ### Documentare l'intera API pubblica è troppo lavoro!
 
 E' vostra responsabilità come sviluppatori professionisti documentare 
-appropriatamente il software il cui uso è destinato ad altri. Gestire la
+appropriatamente software il cui uso è destinato ad altri. Gestire la
 complessità del software è una parte enormemente importante per mantenere
 un progetto efficiente, e ciò è difficile da fare se nessuno sa come usare il
 vostro software, o nessuno sa con sicurezza quali metodi sono invocabili. Nel lungo 
@@ -237,7 +237,7 @@ siano consapevoli della versione illecita.
 ### Cosa dovrei fare se aggiorno le mie dipendenze senza modificare l'API pubblica?
 
 Ciò sarebbe considerato compatibile poiché non interessa l'API pubblica.
-I software che dipendono esplicitamente dalle stesse dipendenze del vostro 
+Software che dipendono esplicitamente dalle stesse dipendenze del vostro 
 pacchetto dovrebbero avere le loro proprie specifiche di dipendenza e l'autore 
 noterà qualsiasi conflitto. Determinare se la modifica sia di livello patch o
 minor dipende se avete aggiornato le vostre dipendenze per correggere un bug o
