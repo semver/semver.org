@@ -160,7 +160,7 @@ flessibili (ma non troppo flessibili) le specifiche di dipendenza possono
 finalmente essere realizzate.
 
 Un semplice esempio dimostrerà come Versionamento Semantico può rendere 
-l'inferno della dipendenza una cosa del passato. Considera una libreria
+l'inferno della dipendenza una cosa del passato. Considerate una libreria
 chiamata "CamionDeiPompieri". Essa richiede un pacchetto Semanticamente 
 Versionato di nome "Scala". All'istante in cui è creato, Scala è alla versione 
 3.1.0. Poiché CamionDeiPompieri utilizza alcune funzionalità che furono 
@@ -170,12 +170,12 @@ versione 3.1.1 e 3.2.0 diventano disponibili, potete rilasciarle al vostro siste
 di gestione dei pacchetti e sapere che esse saranno compatibili con software 
 dipendente esistente.
 
-In qualità di sviluppatore responsabile vorrete, naturalmente, verificare che
+In qualità di sviluppatori responsabili vorrete, naturalmente, verificare che
 qualsiasi aggiornamento di pacchetto funzioni come descritto. Il mondo reale è
 un luogo caotico; non possiamo farci nulla se non essere vigili. Ciò che potete
-fare è consentire a Versionamento Semantico di fornirti un modo sano di 
+fare è consentire a Versionamento Semantico di fornirvi un modo sano di 
 rilasciare ed aggiornare i pacchetti senza dover propagare le nuove versioni
-ai pacchetti dipendenti, risparmiandovi tempo e fastidio.
+ai pacchetti dipendenti, facendovi risparmiare tempo e fastidio.
 
 Se tutto questo vi suona desiderabile, tutto ciò che vi serve fare per iniziare 
 ad usare Versionamento Semantico è dichiarare che state facendo così e poi 
@@ -228,8 +228,8 @@ documentata è in grado di far andare tutto liscio.
 ### Cosa faccio se rilascio accidentalmente una modifica non retrocompatibile come versione minor?
 
 Non appena realizzate di aver infranto le specifiche di Versionamento Semantico,
-correggete il problema e rilasciate una nuova versione minor che corregge il 
-problema e ripristina la retrocompatibilità. Perfino in tali circostanze,
+correggete il problema e rilasciate una nuova versione minor che corregga il 
+problema e ripristini la retrocompatibilità. Perfino in tali circostanze,
 non è accettabile modificare una versione rilasciata. Se è appropriato,
 documentate la versione illecita ed informate i vostri utenti del problema cosicché
 siano consapevoli della versione illecita.
