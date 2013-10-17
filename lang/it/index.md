@@ -41,14 +41,14 @@ requisiti che stabiliscono come i numeri di versione siano assegnati ed
 incrementati.
 Queste regole sono basate su, ma non necessariamente limitate a, diffuse
 pratiche comuni adottate sia in software proprietario che open source.
-Affinché questo sistema funzioni, avete prima bisogno di dichiarare una API 
+Affinché questo sistema funzioni, avete prima bisogno di dichiarare un'API 
 pubblica. Quest'ultima può consistere di documentazione o essere imposta tramite
 il codice stesso. In ogni caso, è importante che tale API sia chiara e precisa. 
 Una volta identificata la vostra API pubblica, comunicatene le modifiche con 
 incrementi specifici del numero di versione. Considerate un formato di 
 versione X.Y.Z (Major.Minor.Patch). La correzione di bug, non influenzando
-l'API, incrementa la versione Patch, aggiunte/modifiche retrocompatibili alla API
-incrementano la versione Minor, e modifiche non retrocompatibili alla API
+la API, incrementa la versione Patch, aggiunte/modifiche retrocompatibili all'API
+incrementano la versione Minor, e modifiche non retrocompatibili all'API
 incrementano la versione Major.
 
 Chiamo questo sistema "Versionamento Semantico". Con queste convenzioni i numeri di 
@@ -64,7 +64,7 @@ Le parole chiave "DEVE" ("MUST"), "NON DEVE" ("MUST NOT"), "REQUIRED", "SHALL",
 e "OPTIONAL" in questo documento sono da interpretarsi come descritto nella 
 [RFC 2119](http://tools.ietf.org/html/rfc2119).
 
-1. Il software che usa Versionamento Semantico DEVE dichiarare una API pubblica. 
+1. Il software che usa Versionamento Semantico DEVE dichiarare un'API pubblica. 
 Questa API potrebbe essere dichiarata nel codice stesso oppure essere definita 
 rigorosamente nella documentazione. Indipendentemente da come è dichiarata, dovrebbe
 essere precisa a completa.
@@ -194,7 +194,7 @@ iniziale e poi incrementare la versione minor per ogni successivo rilascio.
 ### Come faccio a sapere quando rilasciare la 1.0.0?
 
 Se il vostro software è usato in produzione, dovrebbe probabilmente già essere
-alla 1.0.0. Se avete una API stabile dalla quale gli utenti sono diventati 
+alla 1.0.0. Se avete un'API stabile dalla quale gli utenti sono diventati 
 dipendenti, dovreste essere alla 1.0.0. Se vi state preoccupando molto 
 relativamente alla retrocompatibilità, dovreste probabilmente già essere alla 
 1.0.0.
@@ -206,7 +206,7 @@ modificando l'API ogni giorno dovreste o essere già nella versione 0.y.z oppure
 essere su un ramo di sviluppo separato lavorando alla prossima
 versione major.
 
-### Se perfino la più piccola modifica non retrocompatibile alla API pubblica comporta un colpo alla versione major, non finirei alla versione 42.0.0 molto rapidamente?
+### Se perfino la più piccola modifica non retrocompatibile all'API pubblica comporta un colpo alla versione major, non finirei alla versione 42.0.0 molto rapidamente?
 
 Questa è una questione di sviluppo responsabile e lungimiranza. Modifiche
 incompatibili non dovrebbero essere introdotte con leggerezza al software che
