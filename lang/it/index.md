@@ -47,7 +47,7 @@ il codice stesso. In ogni caso, è importante che tale API sia chiara e precisa.
 Una volta identificata la vostra API pubblica, comunicatene le modifiche con 
 incrementi specifici del numero di versione. Considerate un formato di 
 versione X.Y.Z (Major.Minor.Patch). La correzione di bug, non influenzando
-la API, incrementa la versione Patch, aggiunte/modifiche retrocompatibili all'API
+l'API, incrementa la versione Patch, aggiunte/modifiche retrocompatibili all'API
 incrementano la versione Minor, e modifiche non retrocompatibili all'API
 incrementano la versione Major.
 
