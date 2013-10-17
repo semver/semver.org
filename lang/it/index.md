@@ -161,8 +161,8 @@ finalmente essere realizzate.
 
 Un semplice esempio dimostrerà come Versionamento Semantico può rendere 
 l'inferno della dipendenza una cosa del passato. Considerate una libreria
-chiamata "CamionDeiPompieri". Essa richiede un pacchetto Semanticamente 
-Versionato di nome "Scala". All'istante in cui è creato, Scala è alla versione 
+chiamata "CamionDeiPompieri". Essa richiede un pacchetto semanticamente 
+versionato di nome "Scala". All'istante in cui è creato, Scala è alla versione 
 3.1.0. Poiché CamionDeiPompieri utilizza alcune funzionalità che furono 
 inizialmente introdotte in 3.1.0, potete specificare con sicurezza la dipendenza 
 da Scala come maggiore o uguale a 3.1.0 ma minore di 4.0.0. Ora, quando Scala 
@@ -222,8 +222,8 @@ appropriatamente software il cui uso è destinato ad altri. Gestire la
 complessità del software è una parte enormemente importante per mantenere
 un progetto efficiente, e ciò è difficile da fare se nessuno sa come usare il
 vostro software, o nessuno sa con sicurezza quali metodi sono invocabili. Nel lungo 
-periodo, Versionamento Semantico, ed il perseverare su un'API pubblica ben 
-documentata è in grado di far andare tutto liscio.
+periodo Versionamento Semantico, ed il perseverare su un'API pubblica ben 
+documentata, è in grado di far andare tutto liscio.
 
 ### Cosa faccio se rilascio accidentalmente una modifica non retrocompatibile come versione minor?
 
