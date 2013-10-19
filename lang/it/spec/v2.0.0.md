@@ -284,7 +284,7 @@ Traduzione a cura del [Java User Group Padova](http://www.jugpadova.it/):
 * [Tarin Gamberini](http://www.taringamberini.com) (autore)
 * [Enrico Mezzato](https://github.com/mezzato) (revisore)
 * [Emanuele Gesuato](http://nonsolojava.blogspot.it/) (revisore)
-* [Anicet Togue](https://github.com/atogue) (revisore)
+* [Anicet Foba Togue](https://twitter.com/atogue) (revisore)
 
 Se vi piacerebbe lasciare un commento, per favore [aprite una segnalazione su 
 GitHub](https://github.com/mojombo/semver/issues).
