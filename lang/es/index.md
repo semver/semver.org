@@ -98,7 +98,7 @@ Acerca de
 
 La especificación de Versionamiento Semántico fue creada por [Tom Preston-Werner](http://tom.preston-werner.com), inventor de los Gravatars y co-fundador de GitHub. Esta traducción fue realizada por Agustin Feuerhake.
 
-Si quieres dar feedback, [puedes abrir un issue en GitHub](https://github.com/mojombo/semver/issues).
+Si quieres dar feedback, [puedes abrir un issue en GitHub](https://github.com/mojombo/semver.org/issues).
 
 Licencia
 --------
