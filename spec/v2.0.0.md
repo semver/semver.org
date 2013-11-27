@@ -257,7 +257,7 @@ Preston-Werner](http://tom.preston-werner.com), inventor of Gravatars and
 cofounder of GitHub.
 
 If you'd like to leave feedback, please [open an issue on
-GitHub](https://github.com/mojombo/semver/issues).
+GitHub](https://github.com/mojombo/semver.org/issues).
 
 
 License
