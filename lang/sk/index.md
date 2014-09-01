@@ -14,7 +14,7 @@ Ak sa číslo verzie skladá podľa formátu MAJOR.MINOR.PATCH, tak zväčšujem
 1. MAJOR verzie, keď sme spravili zmeny, ktoré nie sú spätne kompatibilné,
 2. MINOR verzie, keď sme pridali funkcionalitu so zachovaním spätnej
 kompatibility,
-3. PATCH verzie, keď sme opravili chyby a ostala zachovaná spätná komaptibilita.
+3. PATCH verzie, keď sme opravili chyby a ostala zachovaná spätná kompatibilita.
 
 Značenie predbežných verzií a pridávanie metadát verzií je možné rozšírením
 spomínaného formátu MAJOR.MINOR.PATCH o potrebné informácie.
@@ -27,10 +27,10 @@ závislostí *(angl. dependency hell)*. Znamená to, že čím viac váš systé
 a máte v ňom integrovaných čoraz viac knižníc, tým je väčšia pravdepodobnosť,
 že sa ocitnete v tomto pekle a budete kompletne zúfalí.
 
-Ak majú systémy veľa závislostí, razdva sa vám stane, že vydávanie novej sa
+Ak majú systémy veľa závislostí, raz-dva sa vám stane, že vydávanie novej sa
 stane nočnou morou. Ak je špecifikácia závislostí príliš striktná, hrozí vám, že
 ostanete na jednej verzii *(angl. version lock)* a nebudete mať možnosť prejsť
-na ďalšiu verziu bez toho aby ste vydali ďalšie verzie všetkých balíčkov, na
+na ďalšiu verziu bez toho, aby ste vydali ďalšie verzie všetkých balíčkov, na
 ktorých závisí. Naopak, ak je špecifikácia závislostí príliš voľná, prídete na
 to, že váš systém je kompatibilný s viacej verziami, ako je potrebné. A teda,
 peklo závislostí je, keď ste zviazaný určitou verziou, prípadne nie je presne
@@ -208,7 +208,7 @@ Napriek takejto situácií, je neprípustné aby ste menili už vydanú verziu. 
 je to možné a vhodné, informujte používateľov o zlej verzií, aby vedeli, že sa
 jedná o chybu a danej verzii sa vyhli.
 
-### Čo robiť, keď som aktualizoval vlastné závislosti bez toho aby sa zmenilo API?
+### Čo robiť, keď som aktualizoval vlastné závislosti bez toho, aby sa zmenilo API?
 
 Môžeme to považovať za kompatibilné, keďže to nejako neovplyvnilo API. Softvér,
 ktorý presne závisí na balíčkoch ako váš, by mal mať vlastnú definíciu
