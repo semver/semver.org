@@ -253,7 +253,8 @@ Ak chcete zanechať spätnú väzbu, prosím
 
 ### Preklad
 
-[Vladimír Kriška](https://github.com/ujovlado) (autor)
+[Vladimír Kriška](https://github.com/ujovlado) (autor),
+[Tibor Soviš](https://github.com/tiso) (korektor)
 
 Licencia
 --------
