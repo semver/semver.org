@@ -10,6 +10,7 @@ Zhrnutie
 --------
 
 V čísle verzie vo formáte MAJOR.MINOR.PATCH zväčšujeme číslo:
+
 1. MAJOR verzie, keď sme spravili zmeny, ktoré nie sú spätne kompatibilné,
 2. MINOR verzie, keď sme pridali funkcionalitu so zachovaním spätnej
 kompatibility,
