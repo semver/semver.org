@@ -25,7 +25,7 @@ spomínaného formátu MAJOR.MINOR.PATCH o potrebné informácie.
 Vo svete softvéru, jeho vývoja a správy existuje hrozné miesto nazývané peklo
 závislostí *(angl. dependency hell)*. Znamená to, že čím viac váš systém rastie
 a máte v ňom integrovaných čoraz viac knižníc, tým je väčšia pravdepodobnosť,
-že sa ocitnete v tomto pekle a budete kompletne zúfalí.
+že sa, kompletne zúfalí, v tomto pekle sami ocitnete.
 
 Ak majú systémy veľa závislostí, raz-dva sa vám stane, že vydávanie novej verzie sa
 stane nočnou morou. Ak je špecifikácia závislostí príliš striktná, hrozí vám, že
@@ -52,9 +52,9 @@ chýb, ktoré nemenia vaše API, zväčšujú číslo PATCH verzie. Spätne komp
 zmeny API zväčšujú číslo MINOR verzie a spätne nekompatibilné zmeny API zväčšujú
 číslo MAJOR verzie.
 
-Tento systém je nazývaný "Sémantické verzovanie". Používanie tejto schémy za
-číslami verzií a spôsobom akým sa menia, skrýva súvisiaci kód a čo bolo zmenené
-medzi dvoma verziami.
+Tento systém je nazývaný "Sémantické verzovanie". Čísla verzií v tomto systéme a
+spôsob, akým sa menia nesú so sebou informáciu o použitom kóde a zmenách medzi
+jednotlivými verziami.
 
 Špecifikácia sémantického verzovania (SemVer)
 ---------------------------------------------
@@ -115,28 +115,28 @@ dve verzie, ktoré sa líšia len v metadátach majú rovnakú prioritu.
 Napr.: 1.0.0-alpha+001, 1.0.0+20130313144700, 1.0.0-beta+exp.sha.5114f85.
 
 11. Priorita sa vzťahuje k tomu, ako sú verzie navzájom porovnávané. Priorita
-MUSÍ byť počítaná rozdelením verzie na MAJOR, MINOR, PATCH a identifikátory
+MUSÍ byť určovaná rozdelením verzie na MAJOR, MINOR, PATCH a identifikátory
 predbežných verzií - presne v takomto poradí (s metadátami sa nepočíta).
 Priorita je daná prvým rozdielom pri porovnávaní zľava doprava pričom čísla
 MAJOR, MINOR a PATCH sú porovnávané vždy ako čísla. Napr.: 1.0.0 < 2.0.0 <
 2.1.0 < 2.1.1. Keď sú čísla MAJOR, MINOR a PATCH rovnaké, predbežná verzia má
 menšiu prioritu ako normálna. Napr.: 1.0.0-alpha < 1.0.0. Priorita pre dve
 predbežné verzie, ktoré sa zhodujú v číslach MAJOR, MINOR a PATCH MUSÍ byť
-počítaná z bodkou oddelených identifikátorov zľava doprava až pokiaľ sa nenájde
-rozdiel, a to takýmto spôsobom: identifikátory obsahujúce len číslice sú
-porovnávané číselne a identifikátory s písmenami alebo pomlčkami sú porovnávané
-lexikálne, zoradené podľa ASCII. Číselné identifikátory majú vždy nižšiu
-prioritu ako nečíselné. Ak sú všetky predchádzajúce identifikátory v predbežnej
-verzii rovnaké, tak viac identifikátorov má väčšiu prioritu ako menej
-identifikátorov. Napr.: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta <
-1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
+počítaná z bodkou oddelených identifikátorov zľava doprava a to dovtedy, 
+pokiaľ sa nenájde rozdiel nasledovným spôsobom: (1) Identifikátory obsahujúce
+iba číslice sú porovnávané číselne a identifikátory s písmenami alebo pomlčkami
+sú porovnávané lexikálne, zoradené podľa ASCII. (2) Číselné identifikátory majú
+vždy nižšiu prioritu ako nečíselné. (3) Ak sú všetky predchádzajúce
+identifikátory v predbežnej verzii rovnaké, tak väčšie množstvo identifikátorov
+značí vyššiu prioritu ako menšie množstvo. Napr.: 1.0.0-alpha < 1.0.0-alpha.1 <
+1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
 
 Prečo používať sémantické verzovanie?
 -------------------------------------
 
 Sémantické verzovanie nie je revolučná myšlienka a ak vydávate softvér,
 pravdepodobne robíte niečo podobné. Problémom je, že "niečo podobné" nestačí.
-Bez dodržiavania akejsi formálnej špecifikácie, sú čísla pre manažment závislostí
+Bez dodržiavania akejsi formálnej špecifikácie sú čísla pre manažment závislostí
 v podstate nanič. Tým, že hore uvedeným myšlienkam dávame presnú a jasnú
 definíciu, je ľahšie komunikovať zámery vášho softvéru jeho používateľom.
 Akonáhle sú zámery jasné a flexibilné (ale nie príliš), špecifikácia závislostí
@@ -144,7 +144,7 @@ môže začať.
 
 Jednoduchým príkladom demonštrujeme, že peklo závislostí môže byť pre vás ľahko
 minulosťou. Predstavte si, že máte knižnicu Hasičské auto. Táto knižnica
-vyžaduje sémanticky verzovanú knižnicu Rebrík. V čase kedy je Hasičské auto
+vyžaduje sémanticky verzovanú knižnicu Rebrík. V čase, kedy je Hasičské auto
 vytvorené, verzia Rebríka je 3.1.0. Keďže Hasičské auto používa funkcie,
 ktoré boli pridané vo verzii 3.1.0, môžete bezpečne špecifikovať, že potrebujete
 verziu Rebríka väčšiu alebo rovnú 3.1.0, no menšiu ako 4.0.0. A potom, keď vyjde
@@ -152,14 +152,15 @@ nová verzia Rebríka 3.1.1 alebo 3.2.0, môžete ju použiť vo vašom Hasičsk
 a budete vedieť, že je s ním kompatibilná.
 
 Ako zodpovední developeri si určite budete chcieť skontrolovať, či všetko
-funguje podľa predpokladov. V skutočnosti je však všade neporiadok, čiže
-musíme dávať pozor. Čo však môžete spraviť je nechať Sémantické verzovanie aby
-vám umožnilo rozumný spôsob ako vydávať a aktualizovať knižnice tak, aby ste
-nemuseli riešiť nové verzie závislostí, ušetrili čas a vyhli sa zmätkom.
+funguje podľa predpokladov. V skutočnosti je však všade neporiadok; tam nám
+pomôže iba dávať si pozor. Čo však môžete spraviť je nechať Sémantické
+verzovanie aby vám umožnilo rozumný spôsob ako vydávať a aktualizovať
+knižnice tak, aby ste nemuseli riešiť nové verzie závislostí, ušetrili čas
+a vyhli sa zmätkom.
 
 Ak to znie rozumne, všetko čo potrebujete spraviť pre začatie používania
 Sémantického verzovania je povedať, že to robíte a následne dodržiavať pravidlá.
-Odkážte z README vášho softvéru na tieto stránky, nech aj ostatní vedia aké
+Odkážte z README vášho softvéru na tieto stránky, nech aj ostatní vedia, aké
 pravidlá používate a majú z nich prospech.
 
 Často kladené otázky (FAQ)
@@ -198,7 +199,7 @@ softvér, ktorý je určený na používanie aj pre ostatných. Spravovanie zlo�
 softvéru je veľmi dôležitá časť, ak chcete projekt udržať efektívny. A to nebude
 možné, ak nikto nebude vedieť ako váš softvér používať alebo ktoré metódy je
 bezpečné volať. Z dlhodobého hľadiska sa Sémantické verzovanie a dôraz na dobre
-definované API ukázalo ako správna voľba a umožňuje bežať veciam hladko.
+definované API ukázali ako správna voľba umožňujúca bežať veciam hladko.
 
 ### Čo spraviť, keď vydám spätne nekompatibilnú verziu ako MINOR?
 
@@ -230,12 +231,11 @@ dôležité, použite také číslo verzie, aby ste ich informovali.
 
 Označenie funcionality ako zastaralej je štandardná časť softvérového vývoja
 a väčšinou je žiadané ísť vpred, takže k tomu jednoducho dôjde. Keď zastarávate
-časť svojho API, mali by ste spraviť dve veci:
-(1) upraviť dokumentáciu aby užívatelia vedeli o zmene,
-(2) vydať ďalšiu MINOR verziu, ktorá funcionalitu zastaráva. A teda, predtým ako
-funkcionalitu kompletne odstránite v ďalšej MAJOR verzii, mali by ste spraviť
-aspoň jednu MINOR verziu, ktorá obsahuje zastaranie a užívatelia mohli ľahko
-prejsť na nové API.
+časť svojho API, mali by ste spraviť dve veci: (1) upraviť dokumentáciu aby
+používatelia vedeli o zmene, (2) vydať ďalšiu MINOR verziu, ktorá funcionalitu
+zastaráva. A teda, predtým ako funkcionalitu kompletne odstránite v ďalšej
+MAJOR verzii, mali by ste spraviť aspoň jednu MINOR verziu, ktorá obsahuje
+zastaranie a používatelia mohli ľahko prejsť na nové API.
 
 ### Má Semantické verzovanie nejaký limit na dĺžku označenie verzie?
 
@@ -255,7 +255,8 @@ Ak chcete zanechať spätnú väzbu, prosím
 ### Preklad
 
 [Vladimír Kriška](https://github.com/ujovlado) (autor),
-[Tibor Soviš](https://github.com/tiso) (korektor)
+[Tibor Soviš](https://github.com/tiso) (korektor),
+[Peter Dulačka](https://github.com/rootpd) (korektor)
 
 Licencia
 --------
