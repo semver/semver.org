@@ -52,7 +52,7 @@ chýb, ktoré nemenia vaše API, zväčšujú číslo PATCH verzie. Spätne komp
 zmeny API zväčšujú číslo MINOR verzie a spätne nekompatibilné zmeny API zväčšujú
 číslo MAJOR verzie.
 
-Tento systém je nazývaný "Sémantické verzovanie". Čísla verzií v tomto systéme a
+Tento systém je nazývaný Sémantické verzovanie. Čísla verzií v tomto systéme a
 spôsob, akým sa menia nesú so sebou informáciu o použitom kóde a zmenách medzi
 jednotlivými verziami.
 
@@ -65,11 +65,11 @@ NOT)* a "MÔŽE" *(angl. MAY, OPTIONAL)* sú interpretovené ako je popísané
 v dokumente [RFC 2119](http://tools.ietf.org/html/rfc2119).
 
 1. Softvér používajúci Sémentické verzovanie MUSÍ mať zadefinované API. Toto API
-môže byť definované priamo v kóde, prípadne môže existovať v dokumentácií. Nech
+môže byť definované priamo v kóde, prípadne môže existovať v dokumentácii. Nech
 už to je tak alebo onak, malo by byť presné a komplexné.
 
 2. Normálne číslo verzie MUSÍ byť vo formáte X.Y.Z, kde X, Y a Z sú nezáporné
-celé čisla a NESMÚ obsahovať úvodné nuly. X je číslo MAJOR verzie, Y je číslo
+celé čísla a NESMÚ obsahovať úvodné nuly. X je číslo MAJOR verzie, Y je číslo
 MINOR verzie a Z je číslo PATCH verzie. Každé z týchto čísel sa musí zväčšovať
 štandardne. Napr.: 1.9.0 -> 1.10.0 -> 1.11.0.
 
@@ -86,14 +86,14 @@ mení číslo verzie je závislý na tomto API a jeho zmenách.
 boli implementované spätne kompatibilné opravy chýb. Oprava chyby je definovaná
 ako interná zmena opravujúca nežiadúce chovanie.
 
-7. Číslo MINOR verzie Y (x.Y.z | x > 0) MUSÍ byť zväčšené ak bola do API
+7. Číslo MINOR verzie Y (x.Y.z | x > 0) MUSÍ byť zväčšené, ak bola do API
 pridaná nová, spätne kompatibilná funkcionalita a tiež MUSÍ byť zväčšené, ak
-bola nejaká funcionalita označená ako zastaralá. MÔŽE tiež byť zväčšené ak bola
+bola nejaká funcionalita označená ako zastaralá. MÔŽE tiež byť zväčšené, ak bola
 pridaná alebo vylepšená podstatná funkcionalita v rámci kódu, ktorý
 neovplyvňuje API. MÔŽE zahrnúť aj zmenu v rámci PATCH verzie, no vtedy MUSÍ byť
 PATCH verzia nastavená na 0.
 
-8. Číslo MAJOR verzie X (X.y.z | X > 0) MUSÍ byť zväčšené ak boli pridané
+8. Číslo MAJOR verzie X (X.y.z | X > 0) MUSÍ byť zväčšené, ak boli pridané
 zmeny, ktoré spôsobili, že API nie je spätne kompatibilné. MÔŽE zahrnúť aj zmenu
 v rámci MINOR a PATCH verzie, no vtedy MUSIA byť tieto verzie nastavené na 0.
 
@@ -123,7 +123,7 @@ MAJOR, MINOR a PATCH sú porovnávané vždy ako čísla. Napr.: 1.0.0 < 2.0.0 <
 menšiu prioritu ako normálna. Napr.: 1.0.0-alpha < 1.0.0. Priorita pre dve
 predbežné verzie, ktoré sa zhodujú v číslach MAJOR, MINOR a PATCH MUSÍ byť
 počítaná z bodkou oddelených identifikátorov zľava doprava a to dovtedy, 
-pokiaľ sa nenájde rozdiel nasledovným spôsobom: (1) Identifikátory obsahujúce
+pokým sa nenájde rozdiel nasledovným spôsobom: (1) Identifikátory obsahujúce
 iba číslice sú porovnávané číselne a identifikátory s písmenami alebo pomlčkami
 sú porovnávané lexikálne, zoradené podľa ASCII. (2) Číselné identifikátory majú
 vždy nižšiu prioritu ako nečíselné. (3) Ak sú všetky predchádzajúce
@@ -131,7 +131,7 @@ identifikátory v predbežnej verzii rovnaké, tak väčšie množstvo identifik
 značí vyššiu prioritu ako menšie množstvo. Napr.: 1.0.0-alpha < 1.0.0-alpha.1 <
 1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
 
-Prečo používať sémantické verzovanie?
+Prečo používať Sémantické verzovanie?
 -------------------------------------
 
 Sémantické verzovanie nie je revolučná myšlienka a ak vydávate softvér,
@@ -205,7 +205,7 @@ definované API ukázali ako správna voľba umožňujúca bežať veciam hladko
 
 Akonáhle zistíte, že ste porušili pravidlá Sémantického verzovania, opravte
 problém a vydajte ďalšiu MINOR verziu, ktorá opäť vráti spätnú kompatibilitu.
-Napriek takejto situácií, je neprípustné aby ste menili už vydanú verziu. A ak
+Napriek takejto situácii, je neprípustné aby ste menili už vydanú verziu. A ak
 je to možné a vhodné, informujte používateľov o zlej verzii, aby vedeli, že sa
 jedná o chybu a danej verzii sa vyhli.
 
@@ -237,7 +237,7 @@ zastaráva. A teda, predtým ako funkcionalitu kompletne odstránite v ďalšej
 MAJOR verzii, mali by ste spraviť aspoň jednu MINOR verziu, ktorá obsahuje
 zastaranie a používatelia mohli ľahko prejsť na nové API.
 
-### Má Semantické verzovanie nejaký limit na dĺžku označenie verzie?
+### Má Sémantické verzovanie nejaký limit na dĺžku označenia verzie?
 
 Nie, no použite zdravý rozum. Číslo verzie, ktoré má 255 znakov je už asi moc,
 no špecifické systémy môžu mať vlastné limity na dĺžku čísla verzie.
