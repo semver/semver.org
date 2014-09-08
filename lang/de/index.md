@@ -81,7 +81,7 @@ Semantische Versionierung 2.0.0
 Zusammenfassung
 ---------------
 
-Mit einer Versionsnummer MAJOR.MINOR.PATCH, erhöhe:
+Mit einer Versionsnummer MAJOR.MINOR.PATCH, erhöhen Sie:
 
 1. die MAJOR (Haupt-) Versionsnummer, wenn nicht-kompatible API-Veränderungen
    gemacht werden,
@@ -116,7 +116,7 @@ Voraussetzungen vor, die es vorschreiben, wie Versionsnummer zu vergeben und
 hochzuzählen sind. Diese Regeln bauen auf bestehenden Methoden auf, die bereits
 in Open- und Closed-Source-Software in Gebrauch sind, werden jedoch nicht
 zwangsläufig von diesen eingeschränkt. Um Erfolg mit diesem System zu haben,
-muss zuerst ein öffentliche API definiert werden. Dies könnte Dokumentation
+muss zuerst eine öffentliche API definiert werden. Diese könnte Dokumentation
 sein, oder von dem Code selber kontrolliert werden. So oder so ist es wichtig,
 dass diese API eindeutig und präzise ist. Nachdem die öffentliche API definiert
 ist, sollen Änderungen dazu mit spezifischen Erhöhungen der Versionsnummer
@@ -142,10 +142,10 @@ Die Schlüsselwörter "MUSS"/"MÜSSEN" ("MUST"), "DARF NICHT" ("MUST NOT"),
 sind wie in
 [RFC2119](http://tools.ietf.org/html/rfc2119) beschrieben zu verstehen.
 
-1. Software, die Semantische Versionierung MUSS eine öffentliche API definieren.
-Diese API könnte in dem Code selber definiert sein, oder könnte ausschließlich
-aus Dokumentation bestehen. Wie auch immer sie gemacht wird, soll sie präsize
-und umfangreich sein.
+1. Software, die die Semantische Versionierung einsetzt, MUSS eine öffentliche
+API definieren. Diese API könnte in dem Code selber definiert sein, oder könnte
+ausschließlich aus Dokumentation bestehen. Wie auch immer sie gemacht wird,
+soll sie präsize und umfangreich sein.
 
 1. Eine normale Versionsnummer MUSS die Form X.Y.Z annehmen, wo X, Y, Z
 nicht-negative Ganzzahlen sind und DARF NICHT führende Nullen enthalten. X ist
@@ -162,29 +162,29 @@ darf sich in dieser Phase jederzeit verändern. Die öffentliche API soll nicht
 als stabil betrachtet werden.
 
 1. Version 1.0.0 definiert die öffentliche API. Wie die Versionsnummer nach
-dieser Veröffentlichung erhöht wird, ist auf diese dieser API und wie sie sich
+dieser Veröffentlichung erhöht wird, ist auf dieser API und wie sie sich
 ändert abhängig.
 
-1. Revisionsnummer Z (x.y.Z | x > 0) MUSS inkrementiert werden, wenn nur
+1. Die Revisionsnummer Z (x.y.Z | x > 0) MUSS inkrementiert werden, wenn nur
 rückwärtskompatible Bufixes eingeführt werden. Unter Bugfix versteht man eine
 interne Änderung, die fehlerhaftes Verhalten korrigiert.
 
-1. Nebenversionsnummer Y (x.Y.z | x > 0) MUSS inkrementiert werden, wenn neue
+1. Die Nebenversionsnummer Y (x.Y.z | x > 0) MUSS inkrementiert werden, wenn neue
 rückwärtskompatible Funktionalität in die öffentliche API eingeführt wird. Sie
-MUSS erhöht werden, wenn API-Funktionalität als hinfällig. Sie DARF erhöht
-werden, wenn erhebliche neue Funktionalität oder Verbesserungen in privatem
-Code eingeführt wird. Es DARF auch Änderungen der Revisionsstufe enthalten sein.
-Die Revisionsnummer muss auf 0 zurückgesetzt werden, wenn die
+MUSS erhöht werden, wenn API-Funktionalität als deprecated markiert wird. Sie
+DARF erhöht werden, wenn erhebliche neue Funktionalität oder Verbesserungen in
+privatem Code eingeführt wird. Es DARF auch Änderungen der Revisionsstufe
+enthalten sein. Die Revisionsnummer muss auf 0 zurückgesetzt werden, wenn die
 Nebenversionsnummer erhöht wird.
 
-1. Hauptversionsnummer X (X.y.z | X > 0) MUSS erhöht werden, wenn
+1. Die Hauptversionsnummer X (X.y.z | X > 0) MUSS erhöht werden, wenn
 nicht-rückwärtskompatible Änderungen in die öffentliche API eingeführt werden.
 Es DARF auch Änderungen der Nebenversions- und Revisionsstufen enthalten sein.
 Die Revisionsnummer und Nebenversionsnummer MÜSSEN auf 0 zurückgesetzt werden,
 wenn die Hauptversionsnummer erhöht wird.
 
 1. Eine Vorveröffentlichungsversion KANN, mit einem Bindestrich und eine Reihe
-von Punkt-getrennte Kennungen, die die Patch-Version direkt folgen,
+von Punkt-getrennte Kennungen, die die Revisionsnummer direkt folgen,
 bezeichnet werden. Eine Kennung MUSS ausschließlich aus ASCII-Alphanumeriken und
 Bindestrichen [0-9A-Za-z-] bestehen. Eine Kennung DARF NICHT leer sein. Eine
 numerische Kennung DARF NICHT führende Nullen enthalten.
@@ -195,7 +195,7 @@ damit verbundenen Normalversion möglicherweise nicht entspricht. Zum Beispiel:
 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7, 1.0.0-x.7.z.92.
 
 1. Build-Metadaten KÖNNEN mit einem Pluszeichen und einer Reihe von
-Punkt-getrennte Kennungen, die die Patch-Version direkt folgen, bezeichnet
+Punkt-getrennte Kennungen, die die Revisionsnummer direkt folgen, bezeichnet
 werden. Eine Kennung MUSS ausschließlich aus ASCII-Alphanumeriken und
 Bindestrichen [0-9A-Za-z-] bestehen. Eine Kennung DARF NICHT leer sein.
 Build-Metadaten SOLLTEN in der Ermittlung von Versionenvorrang ignoriert werden.
@@ -209,12 +209,12 @@ Hauptversions-, Nebenversions-, Patchversions und
 Vorveröffentlichungsversions-Kennungen (Build-Metadaten werden nicht im Vorrang
 berücksichtigt) in dieser Reihenfolge getrennt werden. Vorrang wird von
 dem ersten Unterschied bestimmt, wenn diese Kennungen von links nach rechts wie
-gefolgt verglichen werden: Haupt-, Neben- und Patch-Versionen werden immer
+gefolgt verglichen werden: Haupt-, Neben- und Revisionsnummern werden immer
 numerisch verglichen. Zum Beispiel: 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1. Wenn Haupt-,
-Neben- und Patch-Versionen gleich sind, eine Vorveröffentlichungsversion hat
+Neben- und Revisionsnummern gleich sind, eine Vorveröffentlichungsversion hat
 niedrigeren Vorrang als eine Normalversion. Zum Beispiel: 1.0.0-alpha < 1.0.0.
 Vorrang für zwei Vorveröffentlichungsversionen mit den gleichen Haupt-, Neben-,
-und Patch-Versionen MUSS bestimmt werden, indem jede Punkt-getrennte Kennung von
+und Revisionsnummern MUSS bestimmt werden, indem jede Punkt-getrennte Kennung von
 links nach rechts bis einen Unterschied gefunden wird wie gefolgt verglichen
 werden: Kennungen, die ausschließlich aus Ziffern bestehen, werden numerisch
 verglichen und Kennungen, die Buchstaben oder Bindestriche enthalten, werden
@@ -322,13 +322,13 @@ Lizenz
 =======
 ### Wie soll ich mit Revisionen in der initialen 0.x.y Entwicklungsphase umgehen?
 
-Das Einfachste, ist die erste Entwicklingsveröffentlichung als 0.1.0 anzufangen
+Das Einfachste ist, die erste Entwicklingsveröffentlichung als 0.1.0 anzufangen
 und die Nebenversion mit jeder folgenden Veröffentlichung hochzuzählen.
 
 ### Wie soll ich wissen, wann ich 1.0.0 veröffentlichen soll?
 
 Wenn die Software schon produktiv eingesetzt wird, soll es wahrscheinlich schon
-1.0.0 sein. Wenn es ein stabile API hat, auf die Benutzer sich verlassen, soll
+1.0.0 sein. Wenn es eine stabile API hat, auf die Benutzer sich verlassen, soll
 es 1.0.0 sein. Wenn Sie sich viele Gedanken über Rückwärtskompatibilität machen
 müssen, soll es wahrscheinlich schon 1.0.0 sein.
 
@@ -343,7 +343,7 @@ entwickelt werden.
 
 Dies ist eine Frage der verantwortungsbewussten Entwicklung und Voraussicht.
 Inkompatible Änderungen sollen nicht unüberlegt an Software vorgenommen werden,
-das viel abhängigen Code hat. Die Kosten, die für den Upgrade nötig sind, können
+die viel abhängigen Code hat. Die Kosten, die für den Upgrade nötig sind, können
 erheblich sein. Dass man die Hauptversion hochzählen muss, um inkompatible
 Änderungen zu veröffentlichen, heißt, dass man sich die Folgen von den
 Änderungen überlegen und die verbundene Vor- und Nachteile auswerten muss.
