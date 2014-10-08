@@ -6,7 +6,7 @@ title: Semantic Versioning 2.0.0
 Semantic Versioning 2.0.0
 ==============================
 
-Summary<a id="summary"></a>
+Summary
 -------
 
 Given a version number MAJOR.MINOR.PATCH, increment the:
@@ -18,7 +18,7 @@ Given a version number MAJOR.MINOR.PATCH, increment the:
 
 Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
 
-Introduction<a id="introduction"></a>
+Introduction
 ------------
 
 In the world of software management there exists a dread place called
@@ -53,33 +53,33 @@ and the way they change convey meaning about the underlying code and what has
 been modified from one version to the next.
 
 
-Semantic Versioning Specification (SemVer)<a id="spec"></a>
+Semantic Versioning Specification (SemVer)
 ------------------------------------------
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
 "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
 interpreted as described in [RFC 2119](http://tools.ietf.org/html/rfc2119).
 
-1. <a id="spec-1"></a>Software using Semantic Versioning MUST declare a public API. This API
+1. Software using Semantic Versioning MUST declare a public API. This API
 could be declared in the code itself or exist strictly in documentation.
 However it is done, it should be precise and comprehensive.
 
-1. <a id="spec-1"></a>A normal version number MUST take the form X.Y.Z where X, Y, and Z are
+1. A normal version number MUST take the form X.Y.Z where X, Y, and Z are
 non-negative integers, and MUST NOT contain leading zeroes. X is the
 major version, Y is the minor version, and Z is the patch version.
 Each element MUST increase numerically. For instance: 1.9.0 -> 1.10.0 -> 1.11.0.
 
-1. <a id="spec-1"></a>Once a versioned package has been released, the contents of that version
+1. Once a versioned package has been released, the contents of that version
 MUST NOT be modified. Any modifications MUST be released as a new version.
 
-1. <a id="spec-1"></a>Major version zero (0.y.z) is for initial development. Anything may change
+1. Major version zero (0.y.z) is for initial development. Anything may change
 at any time. The public API should not be considered stable.
 
-1. <a id="spec-1"></a>Version 1.0.0 defines the public API. The way in which the version number
+1. Version 1.0.0 defines the public API. The way in which the version number
 is incremented after this release is dependent on this public API and how it
 changes.
 
-<a id="summary"></a>1. Patch version Z (x.y.Z | x > 0) MUST be incremented if only backwards
+1. Patch version Z (x.y.Z | x > 0) MUST be incremented if only backwards
 compatible bug fixes are introduced. A bug fix is defined as an internal
 change that fixes incorrect behavior.
 
@@ -131,7 +131,7 @@ precedence than a smaller set, if all of the preceding identifiers are equal.
 Example: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta <
 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
 
-Why Use Semantic Versioning?<a id="reasoning"></a>
+Why Use Semantic Versioning?
 ----------------------------
 
 This is not a new or revolutionary idea. In fact, you probably do something
@@ -165,7 +165,7 @@ to this website from your README so others know the rules and can benefit from
 them.
 
 
-FAQ<a id="faq"></a>
+FAQ
 ---
 
 ### How should I deal with revisions in the 0.y.z initial development phase?
