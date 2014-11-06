@@ -90,12 +90,13 @@ ako interná zmena opravujúca nežiadúce chovanie.
 pridaná nová, spätne kompatibilná funkcionalita a tiež MUSÍ byť zväčšené, ak
 bola nejaká funcionalita označená ako zastaralá. MÔŽE tiež byť zväčšené, ak bola
 pridaná alebo vylepšená podstatná funkcionalita v rámci kódu, ktorý
-neovplyvňuje API. MÔŽE zahrnúť aj zmenu v rámci PATCH verzie, no vtedy MUSÍ byť
-PATCH verzia nastavená na 0.
+neovplyvňuje API. MÔŽE zahrnúť aj zmenu v rámci PATCH verzie. Číslo PATCH verzie
+MUSÍ byť nastavené na 0 vždy, keď sa zmení číslo MINOR verzie.
 
 8. Číslo MAJOR verzie X (X.y.z | X > 0) MUSÍ byť zväčšené, ak boli pridané
 zmeny, ktoré spôsobili, že API nie je spätne kompatibilné. MÔŽE zahrnúť aj zmenu
-v rámci MINOR a PATCH verzie, no vtedy MUSIA byť tieto verzie nastavené na 0.
+v rámci MINOR a PATCH verzie. Číslo MINOR aj PATCH verzie MUSÍ byť nastavené na 0
+vždy, keď sa zmení číslo MAJOR verzie.
 
 9. Predbežná verzia *(angl. pre-release)* MÔŽE byť označená pridaním pomlčky
 a sériou identifikátorov oddelených bodkou, hneď za číslo PATCH verzie.
@@ -256,7 +257,8 @@ Ak chcete zanechať spätnú väzbu, prosím
 
 [Vladimír Kriška](https://github.com/ujovlado) (autor),
 [Tibor Soviš](https://github.com/tiso) (korektor),
-[Peter Dulačka](https://github.com/rootpd) (korektor)
+[Peter Dulačka](https://github.com/rootpd) (korektor),
+[Jaroslav Brtiš](https://github.com/Jardo-51) (korektor)
 
 Licencia
 --------
