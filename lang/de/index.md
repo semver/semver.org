@@ -135,11 +135,11 @@ Code und die Änderungen die von einer Version zu einer anderen vorgenommen wurd
 Spezifikation der Semantische Versionierung (SemVer)
 ----------------------------------------------------
 
-Die Schlüsselwörter "MUSS"/"MÜSSEN" ("MUST"), "DARF NICHT" ("MUST NOT"),
+Die Schlüsselwörter "MUSS" ("MUST"), "DARF NICHT"/"DARF KEIN" ("MUST NOT"),
 "ERFORDERLICH" ("REQUIRED"), "SOLL" ("SHALL"), "SOLL NICHT" ("SHALL NOT"),
 "SOLLTE" ("SHOULD"), "SOLLTE NICHT" ("SHOULD NOT"), "EMPFOHLEN"
-("RECOMMENDED"), "KANN"/"KÖNNEN" ("MAY") und "OPTIONAL" in diesem Dokument
-sind wie in
+("RECOMMENDED"), "KANN" ("MAY"), "OPTIONAL" und Beugungen davon sind in
+diesem Dokument wie in
 [RFC2119](http://tools.ietf.org/html/rfc2119) beschrieben zu verstehen.
 
 1. Software, die die Semantische Versionierung einsetzt, MUSS eine öffentliche
