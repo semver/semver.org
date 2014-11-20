@@ -9,13 +9,13 @@ Semantische Versionierung 2.0.0
 Zusammenfassung
 ---------------
 
-Mit einer Versionsnummer MAJOR.MINOR.PATCH, erhöhen Sie:
+Bei einer Versionsnummer MAJOR.MINOR.PATCH, erhöhen Sie:
 
 1. die MAJOR (Haupt-) Versionsnummer, wenn nicht-kompatible API-Veränderungen
    gemacht werden,
-1. die MINOR (Neben-) Versionsnummer, wenn neue rückwärtskompatible
+1. die MINOR (Neben-) Versionsnummer, wenn neue abwärtskompatible
    Funktionalität hinzugefügt wird und
-1. die PATCH Revisionsnummer, wenn rückwärtskompatible Programmfehler behoben
+1. die PATCH Revisionsnummer, wenn abwärtskompatible Programmfehler behoben
    werden.
 
 Zusätzliche Kennungen für Vorveröffentlichungen und Build-Metadaten sind als
@@ -24,43 +24,43 @@ Erweiterungen zu dem MAJOR.MINOR.PATCH-Format verfügbar.
 Einleitung
 ----------
 
-In der Welt des Software-Managements, existiert ein gefürchteter Ort namens
+In der Welt des Software-Managements existiert ein gefürchteter Ort namens
 "die Abhängigkeitshölle". Je größer ein System wird und je mehr Pakete man in
 das System integriert, desto wahrscheinlicher wird es, dass man sich irgendwann
-in diesem Abgrund der Verzweiflung findet.
+in diesem Abgrund der Verzweiflung wiederfindet.
 
-In Systemen mit vielen Abhängigkeiten, neue Paketversionen zu veröffentlichen
-kann schnell zu einem Albtraum werden. Wenn die Abhängigkeitsangabe zu streng
-ist, droht die Gefahr der Versionsblockierung (die Unfähigkeit ein Paket zu
+In Systemen mit vielen Abhängigkeiten kann die Veröffentlichung von neuen Paketversionen
+schnell zu einem Albtraum werden. Wenn die Abhängigkeitsangabe zu streng
+ist, droht die Gefahr der Versionsblockierung (die Unfähigkeit, ein Paket zu
 aktualisieren, ohne neue Versionen für jedes abhängiges Paket zu
 veröffentlichen). Wenn Abhängigkeiten dagegen zu locker angegeben werden, wird
-man unvermeidlich von dem Problem der Versionspromiskuität (Kompatibilität mit
-mehr künftige Versionen als vernünftig vermuten) gebissen werden. Die
-Abhängigkeitshölle ist das, wenn Versionsblockierung oder -Promiskuität ein
-einfaches und sauberes Weiterarbeiten verhindert.
+man unvermeidlich von dem Problem der Versionspromiskuität (Annahme der Kompatibilität mit
+mehr zukünftigen Versionen als vernünftig) eingeholt werden.
+Die Abhängigkeitshölle ist der Ort wo Sie sich befinden, wenn Versionsblockierung oder
+-promiskuität ein einfaches und sauberes Weiterarbeiten verhindert.
 
-Als Lösung für dieses Problem, schlag ich eine einfache Reihe von Regeln und
-Voraussetzungen vor, die es vorschreiben, wie Versionsnummer zu vergeben und
+Als Lösung für dieses Problem schlage ich eine einfache Reihe von Regeln und
+Voraussetzungen vor, die vorschreiben, wie Versionsnummer zu vergeben und
 hochzuzählen sind. Diese Regeln bauen auf bestehenden Methoden auf, die bereits
 in Open- und Closed-Source-Software in Gebrauch sind, werden jedoch nicht
-zwangsläufig von diesen eingeschränkt. Um Erfolg mit diesem System zu haben,
-muss zuerst eine öffentliche API definiert werden. Diese könnte Dokumentation
-sein, oder von dem Code selber kontrolliert werden. So oder so ist es wichtig,
+zwangsläufig von diesen eingeschränkt. Um erfolgreich mit diesem System zu arbeiten,
+muss zuerst eine öffentliche API definiert werden. Diese kann eine Dokumentation
+sein oder von dem Code selber festgelegt werden. In jedem Falle ist es wichtig,
 dass diese API eindeutig und präzise ist. Nachdem die öffentliche API definiert
-ist, sollen Änderungen dazu mit spezifischen Erhöhungen der Versionsnummer
-kommuniziert werden. Bedenken Sie das Versionsformat X.Y.Z, wo X die
+ist, werden ihre Änderungen mit spezifischen Erhöhungen der Versionsnummer
+kommuniziert. Betrachten wir das Versionsformat X.Y.Z, wobei X die
 Hauptversionsnummer ist, Y die Nebenversionsnummer und Z die Revisionsnummer.
 Bug-Fixes, die die API nicht ändern, erhöhen die Revisionsnummer,
-rückwärtskompatible API-Ergänzungen oder -Änderungen erhöhen die
-Nebenversionsnummer und nicht-rückwärtskompatible API-Änderungen erhöhen die
+abwärtskompatible API-Ergänzungen oder -Änderungen erhöhen die
+Nebenversionsnummer und nicht-abwärtskompatible API-Änderungen erhöhen die
 Hauptversionsnummer.
 
-Ich nenne dieses System "Semantische Versionierung". Unter dieser Anordnung,
-kommunizieren Versionsnummern und wie sie sich ändern eine Bedeutung des
-unterliegenden Codes und was sich seit der letzten Version sich geändert hat.
+Ich nenne dieses System "Semantische Versionierung". Mit Hilfe dieses Schemas
+enthalten Versionsnummern und die Art ihrer Änderung Information über den zugrunde liegenden
+Code und die Änderungen die von einer Version zu einer anderen vorgenommen wurden.
 
 
-Spezification der Semantische Versionierung (SemVer)
+Spezifikation der Semantische Versionierung (SemVer)
 ----------------------------------------------------
 
 Die Schlüsselwörter "MUSS"/"MÜSSEN" ("MUST"), "DARF NICHT" ("MUST NOT"),
@@ -72,83 +72,83 @@ sind wie in
 
 1. Software, die die Semantische Versionierung einsetzt, MUSS eine öffentliche
 API definieren. Diese API könnte in dem Code selber definiert sein, oder könnte
-ausschließlich aus Dokumentation bestehen. Wie auch immer sie gemacht wird,
-soll sie präsize und umfangreich sein.
+ausschließlich aus einer Dokumentation bestehen. Wie auch immer sie definiert wird,
+sollte sie präsize und umfangreich sein.
 
-1. Eine normale Versionsnummer MUSS die Form X.Y.Z annehmen, wo X, Y, Z
-nicht-negative Ganzzahlen sind und DARF NICHT führende Nullen enthalten. X ist
+1. Eine normale Versionsnummer MUSS die Form X.Y.Z annehmen, wo X, Y, und Z
+nicht-negative Ganzzahlen sind und KEINE führende Nullen enthalten DÜRFEN. X ist
 die Hauptversionsnummer, Y ist die Nebenversionsnummer und Z ist die
 Revisionsnummer. Jedes Element MUSS numerisch hochgezählt werden. Zum Beispiel:
 1.9.0 -> 1.10.0 -> 1.11.0.
 
-1. Der Inhalt eines versionierten Pakets DARF NICHT geändert werden, nachdem es
+1. Der Inhalt eines versionierten Pakets DARF NICHT geändert werden nachdem es
 veröffentlicht wurde. Alle Änderungen MÜSSEN als eine neue Version
 veröffentlicht werden.
 
-1. Hauptversionsnummer 0 (0.x.y) ist für initiale Entwicklung vorgesehen. Alles
-darf sich in dieser Phase jederzeit verändern. Die öffentliche API soll nicht
+1. Die Hauptversionsnummer 0 (0.x.y) ist für initiale Entwicklung vorgesehen. Alles
+darf sich in dieser Phase jederzeit verändern. Die öffentliche API kann nicht
 als stabil betrachtet werden.
 
-1. Version 1.0.0 definiert die öffentliche API. Wie die Versionsnummer nach
-dieser Veröffentlichung erhöht wird, ist auf dieser API und wie sie sich
+1. Die Version 1.0.0 definiert die öffentliche API. Wie die Versionsnummer nach
+dieser Veröffentlichung erhöht wird, ist von dieser öffentlichen API und wie sie sich
 ändert abhängig.
 
 1. Die Revisionsnummer Z (x.y.Z | x > 0) MUSS inkrementiert werden, wenn nur
-rückwärtskompatible Bufixes eingeführt werden. Unter Bugfix versteht man eine
+abwärtskompatible Bufixes eingeführt werden. Unter Bugfix versteht man eine
 interne Änderung, die fehlerhaftes Verhalten korrigiert.
 
 1. Die Nebenversionsnummer Y (x.Y.z | x > 0) MUSS inkrementiert werden, wenn neue
-rückwärtskompatible Funktionalität in die öffentliche API eingeführt wird. Sie
-MUSS erhöht werden, wenn API-Funktionalität als deprecated markiert wird. Sie
+abwärtskompatible Funktionalität in die öffentliche API eingeführt wird. Sie
+MUSS erhöht werden, wenn API-Funktionalität als 'deprecated' (veraltet) markiert wird. Sie
 DARF erhöht werden, wenn erhebliche neue Funktionalität oder Verbesserungen in
-privatem Code eingeführt wird. Es DARF auch Änderungen der Revisionsstufe
+privatem Code eingeführt wird. Es KÖNNEN auch Änderungen der Revisionsstufe
 enthalten sein. Die Revisionsnummer muss auf 0 zurückgesetzt werden, wenn die
 Nebenversionsnummer erhöht wird.
 
 1. Die Hauptversionsnummer X (X.y.z | X > 0) MUSS erhöht werden, wenn
-nicht-rückwärtskompatible Änderungen in die öffentliche API eingeführt werden.
-Es DARF auch Änderungen der Nebenversions- und Revisionsstufen enthalten sein.
+nicht-abwärtskompatible Änderungen in die öffentliche API eingeführt werden.
+Es KÖNNEN auch Änderungen der Nebenversions- und Revisionsstufen enthalten sein.
 Die Revisionsnummer und Nebenversionsnummer MÜSSEN auf 0 zurückgesetzt werden,
 wenn die Hauptversionsnummer erhöht wird.
 
-1. Eine Vorveröffentlichungsversion KANN, mit einem Bindestrich und eine Reihe
-von Punkt-getrennte Kennungen, die die Revisionsnummer direkt folgen,
+1. Eine Vorveröffentlichungsversion KANN mit einem Bindestrich und einer Reihe
+von Punkt-getrennten Kennungen, die der Revisionsnummer direkt folgen,
 bezeichnet werden. Eine Kennung MUSS ausschließlich aus ASCII-Alphanumeriken und
 Bindestrichen [0-9A-Za-z-] bestehen. Eine Kennung DARF NICHT leer sein. Eine
-numerische Kennung DARF NICHT führende Nullen enthalten.
+numerische Kennung DARF KEINE führende Nullen enthalten.
 Vorveröffentlichungsversionen haben einen niedrigeren Vorrang als die damit
 verbundene Normalversion. Eine Vorveröffentlichungsversion zeigt an, dass die
-Version instabil ist und die beabsichtigte Kompatibilitätsanforderungen der
+Version instabil ist und den beabsichtigten Kompatibilitätsanforderungen der
 damit verbundenen Normalversion möglicherweise nicht entspricht. Zum Beispiel:
 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7, 1.0.0-x.7.z.92.
 
 1. Build-Metadaten KÖNNEN mit einem Pluszeichen und einer Reihe von
-Punkt-getrennte Kennungen, die die Revisionsnummer direkt folgen, bezeichnet
+Punkt-getrennten Kennungen, die der Revisionsnummer direkt folgen, bezeichnet
 werden. Eine Kennung MUSS ausschließlich aus ASCII-Alphanumeriken und
 Bindestrichen [0-9A-Za-z-] bestehen. Eine Kennung DARF NICHT leer sein.
-Build-Metadaten SOLLTEN in der Ermittlung von Versionenvorrang ignoriert werden.
-So werden zwei Versionen, die sich nur in ihren Build-Metadaten unterscheiden,
-den gleichen Vorrang haben. Zum Beispiel: 1.0.0-alpha+001, 1.0.0+20130313144700,
+Build-Metadaten SOLLTEN bei der Ermittlung des Versionenvorrangs ignoriert werden.
+Somit haben zwei Versionen, die sich nur in ihren Build-Metadaten unterscheiden,
+den gleichen Vorrang. Zum Beispiel: 1.0.0-alpha+001, 1.0.0+20130313144700,
 1.0.0-beta+exp.sha.5114f85.
 
-1. Vorrang bezieht sich darauf, wie Versionen miteinander verglichen werden,
-wenn sie sortiert werden. Vorrang MUSS berechnet werden, indem die
+1. Der Begriff Vorrang bezieht sich darauf, wie Versionen miteinander verglichen werden,
+wenn sie sortiert werden. Der Vorrang MUSS berechnet werden, indem die
 Hauptversions-, Nebenversions-, Patchversions und
 Vorveröffentlichungsversions-Kennungen (Build-Metadaten werden nicht im Vorrang
-berücksichtigt) in dieser Reihenfolge getrennt werden. Vorrang wird von
-dem ersten Unterschied bestimmt, wenn diese Kennungen von links nach rechts wie
-gefolgt verglichen werden: Haupt-, Neben- und Revisionsnummern werden immer
+berücksichtigt) in dieser Reihenfolge getrennt werden. Der Vorrang wird vom
+ersten Unterschied bestimmt, wenn diese Kennungen von links nach rechts wie
+folgt verglichen werden: Haupt-, Neben- und Revisionsnummern werden immer
 numerisch verglichen. Zum Beispiel: 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1. Wenn Haupt-,
-Neben- und Revisionsnummern gleich sind, eine Vorveröffentlichungsversion hat
+Neben- und Revisionsnummern gleich sind, hat eine Vorveröffentlichungsversion
 niedrigeren Vorrang als eine Normalversion. Zum Beispiel: 1.0.0-alpha < 1.0.0.
-Vorrang für zwei Vorveröffentlichungsversionen mit den gleichen Haupt-, Neben-,
-und Revisionsnummern MUSS bestimmt werden, indem jede Punkt-getrennte Kennung von
-links nach rechts bis einen Unterschied gefunden wird wie gefolgt verglichen
+Der Vorrang von zwei Vorveröffentlichungsversionen mit den gleichen Haupt-, Neben-,
+und Revisionsnummern MUSS bestimmt werden, indem die Punkt-getrennte Kennungen von
+links nach rechts bis zum Finden eines Unterschieds wie folgt verglichen
 werden: Kennungen, die ausschließlich aus Ziffern bestehen, werden numerisch
-verglichen und Kennungen, die Buchstaben oder Bindestriche enthalten, werden
-lexikalisch in ASCII Sortierungsreihenfolge. Numerische Kennungen haben immer
+verglichen; Kennungen, die Buchstaben oder Bindestriche enthalten, werden
+lexikalisch in ASCII Sortierungsreihenfolge verglichen. Numerische Kennungen haben immer
 einen niedrigeren Vorrang als nicht-numerische Kennungen. Eine größere Menge an
-Vorveröffentlichungsfelder haben einen höheren Vorrang als eine kleinere Menge,
+Vorveröffentlichungskennzeichnern hat einen höheren Vorrang als eine kleinere Menge,
 wenn alle vorangegangene Kennungen gleich sind. Zum Beispiel: 1.0.0-alpha <
 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 <
 1.0.0-rc.1 < 1.0.0.
@@ -157,36 +157,35 @@ wenn alle vorangegangene Kennungen gleich sind. Zum Beispiel: 1.0.0-alpha <
 Warum semantische Versionierung?
 --------------------------------
 
-Das ist keine neue oder revolutionäre Idee. Tatsächlich, Sie machen
+Das ist keine neue oder revolutionäre Idee. Tatsächlich machen Sie
 wahrscheinlich schon etwas Ähnliches. Das Problem besteht darin, dass "ähnlich"
-nicht gut genug ist. Ohne Konformität irgendeiner Spezifikation, sind
-Versionsnummern für Abhangigkeitsverwaltung im Grunde unbrauchbar. Die Benennung
-und klare Definition der obigen Ideen vereinfachen die Kommunikation von
-Absichten mit Benutzern der Software. Erst wenn diese Absichten klar und
-flexibel (aber nicht zu flexibel) sind, kann Abhängigkeitsvorgaben endlich
-gemacht werden.
+nicht gut genug ist. Ohne Konformität irgendeiner Spezifikation sind
+Versionsnummern für Abhangigkeitsverwaltung im Grunde unbrauchbar. Durch die Benennung
+und die klare Definition der obigen Ideen wird es einfach den Nutzern der Software Ihre
+Absichten zu kommunizieren. Erst wenn diese Absichten klar sind, können
+flexible (aber nicht zu flexible) Abhängigkeitsvorgaben gemacht werden.
 
-Ein einfaches Beispiel wird vorzeigen, wie semantische Versionierung die
-Abhängigkeitshölle zu einer angetanen Sache macht. Betrachten Sie eine
-Bibliothek namens "Feuerwehrfahrzeug". Sie erfordert die
-semantisch-versioniertes Paket "Leiter". Zu der Zeit, wo Feuerwehrfahrzeug
-geschaffen wird, ist Leiter bei der Version 3.1.0. Da Feuerwehrfahrzeug einige
-Funktionalitäten verwendet, die erst in 3.1.0 eingeführt wurden, kann man mit
-Sicherheit die Leiter-Abhängigkeit als größer oder gleich 3.1.0 aber kleiner als
-4.0.0 definiert werden. Nun, wenn Leiter-Versionen 3.1.1. und 3.2.0 verfügbar
-werden, kann man sie der Paketverwaltung freigeben und wissen, dass sie mit der
+Ein einfaches Beispiel zeigt auf, wie semantische Versionierung die
+Abhängigkeitshölle zur Vergangenheit macht. Betrachten wir eine
+Bibliothek namens "Firetruck". Sie erfordert das
+semantisch versionierte Paket "Ladder". Zu der Zeit, zu der Firetruck
+erstellt wird, ist Ladder bei der Version 3.1.0. Da Firetruck einige
+Funktionalitäten verwendet, die erst in 3.1.0 eingeführt wurden, kann
+die Ladder-Abhängigkeit mit Sicherheit als größer oder gleich 3.1.0 aber kleiner als
+4.0.0 definiert werden. Wenn nun die Ladder-Versionen 3.1.1. und 3.2.0 verfügbar
+werden, kann man sie in der Paketverwaltung veröffentlichen und weiß, dass sie mit der
 bestehenden abhängigen Software kompatibel sind.
 
 Als verantwortungsbewusste/r Entwickler/in werden Sie natürlich nachprüfen
 wollen, dass alle Paket-Aktualisierungen wie angekündigt funktionieren. Die
-reale Welt ist ein dreckiger Ort; wir können nichts dagegen tun außer aufmerksam
-sein. Was man machen kann, ist es semantischer Versionierung erlauben, Ihnen
-eine vernünftige Weise anzubieten,  Pakete zu veröffentlichen und zu
-aktualisieren, ohne neue Versionen abhängiger Paketen selber bauen zu müssen.
-Das spart Zeit und Ärger.
+reale Welt ist ein chaotischer Ort; wir können nichts dagegen tun außer aufmerksam
+sein. Was Sie tun können, ist, sich durch semantischer Versionierung
+eine vernünftige Arbeitsweise anzubieten zu lassen, um Pakete zu veröffentlichen und zu
+aktualisieren, ohne neue Versionen abhängiger Paketen selber erstellen zu müssen.
+Das spart Zeit und Aufwand.
 
-Wenn das sich alles wünschenswert anhört und Sie die semantische Versionierung
-benutzen wollen, müssen Sie nur verkünden, dass Sie es machen und die Regeln
+Wenn sich dies alles wünschenswert anhört und Sie die semantische Versionierung
+benutzen wollen, müssen Sie nur kundtun, dass Sie es machen und die Regeln
 dann befolgen. Verlinken Sie diese Seite von Ihrem README, damit andere die
 Regeln kennen und davon profitieren können.
 
@@ -195,40 +194,40 @@ FAQ
 
 ### Wie soll ich mit Revisionen in der initialen 0.x.y Entwicklungsphase umgehen?
 
-Das Einfachste ist, die erste Entwicklingsveröffentlichung als 0.1.0 anzufangen
+Das Einfachste ist, die erste Entwicklingsveröffentlichung mit 0.1.0 zu beginnen
 und die Nebenversion mit jeder folgenden Veröffentlichung hochzuzählen.
 
-### Wie soll ich wissen, wann ich 1.0.0 veröffentlichen soll?
+### Woher weiß ich, wann ich 1.0.0 veröffentlichen soll?
 
-Wenn die Software schon produktiv eingesetzt wird, soll es wahrscheinlich schon
-1.0.0 sein. Wenn es eine stabile API hat, auf die Benutzer sich verlassen, soll
+Wenn die Software schon produktiv eingesetzt wird, sollte es wahrscheinlich schon
+1.0.0 sein. Wenn sie eine stabile API hat, auf die Benutzer sich verlassen, sollte
 es 1.0.0 sein. Wenn Sie sich viele Gedanken über Rückwärtskompatibilität machen
-müssen, soll es wahrscheinlich schon 1.0.0 sein.
+müssen, sollte es wahrscheinlich schon 1.0.0 sein.
 
-### Verhindert das nicht die schnelle Entwicklung und Iteration?
+### Verhindert das nicht die schnelle Entwicklung und kurze Iteration?
 
-Hauptversion 0 ist für schnelle Entwicklung. Wenn die API sich tagtäglich
-verändert sollte das Projekt entweder noch in der Version 0.x.y sein oder es
-soll in einem separaten Entwicklungszweig für die nächste Hauptversion
+Die Hauptversion 0 ist für schnelle Entwicklung. Wenn die API sich tagtäglich
+verändert, sollte das Projekt entweder noch in der Version 0.x.y sein oder es
+sollte in einem separaten development branch für die nächste Hauptversion
 entwickelt werden.
 
-### Wenn auch die kleinste Änderungen der öffentlichen API eine neue Hauptversion benötigen, werde ich nicht sehr schnell bei Version 42.0.0 sein?
+### Wenn schon kleinste Änderungen der öffentlichen API eine neue Hauptversion benötigen, werde ich dann nicht sehr schnell bei Version 42.0.0 sein?
 
-Dies ist eine Frage der verantwortungsbewussten Entwicklung und Voraussicht.
-Inkompatible Änderungen sollen nicht unüberlegt an Software vorgenommen werden,
-die viel abhängigen Code hat. Die Kosten, die für den Upgrade nötig sind, können
+Das ist eine Frage der verantwortungsbewussten Entwicklung und Voraussicht.
+Inkompatible Änderungen von Software mit vielen Abhängigkeiten sollten nicht
+unüberlegt vorgenommen werden. Die Kosten, die für den Upgrade nötig sind, können
 erheblich sein. Dass man die Hauptversion hochzählen muss, um inkompatible
-Änderungen zu veröffentlichen, heißt, dass man sich die Folgen von den
-Änderungen überlegen und die verbundene Vor- und Nachteile auswerten muss.
+Änderungen zu veröffentlichen, heißt, dass man sich die Folgen der
+Änderungen bewusst machen und die damit verbundenen Vor- und Nachteile einschätzen muss.
 
-### Die ganze öffentliche API zu dokumentieren ist zu viel Arbeit!
+### Die gesamte öffentliche API zu dokumentieren ist zu viel Arbeit!
 
-Es ist die Verantwortung von einem/r professionellen Entwickler/in, für andere
-beabsichtigte Software richtig zu dokumentieren. Komplexität Verwalten ist ein
-sehr wichtiges Teil davon, ein Projekt effizient zu halten und das wird
-schwierig, wenn niemand weiß, wie die Software funktioniert oder welche Methoden
-sicher aufgerufen werden können. Auf Dauer können semantische Versionierung und
-das Bestehen auf eine klar-definierte öffentliche API kann alles reibungslos
+Es zählt zu Ihrer Verantwortung als professionelle/r Entwickler/in, Software, die
+andere benutzen, sauber zu dokumentieren. Das Verwalten von Software-Komplexität ist ein
+sehr wichtiger Teil bei der effizienten Gestaltung eines Projekts. Dies wird
+schwierig, wenn niemand weiß, wie die Software zu benutzen ist oder welche Methoden
+sicher aufgerufen werden können. Auf Dauer können eine semantische Versionierung und
+das Bestehen auf eine klardefinierte öffentliche API alles reibungslos
 halten.
 
 ### Was mache ich, wenn ich versehentlich eine rückwärtsinkompatible Änderung als Nebenversion veröffentlicht habe?
@@ -236,54 +235,54 @@ halten.
 Sobald Sie erkennen, dass Sie gegen die Spezifikation der semantischen
 Versionierung verstoßen haben, sollen Sie das Problem korrigieren und eine neue
 Nebenversion veröffentlichen, die die Rückwärtskompatibilität wiederherstellt.
-Auch unter diesen Umständen, ist es unakzeptabel versionierte Veröffentlichungen
-zu verändern. Wo angemessen, soll die fehlerhafte Version dokumentiert werden
-und die Benutzer von dem Problem informiert werden, damit sie von der
-fehlerhaften Version wissen.
+Auch unter diesen Umständen ist es unakzeptabel, versionierte Veröffentlichungen
+zu verändern. Wenn nötig, dokumentieren Sie die fehlerhafte Version
+und informieren Sie die Nutzer über das Problem, damit sie über die fehlerhaften
+Version Bescheid wissen.
 
-### Was mache ich, wenn ich die eigene Abhängigkeiten ändere, ohne die öffentliche API zu verändern?
+### Was mache ich, wenn ich die eigenen Abhängigkeiten ändere, ohne die öffentliche API zu verändern?
 
-Das wäre als kompatibel angesehen, da es die öffentliche API nicht beeinflusst.
+Diese Änderungen können als kompatibel angesehen werden, da sie die öffentliche API nicht beeinflusst.
 Software, die explizit von den gleichen Paketen abhängig ist wie Ihr Paket,
-sollte eigene Abhängigkeitsvogaben haben und etwaige Konflikte werden dem Autor
-auffallen. Ob die Änderung eine Patch- oder Nebenversionsänderung entspricht,
+sollte eigene Abhängigkeitsvorgaben haben und etwaige Konflikte werden dem Autor
+auffallen. Ob die Änderung einer Patch- oder Nebenversionsänderung entspricht,
 kommt darauf an, ob die Abhängigkeiten geändert wurden, um einen Bug zu
-korrigieren oder um neue Funktionalitäten einzuführen. Ich würde normalerweise
-zusätzliches Code für das Zweite erwarten, in welchem Fall es selbstverständlich
-eine Nebenversionsänderung wäre.
+korrigieren oder um neue Funktionalitäten einzuführen. In letzerem Fall würde
+ich normalerweise zusätzlichen Code erwarten, wodurch offenbar
+eine Nebenversionsänderung nötig wäre.
 
-### Was ist, wenn ich versehentlich die öffentliche API verändere auf einer Weise, die nicht mit der Versionsnummeränderung übereinstimmt (i.e. das Code führt fälschlicherweise in einer Patch-Veröffentlichung eine Änderung ein, die nicht rückwärtskompatibel ist)
+### Was ist, wenn ich versehentlich die öffentliche API auf eine Weise verändere, die nicht mit der Versionsnummeränderung übereinstimmt (d.h. der Code führt fälschlicherweise in einer Patch-Veröffentlichung eine Änderung ein, die nicht abwärtskompatibel ist)?
 
-Hier sollte man mit Menschenverstand urteilen. Wenn Sie eine große Zielgruppe
+Hier sollte man mit gesundem Menschenverstand urteilen. Wenn Sie eine große Zielgruppe
 haben, die drastisch davon beeinträchtigt wird, wenn das Verhalten geändert
-wird, damit es wieder die API entspricht, könnte es besser sein, eine neue
+wird, um wieder der API zu entsprechen, könnte es besser sein, eine neue
 Hauptversion zu veröffentlichen, obwohl der Fix, streng gesehen, auch nur eine
-Patch-Veröffentlichung benötigt. Vergessen Sie nicht, dass es bei semantischen
+Patch-Veröffentlichung benötigt. Vergessen Sie nicht, dass es bei semantischer
 Versionierung darum geht, Bedeutung mit Versionsnummeränderungen zu vermitteln.
 Wenn diese Änderungen für die Benutzer wichtig sind, verwenden Sie eine
 Versionsnummer um sie zu informieren.
 
 ### Wie soll ich mit Deprecation umgehen?
 
-Bestehende Funktionalität als deprecated zu markieren ist ein normales Teil der
-Softwareentwicklung und ist oft nötig um Fortschritt zu machen. Wenn ein Teil
-der API als deprecated markiert wird, sollte man zwei Sachen machen: (1) die
-Dokumentation aktualisieren, um die Benutzer von der Veränderung zu informieren
-und (2) eine neue Nebenversion veröffentlichen, wo die Deprecation enthalten
+Bestehende Funktionalität als deprecated (veraltet) zu markieren ist ein normaler Teil der
+Softwareentwicklung und ist oft nötig um Fortschritte zu machen. Wenn ein Teil
+der API als deprecated markiert wird, sollten Sie zwei Dinge tun: (1) die
+Dokumentation aktualisieren, um die Benutzer über die Veränderung zu informieren
+und (2) eine neue Nebenversion veröffentlichen, in der die Deprecation enthalten
 ist. Bevor die Funktionalität in einer neuen Hauptversion vollständig entfernt
-wird, sollte es zumindest eine Nebenversion geben, wo die Deprecation enthalten
-ist, um Benutzer einen reibungslosen Übergang zu der neuen API zu ermöglichen.
+wird, sollte es zumindest eine Nebenversion geben, in der die Deprecation enthalten
+ist, um Benutzern einen reibungslosen Übergang zu der neuen API zu ermöglichen.
 
 ### Begrenzt SemVer die Länge des Versions-Strings?
 
-Nein, aber hier wird Vernunft empfohlen. Eine 255-Zeichen-lange Versionsnummer
-ist zum Beispiel wohl übertrieben. Spezifische Systeme können auch eigene
+Nein, aber hier wird gesunder Menschenverstand empfohlen. Eine 255-Zeichen lange Versionsnummer
+ist z. B. wohl übertrieben. Spezifische Systeme können auch eigene
 Längenbegrenzungen setzen.
 
 Über
 -----
 
-Die Spezifikation der semantische Versionierung wurde von
+Die Spezifikation der semantischen Versionierung wurde von
 [Tom Preston-Werner](http://tom.preston-werner.com) geschrieben, Erfinder von
 Gravatars und Mitbegründer von GitHub.
 
