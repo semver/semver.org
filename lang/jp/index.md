@@ -115,7 +115,7 @@ FAQ
 著者について
 -----
 
-セマンティック バージョニング仕様書の著者は[Tom Preston-Werner](http://tom.preston-werner.com/)氏です。彼はGravatarsの考案者であり、GitHunの共同創設者でもあります。
+セマンティック バージョニング仕様書の著者は[Tom Preston-Werner](http://tom.preston-werner.com/)氏です。彼はGravatarsの考案者であり、GitHubの共同創設者でもあります。
 
 もしフィードバックがある場合は、[GitHub上でissueを立てて下さい](https://github.com/mojombo/semver/issues)。
 
