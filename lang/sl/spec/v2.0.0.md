@@ -21,7 +21,7 @@ Dodatne oznake za pred-izdaje in metapodatki gradnje so na voljo kot razširitve
 Uvod
 ----
 
-V svetu programske opreme obstoja grozen prostor imenovan
+V svetu programske opreme obstaja grozen prostor imenovan
 "pekel odvisnosti". Večji kot sistem zraste in več je paketov,
 ki jih integrirate v vašo programsko opremo, bolj možno se boste našli nekega
 dne v tem obupu.
@@ -61,7 +61,7 @@ Ključne besede "MORA", "NE SME", "ZAHTEVANO", "BO", "NE BO", "BI MORALO",
 interpretira, kot so opisane v [RFC 2119](http://tools.ietf.org/html/rfc2119).
 
 1. Programska oprema, ki uporablja semantične verzije MORA določiti javni API. Ta API
-je lahko določen v sami kodi ali obstoja striktno v dokumentaciji.
+je lahko določen v sami kodi ali obstaja striktno v dokumentaciji.
 Kakorkoli je končan, bi moral biti točen in celovit.
 
 1. Običajna številka verzije MORA biti oblike X.Y.Z, kjer so X, Y, in Z
