@@ -255,9 +255,10 @@ Specifikacija sementičnih verzij je avtorizirana s strani [Toma
 Preston-Werner-ja](http://tom.preston-werner.com), izumitelja Gravatarjev in
 soustanovitelja GitHub-a.
 
-Slovenski prevod so prispevali ter zanj skrbijo:
+Slovenski prevod so prispevali:
 
 * [Peter Kokot](https://github.com/peterkokot)
+* [Aleš Šarkanj](https://github.com/alsar)
 
 Če želite pustiti povratne informacije, prosimo, da [odprete vprašanje na
 GitHub-u](https://github.com/mojombo/semver/issues).
