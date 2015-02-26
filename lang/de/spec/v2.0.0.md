@@ -114,7 +114,7 @@ Funktionalitäten als *deprecated* zu markieren ist ein gewöhnlicher Teil von S
 
 Nein, aber sei vernünftig. Zum Beispiel, wäre ein 255 Zeichen langer Version String wahrscheinlich ein wenig übertrieben. Außerdem könnten bestimmte Systeme ihre eigenen Limits definieren.
 
-s
+
 Über
 ----
 
