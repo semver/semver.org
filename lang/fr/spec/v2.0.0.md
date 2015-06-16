@@ -124,7 +124,7 @@ Les identifiants NE DOIVENT PAS être vides. Les méta-données de construction 
 seulement par leurs informations de construction ont la même priorité. 
 Exemples : 1.0.0-alpha+001, 1.0.0+20130313144700, 1.0.0-beta+exp.sha.5114f85.
 
-1. La priorité défini la façon dont sont ordonnées les versions entre elles. 
+1. La priorité définit la façon dont sont ordonnées les versions entre elles. 
 La priorité DOIT être calculée en séparant les identifiants de versions entre 
 majeures, mineures, de correction et de pré-livraison, en suivant cet ordre 
 (les informations de construction n’entrent pas en compte dans la comparaison). 
@@ -198,7 +198,7 @@ pour chaque nouvelle publication.
 
 Si votre logiciel est utilisé en environnement de production ou que vous avez
 une API stable de laquelle des utilisateurs ont commencé à dépendre, vous devriez
-probablement déjà être en version 1.0.0. Et si vous vous faites déjà du soucis
+probablement déjà être en version 1.0.0. Et si vous vous faites déjà du souci
 pour la rétro-compatibilité, vous devriez également avoir dépassé la 1.0.0.
 
 ### N'est-ce pas décourager le développement rapide et les itérations courtes ?
@@ -241,7 +241,7 @@ de ce problème.
 Cela peut être considéré comme compatible dans la mesure où cela n'affecte pas l'API 
 publique. Les logiciels qui dépendent des mêmes librairies que votre composant 
 devraient avoir leur propre spécification de dépendances et l'auteur remarquera ainsi 
-tout conflit. Pour déterminer si la modification est de niveau correctif ou mineure, 
+tout conflit. Pour déterminer si la modification est de niveau correctif ou mineur, 
 il faut vous poser la question de savoir si vous avez mis à jour vos dépendances pour 
 corriger un bug ou pour introduire une nouvelle fonctionnalité. Je considère 
 généralement l'ajout de nouveau code comme la deuxième option ce qui sous-entend 
