@@ -15,7 +15,7 @@ Auf Grundlage einer Versionsnummer von MAJOR.MINOR.PATCH werden die einzelnen El
 2.  MINOR wird erhöht, wenn neue Funktionalitäten, welche kompatibel zur bisherigen API sind, veröffentlicht werden, und
 3.  PATCH wird erhöht, wenn die Änderungen ausschließlich API-kompatible Bugfixes umfassen.
 
-Außerdem sind Bezeichner für Pre-Releases und Build Metadaten als Erweiterungen zum MAJOR.MINOR.PATCH Format verfügbar.
+Außerdem sind Bezeichner für Vorveröffentlichungen und Build-Metadaten als Erweiterungen zum MAJOR.MINOR.PATCH Format verfügbar.
 
 
 Einführung
@@ -43,7 +43,7 @@ Die Terme "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOUL
 
 4.  Versionsnummern mit einer Major Version von 0 (0.y.z) sind für die initiale Development Phase gedacht. Änderungen können in jeder denkbaren Form und zu jeder Zeit auftreten. Die öffentliche API sollte nicht als *stable* betrachtet werden.
 
-5.  Die Version 1.0.0 definiert die öffentliche API. Ab diesem Release hängt die Art und Weise, wie die Versionsnummer erhöht und verändert wird, von der öffentlichen API und den Änderungen, die an ihr vollzogen werden, ab.
+5.  Die Version 1.0.0 definiert die öffentliche API. Ab dieser Veröffentlichung hängt die Art und Weise, wie die Versionsnummer erhöht und verändert wird, von der öffentlichen API und den Änderungen, die an ihr vollzogen werden, ab.
 
 6.  Die Patch Version Z (x.y.Z | x > 0) muss (MUST) erhöht werden, wenn ausschließlich API-kompatible Bugfixes eingeführt werden. Ein Bugfix ist als eine interne Änderung, welche ein fehlerhaftes Verhalten korrigiert, definiert.
 
@@ -51,11 +51,11 @@ Die Terme "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOUL
 
 8.  Die Major Version X (X.y.z | X > 0) muss (MUST) immer dann erhöht werden, wenn API-inkompatible Änderungen in die öffentlichen API eingeführt werden. Die Änderungen dürfen (MAY) auch Änderungen umfassen, die ansonsten die Minor Version oder die Patch Version erhöht hätten. Wenn diese Versionsnummer erhöht wird, muss (MUST) sowohl die Minor Version als auch die Patch Version auf Null zurückgesetzt werden.
 
-9.  Ein Pre-Release kann (MAY) gekennzeichnet werden, indem ein Bindestrich, gefolgt von dem Pre-Release-Bezeichner, dessen Elemente durch Punkte voneinander getrennt werden, an die Patch Version angehängt wird. Die Elemente des Bezeichners dürfen (MUST) nur aus alphanumerischen ASCII Zeichen und dem Bindestrich ([0-9A-Za-z-]) bestehen. Sie dürfen (MUST NOT) außerdem nicht leer sein. Wenn ein Element ausschließlich aus Ziffern besteht, darf (MUST NOT) es keine führenden Nullen enthalten. Eine Pre-Release Version hat einen niedrigeren Rang als die entsprechende reguläre Version. Ein Pre-Release-Bezeichner kennzeichnet, dass die Version als *unstable* zu betrachten ist und dass sie unter Umständen nicht den Kompatibilitätsanforderungen, die für die entsprechende regulären Version bestimmt wurden, entspricht. Beispiele: 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7, 1.0.0-x.7.z.92.
+9.  Eine Vorveröffentlichung kann (MAY) gekennzeichnet werden, indem ein Bindestrich, gefolgt von dem Vorveröffentlichungs-Bezeichner, dessen Elemente durch Punkte voneinander getrennt werden, an die Patch Version angehängt wird. Die Elemente des Bezeichners dürfen (MUST) nur aus alphanumerischen ASCII Zeichen und dem Bindestrich ([0-9A-Za-z-]) bestehen. Sie dürfen (MUST NOT) außerdem nicht leer sein. Wenn ein Element ausschließlich aus Ziffern besteht, darf (MUST NOT) es keine führenden Nullen enthalten. Eine Vorveröffentlichungs-Version hat einen niedrigeren Rang als die entsprechende reguläre Version. Ein Vorveröffentlichungs-Bezeichner kennzeichnet, dass die Version als *unstable* zu betrachten ist und dass sie unter Umständen nicht den Kompatibilitätsanforderungen, die für die entsprechende regulären Version bestimmt wurden, entspricht. Beispiele: 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7, 1.0.0-x.7.z.92.
 
-10. Build Metadaten können (MAY) ausgezeichnet werden, indem ein Plus Symbol, gefolgt von den Metadaten, deren Elemente durch Punkte voneinander getrennt werden, an die Patch Version oder den Pre-Release-Bezeichner angehängt wird. Die Elemente der Metadaten dürfen (MUST) nur aus alphanumerischen ASCII Zeichen und dem Bindestrich ([0-9A-Za-z-]) bestehen. Sie dürfen (MUST NOT) außerdem nicht leer sein. Die Build Metadaten haben keinerlei Einfluss auf den Rang einer Version, sodass zwei Versionen, deren Versionsnummern sich nur in den Build Metadaten unterscheiden, denselben Rang einnehmen. Beispiele: 1.0.0-alpha+001, 1.0.0+20130313144700, 1.0.0-beta+exp.sha.5114f85.
+10. Build-Metadaten können (MAY) ausgezeichnet werden, indem ein Plus Symbol, gefolgt von den Metadaten, deren Elemente durch Punkte voneinander getrennt werden, an die Patch Version oder den Vorveröffentlichungs-Bezeichner angehängt wird. Die Elemente der Metadaten dürfen (MUST) nur aus alphanumerischen ASCII Zeichen und dem Bindestrich ([0-9A-Za-z-]) bestehen. Sie dürfen (MUST NOT) außerdem nicht leer sein. Die Build-Metadaten haben keinerlei Einfluss auf den Rang einer Version, sodass zwei Versionen, deren Versionsnummern sich nur in den Build-Metadaten unterscheiden, denselben Rang einnehmen. Beispiele: 1.0.0-alpha+001, 1.0.0+20130313144700, 1.0.0-beta+exp.sha.5114f85.
 
-11. Der Rang einer Version bestimmt, welche Versionsnummer einer anderen übergeordnet ist, wenn diese bei einer Sortierung miteinander verglichen werden. Der Rang wird (MUST)  aus der Major, Minor und Patch Version sowie dem Pre-Release-Bezeichner berechnet (Die Build Metadaten haben keinerlei Einfluss auf den Rang einer Version). Er wird bestimmt, indem der erste Unterschied zwischen dem oben aufgeführten Elementen ermittelt wird. Dabei wird von links nach rechts, in der oben genannten Reihenfolge vorgegangen. Die Major, Minor und Patch Versionen werden numerisch miteinander verglichen. Beispiel: 1.0.0 &lt; 2.0.0 &lt; 2.1.0 &lt; 2.1.1. Beim Vergleich von zwei Versionsnummern, deren Major, Minor und Patch Versionen gleich sind, nimmt ein Pre-Release einen niedrigeren Rang als die reguläre Version ein. Beispiel: 1.0.0-alpha &lt; 1.0.0. Sind beide dieser Versionen Pre-Releases, wird (MUST) der Rang ermittelt, indem jedes Element eines Pre-Release-Bezeichners (durch Punkte voneinander getrennt) mit dem der anderen Version verglichen wird bis ein Unterschied festgestellt wird. Auch hierbei wird von links nach rechts vorgegangen. Elemente, welche ausschließlich aus Ziffern bestehen, werden numerisch miteinander verglichen. Der Vergleich aller anderen Elemente erfolgt auf Basis der ASCII-Stellenwerte ihrer Zeichen. Numerische Elemente haben immer einen niedrigeren Rang als solche, die auch andere Zeichen enthalten. Falls alle Elemente identisch sind, nimmt der Bezeichner mit den meisten Elementen den höheren Rang ein. Beispiel: 1.0.0-alpha &lt; 1.0.0-alpha.1 &lt; 1.0.0-alpha.beta &lt; 1.0.0-beta &lt; 1.0.0-beta.2 &lt; 1.0.0-beta.11 &lt; 1.0.0-rc.1 &lt; 1.0.0.
+11. Der Rang einer Version bestimmt, welche Versionsnummer einer anderen übergeordnet ist, wenn diese bei einer Sortierung miteinander verglichen werden. Der Rang wird (MUST)  aus der Major, Minor und Patch Version sowie dem Vorveröffentlichungs-Bezeichner berechnet (Die Build-Metadaten haben keinerlei Einfluss auf den Rang einer Version). Er wird bestimmt, indem der erste Unterschied zwischen dem oben aufgeführten Elementen ermittelt wird. Dabei wird von links nach rechts, in der oben genannten Reihenfolge vorgegangen. Die Major, Minor und Patch Versionen werden numerisch miteinander verglichen. Beispiel: 1.0.0 &lt; 2.0.0 &lt; 2.1.0 &lt; 2.1.1. Beim Vergleich von zwei Versionsnummern, deren Major, Minor und Patch Versionen gleich sind, nimmt eine Vorveröffentlichung einen niedrigeren Rang als die reguläre Version ein. Beispiel: 1.0.0-alpha &lt; 1.0.0. Sind beide dieser Versionen Vorveröffentlichungen, wird (MUST) der Rang ermittelt, indem jedes Element eines Vorveröffentlichungs-Bezeichners (durch Punkte voneinander getrennt) mit dem der anderen Version verglichen wird bis ein Unterschied festgestellt wird. Auch hierbei wird von links nach rechts vorgegangen. Elemente, welche ausschließlich aus Ziffern bestehen, werden numerisch miteinander verglichen. Der Vergleich aller anderen Elemente erfolgt auf Basis der ASCII-Stellenwerte ihrer Zeichen. Numerische Elemente haben immer einen niedrigeren Rang als solche, die auch andere Zeichen enthalten. Falls alle Elemente identisch sind, nimmt der Bezeichner mit den meisten Elementen den höheren Rang ein. Beispiel: 1.0.0-alpha &lt; 1.0.0-alpha.1 &lt; 1.0.0-alpha.beta &lt; 1.0.0-beta &lt; 1.0.0-beta.2 &lt; 1.0.0-beta.11 &lt; 1.0.0-rc.1 &lt; 1.0.0.
 
 
 Weshalb sollte man Semantic Versioning nutzen?
@@ -75,7 +75,7 @@ FAQ
 
 ### Wie soll ich bei der Versionierung in der initialen Development Phase (0.y.z) verfahren?
 
-Das Einfachste ist, die Versionierung bei 0.1.0 zu beginnen und dann bei jedem folgenden Release die Minor Version zu erhöhen.
+Das Einfachste ist, die Versionierung bei 0.1.0 zu beginnen und dann bei jedem folgender Veröffentlichung die Minor Version zu erhöhen.
 
 
 ### Woher weiß ich, wann es Zeit ist Version 1.0.0 zu veröffentlichen?
@@ -84,7 +84,7 @@ Wenn die Software schon in der Produktion verwendet wird, sollte sie bereits in 
 
 ### Hält das nicht von *Rapid Development* und *Fast Iteration* ab?
 
-In Versionen mit einer Major Version von Null dreht sich alles um *Rapid Development*. Wenn sich die API tagtäglich verändert, sollte sich das Projekt entweder noch in Version 0.y.z befinden oder es sollte auf einem separate Development Branch an dem nächsten Major Release gearbeitet werden.
+In Versionen mit einer Major Version von Null dreht sich alles um *Rapid Development*. Wenn sich die API tagtäglich verändert, sollte sich das Projekt entweder noch in Version 0.y.z befinden oder es sollte auf einem separate Development Branch an der nächsten Major Veröffentlichung gearbeitet werden.
 
 ### Wenn schon die kleinsten API-inkompatiblen Änderungen an der öffentlichen API eine Anhebung der Major Version erfordern, wird eine Version wie 42.0.0 nicht sehr schnell erreicht werden?
 
@@ -96,7 +96,7 @@ Es ist die Aufgabe eines professionellen Developers, Software, welche für die V
 
 ### Was soll ich tun wenn ich versehentlich eine API-inkompatible Änderung in einer Minor Version veröffentlicht habe?
 
-Sobald du feststellst, dass du die *Semantic Versioning* Spezifikation nicht befolgt hast, korrigiere den Fehler, indem du eine neue Minor Version veröffentlichst, welche das Problem behebt und die Kompatibilität zur API wiederherstellt. Selbst unter diesen Umständen ist es nicht erlaubt, einen bereits veröffentlichten Release zu verändern. Falls es angemessen ist, dokumentiere welche Version problematisch ist, sodass die Nutzer über diese Version Bescheid wissen.
+Sobald du feststellst, dass du die *Semantic Versioning* Spezifikation nicht befolgt hast, korrigiere den Fehler, indem du eine neue Minor Version veröffentlichst, welche das Problem behebt und die Kompatibilität zur API wiederherstellt. Selbst unter diesen Umständen ist es nicht erlaubt, eine bereits veröffentlichte Version zu verändern. Falls es angemessen ist, dokumentiere welche Version problematisch ist, sodass die Nutzer über diese Version Bescheid wissen.
 
 ### Was soll ich tun wenn ich die Abhängigkeitsangaben meines Projekts ändere, aber keine Änderungen an der öffentlichen API einführe?
 
@@ -104,11 +104,11 @@ Dies würde als kompatibel angesehen werden, da es die öffentliche API nicht be
 
 ### Was soll ich tun wenn ich die öffentliche API versehentlich derartig verändert habe, dass sie nicht mit der Änderung an der Versionsnummer harmoniert (Das heißt, der Code zerstört fälschlicherweise in einer Patch Version die API-Konformität)?
 
-Entscheide nach deinem eigene Ermessen. Wenn du eine große Nutzergemeinde hast, die von der aktuellen API stark abhängt, dann wäre es wahrscheinlich das Beste, den Release als eine Major Version zu veröffentlichen, auch wenn die Änderungen eigentlich nur einen Patch darstellen sollten. Denk dran, bei *Semantic Versioning* dreht sich alles darum, die Art und den Umfang der Änderungen am Code durch die Änderungen an der Versionsnummer zu vermitteln.
+Entscheide nach deinem eigene Ermessen. Wenn du eine große Nutzergemeinde hast, die von der aktuellen API stark abhängt, dann wäre es wahrscheinlich das Beste, die Veröffentlichung als eine Major Version zu publizieren, auch wenn die Änderungen eigentlich nur einen Patch darstellen sollten. Denk dran, bei *Semantic Versioning* dreht sich alles darum, die Art und den Umfang der Änderungen am Code durch die Änderungen an der Versionsnummer zu vermitteln.
 
 ### Wie soll ich mit *deprecated* Funktionen verfahren?
 
-Funktionalitäten als *deprecated* zu markieren ist ein gewöhnlicher Teil von Software Development und ist häufig notwendig um mit der Entwicklung voranzuschreiten. Wenn etwas in der öffentlichen API als *deprecated* markiert wird, sollte erstens, die Dokumentation bezüglich der Änderungen angepasst werden, und zweitens, ein neuer Minor Release mit der *deprecated* Funktionalität veröffentlicht werden. Bevor die Funktionalität in einem Major Release vollständig entfernt wird, sollte mindestens ein Minor Release, der die *Deprecation* enthält, veröffentlicht werden, sodass Nutzer einfach zur neuen API migrieren können.
+Funktionalitäten als *deprecated* zu markieren ist ein gewöhnlicher Teil von Software Development und ist häufig notwendig um mit der Entwicklung voranzuschreiten. Wenn etwas in der öffentlichen API als *deprecated* markiert wird, sollte erstens, die Dokumentation bezüglich der Änderungen angepasst werden, und zweitens, eine neue Minor Version mit der *deprecated* Funktionalität veröffentlicht werden. Bevor die Funktionalität in einer Major Veröffentlichung vollständig entfernt wird, sollte mindestens eine Minor Version, die die *Deprecation* enthält, veröffentlicht werden, sodass Nutzer einfach zur neuen API migrieren können.
 
 ### Ist die Länge eines SemVer Version Strings limitiert?
 
