@@ -1,2 +1,2 @@
-markdown: rdiscount
+markdown: kramdown
 pygments: true
