@@ -4,7 +4,7 @@ title: Anlamsal Sürümleme 2.0.0
 ---
 
 Anlamsal Sürümleme 2.0.0
-======================================
+========================
 
 Özet
 ----
@@ -19,10 +19,11 @@ arttırın.
 
 Ayrıca, BÜYÜK.KÜÇÜK.YAMA biçiminin sonuna ön-sunum (_pre-release_) ve derleme üstverisi (_build metadata_) gibi etiketler eklenebilmektedir.
 
+
 Giriş
 -----
 
-Yazılım yönetimi dünyasında "bağımlılık cehennemi" (_dependency hell_) adında korkulu bir diyar vardır. Sisteminiz büyüdükçe ve yazılımınıza daha çok paket eklediğinizde, büyük ihtimalle bir gün gelecek ve kendinizi bu çaresizlik batağında bulacaksınız. 
+Yazılım yönetimi dünyasında "bağımlılık cehennemi" (_dependency hell_) adında korkulu bir diyar vardır. Sisteminiz büyüdükçe ve yazılımınıza daha çok paket eklediğinizde, büyük ihtimalle bir gün gelecek ve kendinizi bu çaresizlik batağında bulacaksınız.
 
 Bir çok bağımlılığı olan sistemlerde, yeni bir paket sürümü çıkarmak bir kabusa dönüşebilir. Bağımlılıklar çok sıkı belirlenmişse, sürüm kitlenmesi (bağımlı olunan tüm paketlerin yeni sürümünü yükseltmeden istenen paketin sürümünü yükseltememek) tehlikesiyle karşı karşıyasınız demektir. Eğer bağımlılıklar çok gevşek belirlenmişse, ister istemez sürüm çeşitliliği (gelecekteki sürümlerle aşırı uyumluluk varsaymak) tarafından ısırılacaksınızdır.
 
@@ -34,7 +35,7 @@ Bu sistemi: "Anlamsal Sürümleme" diye nitelendiriyorum. Bu düzen sayesinde, s
 
 
 Anlamsal Sürümleme Tanımı (SemVer)
-----------------------------------------
+----------------------------------
 
 Bu belge içindeki anahtar sözcükler ve/veya eklerinden oluşan "-MALI", "-MELİ", "-MAMALI", "-MEMELİ", "GEREKLİ", "-ECEK", "-ACAK", "-MEYECEK", "-MAYACAK", "-EBİLİR", ÖNERİLİR", "OLABİLİR", ve "KEYFE BAĞLI", [RFC 2119](http://tools.ietf.org/html/rfc2119)'da belirtildiği şekilde anlaşılmalıdır.
 
@@ -61,6 +62,7 @@ Bu belge içindeki anahtar sözcükler ve/veya eklerinden oluşan "-MALI", "-MEL
 1. Öncelik, sürümlerin sıralandıklarında, birbirleriyle sıralarının nasıl karşılaştırılacaklarını belirtir. Öncelik sürüm numarası büyük, küçük, yama ve ön-sunum tanımlayıcılarıyla, burada yazıldığı sırada (Derleme üstverisi öncelik belirlenirken anlamsızdır) ayırarak HESAPLANMALIDIR. Öncelik, soldan sağa doğru tanımlayıcıların her birini şu şekilde karşılaştırırken belirlenir: Büyük, küçük, ve yama sürümleri daima sayısal olarak karşılaştırılır. Örnek: 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1. Büyük, küçük, ve yama eşit olduğunda, bir ön-sunum sürümü, normal bir sürümden daha düşük önceliğe sahiptir. Örnek: 1.0.0-ilk < 1.0.0.  Aynı büyük, küçük, ve yama sürümüne sahip iki ön-sunum sürümünün önceliği, şu şekilde gösterildiği gibi, soldan sağa doğru her bir tanımlayıcıyı ayırıp karşılaştırarak BELİRLENMELİDİR: yalnızca rakamlardan oluşan tanımlayıcılar sayısal olarak karşılaştırılır ve harfli veya tire çizgili tanımlayıcılar ise ASCII sözcük sıralamalarına göre karşılaştırılırlar. Sayısal tanımlayıcılar, sayısal-olmayan tanımlayıcılardan daima daha düşük önceliğe sahiptirler.
 
 Önce gelen tüm tanımlayıcıları eşitse, büyük bir dizi ön-sunumun alanlarının, daha küçük bir dizininkinden daha yüksek önceliği vardır. Örnek: 1.0.0-ilk < 1.0.0-ilk.1 < 1.0.0-ilk.ikincil < 1.0.0-ikincil < 1.0.0-ikincil.2 < 1.0.0-ikincil.11 < 1.0.0-sa.1 < 1.0.0.
+
 
 Anlamsal Sürümlendirme Neden Kullanılmalıdır?
 ---------------------------------------------
@@ -117,12 +119,14 @@ Varolan işlevlerin çürümesi yazılım geliştirmenin normal bir parçasıdı
 
 Hayır, fakat sağduyunuzu kullanın. Örneğin, 255 karaktere sahip bir sürüm karakteri muhtemelen gereksizdir. Ayrıca, karakterlerin uzunluğu konusunda bazı sistemler kendi sınırlarını koyabilirler.
 
+
 Hakkında
 --------
 
 Anlamsal Sürümlendirme şartnamesi, Gravatar'ların kaşifi ve GitHub'un kurucu ortaklarından olan [Tom Preston-Werner](http://tom.preston-werner.com) tarafından yazılmıştır.
 
 Yorum bırakmak isterseniz, lütfen [GitHub'da bir konu açın](https://github.com/mojombo/semver/issues).
+
 
 Lisans
 ------
