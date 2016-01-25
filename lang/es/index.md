@@ -1,11 +1,10 @@
 ---
 layout: spanish
-title: Versionamiento Semántico 2.0.0-rc.2 
+title: Versionamiento Semántico 2.0.0-rc.2
 ---
 
-Versionamiento Semántico 2.0.0-rc.2 
+Versionamiento Semántico 2.0.0-rc.2
 ===================================
-
 
 En el mundo de la gestión de software existe el temor de caer en algún momento en el llamado “infierno de las dependencias”. Mientras más grande crece tu sistema y mientras más paquetes integras en tu software, más probable es que te encuentres, un día, en este pozo de la desesperación.
 
@@ -17,7 +16,7 @@ Yo llamo a este sistema “Versionamiento Semántico”. Bajo este esquema, los 
 
 
 Especificación de Versionamiento Semántico (en inglés SemVer)
-------------------------------------------------------------
+-------------------------------------------------------------
 
 En el documento original se usa el [RFC 2119](http://tools.ietf.org/html/rfc2119) para el uso de las palabras MUST, MUST NOT, SHOULD, SOULD NOT y MAY. Para que la traducción sea lo más fiel posible, he traducido siempre MUST por el verbo deber en presente (DEBE, DEBEN), SHOULD como el verbo deber en condicional (DEBERÍA, DEBERÍAN) y el verbo MAY como el verbo PODER.
 
@@ -43,6 +42,7 @@ En el documento original se usa el [RFC 2119](http://tools.ietf.org/html/rfc2119
 
 1. La precedencia DEBE ser calculada separando la versión en major, minor, patch e identificadores pre-release en ese orden (La metadata de build no figuran en la precedencia). Las versiones major, minor, y patch son siempre comparadas numéricamente. La precedencia de pre-release DEBE ser determinada comparando cada identificador separado por puntos de la siguiente manera: los identificadores que solo consisten de números son comparados numéricamente y los identificadores con letras o guiones son comparados de acuerdo al orden establecido por ASCII. Los identificadores numéricos siempre tienen una precedencia menor que los no-numéricos. Ejemplo: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
 
+
 ¿Por qué usar Versionamiento Semántico?
 ---------------------------------------
 
@@ -54,6 +54,7 @@ Como desarrollador responsable que eres, claro, querrás verificar que cualquier
 
 Si todo esto suena deseable, todo lo que tienes que hacer para comenzar usando Versionamiento Semántico es declarar que lo estás haciendo y seguir las reglas. Haz un link a este sitio desde tu README para que otros conozcan las reglas y se puedan beneficiar de ellas.
 
+
 FAQ
 ---
 
@@ -63,7 +64,7 @@ Lo más facil es empezar tu desarrollo inicial en 0.1.0 e incrementar la versió
 
 ### ¿Cómo sé cuándo liberar la versión 1.0.0?
 
-Si tu software está siendo usado en producción, probablemente ya deberías estar en 1.0.0. SI tienes una API estable de la cual tus usuarios ya están dependiendo, deberías estar en 1.0.0. Si te preocupa mucho la compatibilidad con versiones anteriores, ya deberías estar en 1.0.0. 
+Si tu software está siendo usado en producción, probablemente ya deberías estar en 1.0.0. SI tienes una API estable de la cual tus usuarios ya están dependiendo, deberías estar en 1.0.0. Si te preocupa mucho la compatibilidad con versiones anteriores, ya deberías estar en 1.0.0.
 
 ### ¿Esto no desincentiva el desarrollo rápido y las iteraciones cortas?
 
@@ -85,7 +86,7 @@ Apenas te des cuenta de que rompiste con la especificación de Versionamiento Se
 
 Eso sería considerado compatible ya que no afecta al API pública. El software que explícitamente depende de las mismas dependencias que tu paquete debiera tener sus propias especificaciones de dependencia y el autor va a notar cualquier conflicto. La determinación de si el cambio es a nivel de patch o minor depende de si actualizaste tus dependencias para arreglar un bug o para agregar funcionalidad nueva. Yo esperaría que haya código adicional si se trata de lo segundo, en cuyo caso el incremento del minor es la opción obvia.
 
-### ¿Qué debería hacer si el bug que estoy arreglando justamente hace que vuelva a estar de acuerdo con la especificación del API pública? (es decir, el código estaba incorrectamente desincronizado con la documentación del API) 
+### ¿Qué debería hacer si el bug que estoy arreglando justamente hace que vuelva a estar de acuerdo con la especificación del API pública? (es decir, el código estaba incorrectamente desincronizado con la documentación del API)
 
 Usa tu sentido común. Si tienes una gran audiencia que se va a ver drásticamente afectada al cambiar el comportamiento a lo que la API pública debía hacer, entonces lo mejor puede ser hacer un release major, incluso si el arreglo es estrictamente un release de tipo patch. Recuerda, el Versionamiento Semántico se trata de incorporar significado a la forma en que el número de versión cambia. Si estos cambios son importantes para tus usuarios, usa el número de versión para informarlos.
 
@@ -93,12 +94,14 @@ Usa tu sentido común. Si tienes una gran audiencia que se va a ver drásticamen
 
 Deprecar (desaprobar) funcionalidad existente es una parte normal del desarrollo de software y es típicamente requerida para avanzar. Cuando desapruebas parte de tu API pública, deberías hacer dos cosas: (1) actualizar tu documentación para permitir que los usuarios sepan del cambio, (2) emitir un nuevo release minor con la desaprobación. Antes de sacar la funcionalidad por completo en un nuevo release major, debería haber al menos un release minor que contenga la desaprobación de manera tal que los usuarios puedan traspasarse a la nueva API de manera suave.
 
+
 Acerca de
 ---------
 
 La especificación de Versionamiento Semántico fue creada por [Tom Preston-Werner](http://tom.preston-werner.com), inventor de los Gravatars y co-fundador de GitHub. Esta traducción fue realizada por Agustin Feuerhake.
 
 Si quieres dar feedback, [puedes abrir un issue en GitHub](https://github.com/mojombo/semver/issues).
+
 
 Licencia
 --------

@@ -18,6 +18,7 @@ Dane številke verzij GLAVNA.MANJŠA.POPRAVEK povečajte:
 
 Dodatne oznake za pred-izdaje in metapodatki gradnje so na voljo kot razširitve v obliki GLAVNA.MANJŠA.POPRAVEK.
 
+
 Uvod
 ----
 
@@ -131,6 +132,7 @@ kot ne-numerični identifikatorji. Večji skupek polj pred-izdaje imajo večji
 vrstni red kot manjši skupek, če vsi prejšnji identifikatorji so enaki.
 Na primer: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta <
 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
+
 
 Zakaj uporabljati semantične verzije?
 -------------------------------------
@@ -247,6 +249,7 @@ lahko uporabniki gladko preidejo na nov API.
 Ne, vendar uporabite dobro presojo. Na primer verzija z 255 dolgim nizom je verjetno pretiravanje.
 Tudi določeni sistemi lahko nalagajo njihove lastne omejitve na velikosti
 niza.
+
 
 O projektu
 ----------

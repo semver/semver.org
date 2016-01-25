@@ -19,6 +19,7 @@ kompatibility,
 Značenie predbežných verzií a pridávanie metadát verzií je možné rozšírením
 spomínaného formátu MAJOR.MINOR.PATCH o potrebné informácie.
 
+
 Úvod
 ----
 
@@ -55,6 +56,7 @@ zmeny API zväčšujú číslo MINOR verzie a spätne nekompatibilné zmeny API 
 Tento systém je nazývaný Sémantické verzovanie. Čísla verzií v tomto systéme a
 spôsob, akým sa menia nesú so sebou informáciu o použitom kóde a zmenách medzi
 jednotlivými verziami.
+
 
 Špecifikácia sémantického verzovania (SemVer)
 ---------------------------------------------
@@ -123,7 +125,7 @@ MAJOR, MINOR a PATCH sú porovnávané vždy ako čísla. Napr.: 1.0.0 < 2.0.0 <
 2.1.0 < 2.1.1. Keď sú čísla MAJOR, MINOR a PATCH rovnaké, predbežná verzia má
 menšiu prioritu ako normálna. Napr.: 1.0.0-alpha < 1.0.0. Priorita pre dve
 predbežné verzie, ktoré sa zhodujú v číslach MAJOR, MINOR a PATCH MUSÍ byť
-počítaná z bodkou oddelených identifikátorov zľava doprava a to dovtedy, 
+počítaná z bodkou oddelených identifikátorov zľava doprava a to dovtedy,
 pokým sa nenájde rozdiel nasledovným spôsobom: (1) Identifikátory obsahujúce
 iba číslice sú porovnávané číselne a identifikátory s písmenami alebo pomlčkami
 sú porovnávané lexikálne, zoradené podľa ASCII. (2) Číselné identifikátory majú
@@ -131,6 +133,7 @@ vždy nižšiu prioritu ako nečíselné. (3) Ak sú všetky predchádzajúce
 identifikátory v predbežnej verzii rovnaké, tak väčšie množstvo identifikátorov
 značí vyššiu prioritu ako menšie množstvo. Napr.: 1.0.0-alpha < 1.0.0-alpha.1 <
 1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
+
 
 Prečo používať Sémantické verzovanie?
 -------------------------------------
@@ -163,6 +166,7 @@ Ak to znie rozumne, všetko čo potrebujete spraviť pre začatie používania
 Sémantického verzovania je povedať, že to robíte a následne dodržiavať pravidlá.
 Odkážte z README vášho softvéru na tieto stránky, nech aj ostatní vedia, aké
 pravidlá používate a majú z nich prospech.
+
 
 Často kladené otázky (FAQ)
 --------------------------
@@ -243,6 +247,7 @@ zastaranie a používatelia mohli ľahko prejsť na nové API.
 Nie, no použite zdravý rozum. Číslo verzie, ktoré má 255 znakov je už asi moc,
 no špecifické systémy môžu mať vlastné limity na dĺžku čísla verzie.
 
+
 O špecifikácii
 --------------
 
@@ -259,6 +264,7 @@ Ak chcete zanechať spätnú väzbu, prosím
 [Tibor Soviš](https://github.com/tiso) (korektor),
 [Peter Dulačka](https://github.com/rootpd) (korektor),
 [Jaroslav Brtiš](https://github.com/Jardo-51) (korektor)
+
 
 Licencia
 --------
