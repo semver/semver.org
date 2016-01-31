@@ -20,7 +20,7 @@ Dodatkowe oznaczenia dla wydania przedpremierowego lub meta danych build-u są d
 Wprowadzenie
 ------------
 
-W świecie zarządzania oprogramowaniem istnieje przerażające miejsce nazywane potocznie "piekłem zależności." Im większy jest system i im więcej paczek
+W świecie zarządzania oprogramowaniem istnieje przerażające miejsce nazywane potocznie "piekłem zależności". Im większy jest system i im więcej paczek
 instalujesz w swoim oprogramowaniu, tym większe jest prawdopodobieństwo, że pewnego dnia wylądujesz w tej otchłani rozpaczy.
 
 W systemach z wieloma zależnościami, wypuszczanie nowych wersji paczek może szybko przeistoczyć się w koszmar. Jeśli zależności są zdefiniowane zbyt ściśle, istnieje niebezpieczeństwo blokady wersji (niemożności zaktualizowania paczki bez konieczności wypuszczenia nowych wersji wszystkich zależnych paczek). Jeśli zależności są zdefiniowane zbyt luźno, nieuchronnie dojdzie do "promiskuityzmu wersji" (zakładając istnienie kompatybilności z większą liczbą przyszłych wersji niż jest to wskazane). Piekło zależności zachodzi, gdy blokada wersji i/lub promiskuityzm wersji uniemożliwiają prosty i szybki rozwój oprogramowania. 
@@ -34,7 +34,7 @@ System ten został nazwany przeze mnie "Semantycznym Wersjonowaniem". W systemie
 Specyfikacja Semantycznego Wersjonowania (SemVer)
 ------------------------------------------
 
-Następujące terminy "MUSI" ("MUST"), "NIE MOŻE" ("MUST NOT"), "WYMAGANY" ("REQUIRED"), "MA BYĆ" ("SHALL"), "NIE BĘDZIE" ("SHALL NOT"), "POWINIEN" ("SHOULD"), "NIE POWINIEN" ("SHOULD NOT"), "ZALECANY" ("RECOMMENDED"), "MOŻE" ("MAY") oraz "OPCJONALNY" ("OPTIONAL") pojawiające się w ty m dokumencie rozumiane są zgodnie z ich opisem na stronie: [RFC 2119](http://tools.ietf.org/html/rfc2119).
+Następujące terminy "MUSI" ("MUST"), "NIE MOŻE" ("MUST NOT"), "WYMAGANY" ("REQUIRED"), "MA BYĆ" ("SHALL"), "NIE BĘDZIE" ("SHALL NOT"), "POWINIEN" ("SHOULD"), "NIE POWINIEN" ("SHOULD NOT"), "ZALECANY" ("RECOMMENDED"), "MOŻE" ("MAY") oraz "OPCJONALNY" ("OPTIONAL") pojawiające się w tym dokumencie rozumiane są zgodnie z ich opisem na stronie: [RFC 2119](http://tools.ietf.org/html/rfc2119).
 
 1. Oprogramowanie oparte na Semantycznym Wersjonowaniu MUSI mieć zdefiniowane publiczne API. API to może być zdefiniowane przez kod źródłowy albo dokumentację. 
 Jakkolwiek jest zdefiniowane, powinno to być dokładne i wyczerpujące. 
