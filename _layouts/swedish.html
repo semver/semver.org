@@ -1,9 +1,10 @@
 <!doctype html>
-<html lang="ru" dir="ltr">
+<html lang="sv" dir="ltr">
  <head>
   <meta charset="utf-8">
   <title>{{ page.title }}</title>
   <meta name="author" content="Tom Preston-Werner">
+  <script src="js/anchorli.js"></script>
   <link rel="stylesheet" href="/css/main.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
 </head>
@@ -11,7 +12,7 @@
    <ol class="nav lang">
      <li><a lang="en" rel="alternate" hreflang="en" href="/">english</a> [en]</li>
      <li><a lang="fr" rel="alternate" hreflang="fr" href="/lang/fr">fran&ccedil;ais</a> [fr]</li>
-     <li><a href="/lang/ru">pycc&#1082;&#1080;&#1081;</a> [ru]</li>
+     <li><a lang="ru" rel="alternate" hreflang="ru" href="/lang/ru">pycc&#1082;&#1080;&#1081;</a> [ru]</li>
      <li><a lang="es" rel="alternate" hreflang="es" href="/lang/es">espa&ntilde;ol</a> [es]</li>
      <li><a lang="it" rel="alternate" hreflang="it" href="/lang/it">italiano</a> [it]</li>
      <li><a lang="pt-BR" rel="alternate" hreflang="pt-BR" href="/lang/pt-BR">portugu&ecirc;s brasileiro</a> [pt-BR]</li>
@@ -25,12 +26,13 @@
      <li><a lang="tr" rel="alternate" hreflang="tr" href="/lang/tr">T&uuml;rk&ccedil;e</a> [tr]</li>
      <li><a lang="cs" rel="alternate" hreflang="cs" href="/lang/cs">česky</a> [cs]</li>
      <li><a lang="de" rel="alternate" hreflang="de" href="/lang/de">deutsch</a> [de]</li>
-     <li><a lang="sv" rel="alternate" hreflang="sv" href="/lang/sv">svenska</a> [sv]</li>
+     <li><a href="/lang/sv">svenska</a> [sv]</li>
    </ol>
    <ol class="nav">
-     <li><a href="/lang/ru/spec/v2.0.0.html">v2.0.0</a></li>
-     <li><a href="/lang/ru/spec/v2.0.0-rc.2.html">v2.0.0-rc.2</a></li>
+     <li><a href="/lang/sv/spec/v2.0.0.html">v2.0.0</a></li>
    </ol>
+   <div id="spec">
    {{ content }}
+   </div>
  </body>
 </html>
