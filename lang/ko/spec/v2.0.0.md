@@ -1,6 +1,6 @@
 ---
-layout: korean
 title: 유의적 버전 2.0.0
+language: ko
 ---
 
 유의적 버전 2.0.0-ko2

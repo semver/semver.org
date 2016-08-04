@@ -1,6 +1,7 @@
 ---
-layout: chinese-simplified
 title: 语义化版本 2.0.0
+language: zh-CN
+author: Wayou Liu
 ---
 
 语义化版本 2.0.0

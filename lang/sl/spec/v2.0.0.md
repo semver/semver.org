@@ -1,6 +1,7 @@
 ---
-layout: slovenian
 title: Semantične verzije 2.0.0
+language: sl
+author: Peter Kokot
 ---
 
 Semantične verzije 2.0.0

@@ -1,6 +1,7 @@
 ---
-layout: czech
 title: Sémantické verzování 2.0.0
+language: cs
+author: Jakub Křižka
 ---
 
 Sémantické verzování 2.0.0

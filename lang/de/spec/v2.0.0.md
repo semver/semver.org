@@ -1,6 +1,6 @@
 ---
-layout: german
 title: Semantic Versioning 2.0.0
+language: de
 ---
 
 Semantic Versioning 2.0.0

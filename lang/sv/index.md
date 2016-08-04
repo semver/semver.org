@@ -1,6 +1,6 @@
 ---
-layout: swedish
 title: Semantisk versionshantering 2.0.0
+language: sv
 ---
 
 Semantisk versionshantering 2.0.0
