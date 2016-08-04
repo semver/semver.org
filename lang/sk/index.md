@@ -1,6 +1,6 @@
 ---
-layout: slovak
 title: Sémantické verzovanie 2.0.0
+language: sk
 ---
 
 Sémantické verzovanie 2.0.0

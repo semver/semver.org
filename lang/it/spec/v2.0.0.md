@@ -1,6 +1,6 @@
 ---
-layout: italian
 title: Versionamento Semantico 2.0.0
+language: it
 ---
 
 Versionamento Semantico 2.0.0

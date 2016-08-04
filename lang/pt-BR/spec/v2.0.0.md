@@ -1,6 +1,6 @@
 ---
-layout: portuguese-brazilian
 title: Versionamento Semântico 2.0.0
+language: pt-BR
 ---
 
 Versionamento Semântico 2.0.0

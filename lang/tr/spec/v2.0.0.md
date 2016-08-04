@@ -1,6 +1,7 @@
 ---
-layout: turkish
 title: Anlamsal Sürümleme 2.0.0
+language: tr
+author: Inanc Gumus
 ---
 
 Anlamsal Sürümleme 2.0.0

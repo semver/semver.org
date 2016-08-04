@@ -1,2 +1,47 @@
-markdown: kramdown
-highlighter: rouge
+title: Semantic Versioning
+descriptions: A simple set of rules and requirements that dictate how version numbers are assigned and incremented
+
+# Should be in the form of
+# <machine readable key>: <human readable label>
+languages:
+  en: english
+  fr: français
+  ru: pyccкий
+  es: español
+  it: italiano
+  pt-BR: português brasileiro
+  zh-TW: 繁體中文
+  zh-CN: 简体中文
+  ko: 한국어
+  sk: slovensky
+  sl: slovenščina
+  ar: العربية
+  ja: 日本語
+  tr: Türkçe
+  cs: česky
+  de: deutsch
+  sv: svenska
+
+versions:
+  - 2.0.0
+  - 2.0.0-rc.2
+  - 2.0.0-rc.1
+  - 1.0.0
+  - 1.0.0-beta
+
+current_version: 2.0.0
+
+# Default author, for when none is set
+author: Tom Preston-Werner
+
+gems:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-redirect-from
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"

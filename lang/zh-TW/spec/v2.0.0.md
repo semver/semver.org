@@ -1,6 +1,6 @@
 ---
-layout: chinese-traditional
 title: 語意化版本 2.0.0
+language: zh-TW
 ---
 
 語意化版本 2.0.0
