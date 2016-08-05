@@ -42,6 +42,7 @@ ol.nav li {
   display: inline;
   font-weight: bold;
   margin-right: 20px;
+  white-space: nowrap;
 }
 
 ol.nav li a {

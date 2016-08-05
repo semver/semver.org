@@ -11,7 +11,8 @@
   </head>
   <body>
     <ol class="nav lang">
-      {% for language in site.languages %}
+      {% assign sorted_languages = site.languages | sort %}
+      {% for language in sorted_languages %}
         <li class="language language-{{ language[0] }}">
           <a rel="alternate" lang="{{ language[0] }}" hreflang="{{ language[0] }}"
             href="{{ language[0] | prepend: "/lang/" | prepend: site.github.url }}">
