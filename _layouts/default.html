@@ -12,7 +12,7 @@
   <body>
     <ol class="nav lang">
       {% for language in site.languages %}
-        <li class="langauge language-{{ language[0] }}">
+        <li class="language language-{{ language[0] }}">
           <a rel="alternate" lang="{{ language[0] }}" hreflang="{{ language[0] }}"
             href="{{ language[0] | prepend: "/lang/" | prepend: site.github.url }}">
             {{ language[1] | smartify }} ({{ language[0] }})
