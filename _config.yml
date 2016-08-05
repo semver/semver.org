@@ -21,6 +21,7 @@ languages:
   cs: česky
   de: deutsch
   sv: svenska
+  de: deutsch
 
 versions:
   - 2.0.0
