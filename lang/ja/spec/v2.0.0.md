@@ -1,6 +1,6 @@
 ---
-layout: japanese
 title: セマンティック バージョニング 2.0.0
+language: ja
 ---
 
 セマンティック バージョニング 2.0.0

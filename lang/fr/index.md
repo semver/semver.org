@@ -1,6 +1,6 @@
 ---
-layout: french
 title: Gestion sémantique de version 2.0.0
+language: fr
 ---
 
 Gestion sémantique de version 2.0.0

@@ -1,42 +1,47 @@
 <!doctype html>
 <html lang="en" dir="ltr">
- <head>
-  <meta charset="utf-8">
-  <title>{{ page.title }}</title>
-  <meta name="author" content="Tom Preston-Werner">
-  <script src="js/anchorli.js"></script>
-  <link rel="stylesheet" href="/css/main.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
-</head>
- <body>
-   <ol class="nav lang">
-     <li><a href="/">english</a> [en]</li>
-     <li><a lang="fr" rel="alternate" hreflang="fr" href="/lang/fr">fran&ccedil;ais</a> [fr]</li>
-     <li><a lang="ru" rel="alternate" hreflang="ru" href="/lang/ru">pycc&#1082;&#1080;&#1081;</a> [ru]</li>
-     <li><a lang="es" rel="alternate" hreflang="es" href="/lang/es">espa&ntilde;ol</a> [es]</li>
-     <li><a lang="it" rel="alternate" hreflang="it" href="/lang/it">italiano</a> [it]</li>
-     <li><a lang="pt-BR" rel="alternate" hreflang="pt-BR" href="/lang/pt-BR">portugu&ecirc;s brasileiro</a> [pt-BR]</li>
-     <li><a lang="zh-TW" rel="alternate" hreflang="zh-TW" href="/lang/zh-TW/">&#32321;&#39636;&#20013;&#25991;</a> [zh-TW]</li>
-     <li><a lang="zh-CN" rel="alternate" hreflang="zh-CN" href="/lang/zh-CN/">&#31616;&#20307;&#20013;&#25991;</a> [zh-CN]</li>
-     <li><a lang="ko" rel="alternate" hreflang="ko" href="/lang/ko">&#54620;&#44397;&#50612;</a> [ko]</li>
-     <li><a lang="sk" rel="alternate" hreflang="sk" href="/lang/sk">slovensky</a> [sk]</li>
-     <li><a lang="sl" rel="alternate" hreflang="sl" href="/lang/sl">sloven&#353;&#269;ina</a>&nbsp;[sl]</li>
-     <li><a lang="ar" rel="alternate" hreflang="ar" href="/lang/ar">العربية</a> [ar]</li>
-     <li><a lang="ja" rel="alternate" hreflang="ja" href="/lang/ja">日本語</a> [ja]</li>
-     <li><a lang="tr" rel="alternate" hreflang="tr" href="/lang/tr">T&uuml;rk&ccedil;e</a> [tr]</li>
-     <li><a lang="cs" rel="alternate" hreflang="cs" href="/lang/cs">česky</a> [cs]</li>
-     <li><a lang="de" rel="alternate" hreflang="de" href="/lang/de">deutsch</a> [de]</li>
-     <li><a lang="sv" rel="alternate" hreflang="sv" href="/lang/sv">svenska</a> [sv]</li>
-   </ol>
-   <ol class="nav">
-     <li><a href="/spec/v2.0.0.html">v2.0.0</a></li>
-     <li><a href="/spec/v2.0.0-rc.2.html">v2.0.0-rc.2</a></li>
-     <li><a href="/spec/v2.0.0-rc.1.html">v2.0.0-rc.1</a></li>
-     <li><a href="/spec/v1.0.0.html">v1.0.0</a></li>
-     <li><a href="/spec/v1.0.0-beta.html">v1.0.0-beta</a></li>
-   </ol>
-   <div id="spec">
-   {{ content }}
-   </div>
- </body>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{ site.github.url }}/css/main.css">
+    {% if page.custom_css %}
+      <link rel="stylesheet" href="{{ site.github.url }}/css/{{ page.language }}.css">
+    {% endif %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    {% seo %}
+  </head>
+  <body>
+    <ol class="nav lang">
+      {% assign sorted_languages = site.languages | sort %}
+      {% for language in sorted_languages %}
+        <li class="language language-{{ language[0] }}">
+          <a rel="alternate" lang="{{ language[0] }}" hreflang="{{ language[0] }}"
+            href="{{ language[0] | prepend: "/lang/" | prepend: site.github.url }}">
+            {{ language[1] | smartify }} ({{ language[0] }})
+          </a>
+        </li>
+      {% endfor %}
+    </ol>
+    <ol class="nav">
+      {% assign language = page.language | default: "en" %}
+      {% for version in site.versions %}
+        {% if language == "en" %}
+          {% assign expected = "spec/v" | append: version | append: ".md" %}
+        {% else %}
+          {% assign expected = "lang/" | append: language | append: "/spec/v" | append: version | append: ".md" %}
+        {% endif %}
+        {% assign found = site.pages | where: "path", expected | first %}
+        {% if found %}
+          <li class="version version-{{ version }}">
+            <a href="{{ found.url | prepend: site.github.url }}">
+              {{ version}}
+            </a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ol>
+    <div id="spec">
+     {{ content }}
+    </div>
+    <script src="{{ site.github.url }}/js/anchorli.js"></script>
+  </body>
 </html>

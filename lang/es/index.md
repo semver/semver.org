@@ -1,6 +1,6 @@
 ---
-layout: spanish
-title: Versionamiento Semántico 2.0.0-rc.2 
+title: Versionamiento Semántico 2.0.0-rc.2
+language: es
 ---
 
 Versionamiento Semántico 2.0.0-rc.2 
