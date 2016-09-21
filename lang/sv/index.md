@@ -167,8 +167,7 @@ borde du sannolikt redan vara på 1.0.0.
 Major-version noll handlar helt om snabb utveckling. Om du ändrar API:t varje dag bör du antingen
 vara kvar i version 0.y.z eller jobba med nästa stora version på en separat utvecklingsgren.
 
-### Även de minsta icke bakåtkompatibla ändringar förändrar det publika API:t, vilket kräver ett steg
-upp i major-versionen. Skulle jag inte då snabbt komma upp i version 42.0.0?
+### Även de minsta icke bakåtkompatibla ändringar förändrar det publika API:t, vilket kräver ett steg upp i major-versionen. Skulle jag inte då snabbt komma upp i version 42.0.0?
 
 Detta är en fråga om ansvarsfull utveckling och planering. Inkompatibla förändringar bör inte
 introduceras lättvinnligt i mjukvara som många har beroende till. Kostnaden man drar på sig för
@@ -201,9 +200,7 @@ minor-nivå beror på om du uppdaterade beroendet för att fixa en bugg eller f�
 ny funktionalitet. För det senare fallet hade jag förväntat mig att ny kod hade skrivits då
 det naturligtvis är på minor-nivå.
 
-### Vad gör jag om jag tvingas förändrar det publika API:t på ett sätt som inte följer
-versionsnumrets förändring (d.v.s. koden introducerar en stor icke kompatibel förändring
-i en patch-version)
+### Vad gör jag om jag tvingas förändra det publika API:t på ett sätt som inte följer versionsnumrets förändring (d.v.s. koden introducerar en stor icke kompatibel förändring i en patch-version)
 
 Använd ditt omdöme. Om du har en stor publik som kommer att påverkas stort av att beteendet
 förändras mot vad som förväntas av det, då är det bäst att skapa en major-version även om
