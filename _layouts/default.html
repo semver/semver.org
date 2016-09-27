@@ -1,5 +1,8 @@
 <!doctype html>
-<html lang="en" dir="ltr">
+{% if page.language == "ar" %}
+  {% assign direction = "rtl" %}
+{% endif %}
+<html lang="{% page.language | default: "en" %}" dir="{% direction | default: "ltr" %}">
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="{{ site.github.url }}/css/main.css">
