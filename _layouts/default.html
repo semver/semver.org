@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en" dir="ltr">
+<html lang="{{ page.language | default: "en" }}" dir="{{ page.language_dir | default: "ltr" }}">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="{{ site.github.url }}/css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
     {% if page.custom_css %}
-      <link rel="stylesheet" href="{{ site.github.url }}/css/{{ page.language }}.css">
+      <link rel="stylesheet" href="/css/{{ page.language }}.css">
     {% endif %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
     {% seo %}
@@ -15,7 +15,7 @@
       {% for language in sorted_languages %}
         <li class="language language-{{ language[0] }}">
           <a rel="alternate" lang="{{ language[0] }}" hreflang="{{ language[0] }}"
-            href="{{ language[0] | prepend: "/lang/" | prepend: site.github.url }}">
+            href="{{ language[0] | prepend: "/lang/" }}">
             {{ language[1] | smartify }} ({{ language[0] }})
           </a>
         </li>
@@ -32,7 +32,7 @@
         {% assign found = site.pages | where: "path", expected | first %}
         {% if found %}
           <li class="version version-{{ version }}">
-            <a href="{{ found.url | prepend: site.github.url }}">
+            <a href="{{ found.url }}">
               {{ version}}
             </a>
           </li>
