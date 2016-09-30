@@ -3,8 +3,8 @@ title: Versionamiento Semántico 2.0.0-rc.2
 language: es
 ---
 
-Versionamiento Semántico 2.0.0-rc.2 
-===================================
+Versionado Semántico 2.0.0-rc.2 
+===============================
 
 
 En el mundo de la gestión de software existe el temor de caer en algún momento en el llamado “infierno de las dependencias”. Mientras más grande crece tu sistema y mientras más paquetes integras en tu software, más probable es que te encuentres, un día, en este pozo de la desesperación.
