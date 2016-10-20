@@ -11,9 +11,9 @@ En bref
 
 Étant donné un numéro de version MAJEUR.MINEUR.CORRECTIF, il faut incrémenter :
 
-1. le numéro de version MAJEUR quand il y a des changements rétro-incompatibles,
-1. le numéro de version MINEUR quand il y a des changements rétro-compatibles,
-1. le numéro de version de CORRECTIF quand il y a des corrections d’anomalies rétro-compatibles
+1. le numéro de version MAJEUR quand il y a des changements non rétrocompatibles,
+1. le numéro de version MINEUR quand il y a des changements rétrocompatibles,
+1. le numéro de version de CORRECTIF quand il y a des corrections d’anomalies rétrocompatibles
 
 Des libellés supplémentaires peuvent être ajoutés pour les versions de pré-livraison et pour
 des méta-données de construction sous forme d'extension du format MAJEURE.MINEURE.CORRECTIF.
@@ -48,9 +48,9 @@ Une fois prête, vous communiquez ses modifications par des incrémentations
 successives de son numéro de version. Considérons le format de version X.Y.Z
 où X, Y et Z identifient la version (Majeure.Mineure.Corrective). Les corrections qui
 n'affectent pas l'API incrémentent le dernier identifiant qui est l'identifiant de
-version de correction. Lors d'ajouts ou de modifications rétro-compatibles de l'API,
+version de correction. Lors d'ajouts ou de modifications rétrocompatibles de l'API,
 il faut incrémenter l'identifiant de version mineure. Enfin, pour des modifications
-rétro-incompatibles, il faut incrémenter l'identifiant de version majeure.
+non rétrocompatibles, il faut incrémenter l'identifiant de version majeure.
 
 J'appelle ce système "gestion sémantique de version". Avec ce système, les numéros de
 version, et la façon dont ils changent, donnent du sens au code sous-jacent et à ce
@@ -87,11 +87,11 @@ est incrémenté après cette publication est dépendante de cette API publique 
 de ses évolutions.
 
 1. L'identifiant de version de correction Z (x.y.Z | x > 0) DOIT être incrémenté
-si seules des corrections rétro-compatibles sont introduites. Une correction
+si seules des corrections rétrocompatibles sont introduites. Une correction
 est définie comme un changement interne qui corrige un comportement incorrect.
 
 1. L'identifiant de version mineure Y (x.Y.z | x > 0) DOIT être incrémenté si de
-nouvelles fonctionnalités rétro-compatibles sont introduites dans l'API
+nouvelles fonctionnalités rétrocompatibles sont introduites dans l'API
 publique. Il DOIT être incrémenté si une fonctionnalité de l'API publique
 est marquée comme obsolète. Il PEUT être incrémenté si de nouvelles fonctionnalités
 ou améliorations substantielles sont introduites dans le code privé. Il PEUT
@@ -99,7 +99,7 @@ inclure dans le même temps des corrections. L'identifiant de version de correct
 DOIT être remis à zéro lorsque l'identifiant de version mineure est incrémenté.
 
 1. L'identifiant de version majeur X (X.y.z | X > 0) DOIT être incrémenté si des
-changements rétro-incompatibles sont introduits dans l'API publique. Cela PEUT
+changements non rétrocompatibles sont introduits dans l'API publique. Cela PEUT
 inclure dans le même temps des changements mineurs et des corrections. Les
 identifiants de version mineure et de correction DOIVENT être remis à zéro quand
 l'identifiant de version majeure est incrémenté.
@@ -208,13 +208,13 @@ rapide. Si vous changez votre API tous les jours, vous devriez toujours être
 en version 0.y.z ou sur une branche de développement séparée en préparant la
 prochaine version majeure.
 
-### Si le moindre changement rétro-incompatible de l'API publique nécessite une incrémentation de l'identifiant de version majeure, ne vais-je pas me retrouver à la version 42.0.0 très rapidement ?
+### Si le moindre changement non rétrocompatible de l'API publique nécessite une incrémentation de l'identifiant de version majeure, ne vais-je pas me retrouver à la version 42.0.0 très rapidement ?
 
 C'est une question de développement responsable et d'anticipation. Les changements
 incompatibles ne doivent pas être introduits à la légère dans du logiciel dont
 beaucoup de code source dépend. Le coût d'une mise à jour vers une nouvelle version
 peut être important. Le besoin de faire évoluer la version majeur pour publier des
-changements rétro-incompatibles signifie que vous aurez mesuré les implications de
+changements non rétrocompatibles signifie que vous aurez mesuré les implications de
 vos modifications et évalué le rapport entre leur coût et leurs bénéfices.
 
 ### Documenter l'ensemble de l'API publique demande trop de travail !
@@ -227,7 +227,7 @@ utiliser votre logiciel ou ne connaît les bonnes méthodes à appeler. Sur le l
 terme, la gestion sémantique de version et les efforts dans la conservation d'une
 API publique bien définie permettront à tout le monde d'avancer sans problème.
 
-### Que faire si j'ai accidentellement publié un changement rétro-incompatible dans une version mineure ?
+### Que faire si j'ai accidentellement publié un changement non rétrocompatible dans une version mineure ?
 
 Dès que vous réalisez que vous avez cassé votre gestion sémantique de version,
 corrigez le problème et publiez une nouvelle version mineure qui rétabli la
@@ -247,7 +247,7 @@ corriger un bug ou pour introduire une nouvelle fonctionnalité. Je considère
 généralement l'ajout de nouveau code comme la deuxième option ce qui sous-entend
 évidemment un incrément de l'identifiant de version mineure.
 
-### Que faire si par mégarde, je modifie l’API publique d’une façon qui ne correspond pas au changement de numéro de version (exemple : le code introduit un changement rétro-incompatible dans une publication de correctif) ?
+### Que faire si par mégarde, je modifie l’API publique d’une façon qui ne correspond pas au changement de numéro de version (exemple : le code introduit un changement non rétrocompatible dans une publication de correctif) ?
 
 C'est à vous de décider. Si vous avez une large audience qui sera considérablement
 affectée par un retour à ce que l'API publique prévoyait, alors il est peut être préférable
