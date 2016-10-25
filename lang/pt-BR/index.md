@@ -40,8 +40,8 @@ em frente com seu projeto de maneira fácil e segura.
 Como uma solução para este problema proponho um conjunto simples de regras e
 requisitos que ditam como os números das versões são atribuídos e incrementados.
 
-Essas regras são baseadas em, mas não necessariamente limitadas às bem 
-difundidas práticas comumente em uso tanto em software fechados como 
+Essas regras são baseadas em, mas não necessariamente limitadas às, bem 
+difundidas práticas comumente em uso tanto em softwares fechados como 
 open-source.
 Para que este sistema funcione, primeiro você precisa declarar uma API pública.
 Isto pode consistir de documentação ou ser determinada pelo próprio código. De
@@ -54,7 +54,7 @@ anteriores da API incrementa a versão Menor, e alterações incompatíveis com 
 versões anteriores da API incrementa a versão Maior.
 
 Eu chamo esse sistema de "Versionamento Semântico". Sob este esquema, os números
-de versão e a forma como eles mudam, transmite o significado do código
+de versão e a forma como eles mudam transmitem o significado do código
 subjacente e o que foi modificado de uma versão para a próxima.
 
 Especificação de Versionamento Semântico (SemVer)
@@ -241,7 +241,7 @@ introduzir nova funcionalidade. Eu normalmente esperaria código adicional para
 Use o bom senso. Se você tem um público enorme que será drasticamente impactado
 pela mudança de comportamento de volta para o que a API pública pretendida, 
 então pode ser melhor realizar um lançamento de uma versão maior, mesmo que a 
-correção pudesse ser considerada estritamente uma versão de correção.Lembre-se, 
+correção pudesse ser considerada estritamente uma versão de correção. Lembre-se, 
 Versionamento Semântico trata de transmitir o conhecimento das mudanças 
 ocorridas na versão. Se estas mudanças são importantes para seus usuários, 
 utilize o número da versão para informá-los.
