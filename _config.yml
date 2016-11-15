@@ -22,6 +22,7 @@ languages:
   de: deutsch
   sv: svenska
   pl: polski
+  fa: فارسی
 
 versions:
   - 2.0.0
