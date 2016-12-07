@@ -286,7 +286,7 @@ Traduzione a cura del [Java User Group Padova](http://www.jugpadova.it/):
 * [Emanuele Gesuato](http://nonsolojava.blogspot.it/) (revisore)
 * [Anicet Foba Togue](https://twitter.com/atogue) (revisore)
 
-Se vi piacerebbe lasciare un commento, per favore [aprite una segnalazione su 
+Per lasciare il vostro feedback per favore [aprite una segnalazione su 
 GitHub](https://github.com/mojombo/semver/issues).
 
 
