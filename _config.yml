@@ -23,6 +23,7 @@ languages:
   sv: svenska
   pl: polski
   fa: فارسی
+  he: עברית
 
 versions:
   - 2.0.0
