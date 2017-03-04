@@ -298,8 +298,7 @@ dianggap rilis patch. Ingat, Semantic Versioning adalah semua tentang menyampaik
 dengan bagaimana perubahan nomor versi. Jika perubahan ini penting untuk pengguna Anda,
 menggunakan nomor versi untuk memberitahu mereka.
 
-### Bagaimana seharusnya saya menangani fungsionalitas deprecated
-(usang)?
+### Bagaimana seharusnya saya menangani fungsionalitas deprecated (usang)?
 
 Mengusangkan fungsi yang ada adalah bagian normal dari pengembangan perangkat lunak dan
 seringkali diperlukan untuk membuat kemajuan ke depan. Ketika Anda mengusangkan bagian dari
