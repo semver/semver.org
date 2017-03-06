@@ -44,12 +44,12 @@ anda harus terlebih dahulu mendeklarasikan API publik. Hal ini mungkin
 terdiri dari dokumentasi atau ditunjukan oleh kode itu sendiri. Bagaimanapun, itu adalah
 penting bahwa API ini menjadi jelas dan tepat. Setelah anda mengidentifikasi publik API
 anda, anda mengkomunikasikan perubahan dengan penambahan khusus untuk nomor versi anda.
-Pertimbangkan format versi X.Y.Z (Major.Minor.Patch). Perbaikan bug tidak mempengaruhi API
-kenaikan patch versi, penambahan/perubahan API kompatibel kenaikan versi minor, dan perubahan
-API sebelumnya kompatibel kenaikan versi utama.
+Pertimbangkan format versi X.Y.Z (Major.Minor.Patch). Perbaikan bug API tidak mempengaruhi
+kenaikan versi patch, penambahan/perubahan API kompatibel kenaikan versi minor, dan perubahan
+API sebelumnya kompatibel kenaikan versi major.
 
 Saya menyebut sistem ini "Semantic Versioning." berdasarkan skema ini, penomoran versi
-dan cara mereka mengubah menyampaikan makna tentang kode yang mendasari dan apa yang
+dan cara mereka mengubah harus menyampaikan makna tentang kode yang mendasari dan apa yang
 telah dimodifikasi dari satu versi ke yang berikutnya.
 
 
@@ -75,8 +75,8 @@ TIDAK HARUS dirubah. Semua perubahan HARUS dirilis sebagai versi baru.
 1. Versi Major nol (0.y.z) adalah untuk pengembangan awal. Apapun MUNGKIN berubah
 sewaktu-waktu. API publik SEHARUSNYA TIDAK dianggap stabil.
 
-1. Versi 1.0.0 mendefinisikan API publik. cara dimana nomor versi
-bertambah setelah rilis ini tergantung pada publik API ini dan bagaimana
+1. Versi 1.0.0 mendefinisikan API publik. Cara dimana nomor versi
+bertambah setelah rilis ini tergantung pada API publik ini dan bagaimana
 itu berubah.
 
 1. Versi Patch Z (x.y.Z | x > 0) HARUS bertambah jika hanya perbaikan
@@ -84,7 +84,7 @@ bug kompatibel sebelumnya diperjenalkan. Perbaikan bug didefinisikan sebagai per
 internal yang memperbaiki perilaku yang tidak benar.
 
 1. Versi Minor Y (x.Y.z | x > 0) HARUS bertambah jika baru, fungsionalitas
-kompatibel sebelymnya diperkenalkan pada API publik. itu HARUS
+kompatibel sebelumnya diperkenalkan pada API publik. itu HARUS
 bertambah jika ada fungsinalitas API yang ditandai sebagai deprecated (usang). itu MUNGKIN
 bertambah jika substansial fungsionalitas baru atau improvisasi diperkenalkan
 beserta kode privat. itu MUNGKIN termasuk perubahan tingkat patch. versi Patch
@@ -329,7 +329,7 @@ Spesifikasi Semantic Versioning ditulis oleh [Tom
 Preston-Werner] (http://tom.preston-werner.com), penemu Gravatars dan
 salah seorang pendiri GitHub.
 
-Jika Anda ingin meninggalkan umpan balik, silakan [membuka masalah pada
+Jika Anda ingin meninggalkan umpan balik, silakan [membuka issue pada
 GitHub] (https://github.com/mojombo/semver/issues).
 
 
