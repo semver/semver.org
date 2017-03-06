@@ -24,6 +24,7 @@ languages:
   pl: polski
   fa: فارسی
   he: עברית
+  id: Indonesian
 
 versions:
   - 2.0.0
