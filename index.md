@@ -98,8 +98,7 @@ version is incremented.
 1. A pre-release version MAY be denoted by appending a hyphen and a
 series of dot separated identifiers immediately following the patch
 version. Identifiers MUST comprise only ASCII alphanumerics and hyphen
-[0-9A-Za-z-]. Identifiers MUST NOT be empty. Numeric identifiers MUST
-NOT include leading zeroes. Pre-release versions have a lower
+[0-9A-Za-z-]. Identifiers MUST NOT be empty. Pre-release versions have a lower
 precedence than the associated normal version. A pre-release version
 indicates that the version is unstable and might not satisfy the
 intended compatibility requirements as denoted by its associated
