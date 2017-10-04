@@ -229,7 +229,7 @@ Nej, "v1.2.3" är inte en semantisk version. Å andra sidan är det vanligt att 
 använda prefixet "v" på semantiska versionsnummer för att förtydliga att det är ett versionsnummer.
 Förkortningen "v" för "version" syns ofta i samband med versionshantering.
 Exempel: `git tag v1.2.3 -m "Release version 1.2.3"`, i detta fallet är "v1.2.3" ett tagg-namn
-och "1.2.3" den symantiska versionen.
+och "1.2.3" den semantiska versionen.
 
 Om
 -----
