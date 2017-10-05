@@ -12,36 +12,65 @@ Streszczenie
 Dla numeru wersji MAJOR.MINOR.PATCH, zwiększaj:
 
 1. wersję MAJOR, gdy dokonujesz zmian niekompatybilnych z API,
-1. wersję MINOR, gdy dodajesz nową funkcjonalność, która jest kompatybilna z poprzednimi wersjami,
-1. wersję PATCH, gdy naprawiasz błąd w sposób kompatybilny z poprzednimi wersjami.
+2. wersję MINOR, gdy dodajesz nową funkcjonalność, która jest kompatybilna
+   z poprzednimi wersjami,
+3. wersję PATCH, gdy naprawiasz błąd nie zrywając kompatybilności z poprzednimi
+   wersjami.
 
-Dodatkowe oznaczenia dla wydania przedpremierowego lub meta danych buildu są dostępne jako rozszerzenia formatu MAJOR.MINOR.PATCH.
+Dodatkowe oznaczenia dla wydania przedpremierowego lub meta-danych buildu są
+dostępne jako rozszerzenia formatu MAJOR.MINOR.PATCH.
 
 Wprowadzenie
 ------------
 
-W świecie zarządzania oprogramowaniem istnieje przerażające miejsce nazywane potocznie „piekłem zależności”. Im większy jest system i im więcej paczek
-instalujesz w swoim oprogramowaniu, tym większe jest prawdopodobieństwo, że pewnego dnia wylądujesz w tej otchłani rozpaczy.
+W świecie zarządzania oprogramowaniem istnieje przerażające miejsce nazywane
+„piekłem zależności”. Im bardziej twój system rośnie i im więcej pakietów
+integrujesz w swoim oprogramowaniu, tym większe jest prawdopodobieństwo, że
+pewnego dnia znajdziesz się w tej otchłani rozpaczy.
 
-W systemach z wieloma zależnościami, wypuszczanie nowych wersji paczek może szybko przeistoczyć się w koszmar. Jeśli zależności są zdefiniowane zbyt ściśle, istnieje niebezpieczeństwo blokady wersji (niemożności zaktualizowania paczki bez konieczności wypuszczenia nowych wersji wszystkich zależnych paczek). Jeśli zależności są zdefiniowane zbyt luźno, nieuchronnie dojdzie do 
-„promiskuityzmu wersji” (zakładając istnienie kompatybilności z większą liczbą przyszłych wersji niż jest to wskazane). Piekło zależności zachodzi, gdy blokada wersji i/lub promiskuityzm wersji uniemożliwiają prosty i szybki rozwój oprogramowania.
+W systemach z wieloma zależnościami, wydawanie nowych wersji pakietu może szybko
+stać się koszmarem. Jeśli zależności są określone zbyt wąsko, jesteś zagrożony
+blokadą wersji (niemożnością zaktualizowania pakietu bez konieczności wydania
+nowych wersji każdego zależnego pakietu). Jeśli zależności są określone zbyt
+luźno, nieuchronnie natniesz się na „rozwiązłość wersji” (założenie
+kompatybilności z większą liczbą kolejnych wersji niż jest to rozsądne). Piekłem
+zależności jest sytuacja, w której blokada wersji i/lub rozwiązłość wersji
+uniemożliwiają wygodny i bezpieczny rozwój twojego projektu.
 
-Jako rozwiązanie tego problemu proponuję prosty zbiór zasad i wymogów, które regulują przypisywanie i inkrementację numerów do wersji. Zasady te oparte są między innymi na istniejących wcześniej, szeroko rozpowszechnionych praktykach stosowanych zarówno w zamkniętym, jak i otwartym oprogramowaniu. By system ten funkcjonował, należy wpierw ustalić publiczne API, które zdefiniowane jest dokumentacją lub wynika z samego kodu źródłowego. Niezależnie od sposobu definicji, istotne jest, by API było klarowne i precyzyjne. Gdy publiczne API jest już zdefiniowane, można wprowadzać do niego zmiany z użyciem konkretnych inkrementacji do numeru wersji. Proponowany format to X.Y.Z (Major.Minor.Patch). Naprawy błędów nieingerujących w API inkrementują wersję patch, kompatybilne wstecz dodatki/zmiany w API inkrementują wersję minor, a niekompatybilne zmiany w API
-inkrementują wersję major.
+Jako rozwiązanie tego problemu proponuję prosty zbiór zasad i wymogów, które
+regulują jak przypisywać i zwiększać numery wersji. Zasady te są oparte, ale
+niekoniecznie ograniczone, na istniejących wcześniej, szeroko rozpowszechnionych
+praktykach, stosowanych zarówno w zamkniętym, jak i otwartym oprogramowaniu. Aby
+ten system działał, musisz najpierw określić publiczne API. Może to być
+dokumentacja lub może wymusić je sam kod źródłowy. Niezależnie od sposobu
+określenia, ważne jest, by to API było przejrzyste i precyzyjne. Kiedy już masz
+swoje publiczne API, komunikujesz zmiany w nim określonymi zwiększeniami w swoim
+numerze wersji. Rozważmy format wersji X.Y.Z (major.minor.patch). Naprawy błędów
+nieingerujących w API zwiększają wersję patch, kompatybilne wstecz
+dodatki/zmiany w API zwiększają wersję minor, a niekompatybilne wstecz zmiany
+w API zwiększają wersję major.
 
-System ten został nazwany przeze mnie „wersjonowaniem semantycznym”. W systemie tym numery wersji i sposób, w jaki zostają zmienione, wskazują na tworzący je kod oraz na to, co zostało zmodyfikowane od ostatniej wersji.
+Nazywam ten system „wersjonowaniem semantycznym”. W tym układzie numery wersji
+i sposób, w jaki się zmieniają, przenoszą informacje o kodzie pod spodem i co
+było zmieniane z wersji na wersję.
 
 
 Specyfikacja wersjonowania semantycznego (SemVer)
 -------------------------------------------------
 
-Następujące terminy „MUSI” („MUST”), „NIE MOŻE” („MUST NOT”), „WYMAGANY” („REQUIRED”), „MA BYĆ” („SHALL”), „NIE BĘDZIE” („SHALL NOT”), „POWINIEN” („SHOULD”), „NIE POWINIEN” („SHOULD NOT”), „ZALECANY” („RECOMMENDED”), „MOŻE” („MAY”) oraz „OPCJONALNY” („OPTIONAL”) pojawiające się w tym dokumencie rozumiane są zgodnie z ich opisem na stronie: [RFC 2119](http://tools.ietf.org/html/rfc2119).
+Terminy „MUSI” („MUST”), „NIE MOŻE” („MUST NOT”), „WYMAGANY” („REQUIRED”), „MA
+BYĆ” („SHALL”), „NIE BĘDZIE” („SHALL NOT”), „POWINIEN” („SHOULD”), „NIE
+POWINIEN” („SHOULD NOT”), „ZALECANY” („RECOMMENDED”), „MOŻE” („MAY”)
+i „OPCJONALNY” („OPTIONAL”) w tym dokumencie należy interpretować jak opisano
+w [RFC 2119](http://tools.ietf.org/html/rfc2119).
 
-1. Oprogramowanie oparte na wersjonowaniu semantycznym MUSI mieć zdefiniowane publiczne API. API to może być zdefiniowane przez kod źródłowy albo dokumentację.
-Jakkolwiek jest zdefiniowane, powinno to być dokładne i wyczerpujące.
+1. Oprogramowanie używające wersjonowania semantycznego MUSI określać swoje
+publiczne API. API to może być zadeklarowane w samym kodzie lub może istnieć
+w samej dokumentacji. Jakkolwiek jest zdefiniowane, powinno być precyzyjne
+i wyczerpujące.
 
-2. Standardowy numer wersji MUSI przyjąć formę X.Y.Z, gdzie X, Y i Z są nieujemnymi liczbami całkowitymi, oraz NIE MOGĄ zawierać wiodących zer. X jest
-wersją major, Y wersją minor, a Z wersją patch. Każdy składnik MUSI rosnąć numerycznie. Przykładowo: 1.9.0 -> 1.10.0 -> 1.11.0.
+2. Normalny numer wersji MUSI przyjąć formę X.Y.Z, gdzie X, Y i Z są nieujemnymi liczbami całkowitymi i NIE MOGĄ zawierać wiodących zer. X jest
+wersją major, Y wersją minor, a Z wersją patch. Każdy składnik MUSI rosnąć numerycznie. Przykładowo: 1.9.0 → 1.10.0 → 1.11.0.
 
 3. W momencie wypuszczenia nowej wersji paczki, jej zawartość
 NIE MOŻE być modyfikowana. Jakiekolwiek zmiany MUSZĄ być wypuszczane w postaci nowej wersji.
