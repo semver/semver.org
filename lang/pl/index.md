@@ -69,11 +69,13 @@ publiczne API. API to może być zadeklarowane w samym kodzie lub może istnieć
 w samej dokumentacji. Jakkolwiek jest zdefiniowane, powinno być precyzyjne
 i wyczerpujące.
 
-2. Normalny numer wersji MUSI przyjąć formę X.Y.Z, gdzie X, Y i Z są nieujemnymi liczbami całkowitymi i NIE MOGĄ zawierać wiodących zer. X jest
-wersją major, Y wersją minor, a Z wersją patch. Każdy składnik MUSI rosnąć numerycznie. Przykładowo: 1.9.0 → 1.10.0 → 1.11.0.
+2. Normalny numer wersji MUSI przyjąć formę X.Y.Z, gdzie X, Y i Z są nieujemnymi
+liczbami całkowitymi i NIE MOGĄ zawierać wiodących zer. X jest wersją major, Y
+wersją minor, a Z wersją patch. Każdy składnik MUSI rosnąć numerycznie.
+Przykładowo: 1.9.0 → 1.10.0 → 1.11.0.
 
-3. W momencie wypuszczenia nowej wersji paczki, jej zawartość
-NIE MOŻE być modyfikowana. Jakiekolwiek zmiany MUSZĄ być wypuszczane w postaci nowej wersji.
+3. W momencie wypuszczenia nowej wersji pakietu, jej zawartość
+NIE MOŻE być modyfikowana. Jakiekolwiek zmiany MUSZĄ być wydane w postaci nowej wersji.
 
 4. Wersja zero Major (0.y.z) stanowi początkową fazę rozwoju. Wszystko może ulec zmianie w dowolnym momencie. Publiczne API nie jest uznane za stałe.
 
@@ -99,7 +101,7 @@ gdy wersja major jest inkrementowana.
 
 9. Wydanie przedpremierowe MOŻE być oznaczone przez dołączenie myślnika oraz zbioru identyfikatorów oddzielonych od siebie kropkami, zaraz za numerem wersji patch. Identyfikatory MUSZĄ składać się wyłącznie ze znaków alfanumerycznych ASCII oraz myślników [0-9A-Za-z-]. Identyfikatory NIE MOGĄ być puste. Numeryczne identyfikatory NIE MOGĄ zawierać wiodących zer. Wydania przedpremierowe są podrzędne w stosunku do powiązanych z nimi standardowych wersji. Wydanie przedpremierowe wskazuje na niestabilność wersji i możliwość niespełniania wymogów kompatybilności obecnych w powiązanej z nią standardowej wersji, na przykład: 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7, 1.0.0-x.7.z.92.
 
-10. Meta dane buildu MOGĄ być oznaczone przez dołączenie znaku plus oraz zbioru identyfikatorów oddzielonych od siebie kropkami, zaraz za numerem wersji pach lub wydania przedpremierowego. Identyfikatory MUSZĄ składać się wyłącznie ze znaków alfanumerycznych ASCII oraz myślników [0-9A-Za-z-]. Identyfikatory NIE MOGĄ być puste. Meta dane buildu POWINNY być odrzucone przy ustalaniu nadrzędności poszczególnych wersji. Zatem, dwie wersje różniące się tylko meta danymi buildu mają ten sam stopień pierwszeństwa. Przykładowo: 1.0.0-alpha+001, 1.0.0+20130313144700, 1.0.0-beta+exp.sha.5114f85.
+10. Meta-dane buildu MOGĄ być oznaczone przez dołączenie znaku plus oraz zbioru identyfikatorów oddzielonych od siebie kropkami, zaraz za numerem wersji patch lub wydania przedpremierowego. Identyfikatory MUSZĄ składać się wyłącznie ze znaków alfanumerycznych ASCII oraz myślników [0-9A-Za-z-]. Identyfikatory NIE MOGĄ być puste. Meta dane buildu POWINNY być odrzucone przy ustalaniu nadrzędności poszczególnych wersji. Zatem, dwie wersje różniące się tylko meta danymi buildu mają ten sam stopień pierwszeństwa. Przykładowo: 1.0.0-alpha+001, 1.0.0+20130313144700, 1.0.0-beta+exp.sha.5114f85.
 
 11. Pierwszeństwo odnosi się do relacji między poszczególnymi wersjami ustawionymi w szeregu. Pierwszeństwo MUSI być ustalone poprzez rozdzielenie numeru wersji na identyfikatory major, minor, pitch oraz identyfikator przedpremierowy w powyżej podanej kolejności (meta dane buildu nie decydują o pierwszeństwie). Pierwszeństwo jest ustalone przez pierwszą różnicę wykrytą podczas porównania identyfikatorów od lewej do prawej strony, czyli w kolejności: wersje major, minor, patch są zawsze porównywane numerycznie. Przykładowo: 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1. Gdy numery wersji major, minor i patch są równe, wydanie przedpremierowe jest podrzędne w stosunku do wersji standardowej. Przykładowo: 1.0.0-alpha < 1.0.0. Pierwszeństwo dwóch wydań przedpremierowych z takimi samymi numerami wersji major, minor i patch MUSI być ustalone przez porównanie każdego identyfikatora oddzielonego od reszty kropkami w kierunku od lewej do prawej póki różnica nie zostanie odkryta jak poniżej: identyfikatory złożone z samych cyfr porównywane są numerycznie, a identyfikatory złożone z liter i myślników porównywane są leksykalnie w kolejność ASCII. Identyfikatory numeryczne są zawsze podrzędne w stosunku do identyfikatorów nienumerycznych. Większy zbiór przedpremierowych identyfikatorów jest nadrzędny w stosunku do mniejszego zbioru, jeśli wszystkie poprzedzające identyfikatory są sobie równe. Przykładowo: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
 
