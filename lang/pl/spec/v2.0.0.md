@@ -69,79 +69,154 @@ publiczne API. API to może być zadeklarowane w samym kodzie lub może istnieć
 w samej dokumentacji. Jakkolwiek jest zdefiniowane, powinno być precyzyjne
 i wyczerpujące.
 
-2. Normalny numer wersji MUSI przyjąć formę X.Y.Z, gdzie X, Y i Z są nieujemnymi
-liczbami całkowitymi i NIE MOGĄ zawierać wiodących zer. X jest wersją major, Y
-wersją minor, a Z wersją patch. Każdy składnik MUSI rosnąć numerycznie.
-Przykładowo: 1.9.0 → 1.10.0 → 1.11.0.
+2. Standardowy numer wersji MUSI przyjąć formę X.Y.Z, gdzie X, Y i Z są
+nieujemnymi liczbami całkowitymi i NIE MOGĄ zawierać wiodących zer. X jest
+wersją major, Y wersją minor, a Z wersją patch. Każdy składnik MUSI rosnąć
+numerycznie. Przykładowo: 1.9.0 → 1.10.0 → 1.11.0.
 
-3. W momencie wypuszczenia nowej wersji pakietu, jej zawartość
-NIE MOŻE być modyfikowana. Jakiekolwiek zmiany MUSZĄ być wydane w postaci nowej wersji.
+3. Po wydaniu wersjonowanego pakietu, zawartość tej wersji NIE MOŻE być
+modyfikowana. Jakiekolwiek zmiany MUSZĄ być wydane jako nowa wersja.
 
-4. Wersja zero Major (0.y.z) stanowi początkową fazę rozwoju. Wszystko może ulec zmianie w dowolnym momencie. Publiczne API nie jest uznane za stałe.
+4. Wersja major zero (0.y.z) jest przeznaczona dla początkowej fazy rozwoju.
+Wszystko może ulec zmianie w dowolnym momencie. Publiczne API nie powinno być
+traktowane jako stabilne.
 
-5. Wersja 1.0.0 definiuje publiczne API. Sposób, w jaki numer wersji
-jest inkrementowany po wypuszczeniu tej wersji, zależy od publicznego API
-i jak jest on modyfikowany.
+5. Wersja 1.0.0 określa publiczne API. Sposób, w jaki numer wersji jest
+zwiększany po tym wydaniu, zależy od tego publicznego API i jak się ono zmienia.
 
-6. Wersja Patch Z (x.y.Z | x > 0) MUSI być inkrementowana jeśli tylko kompatybilne
-wstecz naprawy błędów są wprowadzane. Naprawa błędu definiowana jest jako zmiana
-wewnętrzna, która usuwa nieprawidłowe działanie.
+6. Wersja patch Z (x.y.Z | x > 0) MUSI zostać zwiększona, jeśli wprowadza się
+tylko kompatybilne wstecz naprawy błędów. Naprawa błędu definiowana jest jako
+zmiana wewnętrzna, która usuwa nieprawidłowe działanie.
 
-7. Wersja Minor Y (x.Y.z | x > 0) MUSI być inkrementowana, gdy nowa, kompatybilna
-wstecz funkcjonalność zostaje wprowadzona do publicznego API. MUSI być ona inkrementowana,
-jeśli jakakolwiek funkcjonalność publicznego API zostaje oznaczona jako deprecjonowana.
-Wersja ta MOŻE być inkrementowana, jeśli wprowadzone zostają nowe znaczące funkcjonalności
-lub ulepszenia w obrębie prywatnego kodu. MOŻE ona zawierać zmiany na poziomie patch.
-Numer wersji patch MUSI być zresetowany do 0, gdy wersja minor jest inkrementowana.
+7. Wersja minor Y (x.Y.z | x > 0) MUSI zostać zwiększona, jeśli nowa,
+kompatybilna wstecz funkcjonalność zostaje wprowadzona do publicznego API. MUSI
+zostać zwiększona, jeśli jakakolwiek funkcjonalność publicznego API zostaje
+zdezaprobowana. MOŻE zostać zwiększona, jeśli wprowadzone zostają nowe znaczące
+funkcjonalności lub ulepszenia w obrębie prywatnego kodu. MOŻE ona zawierać
+zmiany na poziomie patch. Numer wersji patch MUSI być ustawiony na 0, gdy wersja
+minor jest zwiększana.
 
-8. Wersja Major X (X.y.z | X > 0) MUSI być inkrementowana, jeżeli jakiekolwiek wstecznie
-niekompatybilne zmiany są wprowadzone do publicznego API. MOŻE ona zawierać zmiany na
-poziomie minor oraz patch. Numery wersji minor oraz patch MUSZĄ być zresetowane do 0,
-gdy wersja major jest inkrementowana.
+8. Wersja major X (X.y.z | X > 0) MUSI zostać zwiększona, jeżeli do publicznego
+API są wprowadzane jakiekolwiek wstecznie niekompatybilne zmiany. MOŻE zawierać
+zmiany na poziomie minor oraz patch. Numery wersji minor oraz patch MUSZĄ być
+ustawione na 0, gdy wersja major jest zwiększana.
 
-9. Wydanie przedpremierowe MOŻE być oznaczone przez dołączenie myślnika oraz zbioru identyfikatorów oddzielonych od siebie kropkami, zaraz za numerem wersji patch. Identyfikatory MUSZĄ składać się wyłącznie ze znaków alfanumerycznych ASCII oraz myślników [0-9A-Za-z-]. Identyfikatory NIE MOGĄ być puste. Numeryczne identyfikatory NIE MOGĄ zawierać wiodących zer. Wydania przedpremierowe są podrzędne w stosunku do powiązanych z nimi standardowych wersji. Wydanie przedpremierowe wskazuje na niestabilność wersji i możliwość niespełniania wymogów kompatybilności obecnych w powiązanej z nią standardowej wersji, na przykład: 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7, 1.0.0-x.7.z.92.
+9. Wydanie przedpremierowe MOŻE być oznaczone przez dołączenie dywizu oraz
+zbioru identyfikatorów rozdzielonych kropkami, zaraz za numerem wersji
+patch. Identyfikatory MUSZĄ składać się wyłącznie ze znaków alfanumerycznych
+ASCII oraz myślników [0-9A-Za-z-]. Identyfikatory NIE MOGĄ być puste. Numeryczne
+identyfikatory NIE MOGĄ zawierać wiodących zer. Wydania przedpremierowe
+poprzedzają powiązane z nimi wersje standardowe. Wydanie przedpremierowe
+wskazuje na niestabilność wersji i możliwość niespełniania wymogów
+kompatybilności, które cechują powiązaną z nią standardową wersję. Przykłady:
+1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7, 1.0.0-x.7.z.92.
 
-10. Meta-dane buildu MOGĄ być oznaczone przez dołączenie znaku plus oraz zbioru identyfikatorów oddzielonych od siebie kropkami, zaraz za numerem wersji patch lub wydania przedpremierowego. Identyfikatory MUSZĄ składać się wyłącznie ze znaków alfanumerycznych ASCII oraz myślników [0-9A-Za-z-]. Identyfikatory NIE MOGĄ być puste. Meta dane buildu POWINNY być odrzucone przy ustalaniu nadrzędności poszczególnych wersji. Zatem, dwie wersje różniące się tylko meta danymi buildu mają ten sam stopień pierwszeństwa. Przykładowo: 1.0.0-alpha+001, 1.0.0+20130313144700, 1.0.0-beta+exp.sha.5114f85.
+10. Meta-dane buildu MOGĄ być oznaczone przez dołączenie znaku plus oraz zbioru
+identyfikatorów rozdzielonych kropkami, zaraz za numerem wersji patch lub
+wydania przedpremierowego. Identyfikatory MUSZĄ składać się wyłącznie ze znaków
+alfanumerycznych ASCII oraz myślników [0-9A-Za-z-]. Identyfikatory NIE MOGĄ być
+puste. Meta-dane buildu POWINNY być ignorowane przy ustalaniu kolejności wersji.
+Zatem, dwie wersje różniące się tylko meta-danymi buildu mają ten sam stopień
+pierwszeństwa. Przykłady: 1.0.0-alpha+001, 1.0.0+20130313144700,
+1.0.0-beta+exp.sha.5114f85.
 
-11. Pierwszeństwo odnosi się do relacji między poszczególnymi wersjami ustawionymi w szeregu. Pierwszeństwo MUSI być ustalone poprzez rozdzielenie numeru wersji na identyfikatory major, minor, pitch oraz identyfikator przedpremierowy w powyżej podanej kolejności (meta dane buildu nie decydują o pierwszeństwie). Pierwszeństwo jest ustalone przez pierwszą różnicę wykrytą podczas porównania identyfikatorów od lewej do prawej strony, czyli w kolejności: wersje major, minor, patch są zawsze porównywane numerycznie. Przykładowo: 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1. Gdy numery wersji major, minor i patch są równe, wydanie przedpremierowe jest podrzędne w stosunku do wersji standardowej. Przykładowo: 1.0.0-alpha < 1.0.0. Pierwszeństwo dwóch wydań przedpremierowych z takimi samymi numerami wersji major, minor i patch MUSI być ustalone przez porównanie każdego identyfikatora oddzielonego od reszty kropkami w kierunku od lewej do prawej póki różnica nie zostanie odkryta jak poniżej: identyfikatory złożone z samych cyfr porównywane są numerycznie, a identyfikatory złożone z liter i myślników porównywane są leksykalnie w kolejność ASCII. Identyfikatory numeryczne są zawsze podrzędne w stosunku do identyfikatorów nienumerycznych. Większy zbiór przedpremierowych identyfikatorów jest nadrzędny w stosunku do mniejszego zbioru, jeśli wszystkie poprzedzające identyfikatory są sobie równe. Przykładowo: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
+11. Pierwszeństwo odnosi się do sposobu porównywania wersji między sobą podczas
+ich porządkowania. Pierwszeństwo MUSI być ustalane w rozdzieleniu wersji na
+identyfikatory major, minor, patch oraz identyfikator przedpremierowy w podanej
+kolejności (meta-dane buildu nie decydują o pierwszeństwie). Pierwszeństwo jest
+ustalane przez pierwszą różnicę wykrytą podczas porównania każdego
+z identyfikatorów od lewej do prawej: wersje major, minor, patch są zawsze
+porównywane numerycznie. Przykład: 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1. Gdy numery
+wersji major, minor i patch są równe, wydanie przedpremierowe poprzedza wersję
+standardową. Przykładowo: 1.0.0-alpha < 1.0.0. Pierwszeństwo dwóch wydań
+przedpremierowych z takimi samymi numerami wersji major, minor i patch MUSI być
+ustalane przez porównywanie każdego z identyfikatorów rozdzielonych kropkami
+w kierunku od lewej do prawej, póki nie zostanie wykryta różnica w taki sposób:
+identyfikatory złożone z samych cyfr porównywane są numerycznie,
+a identyfikatory z literami lub dywizami porównywane są leksykalnie w kolejności
+ASCII. Identyfikatory numeryczne zawsze poprzedzają identyfikatory
+nienumeryczne. Większy zbiór przedpremierowych pól poprzedza mniejszy zbiór,
+o ile wszystkie poprzedzające identyfikatory są sobie równe. Przykład:
+1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-beta.2 <
+1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
+
 
 Dlaczego warto stosować wersjonowanie semantyczne?
 --------------------------------------------------
 
-To nie jest ani nowy, ani rewolucyjny pomysł. W zasadzie, prawdopodobnie posługujesz się prawie tą samą metodą. Problem w tym, że „prawie” robi różnicę. Bez  przestrzegania formalnych zasad specyfikacji, numery wersji są nieprzydatne dla zarządzania zależnościami. Poprzez nadanie nazwy i jasnych definicji powyższym pomysłom, komunikowanie założeń z użytkownikami oprogramowania staje się łatwiejsze. Gdy założenia te są jasne i elastyczne (ale nie za bardzo elastyczne) specyfikacje zależności mogą być ustalone.
+To nie jest nowy ani rewolucyjny pomysł. W zasadzie prawdopodobnie już
+posługujesz się prawie tą samą metodą. Problem w tym, że „prawie” robi różnicę.
+Bez zgodności z jakimś rodzajem formalnej specyfikacji, numery wersji są
+całkowicie nieprzydatne przy zarządzaniu zależnościami. Poprzez nadanie nazwy
+i jasnych definicji powyższym pomysłom, łatwiejszym staje się przekazywanie
+twoich intencji użytkownikom twojego oprogramowania. Gdy te intencje są jasne,
+wreszcie da się robić elastyczne (ale nie zbyt elastyczne) specyfikacje
+zależności.
 
-Prosty przykład może udowodnić w jaki sposób wersjonowanie semantyczne może zamienić piekło zależności w relikt z przeszłości. Weźmy pod uwagę bibliotekę nazwaną „Wóz strażacki”. Wymaga ona semantycznie wersjonowanej paczki nazwanej „Drabina”. W momencie, gdy Wóz Strażacki jest już utworzony, Drabina funkcjonuje w wersji 3.1.0. Skoro Wóz Strażacki korzysta z funkcjonalności, które zostały wprowadzone po raz pierwszy w wersji 3.1.0, można spokojnie założyć, że zależność Drabiny jest większa lub równa 3.1.0, ale mniejsza niż 4.0.0. W momencie, gdy wychodzą wersje Drabiny 3.1.1 lub 3.2.0, można wypuścić je w systemie zarządzania paczkami ze świadomością, że będą one kompatybilne z istniejącym zależnym oprogramowaniem.
+Prosty przykład może udowodnić, w jaki sposób wersjonowanie semantyczne może
+zamienić piekło zależności w relikt przeszłości. Rozważmy bibliotekę nazwaną
+„Wóz strażacki”. Wymaga ona wersjonowanego semantycznie pakietu o nazwie
+„Drabina”. W czasie, gdy Wóz strażacki jest tworzony, Drabina jest w wersji
+3.1.0. Jako że Wóz strażacki korzysta z funkcjonalności, które zostały
+wprowadzone po raz pierwszy w wersji 3.1.0, możesz bezpiecznie założyć, że
+wymagana wersja Drabiny jest większa lub równa 3.1.0, ale mniejsza niż 4.0.0.
+Teraz, gdy staną się dostępne wersje Drabiny 3.1.1 lub 3.2.0, możesz puścić je
+w swoim systemie zarządzania pakietami ze świadomością, że będą one kompatybilne
+z istniejącym zależnym oprogramowaniem.
 
-Wiadomo, że jako odpowiedzialny programista chcesz mieć pewność, że wszelkie aktualizacje paczek działają tak jak powinny. W realnym świecie bywa chaotycznie;
-nie można nic z tym zrobić poza zachowaniem czujności. To, co ty możesz zrobić, to pozwolić by wersjonowanie semantyczne wspomogło cię rozsądną metodą wypuszczania i aktualizowania paczek bez tworzenia nowych wersji zależnych paczek, dzięki czemu oszczędzasz czas i pozbywasz się kłopotu.
+Jako odpowiedzialny programista musisz oczywiście zweryfikować, że każde
+aktualizacje pakietów działają jak powinny. Prawdziwy świat potrafi dać w kość;
+nic nie możemy z tym zrobić poza zachowaniem czujności. To, co ty możesz zrobić,
+to pozwolić by wersjonowanie semantyczne dostarczyło ci rozsądną metodę
+wydawania i aktualizowania pakietów bez konieczności wydawania nowych
+wersji pakietów zależnych, oszczędzającą ci czas i wysiłek.
 
-Jeśli to brzmi kusząco, wszystko, co musisz zrobić, aby korzystać z
-wersjonowania semantycznego, to zadeklarować się, że będziesz to robić i zastosowujesz się do zasad. Zamieść link do tej strony na Twoim README, aby inni poznali te zasady i aby sami mogli z nich skorzystać.
+Jeśli to wszystko brzmi zachęcająco, wszystko, co musisz zrobić, aby korzystać
+z wersjonowania semantycznego, to zadeklarować się, że będziesz to robić,
+a następnie przestrzegać zasad. Podlinkuj tę stronę w swoim README, aby inni
+znali te zasady i mogli z nich korzystać.
 
 
 Często zadawane pytania
 -----------------------
 
-### Co mam robić ze zmianami w 0.y.z w początkowej fazie rozwoju?
+### Jak powinienem zajmować się wersjami w 0.y.z początkowej fazie rozwoju?
 
-Najprostszym rozwiązaniem jest zacząć początkową fazę rozwoju od wypuszczenia 0.1.0, a następnie zwiększać wersję minor dla każdego kolejnego wydania.
+Najprościej jest zacząć swoje wydanie początkowej fazy rozwoju od 0.1.0,
+a następnie zwiększać wersję minor dla każdego kolejnego wydania.
 
-### Skąd mam wiedzieć kiedy wypuścić 1.0.0?
+### Skąd mam wiedzieć, kiedy wydać 1.0.0?
 
-Jeśli twoje oprogramowanie jest już w użyciu, powinno ono być już wersją 1.0.0. Jeśli twoje oprogramowanie posiada stałe API, na którym użytkownicy mogą polegać, oprogramowanie to powinno być 1.0.0. Jeśli zastanawiasz się nad kompatybilnością wstecz, twoje oprogramowanie prawdopodobnie powinno być już w wersji 1.0.0.
+Jeśli twoje oprogramowanie jest w użyciu w produkcji, powinno prawdopodobnie już
+być 1.0.0. Jeśli masz stabilne API, z którego zaczęli korzystać użytkownicy,
+powinieneś mieć 1.0.0. Jeśli dużo się martwisz o kompatybilność wstecz,
+powinieneś prawdopodobnie już mieć 1.0.0.
 
 ### Czy nie opóźnia to szybkiego rozwoju i szybkiej iteracji?
 
-W wersji zero Major chodzi właśnie o szybki rozwój. Jeśli zmieniasz API codziennie, twoje oprogramowanie powinno być wciąż w wersji 0.y.z albo w oddzielnej
-gałęzi rozwoju, dążąc do nowej wersji major.
+W wersji major zero chodzi o szybki rozwój. Jeśli zmieniasz API codziennie,
+powinieneś albo być wciąż w wersji 0.y.z, albo w oddzielnej gałęzi rozwoju,
+pracując nad nową wersją major.
 
-### Jeśli nawet najmniejsze niekompatybilne wstecz zmiany w publicznym API wymagają wypuszczenia nowej wersji major, czy za szybko nie dojdę do wersji 42.0.0?
+### Jeśli nawet najmniejsze niekompatybilne wstecz zmiany w publicznym API wymagają podbicia wersji major, czy bardzo szybko nie skończę na wersji 42.0.0?
 
-To pytanie dotyczy odpowiedzialnego programowania i dalekowzroczności. Niekompatybilne zmiany nie powinny być wprowadzane lekkomyślnie do oprogramowania, które posiada wiele zależnego kodu. Koszt, który trzeba ponieść, by wypuścić nową wersję może być znaczący. Konieczność wypuszczenia nowej wersji major, by wprowadzić niekompatybilne zmiany zmuszą cię do przemyślenia znaczenia zmian i ocenienia stosunku zaistniałych kosztów do możliwych korzyści.
+To jest kwestia odpowiedzialnego programowania i dalekowzroczności.
+Niekompatybilne zmiany nie powinny być wprowadzane z lekkością do
+oprogramowania, które jest zależnością w wielu miejscach. Koszt, który trzeba
+ponieść, by zaktualizować pakiet, może być znamienny. Konieczność podbijania
+wersji major przy wprowadzaniu niekompatybilnych zmian powoduje, że będziesz
+myślał przez pryzmat siły oddziaływania swoich zmian i szacował stosunek
+poniesionych kosztów do zysków.
 
-### Stworzenie dokumentacji całego publicznego API to dużo roboty!
+### Stworzenie dokumentacji całego publicznego API to zbyt dużo pracy!
 
-Do Twoich obowiązków jako profesjonalnego programisty należy poprawne opisanie oprogramowania stworzonego dla innych do użytku. Zarządzanie złożonym oprogramowaniem jest niezwykle istotnym czynnikiem utrzymania sprawności oprogramowania, a jest to trudne do zrobienia, jeśli nikt nie wie jak używać oprogramowania albo z jakich metod korzystać. Na dłuższą metę, wersjonowanie semantyczne oraz utrzymanie dobrze zdefiniowanego publicznego API skutkuje sprawnym funkcjonowaniem oprogramowania.
+Jako profesjonalny programista jesteś odpowiedzialny za prawidłową dokumentację
+oprogramowania, które jest przeznaczone do użytku przez innych. Zarządzanie
+złożonością oprogramowania jest niezwykle ważną częścią utrzymania sprawności
+projektu, a jest to trudne do zrobienia, jeśli nikt nie wie jak używać twojego
+oprogramowania albo z których metod jest bezpiecznie korzystać. Na dłuższą metę
+wersjonowanie semantyczne oraz obstawanie przy dobrze zdefiniowanym publicznym
+API pozwoli wszystkim i wszystkiemu działać płynnie.
 
 ### Co zrobić, jeśli przez przypadek wypuściłem niekompatybilną wstecz zmianę jako wersję minor?
 
