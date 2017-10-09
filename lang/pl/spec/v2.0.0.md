@@ -220,34 +220,62 @@ API pozwoli wszystkim i wszystkiemu działać płynnie.
 
 ### Co zrobić, jeśli przez przypadek wypuściłem niekompatybilną wstecz zmianę jako wersję minor?
 
-Jak tylko odkryjesz, że zaburzyłeś specyfikację semantycznego wersjonowania, napraw
-ten błąd i wypuść nową wersję minor, która niweluje błąd oraz przywraca kompatybilność z przeszłymi wersjami. Nawet w takich okolicznościach, niedopuszczalne jest modyfikowanie wypuszczonej wersji. Jeśli możesz, opisz błędną wersję i poinformuj użytkowników o problemie, aby byli świadomi, że wersja ta jest błędna.
+Jak tylko odkryjesz, że zaburzyłeś specyfikację semantycznego wersjonowania,
+napraw ten błąd i wydaj nową wersję minor, która niweluje błąd i przywraca
+wsteczną kompatybilność. Nawet w takich okolicznościach niedopuszczalne jest
+modyfikowanie wydanej wersji. Jeśli możesz, opisz błędną wersję i poinformuj
+użytkowników o problemie, aby byli świadomi, że ta wersja jest błędna.
 
-### Co zrobić, jeśli zaktualizuje własne zależności bez zmiany publicznego API?
+### Co powinienem zrobić jeśli aktualizuję własne zależności bez zmiany publicznego API?
 
-Taka aktualizacja jest uznana za kompatybilną, gdyż nie narusza publicznego API. Oprogramowanie, które opiera się na tych samych zależnościach co twoja paczka, powinno mieć własną specyfikację zależności, a jego autor powinien zauważyć jakąkolwiek sprzeczność. Ustalenie, czy zmiana jest poziomie patch lub czy jest modyfikacją na poziomie minor zależy od tego, czy zaktualizowałeś zależności w celu naprawy błędu, czy w celu wprowadzenia nowej funkcjonalności. W tym drugim przypadku, użyłbym dodatkowego kodu, co oczywiście oznacza inkrementację na poziomie minor.
+Taka aktualizacja jest uznawana za kompatybilną, gdyż nie narusza publicznego
+API. Oprogramowanie, które opiera się na tych samych zależnościach co twój
+pakiet, powinno mieć własną specyfikację zależności, a jego autor zauważy
+konflikt. Ustalenie, czy zmiana jest na poziomie patch lub czy jest modyfikacją
+na poziomie minor zależy od tego, czy zaktualizowałeś zależności w celu naprawy
+błędu, czy w celu wprowadzenia nowej funkcjonalności. Zazwyczaj spodziewałbym
+się dodatkowego kodu w tym drugim przypadku, co oczywiście oznacza zwiększenie
+wersji minor.
 
-### Co jeśli nieumyślnie zmieniłem publiczne API w taki sposób, że nie jest już kompatybilne ze zmianą numeru wersji (tj. kod nieprawidłowo wprowadza zmianę major w wydaniu patch)?
+### Co jeśli nieumyślnie zmieniłem publiczne API w taki sposób, że nie jest już zgodne ze zmianą numeru wersji (tj. kod nieprawidłowo wprowadza zmianę major w wydaniu patch)?
 
-Postępuj zgodnie z rozsądkiem. Jeśli oprogramowanie używane jest przez wielu użytkowników, dla których zmiana publicznego API do poprzednio zamierzonego stanu może być dużym uderzeniem, lepiej jest wypuścić nową wersję major, nawet jeśli problem mógłby być rozwiązany wydaniem wersji patch. Należy pamiętać, że w semantycznym wersjonowaniu chodzi przede wszystkim o przekazanie znaczenia zmiany poprzez zmianę numeru wersji. Jeśli zmiany są ważne dla użytkowników, poinformuj ich o tym poprzez numer wersji.
+Postępuj zgodnie z rozsądkiem. Jeśli oprogramowanie używane jest przez wielu
+użytkowników, dla których zmiana publicznego API do poprzednio zamierzonego
+stanu może być dużym uderzeniem, lepiej jest wypuścić nową wersję major, nawet
+jeśli problem mógłby być rozwiązany wydaniem wersji patch. Należy pamiętać, że
+w semantycznym wersjonowaniu chodzi przede wszystkim o przekazanie znaczenia
+zmiany poprzez zmianę numeru wersji. Jeśli zmiany są ważne dla użytkowników,
+poinformuj ich o tym poprzez numer wersji.
 
-### Jak poradzić sobie z deprecjacją funkcjonalności?
+### Jak powinienem radzić sobie z dezaprobowaniem funkcjonalności?
 
-Deprecjacja istniejącej funkcjonalności jest standardowym etapem programowania i często jest konieczna, by móc rozwinąć oprogramowanie. Gdy wycofujesz część publicznego API, powinieneś zrobić dwie rzeczy: (1) zaktualizować dokumentację, by użytkownicy wiedzieli, że zaistniała zmiana, (2) wypuścić nowe wydanie minor na etapie deprecjacji. Przed całkowitym wycofaniem funkcjonalności w nowym wydaniu major przynajmniej jedno wydanie minor ukazujące deprecjacje powinno być wypuszczone, aby użytkownicy mogli płynnie przejść na nowe API.
+Dezaprobowanie istniejącej funkcjonalności jest normalną częścią programowania
+i często jest konieczne, by móc rozwijać oprogramowanie. Gdy wycofujesz część
+swojego publicznego API, powinieneś zrobić dwie rzeczy: (1) zaktualizować
+dokumentację, by użytkownicy wiedzieli o tej zmianie, (2) wypuścić nowe wydanie
+minor z informacją o zdezaprobowaniu. Zanim całkowicie usuniesz funkcjonalność
+w nowym wydaniu major, powinno być co najmniej jedno wydanie minor zawierające
+zdezaprobowanie, aby użytkownicy mogli płynnie przejść na nowe API.
 
-### Czy w semver istnieje limit długości oznaczenia wersji?
+### Czy semver ma limit długości na oznaczenie wersji?
 
-Limit nie istnieje, ale należy zachować zdrowy rozsądek. Przykładowo numer długi na 255 znaków to przesada. Ponadto, różne systemy mogą narzucać swoje własne ograniczenia dotyczące długości oznakowania wersji.
+Nie, ale miej zdrowy rozsądek. Na przykład numer wersji długi na 255 znaków to
+prawdopodobnie przesada. Ponadto, konkretne systemy mogą narzucać swoje własne
+ograniczenia na rozmiar tego ciągu znaków.
 
-O twórcy
---------
 
-Autorem specyfikacji wersjonowania semantycznego jest [Tom Preston-Werner](http://tom.preston-werner.com), twórca Gravatars i współzałożyciel GitHub.
+O specyfikacji
+--------------
 
-Jeśli chcesz podzielić się opinią, możesz [otworzyć Issue na GitHub](https://github.com/mojombo/semver/issues).
+Autorem specyfikacji wersjonowania semantycznego jest
+[Tom Preston-Werner](http://tom.preston-werner.com), wynalazca Gravatara
+i współzałożyciel GitHuba.
+
+Jeśli chcesz podzielić się opinią, prosimy
+o [otworzenie zgłoszenia na GitHubie](https://github.com/mojombo/semver/issues).
 
 
 Licencja
 --------
 
-[Creative Commons - CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
+[Creative Commons – CC BY 3.0](http://creativecommons.org/licenses/by/3.0/).
