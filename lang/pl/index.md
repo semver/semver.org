@@ -260,7 +260,7 @@ zdezaprobowanie, aby użytkownicy mogli płynnie przejść na nowe API.
 ### Czy semver ma limit długości na oznaczenie wersji?
 
 Nie, ale miej zdrowy rozsądek. Na przykład numer wersji długi na 255 znaków to
-prawdopodobnie przesada. Ponadto, konkretne systemy mogą narzucać swoje własne
+prawdopodobnie przesada. Ponadto konkretne systemy mogą narzucać swoje własne
 ograniczenia na rozmiar tego ciągu znaków.
 
 
