@@ -258,7 +258,7 @@ Firetruck იყენებს ფუნქციონალს, რომე�
 
 ### ქართული თარგმანი
 
-- [Avtandil Kikabidze aka LONGMAN](https://github.com/akalongman) (autor)
+- [Avtandil Kikabidze aka LONGMAN](https://github.com/akalongman) (author)
 
 ლიცენზია
 --------
