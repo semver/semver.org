@@ -226,8 +226,6 @@ for the latter instance, in which case it's obviously a minor level increment.
 
 #### Special note for JVM or similar environments
 
-I suggest to add something like "[...] If any potential client environment allows only one version of a library be present in running system, [...] user library MUST be [...]"
-
 If any potential client environment allows only one version of a library could 
 be present in a running system, the transitive dependencies effectively become
 part of the public library interface and thus the version of the user library MUST be 
