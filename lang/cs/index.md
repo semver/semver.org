@@ -17,16 +17,17 @@ Navyšování jednotlivých čísel verzí probíhá následovně:
 2. MINOR - když se přidá funkcionalita se zachováním zpětné kompatibility
 3. PATCH - když se opravila chyba a zůstala kompatibilita
 
-Pomocí předběžných verzí a přidáváním metadat je možné upřesnit informace. Např.: 1.0.0-alfa, 1.0.1-beta+2
+Pomocí předběžných verzí a přidáváním metadat je možné upřesnit informace. Např.: `1.0.0-alfa`, `1.0.1-beta+2`
 
 Úvod
 ----
 
-Ve světě softwaru, jeho vývoje a správy existuje děsivé místo, kterému anglicky říkáme “dependency hell” (v překladu "peklo závislostí"). Čím vetší a komplexnější váš projekt je, tím je větší šance, že se na tomto místě jednou ocitnete.
+Ve světě softwaru, jeho vývoje a správy existuje děsivé místo, kterému anglicky říkáme “dependency hell” (v překladu "peklo závislostí"). Čím větší a komplexnější váš projekt je, tím je větší šance, že se na tomto místě jednou ocitnete.
 
 Když mají systémy mnoho závislostí, může se stát, že vydání nové verze je noční můrou pro obě strany. Pokud je specifikovaná závislost příliš striktní, hrozí, že zůstanete na jedné verzi (angl. "version lock") a nebudete mít možnost přejít na další verzi bez toho, abyste vydali další verze všech balíčků nebo knihoven, na kterých projekt stojí. Na druhou stranu, když je specifikovaná závislost příliš volná, přijdete na to, že váš program je kompatibilní s více verzemi než je nutné a potřebné. V pekle závislostí se nacházíte, jakmile jste vázaný určitou verzí nebo v případně, že není přesně specifikován rozsah verzí, které máte použít. Taková situace brání v bezpečném vývoji kupředu.
 
-Řešením tohoto problému je jednoduchý sled pravidel, které určují, jak budou čísla verzí přiřazována a navyšována. Tyto pravidla jsou založené (ale nikoliv omezeny) na již ověřené praxi a to ve vývoji otevřeného i uzavřeného softwaru. Pro správné fungování systému, si musíte nejdříve nadefinovat způsob, jakým se bude komunikovat s Vaší aplikací (dále API). Toto API může být nadefinované pomocí rozsáhlé dokumentace nebo zapsané přímo ve zdrojovém kódu. Nezáleží na způsobu zápisu, je důležité, aby bylo srozumitelné a snadno čitelné. Je třeba mít kompletní dokumentaci, způsob oznamovaní a čitelné rozdíly v nových verzích. Zápis verzí je ve formátu MAJOR.MINOR.PATCH. Opravy chyb, které nezměnily Vaše API, zvyšují číslo PATCH verze. Zpětně kompatibilní změny v API zvyšují hodnotu MINOR verze a rozdílné verze API, které nejsou zpětně kompatibilní, zvyšují číslo MAJOR verze.
+Řešením tohoto problému je jednoduchý sled pravidel, které určují, jak budou čísla verzí přiřazována a navyšována. Tato pravidla jsou založena (ale nikoliv omezena) na již ověřené praxi a to ve vývoji otevřeného i uzavřeného softwaru. Pro správné fungování systému, si musíte nejdříve nadefinovat způsob, jakým se bude komunikovat s Vaší aplikací (dále API). Toto API může být nadefinováno pomocí rozsáhlé dokumentace nebo zapsáno přímo ve zdrojovém kódu. Nezáleží na způsobu zápisu, je důležité, aby bylo srozumitelné a snadno čitelné. Je třeba mít kompletní dokumentaci, způsob oznamovaní a čitelné rozdíly v nových verzích. Zápis verzí je ve formátu MAJOR.MINOR.PATCH. Opravy chyb, které nezměnily Vaše API, zvyšují číslo PATCH verze. Zpětně kompatibilní změny v API zvyšují hodnotu MINOR verze a rozdílné verze API, které nejsou zpětně kompatibilní, zvyšují číslo MAJOR verze.
+
 Tímto způsobem je nastavený systém Sémantického verzování.
 
 Specifikace Sémantického verzování (SemVer)
@@ -58,9 +59,9 @@ Specifikace Sémantického verzování (SemVer)
 
 9. Předběžné verze (angl. pre-release) MOHOU být označeny přidáním pomlčky a sérií identifikátorů oddělených tečkou hned za číslo PATCH verze. Identifikátory MUSÍ obsahovat pouze ASCII alfanumerické znaky a pomlčku [0-9A-Za-z-], NESMÍ být prázdné a číselné identifikátory NESMÍ obsahovat úvodní nulu. Předběžné verze mají nižší prioritu jako související normální verze. Předběžná verze je nestabilní a nemusí splňovat požadavky a závislosti jako normální verze. Např.: 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7, 1.0.0-x.7.z.92.
 
-10. Metadata MOHOU být označené ve verzi přidáním znaku plus (+) a sérií identifikátorů oddělených tečkou hned za číslo PATCH a nebo pomocí předběžné verze. Identifikátory MUSÍ obsahovat pouze ASCII alfanumerické znaky a pomlčku [0-9A-Za-z-], NESMÍ být prázdné a číselné identifikátory NESMÍ obsahovat úvodní nulu. Metadata by NEMĚLY hrát roli při volbě priority verze. Např.: verze 1.0.0-alpha+001, 1.0.0+20130313144700, 1.0.0-beta+exp.sha.5114f85 mají všechny stejnou prioritu.
+10. Metadata MOHOU být označené ve verzi přidáním znaku plus (+) a sérií identifikátorů oddělených tečkou hned za číslo PATCH a nebo pomocí předběžné verze. Identifikátory MUSÍ obsahovat pouze ASCII alfanumerické znaky a pomlčku [0-9A-Za-z-], NESMÍ být prázdné a číselné identifikátory NESMÍ obsahovat úvodní nulu. Metadata by NEMĚLA hrát roli při volbě priority verze. Např.: verze 1.0.0-alpha+001, 1.0.0+20130313144700, 1.0.0-beta+exp.sha.5114f85 mají všechny stejnou prioritu.
 
-11. Priorita se vztahuje na to, jak jsou verze navzájem porovnávané. Priorita MUSÍ být určována rozdělením verze na MAJOR, MINOR, PATCH a identifikátory předběžných verzí - přesně v tomto pořadí (s metadaty se nepočítá). Priorita je daná prvním rozdílem při porovnání zleva doprava přičemž čísla MAJOR, MINOR a PATCH jsou vždy porovnávané jako čísla. Např.: 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1. Pokud jsou čísla MAJOR, MINOR a PATCH stejné, předběžná verze má menší prioritu, než normální. Např.: 1.0.0-alpha < 1.0.0. Priorita pro dvě předběžné verze, které se shodují v číslech MAJOR, MINOR a PATCH musí být počítaná zleva doprava od tečky oddělených identifikátorů a to do doby, dokud se nenajde rozdíl a to následujícím způsobem: (1) Identifikátory obsahující pouze číslice, jsou porovnané číselně a identifikátory s písmeny nebo pomlčkami jsou porovnávané lexikálně, zařazené podle ASCII. (2) Číselné identifikátory mají vždy nižší prioritu jak nečíslené. (3) Jsou-li všechny předchozí identifikátory v předběžné verzi stejné, tak větší množství identifikátorů značí vyšší prioritu, než s menším počtem. Např.: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
+11. Priorita se vztahuje na to, jak se verze vzájemně porovnávají. Priorita MUSÍ být určována rozdělením verze na MAJOR, MINOR, PATCH a identifikátory předběžných verzí - přesně v tomto pořadí (s metadaty se nepočítá). Priorita je daná prvním rozdílem při porovnání zleva doprava přičemž čísla MAJOR, MINOR a PATCH jsou vždy porovnávána jako čísla. Např.: 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1. Pokud jsou čísla MAJOR, MINOR a PATCH stejná, předběžná verze má menší prioritu, než normální. Např.: 1.0.0-alpha < 1.0.0. Priorita pro dvě předběžné verze, které se shodují v číslech MAJOR, MINOR a PATCH musí být počítána zleva doprava od tečky oddělených identifikátorů a to do doby, dokud se nenajde rozdíl a to následujícím způsobem: (1) Identifikátory obsahující pouze číslice, jsou porovnané číselně a identifikátory s písmeny nebo pomlčkami jsou porovnávané lexikálně, zařazené podle ASCII. (2) Číselné identifikátory mají vždy nižší prioritu jak nečíslené. (3) Jsou-li všechny předchozí identifikátory v předběžné verzi stejné, tak větší množství identifikátorů značí vyšší prioritu, než s menším počtem. Např.: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
 
 Proč používat Sémantické verzování?
 ------------------------------------
@@ -71,7 +72,7 @@ Následující příklad ilustruje, jak se díky Sémantickému verzování mů�
 
 Jako zodpovědní vývojáři určitě budete chtít kontrolovat, že všechno funguje podle Vašich předpokladů. Sématické verzování vám umožní rozumný způsob, jak vydávat a aktualizovat knihovny tak, abyste nemuseli řešit nové verze závislostí, ušetřili si čas a vyhnuli se zmatkům.
 
-Pokud vám tyto argumenty připadají rozumné, všechno co potřebujete udělat pro začátek používání Sémantického verzování je dát vědět, že to děláte, a následně dodržovali stanovená pravidla. Odkazem ze souboru README z vaší aplikace/softwaru na tyto stránky dejte ostatním vědět, jaká pravidla používáte. Přinese to užitek vám i uživatelům vašeho software nebo aplikace.
+Pokud vám tyto argumenty připadají rozumné, všechno co potřebujete udělat pro začátek používání Sémantického verzování, je dát vědět, že to děláte, a následně dodržovali stanovená pravidla. Odkazem ze souboru README z vaší aplikace/softwaru na tyto stránky dejte ostatním vědět, jaká pravidla používáte. Přinese to užitek vám i uživatelům vašeho software nebo aplikace.
 
 Často kladené otázky (FAQ)
 --------------------------
@@ -113,7 +114,8 @@ Posuďte, co je nejlepší. Jestli máte velkou skupinu uživatelů, která by b
 Označení funkcionality jako zastaralé je standardní část softwarového vývoje a většinou je to potřeba k tomu, aby šel vývoj kupředu. Když zestárne část API, měli by jste udělat dvě věci: (1) upravit dokumentaci, aby uživatelé věděli o změně, (2) vydat další MINOR verzi, která funkcionalitu “zestárne”. Předtím, než funkcionalitu kompletně odstraníte v další MAJOR verzi, měli byste vytvořit alespoň jednu MINOR verzi, která obsahuje “zestárnutí”. To umožní uživatelům hladký a snadný přechod nebo převod na nové API.
 
 ### Má Sémantické verzování nějaký limit délky označení verzí?
-Ne, nemá. Limit ASCII je 255 znaků ale to je na verzování už asi moc.
+
+Ne, nemá. Limit je 255 ASCII znaků, ale na to při běžném použití verzování nenarazíte.
 
 O specifikaci
 -------------
@@ -129,6 +131,7 @@ Pokud chcete zanechat zpětnou vazbu, prosím
 [Jakub Křižka](https://github.com/jakubkrizka) (autor),
 [Zuzana Bertová](https://www.facebook.com/suzanna.bertova) (korektor)
 [Aleš Pařízek](https://www.facebook.com/ales.parizek.1) (korektor)
+[Jan Barášek](http://baraja.cz) (korektor)
 
 Licence
 --------
