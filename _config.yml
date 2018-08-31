@@ -26,6 +26,7 @@ languages:
   fa: فارسی
   he: עברית
   ka: ქართული
+  hr: hrvatski
 
 versions:
   - 2.0.0
