@@ -12,7 +12,7 @@ En bref
 Étant donné un numéro de version MAJEUR.MINEUR.CORRECTIF, il faut incrémenter :
 
 1. le numéro de version MAJEUR quand il y a des changements non rétrocompatibles,
-1. le numéro de version MINEUR quand il y a des changements rétrocompatibles,
+1. le numéro de version MINEUR quand il y a des ajouts de fonctionnalités rétrocompatibles,
 1. le numéro de version de CORRECTIF quand il y a des corrections d’anomalies rétrocompatibles
 
 Des libellés supplémentaires peuvent être ajoutés pour les versions de pré-livraison et pour
