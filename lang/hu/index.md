@@ -215,7 +215,7 @@ a verzió problémájával kapcsolatban.
 
 ### Mit tegyek ha frissítem a saját függőségeimet a publikus API változtatása nélkül?
 
-Jól átgondolva ez kompatibilis, mert nem érinti a publikus API-t.
+Ez kompatibilisnek számít, mert nem érinti a publikus API-t.
 A szoftvernek amelyre egyértleműen fent állnak azok a függőségek amelyek a te csomagodra, 
 saját függőségi speicifikációjának kell lennie, ezért az író észrefog venni bármilyen konfliktust. 
 Annak megállapítása pedig, hogy a változtatás minor vagy major szintű, attól függ, 
