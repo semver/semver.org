@@ -195,7 +195,7 @@ vagy egy külön ágban kell hogy dolgozz a következő major verzión.
 
 Ez előrelátás és felelősségteljes fejlesztés kérdése. Inkompatibilis változtatást nem kéne könnyedén bevezetni olyan szoftverbe
 ahol ez sok kód függvénye. A javítás során felmerülő költségek jelentősek lehetnek. Kiadásra szánt major verzió növelésénél 
-végig kell gondolnod, a változtatás hatásait és kiértékelned a bennefoglalt költség/haszon arányt.
+végig kell gondolnod a változtatás hatásait és kiértékelned a bennefoglalt költség/haszon arányt.
 
 ### Túl sok munka dokumentálni az egész publikus API-t!
 
