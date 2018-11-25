@@ -188,7 +188,7 @@ tartasz a visszafelé kompatibilitástól, nagy a valószínűsége, hogy eljöt
 
 ### Nem ellenzi ez a gyors fejlesztés és a gyors iterációt?
 
-A gyors fejlesztés a zéró major verzióról szól. Ha minden nap változtatod az API-t, még a 0.y.z verziónál kell hogy tarts 
+A zéró major verzió a gyors fejlesztésről a szól. Ha minden nap változtatod az API-t, még a 0.y.z verziónál kell hogy tarts 
 vagy egy külön ágban kell hogy dolgozz a következő major verzión.
 
 ### Ha a legkissebb visszafelé inkompatibilis változtatás is, a publikus API-ban egy major verzió növelést kíván, nem fogok túl gyorsan a 42.0.0 verziónál kikötni?
