@@ -231,7 +231,7 @@ Ha a változások fontosak a felhasználóid számára, jelezd a verziószámokk
 
 ### Hogyan kezeljem az elavult funkcionalitást?
 
-Teljesen normális esemény a szoftverfejlesztésben, hogy egyes funkcionalitások elavulnak, sőtt mi több, gyakran elvárt a szoftver fejlődésének érdekében. Amikor lecserélsz egy elavult részt a publikus API-dban, két dolgot kell tenned: (1) frissítsd a dokumentációt, hogy a felhasználók tudjanak a változásról, (2) eszközölj egy új minor kiadást az elavult résszel. Mielőtt teljesen eltörölnéd a funkcionalitást egy új, major kiadásban, kell lennie egy minor kiadásnak ami még tartalmazza az elavult részt, hogy a felhasználók zökkenőmentesen áttudjanak állni az új API-ra. 
+Teljesen normális esemény a szoftverfejlesztésben, hogy egyes funkcionalitások elavulnak, sőt mi több, gyakran elvárt a szoftver fejlődésének érdekében. Amikor lecserélsz egy elavult részt a publikus API-dban, két dolgot kell tenned: (1) frissítsd a dokumentációt, hogy a felhasználók tudjanak a változásról, (2) eszközölj egy új minor kiadást az elavult résszel. Mielőtt teljesen eltörölnéd a funkcionalitást egy új, major kiadásban, kell lennie egy minor kiadásnak ami még tartalmazza az elavult részt, hogy a felhasználók zökkenőmentesen át tudjanak állni az új API-ra. 
 
 ### Vannak-e megszorítások a verzió string hosszára nézve a semver szerint?
 
