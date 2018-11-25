@@ -145,7 +145,7 @@ rendszert alkalmazol. A gond az az, hogy a 'hasonló' az nem elég. Egy hivatalo
 előíráshoz való szigorú ragaszkodás nélkül a verziószámok gyakorlatilag
 teljesen hasztalanná válnak a függőségek számontartásában. Másrészről viszont,
 megfelelő előírások és szabályok közlése mellett jelentősen egyszerűbb
-kommunikálni a szándékaidat a szofvered felhasználóinak. Ha ezek a törekvések
+kommunikálni a szándékaidat a szoftvered felhasználóinak. Ha ezek a törekvések
 egyértelműek, rugalmasak (de nem túl rugalmasak), a függőségi előírások
 megfogalmazhatóvá válnak.
 
