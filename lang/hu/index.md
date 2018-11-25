@@ -217,7 +217,7 @@ a verzió problémájával kapcsolatban.
 
 Ez kompatibilisnek számít, mert nem érinti a publikus API-t.
 Azon szoftvernek, amelyre egyértleműen ugyanazok a függőségek állnak fent mint a te csomagodra, 
-saját függőségi speicifikációjának kell lennie, ezért az író észrefog venni bármilyen konfliktust. 
+saját függőségi speicifikációval kell rendelkeznie, ezért az író észre fog venni bármilyen konfliktust. 
 Annak megállapítása pedig, hogy a változtatás minor vagy major szintű, attól függ, 
 hogy a függőségek módosítása bug javítása, avagy új funkció bevezetéséből eredendő. Az utóbbi esetben 
 általában kód bővítésre lehet számítani, melynél egyértelmű, hogy minor szintű inkrementálásról beszélünk.
