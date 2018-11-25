@@ -166,7 +166,7 @@ szoftverfeljesztésed és kiadásodat szabályozza a Szemantikus Verziószámoz�
 úgy hogy az attól függő csomagok minimálisan legyenek érintve, időt és erőfeszítést
 spórolva.
 
-Ha ez kívánatosnak hangzódik, mindössze annyit kell tenned, hogy kijelentsd,
+Ha ez kívánatosnak hangzik, mindössze annyit kell tenned, hogy kijelentsd,
 hogy használod a Szemantikus Verziószámozást és kövesd a szabályait. Linkeld 
 ezt a honlapot a csomagod README-jébe, hogy mások is megismerjék a szabályokat és
 részesülhessenek az előnyeiben.
