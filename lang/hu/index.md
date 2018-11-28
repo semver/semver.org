@@ -8,6 +8,7 @@ Szemantikus Verziószámozás 2.0.0
 
 Összefoglalás
 -------
+
 Adott egy verziószám, MAJOR.MINOR.PATCH, növeljük:
 
 1. a MAJOR verzió számot ha a változtatásaink eredményeként elveszítjük a
@@ -172,8 +173,8 @@ ezt a honlapot a csomagod README-jébe, hogy mások is megismerjék a szabályok
 részesülhessenek az előnyeiben.
 
 
-Gyakori kérdések
----
+GY.I.K.
+-------
 
 ### Hogyan döntsek a revízióról a 0.y.z kezdeti fejlesztési fázisban?
 
