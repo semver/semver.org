@@ -16,10 +16,16 @@ h1, h2, h3 { text-align: center; font-weight: normal; }
  h1 { font-size: 43px; margin: 1.1em 0 .7em; }
  h2 { margin: 2.1em 0 .7em; font-size: 24px; }
  h3 { text-align: left; font-size: 15.8px; margin-bottom: .6em; }
+ html[dir="rtl"] h3 { text-align: right; }
 
 a { color: #009; }
 a:hover, a:focus { color: #000; }
 ol { padding-left: 1.5em; }
+html[dir="rtl"] ol {
+    padding-left: 0;
+    padding-right: 1.5em;
+}
+
 p { margin: 0 0 1em; }
 
 @media print {
@@ -34,7 +40,7 @@ ol.nav {
   background-color: #333;
   list-style-type: none;
   margin: 0;
-  padding: 10px;
+  padding: 10px !important;
   overflow: hidden;
 }
 
@@ -72,8 +78,21 @@ ol.lang li a {
   text-decoration: none;
 }
 
+html[dir="rtl"] #spec a.anchor-link {
+   background-position-x: right;
+   margin-left: 0;
+   margin-right: -1em;
+   padding-right: 0;
+   padding-left: 0.5em;
+}
+
 #spec h1 a.anchor-link {
   margin-left: -0.6em;
+}
+
+ html[dir="rtl"] #spec h1 a.anchor-link {
+  margin-right: -0.6em;
+  margin-left: 0;
 }
 
 #spec h3 a.anchor-link {
@@ -81,9 +100,19 @@ ol.lang li a {
   margin-top: 0.4em;
 }
 
+ html[dir="rtl"] #spec h3 a.anchor-link {
+  margin-left: 0;
+  margin-right: -1.5em;
+}
+
 #spec li a.anchor-link {
   margin-top: 0.4em;
   margin-left: -3em;
+}
+
+ html[dir="rtl"] #spec li a.anchor-link {
+  margin-left: 0;
+  margin-right: -3em;
 }
 
 #spec [id] {
