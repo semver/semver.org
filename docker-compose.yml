@@ -1,0 +1,12 @@
+# Copyright (C) 2019 Sebastian Pipping <sebastian@pipping.org>
+# Licensed under the MIT license
+
+version: '3'
+
+services:
+  semver-org:
+    build: .
+    ports:
+      - "127.0.0.1:4000:4000"
+    volumes:
+      - .:/app/

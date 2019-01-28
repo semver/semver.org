@@ -22,3 +22,13 @@ This is the site at http://semver.org/ that describes the Semantic Versioning sp
    bundle exec jekyll serve
    ```
 4. Open http://localhost:4000.
+
+## Running locally with docker-compose
+
+If you have [docker-compose](https://docs.docker.com/compose/) installed:
+
+1. Build Docker image and start container instance:
+   ```
+   docker-compose up
+   ```
+2. Open http://localhost:4000.
