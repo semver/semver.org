@@ -43,7 +43,7 @@ current_version: 2.0.0
 # Default author, for when none is set
 author: Tom Preston-Werner
 
-gems:
+plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-redirect-from
