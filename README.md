@@ -1,6 +1,6 @@
 # Semver.org
 
-This is the site at http://semver.org/ that describes the Semantic Versioning specification.
+This is the site at https://semver.org/ that describes the Semantic Versioning specification.
 
 ## Adding a translation
 
