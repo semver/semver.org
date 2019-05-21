@@ -6,19 +6,18 @@ language: uk
 Семантичне версіонування 2.0.0
 ==============================
 
-Summary
+Загальне
 -------
 
-Given a version number MAJOR.MINOR.PATCH, increment the:
+У випадку, коли версія має вигляд МАЖОРНА.МІНОРНА.ПАТЧ, слід збільшувати:
 
-1. MAJOR version when you make incompatible API changes,
-1. MINOR version when you add functionality in a backwards-compatible
-   manner, and
-1. PATCH version when you make backwards-compatible bug fixes.
+1. МАЖОРНУ версію, якщо зроблені зміни API, що несумісні з попередньою версією
+2. МІНОРНУ версію, якщо доданий новий функціонал, що є сумісним з попередніми версіями
+3. ПАТЧ версію, якщо зроблені невеликі зміни або фікси, що не впливають на підтримку попередніх версій
 
-Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
+Додаткові позначки для передрелізних збірок дозволені, як розширення до формату МАЖОРНА.МІНОРНА.ПАТЧ.
 
-Introduction
+Вступ
 ------------
 
 In the world of software management there exists a dreaded place called
