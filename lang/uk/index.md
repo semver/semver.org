@@ -34,81 +34,30 @@ language: uk
 Специфікація Семантичного Версіонування (SemVer)
 ------------------------------------------
 
-The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
-"SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
-interpreted as described in [RFC 2119](http://tools.ietf.org/html/rfc2119).
+Ключові слова "ПОВИНЕН" (MUST), "НЕ ПОВИНЕН" (MUST NOT), "ОБОВ'ЯЗКОВО" (REQUIRED), "МУСИТЬ" (SHALL), "НЕ МУСИТЬ" (SHALL NOT), "БАЖАНО" (SHOULD),
+"НЕ БАЖАНО" (SHOULD NOT), "РЕКОМЕНДОВАНО" (RECOMMENDED), "МОЖЕ" (MAY), та "ОПЦІОНАЛЬНО" (OPTIONAL), що використані в цьому документі, повинні бути інтерпретовані за [RFC 2119](http://tools.ietf.org/html/rfc2119).
 
-1. Software using Semantic Versioning MUST declare a public API. This API
-could be declared in the code itself or exist strictly in documentation.
-However it is done, it should be precise and comprehensive.
+1. Програмне забезпечення, що використовує Семантичне Версіонування, ПОВИННЕ оголосити публічний API. Цей API може бути оголошений самим кодом або існувати в документації. Незалежно від типу оголошення, воно повинно бути точним і всеосяжним.
 
-1. A normal version number MUST take the form X.Y.Z where X, Y, and Z are
-non-negative integers, and MUST NOT contain leading zeroes. X is the
-major version, Y is the minor version, and Z is the patch version.
-Each element MUST increase numerically. For instance: 1.9.0 -> 1.10.0 -> 1.11.0.
+2. Нормальний номер версії ПОВИНЕН прийняти форму X.Y.Z, де X, Y і Z є невід'ємними цілими числами, і НЕ ПОВИННІ мати додаткові нулі на початку. X ― мажорна версія, Y ― мінорна версія, а Z ― патч-версія. Кожен елемент повинен збільшуватися чисельно. Наприклад: 1.9.0 -> 1.10.0 -> 1.11.0.
 
-1. Once a versioned package has been released, the contents of that version
-MUST NOT be modified. Any modifications MUST be released as a new version.
+3. Після випуску пакета конкретної версії, він НЕ ПОВИНЕН змінюватись. Будь-які зміни ПОВИННІ бути випущені, як нова версія.
 
-1. Major version zero (0.y.z) is for initial development. Anything may change
-at any time. The public API should not be considered stable.
+4. Нульова мажорна версія (0.y.z) призначена для початкової розробки. Все МОЖЕ змінюватись в будь-який час. Публічний API такої версії не слід вважати стабільним.
 
-1. Version 1.0.0 defines the public API. The way in which the version number
-is incremented after this release is dependent on this public API and how it
-changes.
+5. Версія 1.0.0 визначає відкритий API. Збільшення номерів версій відштовхується від цього API і його змін.
 
-1. Patch version Z (x.y.Z | x > 0) MUST be incremented if only backwards
-compatible bug fixes are introduced. A bug fix is defined as an internal
-change that fixes incorrect behavior.
+6. Патч-версія Z (x.y.Z | x > 0) ПОВИННА бути збільшена, якщо введені лише зворотньосумісні виправлення помилок. Виправлена ​​помилка визначається, як внутрішня зміна, що виправляє неправильну поведінку.
 
-1. Minor version Y (x.Y.z | x > 0) MUST be incremented if new, backwards
-compatible functionality is introduced to the public API. It MUST be
-incremented if any public API functionality is marked as deprecated. It MAY be
-incremented if substantial new functionality or improvements are introduced
-within the private code. It MAY include patch level changes. Patch version
-MUST be reset to 0 when minor version is incremented.
+7. Мінорна версія Y (x.Y.z | x > 0) ПОВИННА бути збільшена, якщо до публічного API додана нова зворотньосумісна функціональність. Вона ПОВИННА бути збільшена, якщо будь-яка функціональність публічного API позначена, як застаріла (deprecated). Вона МОЖЕ збільшуватися, якщо в приватному коді вводяться істотні зміни функціональних можливостей або вдосконалення. Вона МОЖЕ включати зміни подібні до патчів. Патч-версія ПОВИННА бути скинута до 0 при збільшенні мінорної версії.
 
-1. Major version X (X.y.z | X > 0) MUST be incremented if any backwards
-incompatible changes are introduced to the public API. It MAY include minor
-and patch level changes. Patch and minor version MUST be reset to 0 when major
-version is incremented.
+8. Основна версія X (X.y.z | X > 0) ПОВИННА бути збільшена, якщо будь-які зворотньонесумісні зміни вводяться до відкритого API. Вона може включати незначні зміни, та патчі. Патч і мінорна версії ПОВИННІ бути скинуті до 0 при збільшенні мажорної версії.
 
-1. A pre-release version MAY be denoted by appending a hyphen and a
-series of dot separated identifiers immediately following the patch
-version. Identifiers MUST comprise only ASCII alphanumerics and hyphen
-[0-9A-Za-z-]. Identifiers MUST NOT be empty. Numeric identifiers MUST
-NOT include leading zeroes. Pre-release versions have a lower
-precedence than the associated normal version. A pre-release version
-indicates that the version is unstable and might not satisfy the
-intended compatibility requirements as denoted by its associated
-normal version. Examples: 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7,
-1.0.0-x.7.z.92.
+9. Передрелізна версія МОЖЕ бути позначена додаванням дефісу і серії ідентифікаторів, розділених крапками, відразу після патч-версії. Ідентифікатори ПОВИННІ включати лише алфавітно-цифрові символи ASCII та дефіс [0-9A-Za-z-]. Ідентифікатори НЕ ПОВИННІ бути порожніми. Числові ідентифікатори НЕ ПОВИННІ мати додаткові нулі на початку. Передрелізні версії мають меншу значимість, аніж відповідна нормальна версія. Передрелізна версія вказує, що версія нестабільна і може не задовольняти передбачуваним вимогам щодо сумісності, позначеним відповідною версією. Приклади: 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7, 1.0.0-x.7.z.92.
 
-1. Build metadata MAY be denoted by appending a plus sign and a series of dot
-separated identifiers immediately following the patch or pre-release version.
-Identifiers MUST comprise only ASCII alphanumerics and hyphen [0-9A-Za-z-].
-Identifiers MUST NOT be empty. Build metadata SHOULD be ignored when determining
-version precedence. Thus two versions that differ only in the build metadata,
-have the same precedence. Examples: 1.0.0-alpha+001, 1.0.0+20130313144700,
-1.0.0-beta+exp.sha.5114f85.
+10. Метадані збірки МОЖНА позначати додаванням знака плюс і серії ідентифікаторів, розділених крапками відразу після патч або передрелізної версії. Ідентифікатори ПОВИННІ включати лише алфавітно-цифрові символи ASCII та дефіс [0-9A-Za-z-]. Ідентифікатори НЕ ПОВИННІ бути порожніми. Метадані збірки ПОВИННІ ігноруватися при визначенні пріоритету версії. Таким чином, дві версії, які відрізняються тільки в метаданими, мають однаковий пріоритет. Приклади: 1.0.0-alpha+001, 1.0.0+20130313144700, 1.0.0-beta+exp.sha.5114f85.
 
-1. Precedence refers to how versions are compared to each other when ordered.
-Precedence MUST be calculated by separating the version into major, minor, patch
-and pre-release identifiers in that order (Build metadata does not figure
-into precedence). Precedence is determined by the first difference when
-comparing each of these identifiers from left to right as follows: Major, minor,
-and patch versions are always compared numerically. Example: 1.0.0 < 2.0.0 <
-2.1.0 < 2.1.1. When major, minor, and patch are equal, a pre-release version has
-lower precedence than a normal version. Example: 1.0.0-alpha < 1.0.0. Precedence
-for two pre-release versions with the same major, minor, and patch version MUST
-be determined by comparing each dot separated identifier from left to right
-until a difference is found as follows: identifiers consisting of only digits
-are compared numerically and identifiers with letters or hyphens are compared
-lexically in ASCII sort order. Numeric identifiers always have lower precedence
-than non-numeric identifiers. A larger set of pre-release fields has a higher
-precedence than a smaller set, if all of the preceding identifiers are equal.
-Example: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta <
-1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
+11. Поняття значимості відноситься до того, як версії порівнюються один з одним при упорядкуванні. Значимість ПОВИННА обчислюватись шляхом поділу версії на мажорні, мінорні, патч та передрелізні ідентифікатори в такому порядку (метадані збірки не мають пріоритету). Значимість визначається першою відмінністю при порівнянні кожного з цих ідентифікаторів зліва направо наступним чином: мажорні, мінорні і патч-версії завжди порівнюються чисельно. Приклад: 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1. Коли мажорна, мінорна і патч-версія рівні, передрелізна версія має меншу значимість, аніж звичайна версія. Приклад: 1.0.0-alpha < 1.0.0. Значимість для двох передрелізні версій з однаковою версією мажорною, мінорною і патч-версією ПОВИННІ визначатися шляхом порівняння кожного окремого ідентифікатора зліва направо, поки не буде знайдена різниця: ідентифікатори, що складаються тільки з цифр, порівнюються чисельно і ідентифікатори з літерами або дефіси порівнюються лексично в порядку сортування ASCII. Числові ідентифікатори завжди мають меншу значимість, ніж нечислові ідентифікатори. Більший набір попередніх полів має більш високий пріоритет, ніж менший набір, якщо всі попередні ідентифікатори рівні. Приклад: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
 
 Why Use Semantic Versioning?
 ----------------------------
