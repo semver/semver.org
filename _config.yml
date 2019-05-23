@@ -4,12 +4,12 @@ descriptions: A simple set of rules and requirements that dictate how version nu
 # Should be in the form of
 # <machine readable key>: <human readable label>
 languages:
-  en: english
+  en: English
   fr: français
   ru: pyccкий
   es: español
   it: italiano
-  id: indonesia
+  id: Bahasa Indonesia
   pt-BR: português brasileiro
   zh-TW: 繁體中文
   zh-CN: 简体中文
@@ -20,7 +20,7 @@ languages:
   ja: 日本語
   tr: Türkçe
   cs: česky
-  de: deutsch
+  de: Deutsch
   sv: svenska
   pl: polski
   fa: فارسی
