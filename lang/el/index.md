@@ -7,7 +7,7 @@ language: el
 =========================
 
 Περίληψη
--------
+--------
 
 Δοσμένης μίας έκδοσης ΜΕΙΖΩΝ.ΕΛΑΣΣΩΝ.ΔΙΟΡΘΩΤΙΚΗ (MAJOR.MINOR.PATCH), αυξάνεται η:
 
@@ -19,7 +19,7 @@ language: el
 
 
 Εισαγωγή
-------------
+--------
 
 In the world of software management there exists a dread place called
 "dependency hell." The bigger your system grows and the more packages you
