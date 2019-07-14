@@ -21,36 +21,13 @@ language: el
 Εισαγωγή
 --------
 
-In the world of software management there exists a dread place called
-"dependency hell." The bigger your system grows and the more packages you
-integrate into your software, the more likely you are to find yourself, one
-day, in this pit of despair.
+Στον κόσμο της ανάπτυξης λογισμικού, υπάρχει μια φρικτή κατάσταση που ονομάζεται «κόλαση εξαρτήσεων» («dependency hell»). Όσο μεγαλύτερο γίνεται ένα σύστημα και όσο περισσότερα πακέτα ενσωματώνονται στο λογισμικό, τόσο πιο πιθανό είναι ότι το σύστημα θα βρεθεί σε αυτή την κατάσταση.
 
-In systems with many dependencies, releasing new package versions can quickly
-become a nightmare. If the dependency specifications are too tight, you are in
-danger of version lock (the inability to upgrade a package without having to
-release new versions of every dependent package). If dependencies are
-specified too loosely, you will inevitably be bitten by version promiscuity
-(assuming compatibility with more future versions than is reasonable).
-Dependency hell is where you are when version lock and/or version promiscuity
-prevent you from easily and safely moving your project forward.
+Σε συστήματα με πολλές εξαρτήσεις, η δημοσίευση εκδόσεων μπορεί γρήγορα να γίνει εφιάλτης. Εάν οι προδιαγραφές εξαρτήσεων του πακέτου είναι πολύ αυστηρές, υπάρχει ο κίνδυνος «κλειδώματος έκδοσης» («version lock»), δηλαδή αδυναμίας ενημέρωσης ενός πακέτου χωρίς να χρειάζεται η ενημέρωση όλων των εξαρτώμενων πακέτων του. Ωστόσο, εάν οι εξαρτήσεις του πακέτου είναι πολύ χαλαρές, τότε είναι πιθανή η «ασυδοσία έκδοσης» («version promiscuity»), όπου το πακέτο προσποιείται ότι είναι συμβατό με περισσότερες μελλοντικές εκδόσεις των εξαρτημένων πακέτων του, από ότι είναι. Η «κόλαση εξαρτήσεων» αναφέρεται στην περίπτωση όπου είτε το «κλείδωμα έκδοσης» είτε η «ασυδοσία έκδοσης», ή και τα δύο, επηρεάζουν τη διαδικασία ανάπτυξης του έργου.
 
-As a solution to this problem, I propose a simple set of rules and
-requirements that dictate how version numbers are assigned and incremented.
-These rules are based on but not necessarily limited to pre-existing
-widespread common practices in use in both closed and open-source software.
-For this system to work, you first need to declare a public API. This may
-consist of documentation or be enforced by the code itself. Regardless, it is
-important that this API be clear and precise. Once you identify your public
-API, you communicate changes to it with specific increments to your version
-number. Consider a version format of X.Y.Z (Major.Minor.Patch). Bug fixes not
-affecting the API increment the patch version, backwards compatible API
-additions/changes increment the minor version, and backwards incompatible API
-changes increment the major version.
+Ως λύση στο πρόβλημα, προτείνω ένα απλό σύνολο κανόνων που καθορίζει τον τρόπο επιλογής και αύξησης των αριθμών έκδοσης. Οι κανόνες αυτοί βασίζονται στις υπάρχουσες και ευρέως χρησιμοποιούμενες μεθόδους, οι οποίες χρησιμοποιούνται για την ανάπτυξη λογισμικού κλειστού και ανοιχτού κώδικα, χωρίς να περιορίζονται όμως σε αυτό. Για να χρησιμοποιήσετε αυτό το σύστημα, πρέπει πρώτα να ορίσετε ένα δημόσιο API. Αυτό μπορεί είτε να υπάρχει με τη μορφή τεκμηρίωσης, είτε να επιβάλλεται από τον ίδιο τον κώδικα. Ανεξάρτητα από το πώς εφαρμόζεται το API, είναι σημαντικό να είναι σαφές και συνοπτικό. Μόλις δημιουργηθεί το δημόσιο API, οι αλλαγές σε αυτό ανακοινώνονται μέσω συγκεκριμένων αλλαγών στον αριθμό έκδοσης. Θεωρούμε μια μορφή του αριθμού έκδοσης τύπου X.Y.Z - ΜΕΙΖΩΝ.ΕΛΑΣΣΩΝ.ΔΙΟΡΘΩΤΙΚΗ (MAJOR.MINOR.PATCH). Διορθώσεις σφαλμάτων που δεν επηρεάζουν το API αυξάνουν τη διορθωτική (patch) έκδοση, συμβατές προς τα πίσω προσθήκες ή αλλαγές αυξάνουν την ελάσσωνα έκδοση και ασύμβατες προς τα πίσω αλλαγές αυξάνουν τη μείζωνα έκδοση.
 
-I call this system "Semantic Versioning." Under this scheme, version numbers
-and the way they change convey meaning about the underlying code and what has
-been modified from one version to the next.
+Ονομάζω αυτό το σύστημα «Σημασιολογική Έκδοση». Οι αριθμοί έκδοσης που έχουν αυξηθεί σύμφωνα με αυτό το σχήμα παρέχουν άμεση πληροφορία σχετικά με τον αντίστοιχο κώδικα και τί έχει αλλάξει από τη μια έκδοση στην άλλη.
 
 
 Ορισμός Σημασιολογικής Έκδοσης (SemVer)
