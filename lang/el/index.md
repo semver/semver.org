@@ -9,10 +9,10 @@ language: el
 Περίληψη
 --------
 
-Δοσμένης μίας έκδοσης ΜΕΙΖΩΝ.ΕΛΑΣΣΩΝ.ΔΙΟΡΘΩΤΙΚΗ (MAJOR.MINOR.PATCH), αυξάνεται η:
+Δοσμένης μίας έκδοσης ΚΥΡΙΑ.ΔΕΥΤΕΡΕΥΟΥΣΑ.ΔΙΟΡΘΩΤΙΚΗ (MAJOR.MINOR.PATCH), αυξάνεται η:
 
-1. ΜΕΙΖΩΝ (MAJOR) έκδοση, όταν γίνονται ασύμβατες αλλαγές προς τα κάτω στη Διασύνδεση Προγραμματισμού Εφαρμογών (Application Programming Interface ή API)
-2. ΕΛΑΣΣΩΝ (MINOR) έκδοση, όταν προστίθονται λειτουργίες συμβατές προς τα κάτω
+1. ΚΥΡΙΑ (MAJOR) έκδοση, όταν γίνονται ασύμβατες αλλαγές προς τα κάτω στη Διασύνδεση Προγραμματισμού Εφαρμογών (Application Programming Interface ή API)
+2. ΔΕΥΤΕΡΕΥΟΥΣΑ (MINOR) έκδοση, όταν προστίθονται λειτουργίες συμβατές προς τα κάτω
 3. ΔΙΟΡΘΩΤΙΚΗ (PATCH) έκδοση, όταν γίνονται επιδιορθώσεις συμβατές προς τα κάτω
 
 Υπάρχουν επιπρόσθετες ετικέτες προ-δημοσίευσης και μεταδεδομένων εκτελέσιμου προγράμματος (build metadata) ως επεκτάσεις της μορφής MAJOR.MINOR.PATCH.
@@ -21,93 +21,42 @@ language: el
 Εισαγωγή
 --------
 
-Στον κόσμο της ανάπτυξης λογισμικού, υπάρχει μια φρικτή κατάσταση που ονομάζεται «κόλαση εξαρτήσεων» («dependency hell»). Όσο μεγαλύτερο γίνεται ένα σύστημα και όσο περισσότερα πακέτα ενσωματώνονται στο λογισμικό, τόσο πιο πιθανό είναι ότι το σύστημα θα βρεθεί σε αυτή την κατάσταση.
+Στον κόσμο της ανάπτυξης λογισμικού, υπάρχει μία φρικτή κατάσταση που ονομάζεται «κόλαση εξαρτήσεων» («dependency hell»). Όσο μεγαλύτερο γίνεται ένα σύστημα και όσο περισσότερα πακέτα ενσωματώνονται στο λογισμικό, τόσο πιο πιθανό είναι ότι το σύστημα θα βρεθεί σε αυτή την κατάσταση.
 
 Σε συστήματα με πολλές εξαρτήσεις, η δημοσίευση εκδόσεων μπορεί γρήγορα να γίνει εφιάλτης. Εάν οι προδιαγραφές εξαρτήσεων του πακέτου είναι πολύ αυστηρές, υπάρχει ο κίνδυνος «κλειδώματος έκδοσης» («version lock»), δηλαδή αδυναμίας ενημέρωσης ενός πακέτου χωρίς να χρειάζεται η ενημέρωση όλων των εξαρτώμενων πακέτων του. Ωστόσο, εάν οι εξαρτήσεις του πακέτου είναι πολύ χαλαρές, τότε είναι πιθανή η «ασυδοσία έκδοσης» («version promiscuity»), όπου το πακέτο προσποιείται ότι είναι συμβατό με περισσότερες μελλοντικές εκδόσεις των εξαρτημένων πακέτων του, από ότι είναι. Η «κόλαση εξαρτήσεων» αναφέρεται στην περίπτωση όπου είτε το «κλείδωμα έκδοσης» είτε η «ασυδοσία έκδοσης», ή και τα δύο, επηρεάζουν τη διαδικασία ανάπτυξης του έργου.
 
-Ως λύση στο πρόβλημα, προτείνω ένα απλό σύνολο κανόνων που καθορίζει τον τρόπο επιλογής και αύξησης των αριθμών έκδοσης. Οι κανόνες αυτοί βασίζονται στις υπάρχουσες και ευρέως χρησιμοποιούμενες μεθόδους, οι οποίες χρησιμοποιούνται για την ανάπτυξη λογισμικού κλειστού και ανοιχτού κώδικα, χωρίς να περιορίζονται όμως σε αυτό. Για να χρησιμοποιήσετε αυτό το σύστημα, πρέπει πρώτα να ορίσετε ένα δημόσιο API. Αυτό μπορεί είτε να υπάρχει με τη μορφή τεκμηρίωσης, είτε να επιβάλλεται από τον ίδιο τον κώδικα. Ανεξάρτητα από το πώς εφαρμόζεται το API, είναι σημαντικό να είναι σαφές και συνοπτικό. Μόλις δημιουργηθεί το δημόσιο API, οι αλλαγές σε αυτό ανακοινώνονται μέσω συγκεκριμένων αλλαγών στον αριθμό έκδοσης. Θεωρούμε μια μορφή του αριθμού έκδοσης τύπου X.Y.Z - ΜΕΙΖΩΝ.ΕΛΑΣΣΩΝ.ΔΙΟΡΘΩΤΙΚΗ (MAJOR.MINOR.PATCH). Διορθώσεις σφαλμάτων που δεν επηρεάζουν το API αυξάνουν τη διορθωτική (patch) έκδοση, συμβατές προς τα πίσω προσθήκες ή αλλαγές αυξάνουν την ελάσσωνα έκδοση και ασύμβατες προς τα πίσω αλλαγές αυξάνουν τη μείζωνα έκδοση.
+Ως λύση στο πρόβλημα, προτείνω ένα απλό σύνολο κανόνων που καθορίζει τον τρόπο επιλογής και αύξησης των αριθμών έκδοσης. Οι κανόνες αυτοί βασίζονται στις υπάρχουσες και ευρέως χρησιμοποιούμενες μεθόδους, οι οποίες χρησιμοποιούνται για την ανάπτυξη λογισμικού κλειστού και ανοιχτού κώδικα, χωρίς να περιορίζονται όμως σε αυτό. Για να χρησιμοποιήσετε αυτό το σύστημα, πρέπει πρώτα να ορίσετε ένα δημόσιο API. Αυτό μπορεί είτε να υπάρχει με τη μορφή τεκμηρίωσης, είτε να επιβάλλεται από τον ίδιο τον κώδικα. Ανεξάρτητα από το πώς εφαρμόζεται το API, είναι σημαντικό να είναι σαφές και συνοπτικό. Μόλις δημιουργηθεί το δημόσιο API, οι αλλαγές σε αυτό ανακοινώνονται μέσω συγκεκριμένων αλλαγών στον αριθμό έκδοσης. Θεωρούμε μία μορφή του αριθμού έκδοσης τύπου X.Y.Z - ΚΥΡΙΑ.ΔΕΥΤΕΡΕΥΟΥΣΑ.ΔΙΟΡΘΩΤΙΚΗ (MAJOR.MINOR.PATCH). Διορθώσεις σφαλμάτων που δεν επηρεάζουν το API αυξάνουν τη διορθωτική (patch) έκδοση, συμβατές προς τα πίσω προσθήκες ή αλλαγές αυξάνουν τη δευτερεύουσα έκδοση και ασύμβατες προς τα πίσω αλλαγές αυξάνουν την κύρια έκδοση.
 
-Ονομάζω αυτό το σύστημα «Σημασιολογική Έκδοση». Οι αριθμοί έκδοσης που έχουν αυξηθεί σύμφωνα με αυτό το σχήμα παρέχουν άμεση πληροφορία σχετικά με τον αντίστοιχο κώδικα και τί έχει αλλάξει από τη μια έκδοση στην άλλη.
+Ονομάζω αυτό το σύστημα «Σημασιολογική Έκδοση». Οι αριθμοί έκδοσης που έχουν αυξηθεί σύμφωνα με αυτό το σχήμα παρέχουν άμεση πληροφορία σχετικά με τον αντίστοιχο κώδικα και τί έχει αλλάξει από τη μία έκδοση στην άλλη.
 
 
 Ορισμός Σημασιολογικής Έκδοσης (SemVer)
-------------------------------------------
+---------------------------------------
 
-The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
-"SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
-interpreted as described in [RFC 2119](http://tools.ietf.org/html/rfc2119).
+Οι λέξεις κλειδιά «ΠΡΕΠΕΙ» («MUST»), «ΔΕΝ ΠΡΕΠΕΙ» («MUST ΝΟΤ»), «ΑΠΑΙΤΕΙΤΑΙ» («REQUIRED»), «ΘΑ ΜΠΟΡΟΥΣΕ» («SHALL»), «ΔΕ ΘΑ ΜΠΟΡΟΥΣΕ» («SHALL NOT»), «ΘΑ ΗΤΑΝ ΚΑΛΟ» («SHOULD»), «ΔΕ ΘΑ ΗΤΑΝ ΚΑΛΟ» («SHOULD NOT»), «ΠΡΟΤΕΙΝΕΤΑΙ» («RECOMMENDED»), «ΜΠΟΡΕΙ» («MAY»), και «ΠΡΟΑΙΡΕΤΙΚΟ» («OPTIONAL») σε αυτό το κείμενο θα πρέπει να ερμηνεύονται όπως περιγράφονται στη δημοσίευση [RFC 2119](http://tools.ietf.org/html/rfc2119).
 
-1. Software using Semantic Versioning MUST declare a public API. This API
-could be declared in the code itself or exist strictly in documentation.
-However it is done, it should be precise and comprehensive.
+1. Το λογισμικό που χρησιμοποιεί σημασιολογική έκδοση ΠΡΕΠΕΙ να ορίσει ένα δημόσιο API. Το API μπορεί είτε να δηλωθεί στον ίδιο τον κώδικα, είτε να συμπεριληφθεί σε μία τεκμηρίωση. Ωστόσο, όπως και να εφαρμοστεί, είναι σημαντικό να είναι ακριβές και λεπτομερές.
 
-1. A normal version number MUST take the form X.Y.Z where X, Y, and Z are
-non-negative integers, and MUST NOT contain leading zeroes. X is the
-major version, Y is the minor version, and Z is the patch version.
-Each element MUST increase numerically. For instance: 1.9.0 -> 1.10.0 -> 1.11.0.
+2. Μία κανονική έκδοση ΠΡΕΠΕΙ να έχει τη μορφή X.Y.Z, όπου τα Χ, Υ και Ζ είναι θετικοί ακέραιοι αριθμοί και ΔΕΝ ΠΡΕΠΕΙ να έχουν μηδενικά στην αρχή. Το X είναι η κύρια έκδοση, το Y η δευτερεύουσα και το Ζ η διορθωτική. Το κάθε στοιχείο ΠΡΕΠΕΙ να αυξάνεται αριθμητικά. Για παράδειγμα, από την έκδοση 1.9.0 στην 1.10.0 στην 1.11.0.
 
-1. Once a versioned package has been released, the contents of that version
-MUST NOT be modified. Any modifications MUST be released as a new version.
+3. Από τη στιγμή που μία έκδοση δημοσιευτεί, τα περιεχόμενα του πακέτου ΔΕΝ ΠΡΕΠΕΙ να τροποποιηθούν. Η οποιαδήποτε τροποποίηση ΠΡΕΠΕΙ να δημοσιευτεί ως νέα έκδοση.
 
-1. Major version zero (0.y.z) is for initial development. Anything may change
-at any time. The public API should not be considered stable.
+4. Η κύρια έκδοση μηδέν (0.y.z) είναι για την αρχική ανάπτυξη. Το ο,τιδήποτε μπορεί να αλλάξει ανά πάσα στιγμή. Το δημόσιο API ΔΕ ΘΑ ΗΤΑΝ ΚΑΛΟ να θεωρείται αξιόπιστο σε αυτή την περίπτωση.
 
-1. Version 1.0.0 defines the public API. The way in which the version number
-is incremented after this release is dependent on this public API and how it
-changes.
+5. Η έκδοση 1.0.0 περιγράφει το δημόσιο API. Ο τρόπος με τον οποίο αυξάνεται η έκδοση μετά από αυτήν τη δημοσίευση εξαρτάται από το API και το πώς αλλάζει.
 
-1. Patch version Z (x.y.Z | x > 0) MUST be incremented if only backwards
-compatible bug fixes are introduced. A bug fix is defined as an internal
-change that fixes incorrect behavior.
+6. Η διορθωτική έκδοση Z (x.y.Z | x > 0) ΠΡΕΠΕΙ να αυξάνεται μόνο όταν γίνονται συμβατές προς τα πίσω διορθώσεις σφαλμάτων. Η διόρθωση σφάλματος ορίζεται ως μία εσωτερική
+αλλαγή που διορθώνει μία λανθασμένη συμπεριφορά.
 
-1. Minor version Y (x.Y.z | x > 0) MUST be incremented if new, backwards
-compatible functionality is introduced to the public API. It MUST be
-incremented if any public API functionality is marked as deprecated. It MAY be
-incremented if substantial new functionality or improvements are introduced
-within the private code. It MAY include patch level changes. Patch version
-MUST be reset to 0 when minor version is incremented.
+7. Η δευτερεύουσα έκδοση Y (x.Y.z | x > 0) ΠΡΕΠΕΙ να αυξάνεται εάν νέα, συμβατή προς τα κάτω, λειτουργικότητα εισάγεται στο API. ΠΡΕΠΕΙ να αυξηθεί εάν οποιαδήποτε λειτουργικότητα του API έχει επισημανθεί ως απορριπτέα. Η δευτερεύουσα έκδοση ΜΠΟΡΕΙ να αυξηθεί, εάν εισάγονται εκτεταμένες αλλαγές στον εσωτερικό κώδικα. Αν αυξηθεί ο αριθμός της δευτερεύουσας έκδοσης, η διορθωτική έκδοση ΠΡΕΠΕΙ να επαναφερθεί στο μηδέν.
 
-1. Major version X (X.y.z | X > 0) MUST be incremented if any backwards
-incompatible changes are introduced to the public API. It MAY include minor
-and patch level changes. Patch and minor version MUST be reset to 0 when major
-version is incremented.
+8. Η κύρια έκδοση X (X.y.z | X > 0) ΠΡΕΠΕΙ να αυξηθεί εάν λάβουν χώρα αλλαγές ασύμβατες προς τα κάτω στο API. ΜΠΟΡΕΙ να συμπεριλαμβάνει δευτερεύουσες και διορθωτικές αλλαγές. Η δευτερεύουσα και η διορθωτική έκδοση ΠΡΕΠΕΙ να επαναφέρονται στο μηδέν όταν αυξάνεται η κύρια έκδοση.
 
-1. A pre-release version MAY be denoted by appending a hyphen and a
-series of dot separated identifiers immediately following the patch
-version. Identifiers MUST comprise only ASCII alphanumerics and hyphen
-[0-9A-Za-z-]. Identifiers MUST NOT be empty. Numeric identifiers MUST
-NOT include leading zeroes. Pre-release versions have a lower
-precedence than the associated normal version. A pre-release version
-indicates that the version is unstable and might not satisfy the
-intended compatibility requirements as denoted by its associated
-normal version. Examples: 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7,
-1.0.0-x.7.z.92.
+9. Μία προ-δημοσιευμένη έκδοση ΜΠΟΡΕΙ να αναγνωριστεί προσθέτοντας στη διορθωτική έκδοση μία παύλα και μία σειρά διακριτικών αναγνωριστικών που χωρίζονται με τελείες. Τα αναγνωριστικά ΠΡΕΠΕΙ να αποτελούνται μόνο από ASCII αλφαριθμητικά και παύλες [0-9A-Za-z-]. Τα αναγνωριστικά ΔΕΝ ΠΡΕΠΕΙ να είναι κενά. Τα αριθμητικά αναγνωριστικά ΔΕΝ ΠΡΕΠΕΙ να έχουν μηδενικά στην αρχή. Η προ-δημοσιευμένες εκδόσεις έχουν χαμηλότερη προτεραιότητα από τη σχετική κανονική έκδοση. Μία προ-δημοσιευμένη έκδοση δείχνει ότι η έκδοση είναι αναξιόπιστη και μπορεί να μην ικανοποιεί τις προβλεπόμενες απαιτήσεις συμβατότητας, όπως αυτές υποδεικνύονται από τις σχετικές απαιτήσεις της κανονικής έκδοσης. Παραδείγματα: 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7, 1.0.0-x.7.z.92.
 
-1. Build metadata MAY be denoted by appending a plus sign and a series of dot
-separated identifiers immediately following the patch or pre-release version.
-Identifiers MUST comprise only ASCII alphanumerics and hyphen [0-9A-Za-z-].
-Identifiers MUST NOT be empty. Build metadata SHOULD be ignored when determining
-version precedence. Thus two versions that differ only in the build metadata,
-have the same precedence. Examples: 1.0.0-alpha+001, 1.0.0+20130313144700,
-1.0.0-beta+exp.sha.5114f85.
+10. Τα μεταδεδομένα εκτελέσιμου προγράμματος ΜΠΟΡΟΥΝ να αναγνωριστούν προσθέτοντας στη διορθωτική έκδοση το σύμβολο του συν και μία σειρά διακριτικών αναγνωριστικών που χωρίζονται με τελείες. Τα αναγνωριστικά ΠΡΕΠΕΙ να αποτελούνται μόνο από ASCII αλφαριθμητικά και παύλες [0-9A-Za-z-]. Τα αναγνωριστικά ΔΕΝ ΠΡΕΠΕΙ να είναι κενά. Τα μεταδεδομένα ΘΑ ΗΤΑΝ ΚΑΛΟ να αγνοούνται, όταν καθορίζεται η προτεραιότητα εκδόσεων. Οπότε, δυο εκδόσεις που διαφέρουν μόνο στα μεταδεδομένα έχουν την ίδια προτεραιότητα. Παραδείγματα: 1.0.0-alpha+001, 1.0.0+20130313144700, 1.0.0-beta+exp.sha.5114f85.
 
-1. Precedence refers to how versions are compared to each other when ordered.
-Precedence MUST be calculated by separating the version into major, minor, patch
-and pre-release identifiers in that order (Build metadata does not figure
-into precedence). Precedence is determined by the first difference when
-comparing each of these identifiers from left to right as follows: Major, minor,
-and patch versions are always compared numerically. Example: 1.0.0 < 2.0.0 <
-2.1.0 < 2.1.1. When major, minor, and patch are equal, a pre-release version has
-lower precedence than a normal version. Example: 1.0.0-alpha < 1.0.0. Precedence
-for two pre-release versions with the same major, minor, and patch version MUST
-be determined by comparing each dot separated identifier from left to right
-until a difference is found as follows: identifiers consisting of only digits
-are compared numerically and identifiers with letters or hyphens are compared
-lexically in ASCII sort order. Numeric identifiers always have lower precedence
-than non-numeric identifiers. A larger set of pre-release fields has a higher
-precedence than a smaller set, if all of the preceding identifiers are equal.
-Example: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta <
-1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
+11. Η προτεραιότητα αναφέρεται στο πώς οι εκδόσεις συγκρίνονται μεταξύ τους κατά την ταξινόμηση. Η προτεραιότητα ΠΡΕΠΕΙ να υπολογίζεται χωρίζοντας την έκδοση σύμφωνα με τα αναγνωριστικά της κύριας, δευτερεύουσας, διορθωτικής και προ-δημοσιευμένης έκδοσης κατά αυτήν τη σειρά. Τα μεταδεδομένα δεν συμπεριλαμβάνονται στην προτεραιότητα. Η προτεραιότητα καθορίζεται συγκρίνοντας την πρώτη διαφορά κατά τη σύγκριση από αριστερά προς τα δεξία ως εξής: η κύρια, δευτερεύουσα και διορθωτική έκδοση συγκρίνονται αριθμητικά. Παράδειγμα: 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1. Όταν η κύρια, δευτερεύουσα και διορθωτική έκδοση είναι ίδιες, τότε η προ-δημοσιευμένη έκδοση έχει χαμηλότερη προτεραιότητα από μία κανονική έκδοση. Παράδειγμα: 1.0.0-alpha < 1.0.0. Η προτεραιότητα μεταξύ δυο προ-δημοσιευμένων εκδόσεων με ίδια κύρια, δευτερεύουσα και διορθωτική έκδοση ΠΡΕΠΕΙ να προσδιορίζεται συγκρίνοντας κάθε αναγνωριστικό χωρισμένο με τελεία από αριστερά προς τα δεξιά, μέχρι να βρεθεί μία διαφορά ως εξής: τα αναγνωριστικά που αποτελούνται μόνο από ψηφία συγκρίνονται αριθμητικά και τα αναγνωριστικά που αποτελούνται από γράμματα και παύλες συγκρίνονται αλφαβητικά σε σειρά ταξινόμησης ASCII. Τα αριθμητικά αναγνωριστικά πάντα έχουν χαμηλότερη προτεραιότητα από τα μη-αριθμητικά. Μία μεγάλη σειρά αναγνωριστικών προ-δημοσιευμένης έκδοσης έχει υψηλότερη προτεραιότητα από μία μικρότερη σειρά, αν όλα τα προγούμενα αναγνωριστικά είναι ίδια. Παράδειγμα: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
 
 
 Γιατί να χρησιμοποιήσει κάποιος τη Σημασιολογική Έκδοση;
