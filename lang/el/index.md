@@ -1,6 +1,7 @@
 ---
 title: Σημασιολογική Έκδοση 2.0.0
 language: el
+author: Dimitris Damilos
 ---
 
 Σημασιολογική Έκδοση 2.0.0
