@@ -252,14 +252,14 @@ the string.
 
 
 Σχετικά
------
+-------
 
-Οι προδιαγραφές της Σημασιολογικής Έκδοσης συντάσσονται από τον [Τομ Πρέστον-Βέρνερ](http://tom.preston-werner.com), δημιουργό των Gravatars και συνιδρυτή του GitHub.
+Οι προδιαγραφές της Σημασιολογικής Έκδοσης συντάσσονται από τον [Τομ Πρέστον-Βέρνερ](http://tom.preston-werner.com), ο οποίος είναι δημιουργός των Gravatars και συνιδρυτής του GitHub.
 
 Αν θέλετε να αφήσετε κάποιο σχόλιο, παρακαλούμε να ξεκινήσετε ένα [καινούριο θέμα (Issue) στο GitHub](https://github.com/mojombo/semver/issues).
 
 
 Άδεια
--------
+-----
 
 [Creative Commons - CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
