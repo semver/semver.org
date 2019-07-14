@@ -59,7 +59,7 @@ language: el
 
 
 Γιατί να χρησιμοποιήσει κάποιος τη Σημασιολογική Έκδοση;
-----------------------------
+--------------------------------------------------------
 
 This is not a new or revolutionary idea. In fact, you probably do something
 close to this already. The problem is that "close" isn't good enough. Without
@@ -93,7 +93,7 @@ them.
 
 
 Συχνές Ερωτήσεις
----
+----------------
 
 ### How should I deal with revisions in the 0.y.z initial development phase?
 
