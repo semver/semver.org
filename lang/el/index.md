@@ -184,6 +184,10 @@ the string.
 
 Αν θέλετε να αφήσετε κάποιο σχόλιο, παρακαλούμε να ξεκινήσετε ένα [καινούριο θέμα (Issue) στο GitHub](https://github.com/mojombo/semver/issues).
 
+### Ελληνική μετάφραση
+
+[Δημήτρης Δαμήλος](https://www.linkedin.com/in/dimitrisdamilos/) (σύνταξη)
+
 
 Άδεια
 -----
