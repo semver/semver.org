@@ -9,14 +9,13 @@ language: el
 Περίληψη
 -------
 
-Given a version number MAJOR.MINOR.PATCH, increment the:
+Δοσμένης μίας έκδοσης ΜΕΙΖΩΝ.ΕΛΑΣΣΩΝ.ΔΙΟΡΘΩΤΙΚΗ (MAJOR.MINOR.PATCH), αυξάνεται η:
 
-1. MAJOR version when you make incompatible API changes,
-1. MINOR version when you add functionality in a backwards-compatible
-   manner, and
-1. PATCH version when you make backwards-compatible bug fixes.
+1. ΜΕΙΖΩΝΑ (MAJOR) έκδοση, όταν γίνονται ασύμβατες αλλαγές προς τα κάτω στη Διασύνδεση Προγραμματισμού Εφαρμογών (Application Programming Interface ή API)
+2. ΕΛΑΣΣΩΝΑ (MINOR) έκδοση, όταν προστίθονται λειτουργίες συμβατές προς τα κάτω
+3. ΔΙΟΡΘΩΤΙΚΗ (PATCH) έκδοση, όταν γίνονται επιδιορθώσεις συμβατές προς τα κάτω
 
-Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
+Υπάρχουν επιπρόσθετες ετικέτες προ-δημοσίευσης και μεταδεδομένων εκτελέσιμου προγράμματος (build metadata) ως επεκτάσεις της μορφής MAJOR.MINOR.PATCH.
 
 
 Εισαγωγή
