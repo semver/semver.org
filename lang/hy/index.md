@@ -368,3 +368,18 @@ ECMA Script֊ի (JavaScript), PCRE֊ի (Perl համատեղելի ռեգուլյ
 ```
 ^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$
 ```
+
+Հեղինակ
+-------
+
+Սեմանտիկ Տարբերակման սպեցիֆիկացիայի հեղինակն է
+[Թոմ Պրեստոն-Վարները](http://tom.preston-werner.com) (Gravatar֊ի հիմնադիր և
+GitHub֊ի համահիմնադիր)։
+
+Եթե դուք ցանկանում եք որևէ մեկնաբանություն թողնել, խնդրում ենք
+[GitHub֊ում հարց (issue) բացել](https://github.com/semver/semver/issues)։
+
+Լիցենզիա
+--------
+
+[Creative Commons - CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
