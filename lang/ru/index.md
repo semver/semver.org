@@ -129,7 +129,7 @@ X.Y.Z (мажорная, минорная, патч). Баг-фиксы, не в
     1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11
     < 1.0.0-rc.1 < 1.0.0.
 
-## Backus–Naur Form Grammar for Valid SemVer Versions
+## Грамматика формы Бэкуса-Наура для валидных версий SemVer
 
      <valid semver> ::= <version core>
                      | <version core> "-" <pre-release>

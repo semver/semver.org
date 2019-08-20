@@ -61,7 +61,7 @@ RFC 2119.
 1. Програмне забезпечення, що використовує Семантичне Версіонування, ПОВИННЕ
    оголосити публічний API. Цей API може бути оголошений безпосередньо в коді,
    або ж існувати лише у вигляді документації. Незалежно від типу оголошення,
-   воно повинне бути точним і всебічним.
+   воно ПОВИННЕ бути точним і всебічним.
 
 2. Правильний номер версії ПОВИНЕН мати форму X.Y.Z, де X, Y і Z є невід'ємними
    цілими числами, і НЕ ПОВИННІ мати нулі на початку. X ― мажорна версія, Y ―
@@ -72,7 +72,7 @@ RFC 2119.
    зміни ПОВИННІ бути випущені, як нова версія.
 
 4. Нульова мажорна версія (0.y.z) призначена для початкової розробки. Будь-що
-   МОЖЕ змінюватись в будь-який час. Публічний API такої версії не слід вважати
+   МОЖЕ змінюватись в будь-який час. Публічний API такої версії НЕ БАЖАНО вважати
    стабільним.
 
 5. Версія 1.0.0 визначає публічний API. Спосіб, яким збільшуються номери версій
@@ -134,6 +134,72 @@ RFC 2119.
     попередні ідентифікатори збігаються. Приклад: 1.0.0-alpha < 1.0.0-alpha.1 <
     1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 <
     1.0.0.
+
+## Граматика форми Backus-Naur для валідних версій SemVer
+
+     <valid semver> ::= <version core>
+                     | <version core> "-" <pre-release>
+                     | <version core> "+" <build>
+                     | <version core> "-" <pre-release> "+" <build>
+
+     <version core> ::= <major> "." <minor> "." <patch>
+
+     <major> ::= <numeric identifier>
+
+     <minor> ::= <numeric identifier>
+
+     <patch> ::= <numeric identifier>
+
+     <pre-release> ::= <dot-separated pre-release identifiers>
+
+     <dot-separated pre-release identifiers> ::= <pre-release identifier>
+                                              | <pre-release identifier> "." <dot-separated pre-release identifiers>
+
+     <build> ::= <dot-separated build identifiers>
+
+     <dot-separated build identifiers> ::= <build identifier>
+                                        | <build identifier> "." <dot-separated build identifiers>
+
+     <pre-release identifier> ::= <alphanumeric identifier>
+                               | <numeric identifier>
+
+     <build identifier> ::= <alphanumeric identifier>
+                         | <digits>
+
+     <alphanumeric identifier> ::= <non-digit>
+                                | <non-digit> <identifier characters>
+                                | <identifier characters> <non-digit>
+                                | <identifier characters> <non-digit> <identifier characters>
+
+     <numeric identifier> ::= "0"
+                           | <positive digit>
+                           | <positive digit> <digits>
+
+     <identifier characters> ::= <identifier character>
+                              | <identifier character> <identifier characters>
+
+     <identifier character> ::= <digit>
+                             | <non-digit>
+
+     <non-digit> ::= <letter>
+                  | "-"
+
+     <digits> ::= <digit>
+               | <digit> <digits>
+
+     <digit> ::= "0"
+              | <positive digit>
+
+     <positive digit> ::= "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+
+     <letter> ::= "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J"
+               | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T"
+               | "U" | "V" | "W" | "X" | "Y" | "Z" | "a" | "b" | "c" | "d"
+               | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n"
+               | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x"
+               | "y" | "z"
+
+
 
 ## Навіщо використовувати Семантичне Версіонування?
 
@@ -240,20 +306,50 @@ version < 4.0.0). Тепер, коли Ladder версії 3.1.1 і 3.2.0 ста
 функціонал, що буде видалений, щоб користувачі могли плавно переходити до нового
 API.
 
-### Чи має semver обмеження на розмір рядка версії?
+### Чи має SemVer обмеження на розмір рядка версії?
 
 Ні, але будьте розсудливими. Рядок версії з 255 символів ― це вже, можливо,
 забагато. Крім того, конкретні системи можуть накладати свої власні обмеження на
 розмір рядка.
 
+### Чи "v1.2.3" є семантичною версією?
+
+Ні, "v1.2.3" не є семантичною версією. Однак префіксація смислової версії
+з "v" ― це поширений спосіб (в англійській мові) вказати, що це номер версії.
+Скорочення "версії" як "v" часто зустрічається у контролі версій. Приклад:
+`git tag v1.2.3 -m "Release version 1.2.3"`, у цьому випадку "v1.2.3" ― це тег
+назва та семантична версія ― "1.2.3".
+
+### Чи є регулярний вираз (RegEx) для валідації SemVer?
+
+Є два. Один із названими групами для тих систем, які їх підтримують
+(PCRE [Perl, регулярні вирази, сумісні з Perl, тобто Perl, PHP і R], Python
+і Go).
+
+Дивіться: <https://regex101.com/r/Ly7O1x/3/>
+
+```
+^(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?P<patch>0|[1-9]\d*)(?:-(?P<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$
+```
+
+І одна з нумерованими групами (де cg1 = major, cg2 = minor,
+cg3 = patch, cg4 = prerelease and cg5 = buildmetadata), сумісна з ECMA (JavaScript),
+PCRE (сумісні регулярні вирази Perl, тобто Perl, PHP і R), Python і Go.
+
+Дивіться: <https://regex101.com/r/vkijKf/1/>
+
+```
+^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$
+```
+
 ## Про проект
 
 Автором Специфікації Семантичного Версіонування є
-[Том Престон-Вернер](http://tom.preston-werner.com), засновник Gravatars та
+[Том Престон-Вернер](http://tom.preston-werner.com), засновник Gravatar та
 співзасновник GitHub.
 
 Якщо ви бажаєте залишити відгук,
-[відкрийте issue на GitHub](https://github.com/mojombo/semver/issues).
+[відкрийте issue на GitHub](https://github.com/semver/semver/issues).
 
 ## Ліцензія
 
