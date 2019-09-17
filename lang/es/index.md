@@ -1,106 +1,217 @@
 ---
-title: Versionado Semántico 2.0.0-rc.2
+title: Versionado Semántico 2.0.0
 language: es
 ---
 
-Versionado Semántico 2.0.0-rc.2 
-===============================
+Versionado Semántico 2.0.0
+==============================
+
+Resumen
+-------
+
+Dado un número de versión MAYOR.MENOR.PARCHE, se incrementa:
+
+1. la versión MAYOR cuando realizas un cambio incompatible en el API,
+2. la versión MENOR cuando añades funcionalidad que compatible con versiones anteriores, y
+3. la versión PARCHE cuando reparas errores compatibles con versiones anteriores.
+
+Hay disponibles etiquetas para prelanzamiento y metadata de compilación como extensiones al formato MAYOR.MENOR.PARCHE.
+
+Introducción
+------------
+
+En el mundo de la administración de software existe un temido lugar llamado "Infierno de Dependencias". Mientras más grande tu sistema crede y más paquetes integras dentro de tu software, más probable se hace que un día te encuentres en este pozo de desesperación.
+
+En sistemas con muchas dependencias, lanzar nuevos versiones de los paquetes pued convertirse en una pesadilla. Si las especificaciones de la dependencias son muy estrictas, estarás en peligro de una Versión Bloqueada (la inhabilidad de actualizar un paquete sin tener que lanzar una nueva versión de cada otro paquete dependiente). Si las dependencias son especificadas de forma muy relajada, inevitablemente serás mordido por Versión Promiscua (asumir la compatibilidad con una próximas versiones más allá de lo razonable). El Infierno de Dependencias es donde estás cuando una Versión Bloqueada y/o Versión Promiscua previenen que muevas tu proyecto adelante de forma fácil y segura.
+
+Como solución a este problema, propuse un conjunto simple de reglas y requerimientos que digan cómo los números de l versión son asignados e incrementados. Estas reglas están basadas en, pero no necesariamente limitadas, a prácticas preexistentes generalizadas en uso tanto en software cerrado como de código abierto. Para que este sistema funciona, primero debes declarar un API público. Este puede consistir en documentación o puede ser impuesto por el código mismo. Independientemente de lo anterior, es importante que este API sea claro y preciso. Una vez identifiques tu API público, debes comunicar los cambios realizados a éste con incrementos específicos a tu número de versión. Considera un formato de versión X.Y.Z (Major.Menor.Parche). Las correcciones de errores que no afectan el API incrementan la versión parche, adiciones o sustracciones compatibles con versiones anteriores incrementan la versión menor, y cambios en el API incompatibles con versiones anteriores incrementan la versión mayor.
+
+Llamo a este sistema "Versionado Semántico". Bajo este esquema, los números de versión y la forma en la que cambian transmiten el sentido del código y lo que ha sido modificado de una versión a la otra.
+
+Especificación del Versionado Semántico (SemVer)
+------------------------------------------------
+
+Las palabras clave "DEBE", "NO DEBE", "OBLIGATORIO", "DEBERÁ", "NO DEBERÁ", "DEBERÍA", "NO DEBERÍA", "RECOMENDADO", "PUEDE" y "OPCIONAL" en este documento serán interpretadas como se describe en [RFC 2119-es](https://www.rfc-es.org/rfc/rfc2119-es.txt).
+
+1. El Software que usa Versionado Semántico DEBE declarar un API público. Este API puede ser declarado en el propio código o debe existir estrictamente en la documentación. Sin importar como sea realizado, este DEBERÍA ser preciso y comprehensivo.
+
+2. Un número de versión normal DEBE tener la forma de X.Y.Z donde X, Y y Z son números enteros no negativos, y NO DEBE ser precedido de ceros. X es la versión mayor, Y es la versión menor, y Z es la versión parche. Cada elemento DEBE incrementarse numéricamente. Por ejemplo: 1.9.0 -> 1.10.0 -> 1.11.0
+
+3. Una vez el paquete versionado ha sido publicado, el contenido de esa versión NO DEBE ser modificado. Cualquier modificación DEBE ser publicada como una nueva versión.
+
+4. Una versión mayor en cero (0.y.z) se considera como desarrollo inicial. Cualquier cosa PUEDE cambiar en cualquier momento. El API público NO DEBERÍA ser considerado estable.
+
+5. La versión 1.0.0 define el API público. La manera en que cada número de versión es incrementado después de esta publicación dependerá de su API público y cómo cambia.
+
+6. La versión parche Z (x.y.Z | x > 0) DEBE ser incrementado si solamente se introducen correcciones de errores compatibles con versiones anteriores. Una corrección de error se define como un cambio interno que corrige un comportamiento incorrecto.
+
+7. La versión menor Y (x.Y.z | x > 0) DEBE ser incrementado si se introduce funcionalidad nueva y compatible con la versión anterior del API público. Este DEBE ser incrementado si se introduce cualquier funcionalidad del API público o mejora es al código privado. Este PUEDE incluir cambios a nivel de parches. La versión parche DEBE reiniciarse a 0 cuando una versión menor se incrementa.
+
+8. La versión mayor (X.y.z | X > 0) DEBE ser incrementada solamente si se introducen cambios incompatibles con la versión anterior del API público. Este PUEDE incluir cambios de nivel menor y parches. Versiones parche y menores DEBEN ser reiniciadas a 0 cuando una versión mayor es incrementada.
+
+9. Una versión de prelanzamiento PUEDE ser denotada agregando un guión y una serie de puntos separados por identificadores, inmediatamente seguida de la versión parche. Los identificadores DEBEN ser compuestos de sólo caracteres alfanuméricos ASCII y guión ([0-9A-Za-z-]). Los identificadores NO DEBEN estar vacíos. Identificadores numéricos NO DEBEN ser precedidos de cero. Versiones de prelanzamiento tienen una precedencia inferior que una versión normal. Una versión de prelanzamiento indica que esa versión no es estable y puede no satisfacer los requerimientos de compatibilidad destinados como se denota en la versión normal asociada. Por ejemplo: 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7, 1.0.0-x.7.z.92.
+
+10. Metadatos de compilación PUEDEN ser denotados agregando el signo más y una serie de identificadores separados por puntos, inmediatamente seguido de la versión parche o prelanzamiento.  Los identificadores DEBEN ser compuestos de sólo caracteres alfanuméricos ASCII y guión [0-9A-Za-z-]. Los identificadores NO DEBEN estar vacíos. Identificadores numéricos NO DEBEN ser precedidos de cero. Los metadatos de compilación DEBEN ser ignorados cuando se determina la precedencia de la versión. Por lo tanto, dos versiones que difieren solamente en los metadatos de compilación tienen la misma precedencia. Por ejemplo: 1.0.0-alpha+001, 1.0.0+20130313144700, 1.0.0-beta+exp.sha.5114f85.
+
+11. La precedencia se refiere a cómo las versiones se comparan entre ellas cuando se ordenan. La precedencia DEBE ser calculada separando los identificadores de la versión en mayor, menor, parche y prelanzamiento (dejando de lado los metadatos de compilación). La precedencia es determinada por la primera diferencia al comparar cada uno de los identificadores desde la izquierda hasta la derecha como se indica: mayor, menor, parche son siempre comparadas numéricamente. Por ejemplo: 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1. Cuando mayor, menor y parche son iguales, la versión de prelanzamiento tiene menor precedencia que la versión normal. Por ejemplo: 1.0.0-alpha < 1.0.0. La precedencia para dos versiones de prelanzamiento con la misma versión mayor, menor y parche DEBE ser determinada comparando cada identificador separado por punto, de izquierda a derecha, hasta que una diferencia sea encontrada como se indica: identificadores compuestos por solamente números son comparados numéricamente y los identificadores con letras o guiones son comparados léxicamente en orden ASCII. Identificadores numéricos siempre tienen menor precedencia que identificadores no numéricos. Un gran conjunto de campos de prelanzamiento tiene mayor precedencia que un conjunto pequeño,  si todos los identificadores anteriores son iguales. Por ejemplo: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
+
+Forma Gramatical Backus–Naur para Versiones Válidas SemVer
+----------------------------------------------------------
+
+    <semver válido> ::= <versión núcleo>
+                      | <versión núcleo> "-" <prelanzamiento>
+                      | <versión núcleo> "+" <compilación>
+                      | <versión núcleo> "-" <prelanzamiento> "+" <compilación>
+
+    <versión núcleo> ::= <major> "." <menor> "." <parche>
+
+    <major> ::= <identificador numérico>
+
+    <menor> ::= <identificador numérico>
+
+    <parche> ::= <identificador numérico>
+
+    <prelanzamiento> ::= <identificadores prelanzamiento separados-por-puntos>
+
+    <identificadores prelanzamiento separados-por-puntos> ::= <identificador prelanzamiento>
+                                                            | <identificador prelanzamiento> "." <identificadores prelanzamiento separados-por-puntos>
+
+    <compilación> ::= <identificadores compilación separados-por-puntos>
+
+    <identificadores compilación separados-por-puntos> ::= <identificador compilación>
+                                                         | <identificador compilación> "." <identificadores compilación separados-por-puntos>
+
+    <identificador prelanzamiento> ::= <identificador alfanumérico>
+                                     | <identificador numérico>
+
+    <identificador compilación> ::= <identificador alfanumérico>
+                                  | <dígitos>
+
+    <identificador alfanumérico> ::= <no-dígito>
+                                   | <no-dígito> <caracteres identificadores>
+                                   | <caracteres identificadores> <no-dígito>
+                                   | <caracteres identificadores> <no-dígito> <caracteres identificadores>
+
+    <identificador numérico> ::= "0"
+                               | <dígito positivo>
+                               | <dígito positivo> <dígitos>
+
+    <caracteres identificadores> ::= <carácter identificador>
+                                   | <carácter identificador> <caracteres identificadores>
+
+    <identificador caracter> ::= <dígito>
+                               | <no-dígito>
+
+    <no-dígito> ::= <letra>
+                  | "-"
+
+    <dígitos> ::= <dígito>
+                | <dígito> <dígitos>
+
+    <dígito> ::= "0"
+               | <dígito positivo>
+
+    <dígito positivo> ::= "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+
+    <letra> ::= "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J"
+              | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T"
+              | "U" | "V" | "W" | "X" | "Y" | "Z" | "a" | "b" | "c" | "d"
+              | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n"
+              | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x"
+              | "y" | "z"
 
 
-En el mundo de la gestión de software existe el temor de caer en algún momento en el llamado “infierno de las dependencias”. Mientras más grande crece tu sistema y mientras más paquetes integras en tu software, más probable es que te encuentres, un día, en este pozo de la desesperación.
+Porqué usar Versionado Semántico
+---------------------------------
 
-En sistemas con muchas dependencias, publicar nuevas versiones de un paquete puede transformarse rápidamente en una pesadilla. Si las especificaciones de dependencia son muy estrictas está el peligro del bloqueo de versiones (la imposibilidad de actualizar un paquete sin tener que actualizar todos los que dependen de este). Si las dependencias se especifican de manera muy amplia, inevitablemente caerás en promiscuidad de versiones (asumir más compatibilidad con versiones futuras de lo razonable). El infierno de las dependencias es donde te encuentras cuando el bloqueo de versiones o la promiscuidad de versiones te impiden avanzar en tu proyecto de manera fácil y segura.
+Esto no es una idea nueva o revolucionaria. De hecho, probablemente ya tengas algo parecido a ésto. El problema es que "parecido" no es lo suficientemente bueno. Sin el cumplimiento de alguna especie de especificación formal, los números de versión son esencialmente inútiles para el manejo de dependencias. Dándole un nombre y una definición clara a las ideas anteriores, se hace fácil comunicar tus intenciones a los usuarios de tu software. Una vez estas intenciones son claras y flexibles (pero no tanto) las especificaciones de dependencia finalmente se pueden generar.
 
-Como solución a este problema, propongo un set simple de reglas y requerimientos que dictan cómo asignar y cómo aumentar los números de versión. Para que este sistema funcione, tienes que declarar primero un API pública. Esto puede consistir en documentación o ser explicitado en el código mismo. De cualquier forma, es importante que esta API sea clara y precisa. Una vez que identificaste tu API pública, comunicas cambios a ella con aumentos específicos al número de versión. Considera un formato de versión del tipo X.Y.Z (Major.Minor.Patch) Los arreglos de bugs que no cambian el API incrementan el patch, los cambios y adiciones que no rompen la compatibilidad de las dependencias anteriores incrementan el minor, y los cambios que rompen la compatibilidad incrementan el major.
+Un simple ejemplo va a demostrar como el Versionado Semántico puede hacer el infierno de dependencias una cosa del pasado. Considera una librería llamada "Camión de bomberos". Este requiere un paquete versionado semánticamente llamado "Escalera". Al mismo tiempo que el "Camión de bomberos" es creado, "Escalera" está en su versión 3.1.0. Dado que "Camión de bomberos" usa una funcionalidad que fue introducida en 3.1.0, puedes especificar con seguridad la dependencia "Escalera" igual o mayor a 3.1.0 pero menor a 4.0.0. Ahora, cuando la versión "Escalera" 3.1.1 y 3.2.0 se hagan disponibles, puedes recibirlas en tu gestor de paquetes y saber que son compatibles con tu software existente.
 
-Yo llamo a este sistema “Versionado Semántico”. Bajo este esquema, los números de versión y la forma en que cambian entregan significado del código que está detrás y lo que fue modificado de una versión a otra.
+Como desarrollador responsable vas a querer verificar, como deberías, que cada actualización de paquetes funciona como se indica. El mundo real es un lugar desordenado; no hay nada que podamos hacer excepto estar atentos. Lo que puedes hacer es dejar que el Versionado Semántico te otorgue una sana manera de publicar y actualizar paquetes sin tener que crear nuevas versiones de paquetes dependientes, ahorrándote tiempo y molestias.
+
+Si todo esto suena deseable, todo lo que tienes que hacer para usar Versionado Semántico es declarar que los vas a hacer y seguir las reglas. Vincula este sitio web en tu LÉEME para que otros sepan las reglas y puedan beneficiarse de ellas.
+
+PREGUNTAS FRECUENTES
+--------------------
+
+### ¿Cómo debería lidiar con las revisiones en la fase inicial de desarrollo 0.y.z?
+
+La manera más simple de hacerlo es comenzar la publicación de tu desarrollo inicial en 0.1.0 y luego incrementar la versión menor por cada siguiente lanzamiento.
+
+### ¿Cómo voy a saber cuando publique la versión 1.0.0?
+
+Si tu software está siendo usado en producción, probablemente ya debería ser 1.0.0. Si tienes un API estable en el cual los usuarios dependen, debería ser 1.0.0. Si te estás preocupando mucho por la retrocompatibilidad, probablemente ya debería ser 1.0.0.
+
+### ¿Acaso esto no desalienta el desarrollo rápido y la iteración rápida?
+
+La versión mayor cero se trata de desarrollo rápido. Si estás cambiando el API cada día entonces aún deberías estar en la versión 0.y.z o en una rama separada de desarrollo trabajando en la siguiente versión.
+
+### Si incluso el más pequeño cambio incompatible con versiones anteriores del API público requiere incrementar la versión mayor, ¿Acaso no voy a terminar con una versión 42.0.0 muy pronto?
+
+Esto es una pregunta de desarrollo responsable y precaución. Cambios incompatibles no deberían ser introducidos a la ligera en un software que tiene mucho código dependiente. El costo que se incurre en actualizar puede ser significativo. Tener que incrementar versiones mayores para publicar cambios incompatibles quiere decir que tendrás que pensar sobre el impacto de tus cambios, y evaluar la proporción costo/beneficio involucrado.
+
+### ¡Documentar todo el API público es demasiado trabajo!
+
+Es tu responsabilidad como desarrollador profesional el documentar apropiadamente el software destinado a ser utilizados por otros. Administrar la complejidad del software es una parte muy importante para mantener un proyecto eficiente, y eso es difícil de hacer si nadie sabe cómo se usa tu software, o qué métodos son seguros de llamar. A largo plazo, el Versionado Semántico, y la insistencia de un API público bien definido puede mantener a todos y todo funcionando sin contratiempos.
+
+### ¿Qué pasa si accidentalmente publico una versión incompatible como versión menor?
+
+Tan pronto como te des cuenta que has roto las especificaciones del Versionado Semántico, arregla el problema y publica una nueva versión menor que corrija el problema y restaure la retrocompatibilidad. Incluso bajo estas circunstancias, es inaceptable modificar publicaciones versionadas. Si es apropiado, documenta la versión problemática e informa a tus usuarios sobre el percance para que todos sepan de esta versión problemática.
+
+### ¿Qué debería hacer si actualizo mis propias dependencias sin cambiar el API público?
+
+Eso sería considerado compatible dado que no afecta el API público. El sofware que explícitamente dependa de las mismas dependencias que tu paquete deberían tener su propias especificaciones de dependencias y el autor se dará cuenta de cualquier conflicto. Determinar si el cambio requiere modificar la versión parche o la versión menor dependerá en si has actualizado tus dependencias para arreglar un error o introducir nueva funcionalidad. Usualmente sospecho de código adicional sobre lo último, en ese caso es obviamente un incremento a la versión menor.
+
+### ¿Qué pasa si altero el API público sin darme cuenta de una manera que deja de cumplir con el número de la versión, como cuando el código incorrectamente introduce un cambio importante en una versión parche?
+
+Use tu mejor juicio. Si tienes una gran audiencia que será drásticamente impactada al cambiar el comportamiento a lo que pretendía el API público, entonces quizás sea mejor realizar un lanzamiento de una versión mayor, incluso si una corrección pueda ser estrictamente considerada una versión parche. Recuerda, el Versionado Semántico se trata de darle sentido a cómo un número de versión cambia. Si estos cambios son importantes para tus usuarios, usa el número de versión para informarles.
+
+### ¿Cómo debería manejar funcionalidad obsoleta?
+
+Desechando funcionalidad existente es algo normal en el desarrollo de software y es usualmente requerido para progresar. Cuando desechas parte de tu API público, deberías hacer todos cosas: (1) actualizar tu documentación para dar cuenta a tus usuarios sobre el cambio, (2) lanzar una nueva versión menor con la obsolescencia en su lugar. Antes que remuevas completamente la funcionalidad en una nueva versión mayor debería haber al menos una versión menor anterior que contenga la obsolescencia para que todos los usuarios puedan hacer una transición sin sobresaltos al nuevo API.
+
+### ¿Tiene SemVer un tamaño límite en el texto de la versión?
+
+No, pero usa tu juicio. Una versión de 255 caracteres es probablemente exagerada, por ejemplo. También, algunos sistemas en específico pueden imponer sus propios límites en el tamaño del texto.
+
+### ¿Es "v1.2.3" una versión semántica?
+
+No, "v1.2.3" no es una versión semántica. Sin embargo, anteponer una versión semántica con un "v" es una forma muy generalizada (en Inglés) de indicar que es un número de versión. Abreviar "version" como "v" es visto como control de versiones. Por ejemplo: `git tag v1.2.3 -m "Release version 1.2.3"`, en donde "v1.2.3" es el nombre de la etiqueta y la versión semántica es "1.2.3".
+
+### ¿Hay alguna expresión regular (RegEx) sugerida para verificar un texto SemVer?
+
+Hay dos. Uno incluye grupos con nombre para sistemas que los soportan (PCRE [Perl Compatible Regular Expressions, i.e. Perl, PHP and R], Python y Go)
+
+Mira: <https://regex101.com/r/Ly7O1x/3/>
+
+```
+^(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?P<patch>0|[1-9]\d*)(?:-(?P<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$
+```
+
+Y el otro, en cambio, incluye grupos capturados numéricamente (así que cg1 = mayor, cg2 = menor, cg3 = parche, cg4 = prelanzamiento y cg5 = metadatos de compilación) que es compatible con ECMA Script (JavaScript), PCRE (Perl Compatible Regular Expressions, i.e. Perl, PHP and R), Python y Go.
+
+Mira: <https://regex101.com/r/vkijKf/1/>
+
+```
+^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$
+```
+
+Acerca
+------
+
+La especificación de Versionado Semántico ha sido escrita por [Tom Preston-Werner](http://tom.preston-werner.com), inventor de Gravatar y co-fundador de GitHub.
+
+Si quieres dejar comentarios, porfavor [abre un problema en Github](https://github.com/semver/semver/issues).
 
 
-Especificación de Versionado Semántico (en inglés SemVer)
-------------------------------------------------------------
+Traducción
+----------
 
-En el documento original se usa el [RFC 2119](http://tools.ietf.org/html/rfc2119) para el uso de las palabras MUST, MUST NOT, SHOULD, SOULD NOT y MAY. Para que la traducción sea lo más fiel posible, he traducido siempre MUST por el verbo deber en presente (DEBE, DEBEN), SHOULD como el verbo deber en condicional (DEBERÍA, DEBERÍAN) y el verbo MAY como el verbo PODER.
+Esta traducción ha sido realizada por [Italo Baeza Cabrera](https://italobc.com). Si deseas editar esta traducción, puedes [dirigirte al respectivo repositorio en Github](https://github.com/semver/semver.org/blob/gh-pages/lang/es/index.md)
 
-1. El software que use Versionado Semántico DEBE declarar una API pública. Esta API puede ser declarada en el código mismo o existir en documentación estricta. De cualquier manera, debería ser precisa y completa.
-
-2. Un número normal de versión DEBE tomar la forma X.Y.Z donde X, Y, y Z son enteros no negativos. X es la versión “major”, Y es la versión “minor”, y Z es la versión “patch”. Cada elemento DEBE incrementarse numéricamente en incrementos de 1. Por ejemplo: 1.9.0 -> 1.10.0 -> 1.11.0.
-
-3. Una vez que un paquete versionado ha sido liberado (release), los contenidos de esa versión NO DEBEN ser modificadas. Cualquier modificación DEBE ser liberada como una nueva versión.
-
-4. La versión major en cero (0.y.z) es para desarrollo inicial. Cualquier cosa puede cambiar en cualquier momento. El API pública no debiera ser considerada estable.
-
-5. La versión 1.0.0 define el API pública. La forma en que el número de versión es incrementado después de este release depende de esta API pública y de cómo esta cambia.
-
-6. La versión patch Z (x.y.Z `|` x > 0) DEBE incrementarse cuando se introducen solo arreglos compatibles con la versión anterior. Un arreglo de bug se define como un cambio interno que corrige un comportamiento erróneo.
-
-7. La versión minor Y (x.Y.z `|` x > 0) DEBE ser incrementada si se introduce nueva funcionalidad compatible con la versión anterior. Se DEBE incrementar si cualquier funcionalidad de la API es marcada como deprecada. PUEDE ser incrementada si se agrega funcionalidad o arreglos considerables al código privado. Puede incluir cambios de nivel patch. La versión patch DEBE ser reseteada a 0 cuando la versión minor es incrementada.
-
-8. La versión major X (X.y.z `|` X > 0) DEBE ser incrementada si cualquier cambio no compatible con la versión anterior es introducida a la API pública. PUEDE incluir cambios de niver minor y/o patch. Las versiones patch y minor DEBEN ser reseteadas a 0 cuando se incrementa la versión major.
-
-9. Una versión pre-release PUEDE ser representada por adjuntar un guión y una serie de identificadores separados por puntos inmediatamente después de la versión patch. Los identificadores DEBEN consistir solo de caracteres ASCII alfanuméricos y el guión  [0-9A-Za-z-]. Las versiones pre-release satisfacen pero tienen una menor precedencia que la versión normal asociada.Ejemplos: 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7, 1.0.0-x.7.z.92.
-
-10. La metadata de build PUEDE ser representada adjuntando un signo más y una serie de identificadores separados por puntos inmediatamente después de la versión patch o la pre-release. Los identificadores DEBEN consistir sólo de caracteres ASCII alfanuméricos y el guión [0-9A-Za-z-]. Los meta-datos de build DEBIERAN ser ignorados cuando se intenta determinar precedencia de versiones. Luego, dos paquetes con la misma versión pero distinta metadata de build se consideran la misma versión. Ejemplos: 1.0.0-alpha+001, 1.0.0+20130313144700, 1.0.0-beta+exp.sha.5114f85.
-
-11. La precedencia DEBE ser calculada separando la versión en major, minor, patch e identificadores pre-release en ese orden (La metadata de build no figuran en la precedencia). Las versiones major, minor, y patch son siempre comparadas numéricamente. La precedencia de pre-release DEBE ser determinada comparando cada identificador separado por puntos de la siguiente manera: los identificadores que solo consisten de números son comparados numéricamente y los identificadores con letras o guiones son comparados de acuerdo al orden establecido por ASCII. Los identificadores numéricos siempre tienen una precedencia menor que los no-numéricos. Ejemplo: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
-
-¿Por qué usar Versionado Semántico?
----------------------------------------
-
-Esta no es una idea nueva o revolucionarias. De hecho, probablemente ya haces algo cercano hoy en día. El problema es que “cercano” no es suficientemente bueno. Sin un acuerdo en algun tipo de especificación formal, los números de versiones son esencialmente inútiles para el manejo de dependencias. Al darle un nombre y una definición clara a las ideas expresadas arriba, se hace facil comunicar tus intenciones a los usuarios de tu software. Una vez que estas intenciones son claras y flexibles (pero no demasiado flexibles) finalmente se pueden hacer especificaciones de dependencias.
-
-Un ejemplo simple puede demostrar como el Versionado Semántico puede ayudar a que el infierno de dependencias quede en el pasado. Considera una librería llamada "CarroBomba" Requiere de un paquete Semanticamente Versionado llamado “Escalera”. En el momento en que se crea CarroBomba, Escalera está en su versión 3.1.0. Como CarroBomba usa algunas de las funcionalidades que recién se estrenaron en la versión 3.1.0, puedes tranquilamente definir la dependencia de Escalera como mayor o igual a 3.1.0, pero menor a 4.0.0. Ahora, cuando la versión 3.1.1 y 3.2.0 de Escalera sean liberadas, puedes usarlas en tu sistema de Versionado de paquetes sabiendo que serán compatibles con el software dependiente.
-
-Como desarrollador responsable que eres, claro, querrás verificar que cualquier actualización de paquete funcione como se anunció. El mundo real es complejo; no hay nada que podamos hacer salvo estar atentos. Lo que puedes hacer es dejar que el Versionado Semántico te provea de una manera sana de liberar y actualizar paquetes sin tener que entregar nuevas versiones de tus paquetes dependientes, ahorrándote tiempo y molestias.
-
-Si todo esto suena deseable, todo lo que tienes que hacer para comenzar usando Versionado Semántico es declarar que lo estás haciendo y seguir las reglas. Haz un link a este sitio desde tu README para que otros conozcan las reglas y se puedan beneficiar de ellas.
-
-FAQ
----
-
-### ¿Cómo tengo que hacer con las revisiones en la etapa inicial de desarrollo 0.y.z ?
-
-Lo más facil es empezar tu desarrollo inicial en 0.1.0 e incrementar la versión minor en cada release.
-
-### ¿Cómo sé cuándo liberar la versión 1.0.0?
-
-Si tu software está siendo usado en producción, probablemente ya deberías estar en 1.0.0. SI tienes una API estable de la cual tus usuarios ya están dependiendo, deberías estar en 1.0.0. Si te preocupa mucho la compatibilidad con versiones anteriores, ya deberías estar en 1.0.0. 
-
-### ¿Esto no desincentiva el desarrollo rápido y las iteraciones cortas?
-
-La versión major en cero se trata de desarrollo rápido. Si estás cambiando la API todos los días debieras o bien estar todavía en la versión 0.y.z o estar trabajando en un branch separado para la próxima versión major.
-
-### Si incluso el cambio incompatible con la versión anterior más pequeño requiere un aumento de la versión major ¿No voy a terminar en la versión 42.0.0 demasiado rápido?
-
-Este es un tema de desarrollo responsable y visión anticipada. Los cambios incompatibles no debieran ser introducidos con ligereza al software del cual depende mucho código. El costo de actualizar puede ser significante. Tener que aumentar la versión major para publicar cambios incompatibles significa que vas a pensar bien el efecto de tus cambios, y evaluar el costo/beneficio asociado.
-
-### Documentar la API pública entera es demasiado trabajo!
-
-Es tu responsabilidad como desarrollador profesional documentar adecuadamente el software pensado para que lo usen otros. Gestionar la complejidad del software es una parte tremendamente importante de mantener un proyecto eficiente, y es muy dificil de lograr si nadie sabe cómo usar tu software o qué métodos es seguro llamar. A largo plazo, el Versionado Semántico, y la insistencia en una API pública bien definida pueden asegurar que todos y todo corra de manera suave.
-
-### ¿Qué hago si accidentalmente publico un cambio incompatible con la versión anterior como un cambio de versión minor?
-
-Apenas te des cuenta de que rompiste con la especificación de Versionado Semántico, repara el problema y publica una nueva versión minor que corrige el problema y recupera la compatiblidad. Incluso en esta circunstancia, es inaceptable modificar releases versionados. Si corresponde, documenta la versión que rompe la especificación e informa a tus usuarios que estén atentos a ella.
-
-### ¿Qué debería hacer si actualizo mis propias dependencias sin cambiar la API pública?
-
-Eso sería considerado compatible ya que no afecta al API pública. El software que explícitamente depende de las mismas dependencias que tu paquete debiera tener sus propias especificaciones de dependencia y el autor va a notar cualquier conflicto. La determinación de si el cambio es a nivel de patch o minor depende de si actualizaste tus dependencias para arreglar un bug o para agregar funcionalidad nueva. Yo esperaría que haya código adicional si se trata de lo segundo, en cuyo caso el incremento del minor es la opción obvia.
-
-### ¿Qué debería hacer si el bug que estoy arreglando justamente hace que vuelva a estar de acuerdo con la especificación del API pública? (es decir, el código estaba incorrectamente desincronizado con la documentación del API) 
-
-Usa tu sentido común. Si tienes una gran audiencia que se va a ver drásticamente afectada al cambiar el comportamiento a lo que la API pública debía hacer, entonces lo mejor puede ser hacer un release major, incluso si el arreglo es estrictamente un release de tipo patch. Recuerda, el Versionado Semántico se trata de incorporar significado a la forma en que el número de versión cambia. Si estos cambios son importantes para tus usuarios, usa el número de versión para informarlos.
-
-### ¿Cómo debiera controlar la funcionalidad deprecada?
-
-Deprecar (desaprobar) funcionalidad existente es una parte normal del desarrollo de software y es típicamente requerida para avanzar. Cuando desapruebas parte de tu API pública, deberías hacer dos cosas: (1) actualizar tu documentación para permitir que los usuarios sepan del cambio, (2) emitir un nuevo release minor con la desaprobación. Antes de sacar la funcionalidad por completo en un nuevo release major, debería haber al menos un release minor que contenga la desaprobación de manera tal que los usuarios puedan traspasarse a la nueva API de manera suave.
-
-Acerca de
----------
-
-La especificación de Versionado Semántico fue creada por [Tom Preston-Werner](http://tom.preston-werner.com), inventor de los Gravatars y co-fundador de GitHub. Esta traducción fue realizada por Agustin Feuerhake.
-
-Si quieres dar feedback, [puedes abrir un issue en GitHub](https://github.com/mojombo/semver/issues).
 
 Licencia
---------
+-------
 
-[Creative Commons - CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
+[Creative Commons - CC BY 3.0](http://creativecommons.org/licenses/by/3.0/) ([en español])[https://creativecommons.org/licenses/by/3.0/deed.es]
