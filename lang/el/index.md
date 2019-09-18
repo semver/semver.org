@@ -62,35 +62,13 @@ author: Dimitris Damilos
 Γιατί να χρησιμοποιήσει κάποιος τη Σημασιολογική Έκδοση;
 --------------------------------------------------------
 
-This is not a new or revolutionary idea. In fact, you probably do something
-close to this already. The problem is that "close" isn't good enough. Without
-compliance to some sort of formal specification, version numbers are
-essentially useless for dependency management. By giving a name and clear
-definition to the above ideas, it becomes easy to communicate your intentions
-to the users of your software. Once these intentions are clear, flexible (but
-not too flexible) dependency specifications can finally be made.
+Αυτή δεν είναι μια νέα ή επαναστατική ιδέα. Στην πραγματικότητα, ήδη χρησιμοποιείτε κάτι παρόμοιο. Το πρόβλημα είναι ότι το «παρόμοιο» δεν είναι αρκετό. Χωρίς προσαρμογή σε κάποιο είδος τυπικής προδιαγραφής, οι αριθμοί έκδοσης είναι ουσιαστικά άχρηστοι για τη διαχείριση εξαρτήσεων. Δίνοντας ένα όνομα και σαφές ορισμό των παραπάνω ιδεών, γίνεται εύκολη η επικοινωνία των προθέσεων στους χρήστες του λογισμικού. Μόλις αυτές οι προθέσεις είναι σαφείς, μπορούν τελικά να δημιουργηθούν ευέλικτες, αλλά όχι και εντελώς ευέλικτες, προδιαγραφές εξαρτήσεων.
 
-A simple example will demonstrate how Semantic Versioning can make dependency
-hell a thing of the past. Consider a library called "Firetruck." It requires a
-Semantically Versioned package named "Ladder." At the time that Firetruck is
-created, Ladder is at version 3.1.0. Since Firetruck uses some functionality
-that was first introduced in 3.1.0, you can safely specify the Ladder
-dependency as greater than or equal to 3.1.0 but less than 4.0.0. Now, when
-Ladder version 3.1.1 and 3.2.0 become available, you can release them to your
-package management system and know that they will be compatible with existing
-dependent software.
+Με ένα απλό παράδειγμα, μπορούμε να καταδείξουμε πώς η Σημασιολογική Έκδοση μπορεί να κάνει την «κόλαση εξαρτήσεων» ένα πράγμα του παρελθόντος. Έστω μια βιβλιοθήκη με όνομα «Firetruck» («Πυροσβεστικό όχημα»). Η «Firetruck» περιλαμβάνει ένα πακέτο που έχει σημασιολογικά εκδοθεί ως «Ladder» («Σκάλα»). Όταν δημιουργήθηκε η «Firetruck», το «Ladder» ήταν στην έκδοση 3.1.0. Από τη στιγμή που η «Firetruck» χρησιμοποιεί λειτουργίες που προστέθηκαν στο «Ladder» στην έκδοση 3.1.0, είναι ασφαλές να θέσουμε την έκδοση εξάρτησης του «Ladder» ως ίση ή μεγαλύτερη του 3.1.0, αλλά μικρότερη του 4.0.0. Έτσι, όταν οι εκδόσεις 3.1.1 ή 3.2.0 του «Ladder» γίνουν διαθέσιμες, μπορούμε να τις χρησιμοποιήσουμε γνωρίζοντας ότι θα είναι συμβατές με το υπάρχον λογισμικό.
 
-As a responsible developer you will, of course, want to verify that any
-package upgrades function as advertised. The real world is a messy place;
-there's nothing we can do about that but be vigilant. What you can do is let
-Semantic Versioning provide you with a sane way to release and upgrade
-packages without having to roll new versions of dependent packages, saving you
-time and hassle.
+Ως υπεύθυνοι προγραμματιστές, φυσικά, πρέπει να επαληθεύσουμε ότι οι όποιες αναβαθμίσεις πακέτων υπάρχουν, λειτουργούν όπως διαφημίζονται. Ο πραγματικός κόσμος είναι ένα χαοτικός. Δεν υπάρχει τίποτα που μπορούμε να κάνουμε γι' αυτό, οπότε πρέπει να προσέχουμε. Αυτό που μπορούμε να κάνουμε είναι να αφήσουμε τη Σημασιολογική Έκδοση να μας παρέχει ένα λογικό τρόπο έκδοσης και αναβάθμισης πακέτων, χωρίς να χρειάζεται να δημοσιεύουμε νέες εκδόσης πακέτων εξαρτήσεων, εξοικονομώντας μας χρόνο και ταλαιπωρία.
 
-If all of this sounds desirable, all you need to do to start using Semantic
-Versioning is to declare that you are doing so and then follow the rules. Link
-to this website from your README so others know the rules and can benefit from
-them.
+Εάν όλα αυτά είναι επιθυμητά, το μόνο που χρειάζεται να κάνουμε για να αρχίσουμε να χρησιμοποιούμε τη Σημασιολογική Έκδοση θα είναι να δηλώσουμε ότι το κάνουμε και έπειτα να ακολουθήσουμε τους κανόνες. Χρησιμποιήστε ένα σύνδεσμο σε αυτή την ιστοσελίδα από το README σας, ώστε άλλοι να γνωρίζουν τους κανόνες και να επωφεληθούν από αυτό.
 
 
 Συχνές Ερωτήσεις
