@@ -22,7 +22,7 @@ Introduction
 ------------
 
 Dans le monde de la gestion des logiciels, il existe un endroit redouté appelé
-« l'enfer des dépendances » (de l'anglais _dependency hell_). Plus votre système se
+«&nbsp;l'enfer des dépendances&nbsp;» (de l'anglais _dependency hell_). Plus votre système se
 développe et plus vous intégrez de composants dans votre logiciel, plus vous êtes
 susceptible de vous trouver un jour dans cet abîme de désespoir.
 
@@ -51,7 +51,7 @@ version de correction. Lors d'ajouts ou de modifications rétrocompatibles de l'
 il faut incrémenter l'identifiant de version mineure. Enfin, pour des modifications
 non rétrocompatibles, il faut incrémenter l'identifiant de version majeure.
 
-J'appelle ce système « gestion sémantique de version ». Avec ce système, les numéros de
+J'appelle ce système «&nbsp;gestion sémantique de version&nbsp;». Avec ce système, les numéros de
 version, et la façon dont ils changent, donnent du sens au code sous-jacent et à ce
 qui a été modifié d'une version à l'autre.
 
@@ -115,7 +115,7 @@ associées à une version normale.
 Exemples : 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7, 1.0.0-x.7.z.92.
 
 1. Les méta-données de construction PEUVENT être notées par l'ajout d'un signe
-« plus » et d'une série d'identifiants séparés par des points suivant immédiatement
+«&nbsp;plus&nbsp;» et d'une série d'identifiants séparés par des points suivant immédiatement
 l'identifiant de version de correction ou de pré-livraison. Les identifiants DOIVENT
 être composés uniquement de caractères alphanumériques ASCII et de traits d'union [0-9A-Za-z-].
 Les identifiants NE DOIVENT PAS être vides. Les méta-données de construction DEVRAIENT
@@ -152,16 +152,16 @@ Pourquoi utiliser la gestion sémantique de version ?
 
 Il ne s'agit pas d'une idée nouvelle ou révolutionnaire. En fait, vous faites
 probablement déjà quelque chose d'approchant. Et le problème vient du fait que
-« quelque chose de proche » n'est pas suffisant. Sans conformité avec une méthode
+«&nbsp;quelque chose de proche&nbsp;» n'est pas suffisant. Sans conformité avec une méthode
 formelle, les numéros de version deviennent inutilisables pour la gestion de
 vos dépendances. En donnant un nom et une définition claire aux idées exposées
 ci-dessus, il devient facile de communiquer vos intentions aux utilisateurs
 de votre logiciel. Une fois que vos intentions sont claires, une spécification
-souple (mais pas « trop » souple) des dépendances peut être réalisée.
+souple (mais pas «&nbsp;trop&nbsp;» souple) des dépendances peut être réalisée.
 
 Un exemple simple permet de montrer comment la gestion sémantique de version peut
 faire de l'enfer des dépendances, une chose du passé. Considérons une bibliothèque
-appelée « CamionDePompier ». Elle nécessite un composant appelé « Échelle » dont la
+appelée «&nbsp;CamionDePompier&nbsp;». Elle nécessite un composant appelé «&nbsp;Échelle&nbsp;» dont la
 version est gérée sémantiquement. Lorsque la librairie CamionDePompier est créée,
 Échelle en est à sa version 3.1.0. Et puisque CamionDePompier utilise des fonctionnalités
 qui ont été introduites en 3.1.0, vous pouvez spécifier, sans courir le moindre risque,
