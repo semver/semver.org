@@ -170,7 +170,7 @@ vara kvar i version 0.y.z eller jobba med nästa stora version på en separat ut
 ### Även de minsta icke bakåtkompatibla ändringar förändrar det publika API:t, vilket kräver ett steg upp i major-versionen. Skulle jag inte då snabbt komma upp i version 42.0.0?
 
 Detta är en fråga om ansvarsfull utveckling och planering. Inkompatibla förändringar bör inte
-introduceras lättvinnligt i mjukvara som många har beroende till. Kostnaden man drar på sig för
+introduceras lättvindigt i mjukvara som många har beroende till. Kostnaden man drar på sig för
 att uppgradera kan bli betydande. Att öka major-versionen för att släppa inkompatibla ändringar
 innebär att du också måste tänka genom konsekvenserna av dina ändringar och utvärdera kostnad
 kontra nytta.
