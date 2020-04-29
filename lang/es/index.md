@@ -6,7 +6,18 @@ language: es
 Versionado Semántico 2.0.0-rc.2 
 ===============================
 
+Resumen
+-------
+Dada una versión MAJOR.MINOR.PATCH, el incremento será:
 
+1. MAJOR version cuando se realizan cambios incompatibles en la API.
+1. MINOR version cuando se agrega funcionalidad de forma retrocompatible.
+1. PATCH version cuando se corrigen bugs de forma retrocompatible.
+
+Adicionalmente se puede agregar etiquetas para versiones pre-liberación, con formato MAJOR.MINOR.PATCH-LABEL.
+
+Introduction
+------------
 En el mundo de la gestión de software existe el temor de caer en algún momento en el llamado “infierno de las dependencias”. Mientras más grande crece tu sistema y mientras más paquetes integras en tu software, más probable es que te encuentres, un día, en este pozo de la desesperación.
 
 En sistemas con muchas dependencias, publicar nuevas versiones de un paquete puede transformarse rápidamente en una pesadilla. Si las especificaciones de dependencia son muy estrictas está el peligro del bloqueo de versiones (la imposibilidad de actualizar un paquete sin tener que actualizar todos los que dependen de este). Si las dependencias se especifican de manera muy amplia, inevitablemente caerás en promiscuidad de versiones (asumir más compatibilidad con versiones futuras de lo razonable). El infierno de las dependencias es donde te encuentras cuando el bloqueo de versiones o la promiscuidad de versiones te impiden avanzar en tu proyecto de manera fácil y segura.
