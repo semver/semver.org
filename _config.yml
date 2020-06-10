@@ -31,6 +31,7 @@ languages:
   hin: हिन्दी
   ca: català
   hu: magyar
+  hy: Հայերեն
 
 versions:
   - 2.0.0
