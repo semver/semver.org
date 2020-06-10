@@ -16,7 +16,7 @@ Dada una versión MAJOR.MINOR.PATCH, el incremento será:
 
 Adicionalmente se puede agregar etiquetas para versiones pre-liberación, con formato MAJOR.MINOR.PATCH-LABEL.
 
-Introduction
+Introducción
 ------------
 En el mundo de la gestión de software existe el temor de caer en algún momento en el llamado “infierno de las dependencias”. Mientras más grande crece tu sistema y mientras más paquetes integras en tu software, más probable es que te encuentres, un día, en este pozo de la desesperación.
 
