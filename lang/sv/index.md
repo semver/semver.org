@@ -13,7 +13,7 @@ Sammanfattning
 Givet ett versionsnummer på formen MAJOR.MINOR.PATCH, räkna upp varje del enligt följande:
 
 1. Öka MAJOR med 1 när du gör ändringar som påverkar bakåtkompatibiliteten för API:t.
-1. Öka MINOR med 1 när du lägg till ny funktionalitet men 100 % bakåtkompatibilitet bibehålls.
+1. Öka MINOR med 1 när du lägger till ny funktionalitet men 100 % bakåtkompatibilitet bibehålls.
 1. Öka PATCH med 1 när du fixar buggar förutsatt att 100 % bakåtkompatibilitet bibehålls.
 
 Ibland kan det även förekomma ytterligare delar i versionsnumret för att markera
@@ -67,21 +67,21 @@ positiva heltal och FÅR INTE innehålla inledande nollor. X är major-versionen
 Y är minor-versionen och Z är patch-versionen. Varje element MÅSTE ökas numeriskt,
 t.ex. 1.9.0 -> 1.10.0 -> 1.11.0.
 
-1. När ett versionshanterat packet har släppts FÅR INTE innehållet i den versionen
-förändras. Alla modifieringar MÅSTE vara relaterade till en ny version.
+1. När ett versionshanterat paket har släppts FÅR INTE innehållet i den versionen
+förändras. Alla modifieringar MÅSTE släppas som en ny version.
 
-1. Major-versionen noll (0.y.z) är för inledande utveckling. Allt KAN förändras när som helst.
+1. Major-versionen noll (0.y.z) är för inledande utveckling. Vad som helst KAN förändras när som helst.
 Publikt API BÖR ej ses som stabilt.
 
 1. Version 1.0.0 definierar det publika API:t. Hur versionsnumret ökar efter detta släpp
 är beroende på detta publika API och hur det förändras.
 
 1. Patch-version Z (x.y.Z | x > 0) FÅR ENBART ökas om bakåtkompatibla buggfixar är
-introducerade. En buggfix definieras som en intern förändring som fixar ett felaktigt beteende.
+introducerade. En buggfix definieras som en intern förändring som åtgärdar ett felaktigt beteende.
 
 1. Minor-version Y (x.Y.z | x > 0) MÅSTE ökas om ny bakåtkompatibel funktionalitet introduceras
 i det publika API:t. Det MÅSTE ökas om någon funktion i det publika API:t markeras som
-föråldrat (deprecated). Det KAN ökas om väsentlig ny funktionalitet eller förbättringar
+föråldrad (deprecated). Det KAN ökas om väsentlig ny funktionalitet eller förbättringar
 införs i den privata koden. Även förändringar på patch-nivå KAN ingå. Patch-versionen MÅSTE
 återställas till 0 när minor-versionen ökar.
 
@@ -90,34 +90,34 @@ introduceras i det publika API:t. Även förändringar på minor- och patch-niv�
 och minor-versionerna MÅSTE återställas till 0 när major-versionen ökar.
 
 1. En förhandsversion KAN markeras genom att lägga till ett bindestreck och en serie av
-punktseparerade identiteter direkt efter patch-versionen.  Identiteterna FÅR ENBART innehålla
-alfanumeriska ASCII-tecken och bindestreck [0-9A-Za-z-]. Identiteterna FÅR INTE vara tomma.
-Numeriska identiteter FÅR INTE ha inledande nollor. En förhandsversion har en lägre prioritet
+punktseparerade identifierare direkt efter patch-versionen.  Identifierare FÅR ENBART innehålla
+alfanumeriska ASCII-tecken och bindestreck [0-9A-Za-z-]. Identifierare FÅR INTE vara tomma.
+Numeriska identifierare FÅR INTE ha inledande nollor. En förhandsversion har en lägre prioritet
 än tillhörande normal version. En förhandsversion indikerar att versionen är instabil och
 kanske inte uppfyller avsedda kompabilitetskrav som utmärker dess tillhörande normala version.
 Exempel: 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7, 1.0.0-x.7.z.92.
 
 1. Metadata för byggen KAN markeras genom att lägga till ett plustecken och en serie
-punktseparerade identiteter direkt efter patch-versionen eller information om förhandsversion.
-Identiteterna FÅR ENBART innehålla alfanumeriska ASCII-tecken och bindestreck [0-9A-Za-z-].
-Identiteterna FÅR INTE vara tomma. Bygg-metadata MÅSTE ignoreras när versionsprioritet skall
+punktseparerade identifierare direkt efter patch-versionen eller information om förhandsversion.
+Identifierare FÅR ENBART innehålla alfanumeriska ASCII-tecken och bindestreck [0-9A-Za-z-].
+Identifierare FÅR INTE vara tomma. Bygg-metadata MÅSTE ignoreras när versionsprioritet skall
 fastställas. Således har två versioner som enbart skiljer i bygg-metadata samma prioritet.
 Exempel: 1.0.0-alpha+001, 1.0.0+20130313144700, 1.0.0-beta+exp.sha.5114f85.
 
 1. Versionsprioritet syftar på hur versioner jämförs när de sorteras. Prioritet MÅSTE beräknas
-genom att separera versionen i major, minor, patch och identitet för förhandsversion i given
+genom att separera versionen i major, minor, patch och identifierare för förhandsversion i given
 ordning (bygg-metadata påverkar ej rangordningen). Prioritet bestäms av första skillnaden
-när var och en av dessa identiteter jämförs i tur och ordning från vänster till höger enligt:
+när var och en av dessa identifierare jämförs i tur och ordning från vänster till höger enligt:
 Major-, minor- och patch-version jämförs alltid numeriskt.
 Exempel: 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1. När major, minor och patch är lika har en förhandsversion
 lägre prioritet än en normal version. Exempel: 1.0.0-alpha < 1.0.0. Prioritet för två
 förhandsversioner med samma major-, minor- och patch-version MÅSTE bestämmas genom att jämföra
-varje punktseparerad identitet från vänster till höger till dess att en skillnad hittas enligt
-följande: Identiteter som enbart består av siffror jämförs numeriskt och identiteter med
+varje punktseparerad identifierare från vänster till höger till dess att en skillnad hittas enligt
+följande: identifierare som enbart består av siffror jämförs numeriskt och identifierare med
 bokstäver och bindestreck jämförs lexikalt enligt sorteringsordningen i ASCII. Numeriska
-identiteter har alltid lägre prioritet än icke numeriska identiteter. En större uppsättning
-förhandsversionsidentiteter har en högre prioritet än en med färre antal ifall alla inledande
-identiteter är lika. Exempel: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta <
+identifierare har alltid lägre prioritet än icke numeriska identifierare. En större uppsättning
+förhandsversionsidentifierare har en högre prioritet än en med färre antal ifall alla inledande
+identifierare är lika. Exempel: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta <
 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
 
 Varför använda Semantisk versionshantering?
@@ -170,7 +170,7 @@ vara kvar i version 0.y.z eller jobba med nästa stora version på en separat ut
 ### Även de minsta icke bakåtkompatibla ändringar förändrar det publika API:t, vilket kräver ett steg upp i major-versionen. Skulle jag inte då snabbt komma upp i version 42.0.0?
 
 Detta är en fråga om ansvarsfull utveckling och planering. Inkompatibla förändringar bör inte
-introduceras lättvinnligt i mjukvara som många har beroende till. Kostnaden man drar på sig för
+introduceras lättvindigt i mjukvara som många har beroende till. Kostnaden man drar på sig för
 att uppgradera kan bli betydande. Att öka major-versionen för att släppa inkompatibla ändringar
 innebär att du också måste tänka genom konsekvenserna av dina ändringar och utvärdera kostnad
 kontra nytta.
