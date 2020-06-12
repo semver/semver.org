@@ -1,14 +1,13 @@
 name: Nightly Sync of content
 
-# on:
-#   schedule:
-#   - cron: '0 3 * * *' # run daily at 3am
-on: [issue_comment]
+on:
+  schedule:
+  - cron: '0 3 * * *' # run daily at 3am
 
 
 jobs:
   sync:
-    if: github.repository == 'alexandrtovmach/semver.org'
+    if: github.repository == 'semver/semver.org'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
