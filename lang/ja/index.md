@@ -181,7 +181,7 @@ FAQ
 
 ### SemVer文字列をチェックするために推奨される正規表現（RegEx）はありますか？
 
-　二つあります。一つは名前付きグループをサポートするシステム（PCRE [Perl Compatible Regular Expressions, i.e. Perl, PHP and R]、Python、Go）のための正規表現です。
+　二つあります。一つは名前付きグループをサポートするシステム（PCRE [Perl Compatible Regular Expressions, 例: Perl, PHP and R]、Python、Go）のための正規表現です。
 
 参考: <https://regex101.com/r/Ly7O1x/3/>
 
@@ -189,7 +189,7 @@ FAQ
 ^(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?P<patch>0|[1-9]\d*)(?:-(?P<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$
 ```
 
-　もう一つは番号付きキャプチャグループを使った正規表現です（したがって、cg1 = メジャー、cg2 = マイナー、cg3 = パッチ、cg4 = プレリリース、cg5 = ビルドメタデータを意味します）。これはECMA Script（JavaScript）、PCRE（Perl Compatible Regular Expressions, i.e. Perl, PHP and R）、Python、Goにおいて互換性があります。
+　もう一つは番号付きキャプチャグループを使った正規表現です（したがって、cg1 = メジャー、cg2 = マイナー、cg3 = パッチ、cg4 = プレリリース、cg5 = ビルドメタデータを意味します）。これはECMA Script（JavaScript）、PCRE（Perl Compatible Regular Expressions, 例: Perl, PHP and R）、Python、Goにおいて互換性があります。
 
 参考: <https://regex101.com/r/vkijKf/1/>
 
