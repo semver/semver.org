@@ -4,6 +4,7 @@
   "description": "Website for SemVer specification https://semver.org",
   "main": "scripts/collect.js",
   "scripts": {
+    "collect": "node scripts/collect.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
