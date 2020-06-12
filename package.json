@@ -23,5 +23,9 @@
     "url": "https://github.com/semver/semver.org/issues"
   },
   "homepage": "https://github.com/semver/semver.org#readme",
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "js-yaml": "^3.14.0",
+    "semver": "^7.3.2"
+  }
 }
