@@ -1,0 +1,27 @@
+{
+  "name": "semver.org",
+  "version": "0.0.1",
+  "description": "Website for SemVer specification https://semver.org",
+  "main": "scripts/collect.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/semver/semver.org.git"
+  },
+  "keywords": [
+    "semver",
+    "spec",
+    "version",
+    "semantic",
+    "version"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/semver/semver.org/issues"
+  },
+  "homepage": "https://github.com/semver/semver.org#readme",
+  "dependencies": {}
+}
