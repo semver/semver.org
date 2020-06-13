@@ -29,6 +29,7 @@ languages:
   ca: català
   hu: magyar
   hy: Հայերեն
+  kab: taqbaylit
 versions:
   - 2.0.0
   - 2.0.0-rc.2
