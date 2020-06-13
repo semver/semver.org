@@ -5,7 +5,7 @@
   "main": "scripts/collect.js",
   "scripts": {
     "collect": "node scripts/collect.js",
-    "lint": "echo \"Lint\" && exit 0",
+    "lint": "remark -qf .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -28,6 +28,9 @@
   "dependencies": {},
   "devDependencies": {
     "js-yaml": "^3.14.0",
+    "remark-cli": "^8.0.0",
+    "remark-frontmatter": "^2.0.0",
+    "remark-preset-lint-node": "^1.16.0",
     "semver": "^7.3.2"
   }
 }
