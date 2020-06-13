@@ -1,0 +1,53 @@
+name: Check chagnes
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@0.9.0
+        id: comment
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            return (
+              context.payload.issue.pull_request &&
+              context.payload.comment.body === '/check'
+            );
+      - uses: actions/checkout@v2
+        if: steps.comment.outputs.result == 'true'
+      - uses: actions/setup-node@v1
+        if: steps.comment.outputs.result == 'true'
+        with:
+          node-version: "12.x"
+
+      - name: Fail for non-GitHub Bot PRs
+        if: steps.comment.outputs.result == 'true' && github.actor != 'github-actions'
+        uses: thollander/actions-comment-pull-request@master
+        with:
+          message: |
+            Thank you for contribution!
+            Seems like you trying to change specification not in a right place :thinking:
+            This repository contains code for website [semver.org](https://semver.org) with spec translations. If you looking for direct changes to SemVer, please use [semver/semver](https://github.com/semver/semver) repository.
+            
+            Please close this PR and create a new one to the right repository. If you have any questions, feel free to ping someone from @semver/maintainers
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/cache@v1
+        if: steps.comment.outputs.result == 'true'
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install Dependencies
+        if: steps.cache.outputs.cache-hit != 'true' && steps.comment.outputs.result == 'true'
+        run: npm ci
+
+      - name: Check
+        if: steps.comment.outputs.result == 'true'
+        run: npm run lint
