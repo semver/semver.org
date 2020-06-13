@@ -21,7 +21,7 @@ Llant tecraḍ nniḍen i yileqman send tuffɣa (pre-release) d yidfersefka n us
 Tazwart
 -------
 
-Deg umaḍal n usnefli n yiseɣẓan, tella yiwet n tegnit ttkukrun-tt medden
+Deg umaḍal n usnefli n yiseɣẓanen, tella yiwet n tegnit ttkukrun-tt medden
 ssawalen-as "times n teglin" (seg Teglizit "dependency hell"). Simal yettimɣur
 unagraw-nwen, simal trennum iwemmusen i useɣẓan-nwen, simal yettaẓ-d wass deg
 ur as-tettafem ara akk ixef-is deg wanu-a yesbelɛen asirem.
