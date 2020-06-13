@@ -1,0 +1,28 @@
+name: Protect original content from manual changes
+
+on: 
+  pull_request:
+    paths:
+    - 'spec/**'
+
+jobs:
+  creator-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+
+      - name:  Fail for non-GitHub Bot PRs
+        if: github.actor != 'github-actions'
+        uses: thollander/actions-comment-pull-request@master
+        with:
+          message: |
+            Thank you for contribution!
+            Seems like you trying to change specification not in a right place :thinking:
+            This repository contains code for website [semver.org](https://semver.org) with spec translations. If you looking for direct changes to SemVer, please use [semver/semver](https://github.com/semver/semver) repository.
+            
+            Please close this PR and create a new one to the right repository. If you have any questions, feel free to ping someone from @semver/maintainers
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
