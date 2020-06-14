@@ -40,7 +40,6 @@ Specifikace Sémantického verzování (SemVer)
 “MŮŽE” (angl. MAY, OPTIONAL)
 (výrazy jsou interpretované z dokumentu: [RFC 2119](http://tools.ietf.org/html/rfc2119))
 
-
 1. Software používající Sémantické verzování, MUSÍ mít nadefinované API, buďto přímo ve zdrojovém kódu a nebo v externí dokumentaci. V obou případech to musí být hlavně přesné a komplexní.
 
 2. Číslo verzí MUSÍ být ve formátu X, Y, Z. Jedná se o celá nezáporná čísla, přičemž X se NESMÍ rovnat hodnotě nula. Může se rovnat nule jen v případě, kdy se jedná o počáteční vývoj. X je číslo MAJOR verze, Y je číslem MINOR verze a Z je číslem PATCH verze, přičemž každé číslo má svoji hodnotu a navyšují se zvlášť a standardně, např.1.9.0 => 1.10.0 => 1.11.0.

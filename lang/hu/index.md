@@ -50,7 +50,6 @@ a major verziót.
 A rendszert "Szemantikus Verziószámozásnak" keresztelem. Ezen séma alapján, a verziószámok és ahogyan ezek változnak, 
 jelentést hordoznak a mögöttes kódról és hogy mi változott egyik verzióról a másikra térve.
 
-
 A Szemantikus Verziószámozás leírása (SemVer)
 ------------------------------------------
 
@@ -172,7 +171,6 @@ hogy használod a Szemantikus Verziószámozást és kövesd a szabályait. Link
 ezt a honlapot a csomagod README-jébe, hogy mások is megismerjék a szabályokat és
 részesülhessenek az előnyeiben.
 
-
 GY.I.K.
 -------
 
@@ -238,7 +236,6 @@ Teljesen normális esemény a szoftverfejlesztésben, hogy egyes funkcionalitás
 
 Nincs, de becsüljük meg észszerűen a hosszát. Például, egy 255 karakteres verzió string erős túlzás. Különböző 
 rendszereknél, különböző verzió string hossz korlátokat alkalmazhatnak.
-
 
 Infó
 -----

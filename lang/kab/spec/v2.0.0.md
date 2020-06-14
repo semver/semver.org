@@ -51,7 +51,6 @@ Semmaɣ-as i unagraw-a "aleqqem anamkan". S unagraw-a, uṭṭunen n ulqem d wam
 i ttnernin ttaken anamek i tengalt uɣur cudden d wayen yettbeddilen seg ulqem
 ar wayeḍ.
 
-
 Asefru n uleqqem anamkan (SemVer)
 ---------------------------------
 
@@ -161,7 +160,6 @@ Ma yella yeffeɣ fell-awen akk waya, tuḥwaǧem kan ad d-tinim belli tseqdacem-
 yerna ad tḍefrem ilugan akken ad tebdum aseqdec n uleqqem anamkan. Rnut aseɣwen
 ar usmel-a deg README-nwen akken ad walin wiyaḍ ilugan yerna ad d-sfaydin
 seg-sen.
-
 
 Isteqsiyen imezga
 -----------------

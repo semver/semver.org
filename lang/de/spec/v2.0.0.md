@@ -17,7 +17,6 @@ Auf Grundlage einer Versionsnummer von MAJOR.MINOR.PATCH werden die einzelnen El
 
 Außerdem sind Bezeichner für Vorveröffentlichungen und Build-Metadaten als Erweiterungen zum MAJOR.MINOR.PATCH Format verfügbar.
 
-
 Einführung
 ---------
 
@@ -28,7 +27,6 @@ In Projekten mit vielen Abhängigkeiten kann das Aktualisieren abhängiger Paket
 Als Lösung für dieses Problem schlage ich ein einfaches Regelwerk vor, welches definiert wie Versionsnummern gewählt und erhöht werden. Diese Regeln basieren auf bereits existierenden und weit verbreiteten Verfahren, welche sowohl bei der Entwicklung von Closed- als auch von Open-Source Software verwendet werden, aber beschränken sich nicht zwingend auf diese. Um dieses System nutzen zu können, muss zuerst eine öffentliche API definiert werden. Diese kann entweder in Form einer Dokumentation existieren oder durch den Code selbst erzwungen werden. Egal auf welche Art und Weise die API umgesetzt wird, es ist wichtig, dass sie übersichtlich und präzise ist. Sobald die öffentliche API erstellt wurde, werden Änderungen an dieser durch bestimmten Veränderungen an der Versionsnummer vermittelt. Nimm ein Versionsnummernformat von X.Y.Z (Major.Minor.Patch) an. Bei Einführung von Bugfixes, welche die öffentliche API nicht beeinflussen, wird die Patch Version erhöht, API-kompatible Ergänzungen oder Änderungen erhöhen die Minor Versionsnummer, und Änderungen, welche nicht kompatibel zur aktuellen öffentlichen API sind, erhöhen die Major Version.
 
 Ich nenne dieses System "Semantic Versioning". Versionsnummern, die nach diesem Schema gewählt und erhöht werden, geben direkten Aufschluss über den entsprechenden Code und was sich von einer zur anderen Version verändert hat.
-
 
 Semantic Versioning Spezifikation (SemVer)
 -------------------------------------
@@ -57,7 +55,6 @@ Die Terme "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOUL
 
 11. Der Rang einer Version bestimmt, welche Versionsnummer einer anderen übergeordnet ist, wenn diese bei einer Sortierung miteinander verglichen werden. Der Rang wird (MUST)  aus der Major, Minor und Patch Version sowie dem Vorveröffentlichungs-Bezeichner berechnet (Die Build-Metadaten haben keinerlei Einfluss auf den Rang einer Version). Er wird bestimmt, indem der erste Unterschied zwischen dem oben aufgeführten Elementen ermittelt wird. Dabei wird von links nach rechts, in der oben genannten Reihenfolge vorgegangen. Die Major, Minor und Patch Versionen werden numerisch miteinander verglichen. Beispiel: 1.0.0 &lt; 2.0.0 &lt; 2.1.0 &lt; 2.1.1. Beim Vergleich von zwei Versionsnummern, deren Major, Minor und Patch Versionen gleich sind, nimmt eine Vorveröffentlichung einen niedrigeren Rang als die reguläre Version ein. Beispiel: 1.0.0-alpha &lt; 1.0.0. Sind beide dieser Versionen Vorveröffentlichungen, wird (MUST) der Rang ermittelt, indem jedes Element eines Vorveröffentlichungs-Bezeichners (durch Punkte voneinander getrennt) mit dem der anderen Version verglichen wird bis ein Unterschied festgestellt wird. Auch hierbei wird von links nach rechts vorgegangen. Elemente, welche ausschließlich aus Ziffern bestehen, werden numerisch miteinander verglichen. Der Vergleich aller anderen Elemente erfolgt auf Basis der ASCII-Stellenwerte ihrer Zeichen. Numerische Elemente haben immer einen niedrigeren Rang als solche, die auch andere Zeichen enthalten. Falls alle Elemente identisch sind, nimmt der Bezeichner mit den meisten Elementen den höheren Rang ein. Beispiel: 1.0.0-alpha &lt; 1.0.0-alpha.1 &lt; 1.0.0-alpha.beta &lt; 1.0.0-beta &lt; 1.0.0-beta.2 &lt; 1.0.0-beta.11 &lt; 1.0.0-rc.1 &lt; 1.0.0.
 
-
 Weshalb sollte man Semantic Versioning nutzen?
 -----------------------------------------
 
@@ -69,14 +66,12 @@ Als ein verantwortungsbewusster Programmierer will man natürlich prüfen, ob di
 
 Wenn das alles wünschenswert klingt und von den Vorteilen profitiert werden soll, muss nichts Weiteres getan werden, als anzugeben, dass ein Projekt *Semantic Versioning* verwendet und anschließend den oben genannte Regeln Folge zu leisten. Verweise in der README auf diese Webseite, sodass auch andere über die Regeln Bescheid wissen und von ihnen profitieren können.
 
-
 FAQ
 ---
 
 ### Wie soll ich bei der Versionierung in der initialen Development Phase (0.y.z) verfahren?
 
 Das Einfachste ist, die Versionierung bei 0.1.0 zu beginnen und dann bei jedem folgender Veröffentlichung die Minor Version zu erhöhen.
-
 
 ### Woher weiß ich, wann es Zeit ist Version 1.0.0 zu veröffentlichen?
 
@@ -114,14 +109,12 @@ Funktionalitäten als *deprecated* zu markieren ist ein gewöhnlicher Teil von S
 
 Nein, aber sei vernünftig. Zum Beispiel, wäre ein 255 Zeichen langer Version String wahrscheinlich ein wenig übertrieben. Außerdem könnten bestimmte Systeme ihre eigenen Limits definieren.
 
-
 Über
 ----
 
 Die *Semantic Versioning* Spezifikation wurde von [Tom Preston-Werner](http://tom.preston-werner.com), Erfinder von Gravatars und Mitbegründer von GitHub, erstellt.
 
 Für Feedback, [eröffne bitte ein Issue auf GitHub](https://github.com/mojombo/semver/issues).
-
 
 Lizenz
 ------

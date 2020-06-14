@@ -55,7 +55,6 @@ Chiamo questo sistema "Versionamento Semantico". Con queste convenzioni i numeri
 versione, ed il modo in cui essi cambiano, comunicano significato relativamente
 al codice sottostante e a cosa è stato modificato da una versione all'altra.
 
-
 Specifica di Versionamento Semantico (SemVer)
 ---------------------------------------------
 
@@ -182,7 +181,6 @@ ad usare Versionamento Semantico è dichiarare che state facendo così e poi
 seguire le regole. Rimandate a questo sito web dal vostro LEGGIMI (README) così altri
 conosceranno le regole e potranno beneficiarne.
 
-
 FAQ
 ---
 
@@ -288,7 +286,6 @@ Traduzione a cura del [Java User Group Padova](http://www.jugpadova.it/):
 
 Per lasciare il vostro feedback per favore [aprite una segnalazione su 
 GitHub](https://github.com/mojombo/semver/issues).
-
 
 Licenza
 -------

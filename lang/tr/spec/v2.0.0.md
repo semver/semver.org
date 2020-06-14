@@ -33,7 +33,6 @@ Bu soruna bir çözüm olarak, sürüm numaralarının nasıl verildiği ve artt
 
 Bu sistemi: "Anlamsal Sürümleme" diye nitelendiriyorum. Bu düzen sayesinde, sürüm numaraları ve sürüm numaralarının değişim şekilleri, kodda, bir sürümden diğerine neyin değiştiğini anlatır hale gelmektedir.
 
-
 Anlamsal Sürümleme Tanımı (SemVer)
 ----------------------------------------
 
@@ -73,7 +72,6 @@ Basit bir örnek Anlamsal Sürümlendirme'nin bağımlılık cehennemini nasıl 
 Sorumluluk sahibi bir yazılım geliştirici olarak, tabii ki, her paket güncellemesinin reklam edildiği şekilde işlediğini kontrol etmek isteyeceksiniz. Gerçek dünya karışık bir yerdir; gözünüzü açık tutmak dışında yapabileceğiniz pek bir şey yoktur. Ancak, yapabileceğiniz şudur: Bağımlı olunan paketlerin yeni sürümlerini çıkarmaya gerek kalmadan paketleri sunmak ve yükseltmek için sizi zaman ve eziyetten kurtaracak mantıklı bir yol öneren Anlamsal Sürümlendirme'yi kullanmaktır.
 
 Bütün bunlar hoşunuza gittiyse, Anlamsal Sürünlendirme'yi kullanmaya başlamak için yapmanız gereken tek şey kullanmaya başladığınızı ve kurallarını takip ettiğinizi duyurmaktır. BENİOKU (_README_) dosyanızdan bu web sitesine bağlantı vererek diğerlerinin de kuralları bilmesini ve bunlardan yarar sağlamalarını sağlayabilirsiniz.
-
 
 SSS
 ---

@@ -53,7 +53,6 @@ I call this system "Semantic Versioning." Under this scheme, version numbers
 and the way they change convey meaning about the underlying code and what has
 been modified from one version to the next.
 
-
 Semantic Versioning Specification (SemVer)
 ------------------------------------------
 
@@ -232,7 +231,6 @@ Versioning is to declare that you are doing so and then follow the rules. Link
 to this website from your README so others know the rules and can benefit from
 them.
 
-
 FAQ
 ---
 
@@ -356,7 +354,6 @@ cofounder of GitHub.
 
 If you'd like to leave feedback, please [open an issue on
 GitHub](https://github.com/semver/semver/issues).
-
 
 License
 -------
