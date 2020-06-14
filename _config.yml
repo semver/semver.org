@@ -1,8 +1,5 @@
 title: Semantic Versioning
 descriptions: A simple set of rules and requirements that dictate how version numbers are assigned and incremented
-
-# Should be in the form of
-# <machine readable key>: <human readable label>
 languages:
   en: english
   fr: français
@@ -31,28 +28,23 @@ languages:
   hin: हिन्दी
   ca: català
   hu: magyar
+  hy: Հայերեն
+  kab: taqbaylit
   bg: Български
-
 versions:
   - 2.0.0
   - 2.0.0-rc.2
   - 2.0.0-rc.1
   - 1.0.0
   - 1.0.0-beta
-
 current_version: 2.0.0
-
-# Default author, for when none is set
 author: Tom Preston-Werner
-
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-redirect-from
-
 defaults:
-  -
-    scope:
-      path: ""
+  - scope:
+      path: ''
     values:
-      layout: "default"
+      layout: default
