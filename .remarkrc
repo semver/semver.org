@@ -10,6 +10,9 @@
     ["remark-lint-no-trailing-spaces", false],
     ["remark-lint-no-undefined-references", false],
     ["remark-lint-prohibited-strings", false],
-    ["remark-lint-unordered-list-marker-style", "-"]
+    ["remark-lint-no-shortcut-reference-link", false],
+    ["remark-lint-unordered-list-marker-style", "-"],
+    ["remark-lint-heading-style", "setext"],
+    ["remark-lint-code-block-style", "fenced"]
   ]
 }

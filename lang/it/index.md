@@ -281,10 +281,10 @@ Preston-Werner](http://tom.preston-werner.com), inventore di Gravatars e
 cofondatore di GitHub.
 
 Traduzione a cura del [Java User Group Padova](http://www.jugpadova.it/):
-* [Tarin Gamberini](http://www.taringamberini.com) (autore)
-* [Enrico Mezzato](https://github.com/mezzato) (revisore)
-* [Emanuele Gesuato](http://nonsolojava.blogspot.it/) (revisore)
-* [Anicet Foba Togue](https://twitter.com/atogue) (revisore)
+- [Tarin Gamberini](http://www.taringamberini.com) (autore)
+- [Enrico Mezzato](https://github.com/mezzato) (revisore)
+- [Emanuele Gesuato](http://nonsolojava.blogspot.it/) (revisore)
+- [Anicet Foba Togue](https://twitter.com/atogue) (revisore)
 
 Per lasciare il vostro feedback per favore [aprite una segnalazione su 
 GitHub](https://github.com/mojombo/semver/issues).

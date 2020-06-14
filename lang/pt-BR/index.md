@@ -274,15 +274,15 @@ colaborativa pela [Wend Tecnologia](https://github.com/wendtecnologia) através
 de [Walker de Alencar Oliveira](https://github.com/walkeralencar) e teve a 
 participação de:
 
-* [William G. Comnisky](https://github.com/wcomnisky)
-* [Rafael Sirotheau](https://github.com/rafasirotheau)
-* [Arthur Almeida](https://github.com/arthuralmeidap)
-* [Alberto Guimarães Viana](https://github.com/albertogviana)
-* [Rafael Lúcio](https://github.com/poste9)
-* Josiel Rocha
-* Alessandro Leite
-* Vinícius Assef
-* [Silas Ribas Martins](https://github.com/silasrm)
+- [William G. Comnisky](https://github.com/wcomnisky)
+- [Rafael Sirotheau](https://github.com/rafasirotheau)
+- [Arthur Almeida](https://github.com/arthuralmeidap)
+- [Alberto Guimarães Viana](https://github.com/albertogviana)
+- [Rafael Lúcio](https://github.com/poste9)
+- Josiel Rocha
+- Alessandro Leite
+- Vinícius Assef
+- [Silas Ribas Martins](https://github.com/silasrm)
 
 Toda colaboração na tradução pode ser acompanhada no link:
 http://pad.okfn.org/p/Fh9hjBPVu9

@@ -258,8 +258,8 @@ soustanovitelja GitHub-a.
 
 Slovenski prevod so prispevali:
 
-* [Peter Kokot](https://github.com/peterkokot)
-* [Aleš Šarkanj](https://github.com/alsar)
+- [Peter Kokot](https://github.com/peterkokot)
+- [Aleš Šarkanj](https://github.com/alsar)
 
 Če želite pustiti povratne informacije, prosimo, da [odprete vprašanje na
 GitHub-u](https://github.com/mojombo/semver/issues).
