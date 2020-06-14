@@ -210,5 +210,5 @@ Preston-Werner)](http://tom.preston-werner.com)가 작성했다.
 라이선스
 --------
 
-Creative Commons - CC BY 3.0
+Creative Commons ― CC BY 3.0
 http://creativecommons.org/licenses/by/3.0/

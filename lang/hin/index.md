@@ -119,4 +119,4 @@ language: hin
 लाइसेंस
 -----
 
-[क्रिएटिव कॉमन्स - 3.0 द्वारा सीसी](http://creativecommons.org/licenses/by/3.0/)
+[क्रिएटिव कॉमन्स ― 3.0 द्वारा सीसी](http://creativecommons.org/licenses/by/3.0/)

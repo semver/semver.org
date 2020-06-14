@@ -38,7 +38,7 @@ meggátol a projekt könnyed és rizikómentes előrevitelében.
 
 A probléma megoldásaként javaslom ezen egyszerű szabályok és követelmények halmazát,
 melyek megszabják hogyan rendeljünk hozzá, illetve inkrementáljuk a verziószámokat.
-Ezen szabályok a már jól bevett gyakorlatokon alapulnak - ám, nem szükségszerűen korlátozódnak rájuk -, 
+Ezen szabályok a már jól bevett gyakorlatokon alapulnak ― ám, nem szükségszerűen korlátozódnak rájuk -, 
 mind zárt- és nyílt forráskódú szoftverekben. A rendszer első feltétele egy publikus API létrehozása. 
 Ez egyaránt lehet dokumentáció formájában, vagy a programon keresztül meghatározva.
 Kulcsfontosságú, hogy ez az API átlátható es precíz legyen. Miután az API-t kiadtuk, 
@@ -251,4 +251,4 @@ Fordította:
 Licensz
 -------
 
-[Creative Commons - CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
+[Creative Commons ― CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)

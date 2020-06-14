@@ -130,4 +130,4 @@ GitHub](https://github.com/mojombo/semver/issues).
 الرُخصة
 -------
 
-[المشاع الإبداعي - CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
+[المشاع الإبداعي ― CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)

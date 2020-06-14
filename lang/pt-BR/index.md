@@ -292,4 +292,4 @@ Caso queira deixar sua opinião, por favor [abra uma issue no GitHub](https://gi
 Licença
 -------
 
-[Creative Commons - CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
+[Creative Commons ― CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)

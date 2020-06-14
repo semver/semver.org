@@ -242,4 +242,4 @@ Om du vill lämna feedback, [öppna en fråga på GitHub](https://github.com/moj
 Licens
 -------
 
-[Creative Commons - CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
+[Creative Commons ― CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)

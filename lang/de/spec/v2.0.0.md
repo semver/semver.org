@@ -119,4 +119,4 @@ Für Feedback, [eröffne bitte ein Issue auf GitHub](https://github.com/mojombo/
 Lizenz
 ------
 
-[Creative Commons - CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
+[Creative Commons ― CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
