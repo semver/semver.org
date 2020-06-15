@@ -8,13 +8,13 @@ Versionado Semántico 2.0.0-rc.2
 
 Resumen
 -------
-Dada una versión MAJOR.MINOR.PATCH, el incremento será:
+Dada una versión MAYOR.MENOR.PARCHE, el incremento será:
 
-1. MAJOR version cuando se realizan cambios incompatibles en la API.
-1. MINOR version cuando se agrega funcionalidad de forma retrocompatible.
-1. PATCH version cuando se corrigen bugs de forma retrocompatible.
+1. Versión MAYOR, cuando se realizan cambios incompatibles en la API.
+1. Versión MENOR cuando se agrega funcionalidad de forma retrocompatible.
+1. Version PARCHE cuando se corrigen bugs de forma retrocompatible.
 
-Adicionalmente se puede agregar etiquetas para versiones pre-liberación, con formato MAJOR.MINOR.PATCH-LABEL.
+Adicionalmente se puede agregar etiquetas para versiones pre-liberación, con formato MAYOR.MENOR.PARCHE-ETIQUETA.
 
 Introducción
 ------------
@@ -46,7 +46,7 @@ En el documento original se usa el [RFC 2119](http://tools.ietf.org/html/rfc2119
 
 7. La versión minor Y (x.Y.z `|` x > 0) DEBE ser incrementada si se introduce nueva funcionalidad compatible con la versión anterior. Se DEBE incrementar si cualquier funcionalidad de la API es marcada como deprecada. PUEDE ser incrementada si se agrega funcionalidad o arreglos considerables al código privado. Puede incluir cambios de nivel patch. La versión patch DEBE ser reseteada a 0 cuando la versión minor es incrementada.
 
-8. La versión major X (X.y.z `|` X > 0) DEBE ser incrementada si cualquier cambio no compatible con la versión anterior es introducida a la API pública. PUEDE incluir cambios de niver minor y/o patch. Las versiones patch y minor DEBEN ser reseteadas a 0 cuando se incrementa la versión major.
+8. La versión major X (X.y.z `|` X > 0) DEBE ser incrementada si cualquier cambio no compatible con la versión anterior es introducida a la API pública. PUEDE incluir cambios de niveL minor y/o patch. Las versiones patch y minor DEBEN ser reseteadas a 0 cuando se incrementa la versión major.
 
 9. Una versión pre-release PUEDE ser representada por adjuntar un guión y una serie de identificadores separados por puntos inmediatamente después de la versión patch. Los identificadores DEBEN consistir solo de caracteres ASCII alfanuméricos y el guión  [0-9A-Za-z-]. Las versiones pre-release satisfacen pero tienen una menor precedencia que la versión normal asociada.Ejemplos: 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7, 1.0.0-x.7.z.92.
 
