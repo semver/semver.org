@@ -36,8 +36,8 @@ yileqman neɣ aceṛṛeɛ n yileqman ad tseddum asenfar-nwen ar zdat s tefses
 d tɣellist, ad d-tafem iman-nwen deg "tmes n teglin".
 
 Akken ad yefru wugur-a, summreɣ-d kra n yilugan d tmariwin ara awen-d-yinin amek
-ara tesbeddem neɣ ad tesnernim uṭṭunen n yileqman. Ilugan-a bnan - ɣas akken
-mačči ala ɣef waya - ɣef tsemras i nennum, yellan yakan ttwaseqdacent s waṭas
+ara tesbeddem neɣ ad tesnernim uṭṭunen n yileqman. Ilugan-a bnan ― ɣas akken
+mačči ala ɣef waya ― ɣef tsemras i nennum, yellan yakan ttwaseqdacent s waṭas
 ama deg useɣẓan uslig ama deg win yeldin. Akken ad yeddu unagraw-a, ilaq ad
 tesbeddem API tazayezt (agrudem n usihel n yesnasen). Aya yezmer ad yili s
 usedles neɣ ad yettwaseyyef deg tengalt yakan. Akken yebɣu yili, API-a ilaq ad
@@ -50,7 +50,6 @@ yemyagin d wayen yezrin ad yesnerni alqem major.
 Semmaɣ-as i unagraw-a "aleqqem anamkan". S unagraw-a, uṭṭunen n ulqem d wamek s
 i ttnernin ttaken anamek i tengalt uɣur cudden d wayen yettbeddilen seg ulqem
 ar wayeḍ.
-
 
 Asefru n uleqqem anamkan (SemVer)
 ---------------------------------
@@ -161,7 +160,6 @@ Ma yella yeffeɣ fell-awen akk waya, tuḥwaǧem kan ad d-tinim belli tseqdacem-
 yerna ad tḍefrem ilugan akken ad tebdum aseqdec n uleqqem anamkan. Rnut aseɣwen
 ar usmel-a deg README-nwen akken ad walin wiyaḍ ilugan yerna ad d-sfaydin
 seg-sen.
-
 
 Isteqsiyen imezga
 -----------------
@@ -286,4 +284,4 @@ ma ulac aɣilif.
 Turagt
 ------
 
-[Creative Commons - CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
+[Creative Commons ― CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)

@@ -53,7 +53,6 @@ Jo anomeno aquest sistema "gestió semàntica de versions". Amb aquest sistema,
 els nombres de versió i la manera com canvien donen sentit al codi subjacent
 i a tot allò que s'ha modificat d'una versió a una altra.
 
-
 Especificació de la gestió semàntica de versions (SemVer)
 ---------------------------------------------------------
 
@@ -142,7 +141,6 @@ pre-llençament té major prioritat sobre un conjunt més curt, si tots els iden
 anteriors són idèntics. Exemple: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta <
 1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
 
-
 Per què utilitzar la gestió semàntica de versions?
 --------------------------------------------------
 
@@ -178,7 +176,6 @@ Si tot això us sona bé, tot el que heu de fer per començar a utilitzar la ges
 semàntica de la versions és declarar que ho feu i llavors seguiu les regles.
 Afegiu un enllaç a aquest lloc web al vostre fitxer README i així altres podran
 conèixer les regles i beneficiar-se'n.
-
 
 FAQ
 ---
@@ -276,7 +273,7 @@ Preston-Werner] (http://tom.preston-werner.com), inventor de Gravatars i
 cofundador de GitHub.
 
 Traducció d'aquest document a càrrec de:
-* [Jordi Sanfeliu](https://github.com/mikaku)
+- [Jordi Sanfeliu](https://github.com/mikaku)
 
 Si voleu deixar comentaris, si us plau [obre un tiquet a
 GitHub] (https://github.com/mojombo/semver/issues).
@@ -284,4 +281,4 @@ GitHub] (https://github.com/mojombo/semver/issues).
 Llicència
 ---------
 
-[Creative Commons - CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
+[Creative Commons ― CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)

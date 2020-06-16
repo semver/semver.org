@@ -38,7 +38,7 @@ meggátol a projekt könnyed és rizikómentes előrevitelében.
 
 A probléma megoldásaként javaslom ezen egyszerű szabályok és követelmények halmazát,
 melyek megszabják hogyan rendeljünk hozzá, illetve inkrementáljuk a verziószámokat.
-Ezen szabályok a már jól bevett gyakorlatokon alapulnak - ám, nem szükségszerűen korlátozódnak rájuk -, 
+Ezen szabályok a már jól bevett gyakorlatokon alapulnak ― ám, nem szükségszerűen korlátozódnak rájuk -, 
 mind zárt- és nyílt forráskódú szoftverekben. A rendszer első feltétele egy publikus API létrehozása. 
 Ez egyaránt lehet dokumentáció formájában, vagy a programon keresztül meghatározva.
 Kulcsfontosságú, hogy ez az API átlátható es precíz legyen. Miután az API-t kiadtuk, 
@@ -49,7 +49,6 @@ kiegészítések/módosítások esetén növeljük a minor verziót, és visszaf
 a major verziót.
 A rendszert "Szemantikus Verziószámozásnak" keresztelem. Ezen séma alapján, a verziószámok és ahogyan ezek változnak, 
 jelentést hordoznak a mögöttes kódról és hogy mi változott egyik verzióról a másikra térve.
-
 
 A Szemantikus Verziószámozás leírása (SemVer)
 ------------------------------------------
@@ -172,7 +171,6 @@ hogy használod a Szemantikus Verziószámozást és kövesd a szabályait. Link
 ezt a honlapot a csomagod README-jébe, hogy mások is megismerjék a szabályokat és
 részesülhessenek az előnyeiben.
 
-
 GY.I.K.
 -------
 
@@ -239,7 +237,6 @@ Teljesen normális esemény a szoftverfejlesztésben, hogy egyes funkcionalitás
 Nincs, de becsüljük meg észszerűen a hosszát. Például, egy 255 karakteres verzió string erős túlzás. Különböző 
 rendszereknél, különböző verzió string hossz korlátokat alkalmazhatnak.
 
-
 Infó
 -----
 
@@ -254,4 +251,4 @@ Fordította:
 Licensz
 -------
 
-[Creative Commons - CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
+[Creative Commons ― CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
