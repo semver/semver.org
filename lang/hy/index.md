@@ -153,9 +153,9 @@ promiscuity) խնդրին․ անհիմն է ենթադրությունը, որ 
 --------------------------------------------------------------------
 ```
 <valid semver> ::= <version core>
-               | <version core> "-" <pre-release>
-               | <version core> "+" <build>
-               | <version core> "-" <pre-release> "+" <build>
+                 | <version core> "-" <pre-release>
+                 | <version core> "+" <build>
+                 | <version core> "-" <pre-release> "+" <build>
 
 <version core> ::= <major> "." <minor> "." <patch>
 
@@ -182,37 +182,37 @@ promiscuity) խնդրին․ անհիմն է ենթադրությունը, որ 
                      | <digits>
 
 <alphanumeric identifier> ::= <non-digit>
-                           | <non-digit> <identifier characters>
-                           | <identifier characters> <non-digit>
-                           | <identifier characters> <non-digit> <identifier characters>
+                            | <non-digit> <identifier characters>
+                            | <identifier characters> <non-digit>
+                            | <identifier characters> <non-digit> <identifier characters>
 
 <numeric identifier> ::= "0"
-                     | <positive digit>
-                     | <positive digit> <digits>
+                       | <positive digit>
+                       | <positive digit> <digits>
 
 <identifier characters> ::= <identifier character>
-                        | <identifier character> <identifier characters>
+                          | <identifier character> <identifier characters>
 
 <identifier character> ::= <digit>
-                        | <non-digit>
+                         | <non-digit>
 
 <non-digit> ::= <letter>
-            | "-"
+              | "-"
 
 <digits> ::= <digit>
-         | <digit> <digits>
+           | <digit> <digits>
 
 <digit> ::= "0"
-         | <positive digit>
+          | <positive digit>
 
 <positive digit> ::= "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
 
 <letter> ::= "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J"
-         | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T"
-         | "U" | "V" | "W" | "X" | "Y" | "Z" | "a" | "b" | "c" | "d"
-         | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n"
-         | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x"
-         | "y" | "z"
+           | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T"
+           | "U" | "V" | "W" | "X" | "Y" | "Z" | "a" | "b" | "c" | "d"
+           | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n"
+           | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x"
+           | "y" | "z"
 ```
 
 Ի՞նչու օգտագործել սեմանտիկ տարբերակում
