@@ -1,56 +1,14 @@
 name: Check chagnes
 
-on:
-  issue_comment:
-    types: [created]
+on: [pull_request]
 
 jobs:
   checks:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/github-script@0.9.0
-        id: comment
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: return context.payload.issue.pull_request && context.payload.comment.body === '/check'
       - uses: actions/checkout@v2
-        if: steps.comment.outputs.result == 'true'
-      - name: Checkout Git Branch
-        if: steps.comment.outputs.result == 'true'
-        run: |
-          git fetch origin +refs/pull/${{ github.event.issue.number }}/merge
-          git checkout FETCH_HEAD
-      - name: Comment for non-GitHub Bot PRs
-        if: steps.comment.outputs.result == 'true' && github.actor != 'github-actions'
-        uses: actions/github-script@0.9.0
-        with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          script: |
-            const { data: { merge_commit_sha } } = await github.pulls.get({
-              pull_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo
-            });
-            const { data: { files }} = await github.repos.getCommit({
-              ref: merge_commit_sha,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-            });
-            if (files.some(({ filename }) => /^spec\//.test(filename))) {
-              github.issues.createComment({
-                issue_number: context.issue.number,
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                body: 'Thank you for contribution!\nSeems like you trying to change specification not in a right place :thinking:\nThis repository contains code for website [semver.org](https://semver.org) with spec translations. If you looking for direct changes to SemVer, please use [semver/semver](https://github.com/semver/semver) repository.\n\nPlease close this PR and create a new one to the right repository. If you have any questions, feel free to ping someone from @semver/maintainers'
-              });
-            }
       - uses: actions/setup-node@v1
-        if: steps.comment.outputs.result == 'true'
         with:
           node-version: "12.x"
-      - name: Install Dependencies
-        if: steps.comment.outputs.result == 'true'
-        run: npm ci
-      - name: Check
-        if: steps.comment.outputs.result == 'true'
-        run: npm run lint
+      - run: npm ci
+      - run: npm run lint
