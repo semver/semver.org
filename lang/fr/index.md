@@ -13,7 +13,7 @@ En bref
 
 1. le numéro de version MAJEUR quand il y a des changements non rétrocompatibles,
 1. le numéro de version MINEUR quand il y a des ajouts de fonctionnalités rétrocompatibles,
-1. le numéro de version de CORRECTIF quand il y a des corrections d’anomalies rétrocompatibles
+1. le numéro de version de CORRECTIF quand il y a des corrections d’anomalies rétrocompatibles.
 
 Des libellés supplémentaires peuvent être ajoutés pour les versions de pré-livraison et pour
 des méta-données de construction sous forme d'extension du format MAJEURE.MINEURE.CORRECTIF.
@@ -22,9 +22,9 @@ Introduction
 ------------
 
 Dans le monde de la gestion des logiciels, il existe un endroit redouté appelé
-"l'enfer des dépendances" (de l'anglais "dependency hell"). Plus votre système se
+«&nbsp;l'enfer des dépendances&nbsp;» (de l'anglais _dependency hell_). Plus votre système se
 développe et plus vous intégrez de composants dans votre logiciel, plus vous êtes
-susceptible de vous trouver un jour dans cette abîme de désespoir.
+susceptible de vous trouver un jour dans cet abîme de désespoir.
 
 Dans les systèmes comportant de nombreuses dépendances, publier une nouvelle
 version d'un composant peut vite devenir un cauchemar. Si les règles de
@@ -42,9 +42,8 @@ simples qui dictent la façon dont les numéros de version sont attribués et
 incrémentés. Ces règles sont basées mais pas nécessairement limitées à des
 pratiques très répandues aussi bien dans les domaines du logiciel privé que du
 logiciel libre. Pour que ce système fonctionne, vous devez d'abord déclarer une API
-publique. Il peut s'agir d'un document ou de règles imposées par le code lui-
-même. Quoiqu'il en soit, il est important que cette API soit claire et précise.
-Une fois prête, vous communiquez ses modifications par des incrémentations
+publique. Il peut s'agir d'un document ou de règles imposées par le code lui-même. Quoi qu'il en soit, il est important que cette API soit claire et précise.
+Une fois celle-ci prête, vous communiquez ses modifications par des incrémentations
 successives de son numéro de version. Considérons le format de version X.Y.Z
 où X, Y et Z identifient la version (Majeure.Mineure.Corrective). Les corrections qui
 n'affectent pas l'API incrémentent le dernier identifiant qui est l'identifiant de
@@ -52,10 +51,9 @@ version de correction. Lors d'ajouts ou de modifications rétrocompatibles de l'
 il faut incrémenter l'identifiant de version mineure. Enfin, pour des modifications
 non rétrocompatibles, il faut incrémenter l'identifiant de version majeure.
 
-J'appelle ce système "gestion sémantique de version". Avec ce système, les numéros de
+J'appelle ce système «&nbsp;gestion sémantique de version&nbsp;». Avec ce système, les numéros de
 version, et la façon dont ils changent, donnent du sens au code sous-jacent et à ce
 qui a été modifié d'une version à l'autre.
-
 
 Spécification de la gestion sémantique de version (SemVer)
 ----------------------------------------------------------
@@ -116,7 +114,7 @@ associées à une version normale.
 Exemples : 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7, 1.0.0-x.7.z.92.
 
 1. Les méta-données de construction PEUVENT être notées par l'ajout d'un signe
-"plus" et d'une série d'identifiants séparés par des points suivant immédiatement
+«&nbsp;plus&nbsp;» et d'une série d'identifiants séparés par des points suivant immédiatement
 l'identifiant de version de correction ou de pré-livraison. Les identifiants DOIVENT
 être composés uniquement de caractères alphanumériques ASCII et de traits d'union [0-9A-Za-z-].
 Les identifiants NE DOIVENT PAS être vides. Les méta-données de construction DEVRAIENT
@@ -131,7 +129,7 @@ majeures, mineures, de correction et de pré-livraison, en suivant cet ordre
 La priorité est déterminée par la première différence apparaissant dans la comparaison
 de chacun de ces identifiants dans l'ordre : majeur, mineur et correctif. Ces
 identifiants sont toujours comparés numériquement.
-Exemple : 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1
+Exemple : 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1.
 Lorsque ces identifiants sont identiques, une version de pré-livraison est moins
 prioritaire qu’une version normale.
 Exemple : 1.0.0-alpha < 1.0.0.
@@ -147,25 +145,24 @@ prioritaire par rapport à un ensemble de champs plus court si tous les identifi
 précédents sont identiques.
 Exemple : 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
 
-
 Pourquoi utiliser la gestion sémantique de version ?
 ----------------------------------------------------
 
 Il ne s'agit pas d'une idée nouvelle ou révolutionnaire. En fait, vous faites
 probablement déjà quelque chose d'approchant. Et le problème vient du fait que
-"quelque chose de proche" n'est pas suffisant. Sans conformité avec une méthode
-formelle, les numéros de versions deviennent inutilisables pour la gestion de
+«&nbsp;quelque chose de proche&nbsp;» n'est pas suffisant. Sans conformité avec une méthode
+formelle, les numéros de version deviennent inutilisables pour la gestion de
 vos dépendances. En donnant un nom et une définition claire aux idées exposées
 ci-dessus, il devient facile de communiquer vos intentions aux utilisateurs
 de votre logiciel. Une fois que vos intentions sont claires, une spécification
-souple (mais pas "trop" souple) des dépendances peut être réalisée.
+souple (mais pas «&nbsp;trop&nbsp;» souple) des dépendances peut être réalisée.
 
 Un exemple simple permet de montrer comment la gestion sémantique de version peut
 faire de l'enfer des dépendances, une chose du passé. Considérons une bibliothèque
-appelée "CamionDePompier". Elle nécessite un composant appelé "Échelle" dont la
+appelée «&nbsp;CamionDePompier&nbsp;». Elle nécessite un composant appelé «&nbsp;Échelle&nbsp;» dont la
 version est gérée sémantiquement. Lorsque la librairie CamionDePompier est créée,
 Échelle en est à sa version 3.1.0. Et puisque CamionDePompier utilise des fonctionnalités
-qui ont été introduites en 3.1.0, vous pouvez spécifier, sans ne courir aucun risque,
+qui ont été introduites en 3.1.0, vous pouvez spécifier, sans courir le moindre risque,
 une dépendance vers Échelle plus grande ou égale à 3.1.0 mais inférieure à 4.0.0.
 Maintenant, lorsque les versions 3.1.1 et 3.2.0 de Échelle seront disponibles, vous
 pourrez les publier dans votre système de gestion de dépendances en sachant qu'elles
@@ -183,7 +180,6 @@ Si tout cela vous semble intéressant, tout ce que vous avez à faire pour comme
 à utiliser la gestion sémantique de version est de déclarer que vous le faites
 et d'en suivre les règles. Ajoutez ensuite un lien vers ce site web dans votre
 README pour que d'autres puissent en connaître les règles et en bénéficier.
-
 
 FAQ
 ---
@@ -213,7 +209,7 @@ prochaine version majeure.
 C'est une question de développement responsable et d'anticipation. Les changements
 incompatibles ne doivent pas être introduits à la légère dans du logiciel dont
 beaucoup de code source dépend. Le coût d'une mise à jour vers une nouvelle version
-peut être important. Le besoin de faire évoluer la version majeur pour publier des
+peut être important. Le besoin de faire évoluer la version majeure pour publier des
 changements non rétrocompatibles signifie que vous aurez mesuré les implications de
 vos modifications et évalué le rapport entre leur coût et leurs bénéfices.
 
@@ -230,7 +226,7 @@ API publique bien définie permettront à tout le monde d'avancer sans problème
 ### Que faire si j'ai accidentellement publié un changement non rétrocompatible dans une version mineure ?
 
 Dès que vous réalisez que vous avez cassé votre gestion sémantique de version,
-corrigez le problème et publiez une nouvelle version mineure qui rétabli la
+corrigez le problème et publiez une nouvelle version mineure qui rétablit la
 compatibilité avec les versions précédentes. Même dans de telles circonstances,
 il est inacceptable de modifier une version déjà publiée. Mettez à jour la
 documentation en signalant la version défectueuse et informez vos utilisateurs
@@ -247,11 +243,11 @@ corriger un bug ou pour introduire une nouvelle fonctionnalité. Je considère
 généralement l'ajout de nouveau code comme la deuxième option ce qui sous-entend
 évidemment un incrément de l'identifiant de version mineure.
 
-### Que faire si par mégarde, je modifie l’API publique d’une façon qui ne correspond pas au changement de numéro de version (exemple : le code introduit un changement non rétrocompatible dans une publication de correctif) ?
+### Que faire si par mégarde je modifie l’API publique d’une façon qui ne correspond pas au changement de numéro de version (exemple : le code introduit un changement non rétrocompatible dans une publication de correctif) ?
 
 C'est à vous de décider. Si vous avez une large audience qui sera considérablement
 affectée par un retour à ce que l'API publique prévoyait, alors il est peut être préférable
-de publier une version majeure, même si la livraison pourrait être uniquement considérées
+de publier une version majeure, même si la livraison pourrait être uniquement considérée
 comme un correctif. Souvenez-vous encore que la gestion sémantique de version consiste
 essentiellement à transmettre du sens dans la façon dont le numéro de version change. Si
 ces changements sont importants pour vos utilisateurs, utilisez les numéros de version
@@ -283,8 +279,7 @@ cofondateur de GitHub.
 Si vous souhaitez laisser des commentaires, veuillez [ouvrir un ticket sur
 GitHub](https://github.com/mojombo/semver/issues).
 
-
 Licence
 -------
 
-[Creative Commons - CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
+[Creative Commons ― CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
