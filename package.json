@@ -1,0 +1,37 @@
+{
+  "name": "semver.org",
+  "version": "0.0.1",
+  "description": "Website for SemVer specification https://semver.org",
+  "main": "scripts/collect.js",
+  "scripts": {
+    "collect": "node scripts/collect.js",
+    "lint": "remark -qf lang spec index.md",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/semver/semver.org.git"
+  },
+  "keywords": [
+    "semver",
+    "spec",
+    "version",
+    "semantic",
+    "version"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/semver/semver.org/issues"
+  },
+  "homepage": "https://github.com/semver/semver.org#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "js-yaml": "^3.14.0",
+    "remark-cli": "^8.0.0",
+    "remark-frontmatter": "^2.0.0",
+    "remark-lint-mdash-style": "^1.1.1",
+    "remark-preset-lint-node": "^1.16.0",
+    "semver": "^7.3.2"
+  }
+}

@@ -13,9 +13,9 @@ Shrnutí
 Číslo verzí zapisujeme ve formátu MAJOR.MINOR.PATCH
 Navyšování jednotlivých čísel verzí probíhá následovně:
 
-1. MAJOR - když nastala změna, která není zpětně kompatibilní s ostatními (API)
-2. MINOR - když se přidá funkcionalita se zachováním zpětné kompatibility
-3. PATCH - když se opravila chyba a zůstala kompatibilita
+1. MAJOR ― když nastala změna, která není zpětně kompatibilní s ostatními (API)
+2. MINOR ― když se přidá funkcionalita se zachováním zpětné kompatibility
+3. PATCH ― když se opravila chyba a zůstala kompatibilita
 
 Pomocí předběžných verzí a přidáváním metadat je možné upřesnit informace. Např.: `1.0.0-alfa`, `1.0.1-beta+2`
 
@@ -40,7 +40,6 @@ Specifikace Sémantického verzování (SemVer)
 “MŮŽE” (angl. MAY, OPTIONAL)
 (výrazy jsou interpretované z dokumentu: [RFC 2119](http://tools.ietf.org/html/rfc2119))
 
-
 1. Software používající Sémantické verzování, MUSÍ mít nadefinované API, buďto přímo ve zdrojovém kódu a nebo v externí dokumentaci. V obou případech to musí být hlavně přesné a komplexní.
 
 2. Číslo verzí MUSÍ být ve formátu X, Y, Z. Jedná se o celá nezáporná čísla, přičemž X se NESMÍ rovnat hodnotě nula. Může se rovnat nule jen v případě, kdy se jedná o počáteční vývoj. X je číslo MAJOR verze, Y je číslem MINOR verze a Z je číslem PATCH verze, přičemž každé číslo má svoji hodnotu a navyšují se zvlášť a standardně, např.1.9.0 => 1.10.0 => 1.11.0.
@@ -61,7 +60,7 @@ Specifikace Sémantického verzování (SemVer)
 
 10. Metadata MOHOU být označené ve verzi přidáním znaku plus (+) a sérií identifikátorů oddělených tečkou hned za číslo PATCH a nebo pomocí předběžné verze. Identifikátory MUSÍ obsahovat pouze ASCII alfanumerické znaky a pomlčku [0-9A-Za-z-], NESMÍ být prázdné a číselné identifikátory NESMÍ obsahovat úvodní nulu. Metadata by NEMĚLA hrát roli při volbě priority verze. Např.: verze 1.0.0-alpha+001, 1.0.0+20130313144700, 1.0.0-beta+exp.sha.5114f85 mají všechny stejnou prioritu.
 
-11. Priorita se vztahuje na to, jak se verze vzájemně porovnávají. Priorita MUSÍ být určována rozdělením verze na MAJOR, MINOR, PATCH a identifikátory předběžných verzí - přesně v tomto pořadí (s metadaty se nepočítá). Priorita je daná prvním rozdílem při porovnání zleva doprava přičemž čísla MAJOR, MINOR a PATCH jsou vždy porovnávána jako čísla. Např.: 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1. Pokud jsou čísla MAJOR, MINOR a PATCH stejná, předběžná verze má menší prioritu, než normální. Např.: 1.0.0-alpha < 1.0.0. Priorita pro dvě předběžné verze, které se shodují v číslech MAJOR, MINOR a PATCH musí být počítána zleva doprava od tečky oddělených identifikátorů a to do doby, dokud se nenajde rozdíl a to následujícím způsobem: (1) Identifikátory obsahující pouze číslice, jsou porovnané číselně a identifikátory s písmeny nebo pomlčkami jsou porovnávané lexikálně, zařazené podle ASCII. (2) Číselné identifikátory mají vždy nižší prioritu jak nečíslené. (3) Jsou-li všechny předchozí identifikátory v předběžné verzi stejné, tak větší množství identifikátorů značí vyšší prioritu, než s menším počtem. Např.: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
+11. Priorita se vztahuje na to, jak se verze vzájemně porovnávají. Priorita MUSÍ být určována rozdělením verze na MAJOR, MINOR, PATCH a identifikátory předběžných verzí ― přesně v tomto pořadí (s metadaty se nepočítá). Priorita je daná prvním rozdílem při porovnání zleva doprava přičemž čísla MAJOR, MINOR a PATCH jsou vždy porovnávána jako čísla. Např.: 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1. Pokud jsou čísla MAJOR, MINOR a PATCH stejná, předběžná verze má menší prioritu, než normální. Např.: 1.0.0-alpha < 1.0.0. Priorita pro dvě předběžné verze, které se shodují v číslech MAJOR, MINOR a PATCH musí být počítána zleva doprava od tečky oddělených identifikátorů a to do doby, dokud se nenajde rozdíl a to následujícím způsobem: (1) Identifikátory obsahující pouze číslice, jsou porovnané číselně a identifikátory s písmeny nebo pomlčkami jsou porovnávané lexikálně, zařazené podle ASCII. (2) Číselné identifikátory mají vždy nižší prioritu jak nečíslené. (3) Jsou-li všechny předchozí identifikátory v předběžné verzi stejné, tak větší množství identifikátorů značí vyšší prioritu, než s menším počtem. Např.: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
 
 Proč používat Sémantické verzování?
 ------------------------------------
@@ -136,4 +135,4 @@ Pokud chcete zanechat zpětnou vazbu, prosím
 Licence
 --------
 
-[Creative Commons - CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
+[Creative Commons ― CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
