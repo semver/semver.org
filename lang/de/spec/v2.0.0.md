@@ -58,6 +58,72 @@ Die Terme "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOUL
 11. Der Rang einer Version bestimmt, welche Versionsnummer einer anderen übergeordnet ist, wenn diese bei einer Sortierung miteinander verglichen werden. Der Rang wird (MUST)  aus der Major, Minor und Patch Version sowie dem Vorveröffentlichungs-Bezeichner berechnet (Die Build-Metadaten haben keinerlei Einfluss auf den Rang einer Version). Er wird bestimmt, indem der erste Unterschied zwischen dem oben aufgeführten Elementen ermittelt wird. Dabei wird von links nach rechts, in der oben genannten Reihenfolge vorgegangen. Die Major, Minor und Patch Versionen werden numerisch miteinander verglichen. Beispiel: 1.0.0 &lt; 2.0.0 &lt; 2.1.0 &lt; 2.1.1. Beim Vergleich von zwei Versionsnummern, deren Major, Minor und Patch Versionen gleich sind, nimmt eine Vorveröffentlichung einen niedrigeren Rang als die reguläre Version ein. Beispiel: 1.0.0-alpha &lt; 1.0.0. Sind beide dieser Versionen Vorveröffentlichungen, wird (MUST) der Rang ermittelt, indem jedes Element eines Vorveröffentlichungs-Bezeichners (durch Punkte voneinander getrennt) mit dem der anderen Version verglichen wird bis ein Unterschied festgestellt wird. Auch hierbei wird von links nach rechts vorgegangen. Elemente, welche ausschließlich aus Ziffern bestehen, werden numerisch miteinander verglichen. Der Vergleich aller anderen Elemente erfolgt auf Basis der ASCII-Stellenwerte ihrer Zeichen. Numerische Elemente haben immer einen niedrigeren Rang als solche, die auch andere Zeichen enthalten. Falls alle Elemente identisch sind, nimmt der Bezeichner mit den meisten Elementen den höheren Rang ein. Beispiel: 1.0.0-alpha &lt; 1.0.0-alpha.1 &lt; 1.0.0-alpha.beta &lt; 1.0.0-beta &lt; 1.0.0-beta.2 &lt; 1.0.0-beta.11 &lt; 1.0.0-rc.1 &lt; 1.0.0.
 
 
+Backus–Naur Form Grammatik für valide SemVer Versionen
+------------------------------------------------------
+
+    <valid semver> ::= <version core>
+                     | <version core> "-" <pre-release>
+                     | <version core> "+" <build>
+                     | <version core> "-" <pre-release> "+" <build>
+
+    <version core> ::= <major> "." <minor> "." <patch>
+
+    <major> ::= <numeric identifier>
+
+    <minor> ::= <numeric identifier>
+
+    <patch> ::= <numeric identifier>
+
+    <pre-release> ::= <dot-separated pre-release identifiers>
+
+    <dot-separated pre-release identifiers> ::= <pre-release identifier>
+                                              | <pre-release identifier> "." <dot-separated pre-release identifiers>
+
+    <build> ::= <dot-separated build identifiers>
+
+    <dot-separated build identifiers> ::= <build identifier>
+                                        | <build identifier> "." <dot-separated build identifiers>
+
+    <pre-release identifier> ::= <alphanumeric identifier>
+                               | <numeric identifier>
+
+    <build identifier> ::= <alphanumeric identifier>
+                         | <digits>
+
+    <alphanumeric identifier> ::= <non-digit>
+                                | <non-digit> <identifier characters>
+                                | <identifier characters> <non-digit>
+                                | <identifier characters> <non-digit> <identifier characters>
+
+    <numeric identifier> ::= "0"
+                           | <positive digit>
+                           | <positive digit> <digits>
+
+    <identifier characters> ::= <identifier character>
+                              | <identifier character> <identifier characters>
+
+    <identifier character> ::= <digit>
+                             | <non-digit>
+
+    <non-digit> ::= <letter>
+                  | "-"
+
+    <digits> ::= <digit>
+               | <digit> <digits>
+
+    <digit> ::= "0"
+              | <positive digit>
+
+    <positive digit> ::= "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+
+    <letter> ::= "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J"
+               | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T"
+               | "U" | "V" | "W" | "X" | "Y" | "Z" | "a" | "b" | "c" | "d"
+               | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n"
+               | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x"
+               | "y" | "z"
+
+
 Weshalb sollte man Semantic Versioning nutzen?
 -----------------------------------------
 
