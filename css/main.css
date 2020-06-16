@@ -4,7 +4,7 @@ CSS for semver.org
 @link http://mathiasbynens.be/
 */
 
-h1, h2, ol { margin: 0; padding: 0; }
+h1, h2, ol, ul { margin: 0; padding: 0; }
 
 html { font: 14.4px/1.5 Helvetica, Arial, sans-serif; }
 body { margin: 0 auto; padding: 0 10%; max-width: 710px; color: #000; background-color: #fff; }
@@ -18,7 +18,6 @@ html { -webkit-text-size-adjust: 100%; }
 
 h1, h2, h3 {
   text-align: center;
-  line-height: 1;
 }
  h1 { font-size: 43px; margin: 1.1em 0 .7em; }
  h2 { margin: 2.1em 0 .7em; font-size: 24px; }
@@ -27,8 +26,8 @@ h1, h2, h3 {
 
 a { color: #009; }
 a:hover, a:focus { color: #000; }
-ol { padding-left: 1.5em; }
-html[dir="rtl"] ol {
+ol, ul { padding-left: 1.5em; }
+html[dir="rtl"] ol, html[dir="rtl"] ul {
     padding-left: 0;
     padding-right: 1.5em;
 }
@@ -43,7 +42,7 @@ p { margin: 0 0 1em; }
 
 /* Nav */
 
-ol.nav {
+ul.nav {
   background-color: #333;
   list-style-type: none;
   margin: 0;
@@ -51,25 +50,25 @@ ol.nav {
   overflow: hidden;
 }
 
-ol.nav li {
+ul.nav li {
   display: inline;
   font-weight: bold;
   margin: 0 0.5em;
   white-space: nowrap;
 }
 
-ol.nav li a {
+ul.nav li a {
   color: white;
 }
 
-ol.lang {
+ul.lang {
   background-color: white;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-ol.lang li a {
+ul.lang li a {
   color: black;
 }
 
@@ -94,6 +93,12 @@ html[dir="rtl"] #spec a.anchor-link {
    margin-right: -1em;
    padding-right: 0;
    padding-left: 0.5em;
+}
+
+#spec h1 a.anchor-link,
+#spec h2 a.anchor-link,
+#spec h3 a.anchor-link {
+  height: calc(1em * 1.5);
 }
 
 #spec h1 a.anchor-link {
