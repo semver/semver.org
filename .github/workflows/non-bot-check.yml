@@ -33,7 +33,7 @@ jobs:
               repo: context.repo.repo
             });
             console.log(`PR created by ${login}`);
-            if (login !== 'github-actions') {
+            if (login !== 'github-actions' || login !== 'github-actions[bot]') {
               const { data: { files }} = await github.repos.getCommit({
                 ref: merge_commit_sha,
                 owner: context.repo.owner,
