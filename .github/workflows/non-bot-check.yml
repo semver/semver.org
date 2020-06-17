@@ -27,41 +27,44 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
-            const { data: { merge_commit_sha } } = await github.pulls.get({
+            const { data: { merge_commit_sha, user: { login }} } = await github.pulls.get({
               pull_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo
             });
-            const { data: { files }} = await github.repos.getCommit({
-              ref: merge_commit_sha,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-            });
-            const protectedFiles = files.filter(({ filename }) => /^spec\//.test(filename))
-            if (protectedFiles && protectedFiles.length) {
-              await github.issues.createComment({
-                issue_number: context.issue.number,
+            console.log(`PR created by ${login}`);
+            if (login !== 'github-actions') {
+              const { data: { files }} = await github.repos.getCommit({
+                ref: merge_commit_sha,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                body: 'Thank you for contribution!\nSeems like you trying to change specification not in a right place :thinking:\nThis repository contains code for website [semver.org](https://semver.org) with spec translations. If you looking for direct changes to SemVer, please use [semver/semver](https://github.com/semver/semver) repository.\n\nPlease close this PR and create a new one to the right repository. If you have any questions, feel free to ping someone from @semver/maintainers'
               });
-              const comments = protectedFiles.map(({ filename }) => ({
-                "path": filename,
-                "position": 1,
-                "body": "This file shouldn't be changed in this repo"
-              }))
-              await github.pulls.createReview({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                pull_number: context.issue.number,
-                event: 'REQUEST_CHANGES',
-                comments
-              })
-            } else {
-              await github.pulls.createReview({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                pull_number: context.issue.number,
-                event: 'APPROVE'
-              })
+              const protectedFiles = files.filter(({ filename }) => /^spec\//.test(filename))
+              if (protectedFiles && protectedFiles.length) {
+                await github.issues.createComment({
+                  issue_number: context.issue.number,
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  body: 'Thank you for contribution!\nSeems like you trying to change specification not in a right place :thinking:\nThis repository contains code for website [semver.org](https://semver.org) with spec translations. If you looking for direct changes to SemVer, please use [semver/semver](https://github.com/semver/semver) repository.\n\nPlease close this PR and create a new one to the right repository. If you have any questions, feel free to ping someone from @semver/maintainers'
+                });
+                const comments = protectedFiles.map(({ filename }) => ({
+                  "path": filename,
+                  "position": 1,
+                  "body": "This file shouldn't be changed in this repo"
+                }))
+                await github.pulls.createReview({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  pull_number: context.issue.number,
+                  event: 'REQUEST_CHANGES',
+                  comments
+                })
+              } else {
+                await github.pulls.createReview({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  pull_number: context.issue.number,
+                  event: 'APPROVE'
+                })
+              }
             }
