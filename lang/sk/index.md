@@ -46,7 +46,7 @@ akým sa bude komunikovať s vaším systémom (ďalej len API). Môže byť zad
 formou dokumentácie, prípadne vynútené samotným kódom. Bez ohľadu na formu akou
 to bude, je
 dôležité aby toto API bolo presné a jasné. Akonáhle budete mať zadefinované vaše
-API, jeho zmeny budete oznamovať špecifickým zväčšením čísla verzie vašeho
+API, jeho zmeny budete oznamovať špecifickým zväčšením čísla verzie vášho
 systému. Uvažujme, že číslo verzie bude vo formáte MAJOR.MINOR.PATCH. Opravy
 chýb, ktoré nemenia vaše API, zväčšujú číslo PATCH verzie. Spätne kompatibilné
 zmeny API zväčšujú číslo MINOR verzie a spätne nekompatibilné zmeny API zväčšujú
@@ -117,7 +117,7 @@ Napr.: 1.0.0-alpha+001, 1.0.0+20130313144700, 1.0.0-beta+exp.sha.5114f85.
 
 11. Priorita sa vzťahuje k tomu, ako sú verzie navzájom porovnávané. Priorita
 MUSÍ byť určovaná rozdelením verzie na MAJOR, MINOR, PATCH a identifikátory
-predbežných verzií - presne v takomto poradí (s metadátami sa nepočíta).
+predbežných verzií ― presne v takomto poradí (s metadátami sa nepočíta).
 Priorita je daná prvým rozdielom pri porovnávaní zľava doprava pričom čísla
 MAJOR, MINOR a PATCH sú porovnávané vždy ako čísla. Napr.: 1.0.0 < 2.0.0 <
 2.1.0 < 2.1.1. Keď sú čísla MAJOR, MINOR a PATCH rovnaké, predbežná verzia má
@@ -263,4 +263,4 @@ Ak chcete zanechať spätnú väzbu, prosím
 Licencia
 --------
 
-[Creative Commons - CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
+[Creative Commons ― CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
