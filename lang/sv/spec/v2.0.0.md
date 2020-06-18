@@ -50,7 +50,6 @@ Jag kallar detta system "Semantisk versionshantering". Under detta schema förme
 versionsnumret och dess förändringar mening till den underliggande koden och hur den
 har förändrats från en version till en annan.
 
-
 Specifikation av Semantisk versionshantering (SemVer)
 ------------------------------------------
 
@@ -240,8 +239,7 @@ GitHub.
 
 Om du vill lämna feedback, [öppna en fråga på GitHub](https://github.com/mojombo/semver/issues).
 
-
 Licens
 -------
 
-[Creative Commons - CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
+[Creative Commons ― CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)

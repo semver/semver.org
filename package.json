@@ -5,6 +5,7 @@
   "main": "scripts/collect.js",
   "scripts": {
     "collect": "node scripts/collect.js",
+    "lint": "remark -qf lang spec index.md",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -27,6 +28,10 @@
   "dependencies": {},
   "devDependencies": {
     "js-yaml": "^3.14.0",
+    "remark-cli": "^8.0.0",
+    "remark-frontmatter": "^2.0.0",
+    "remark-lint-mdash-style": "^1.1.1",
+    "remark-preset-lint-node": "^1.16.0",
     "semver": "^7.3.2"
   }
 }

@@ -51,7 +51,6 @@ Spesifikasi Versi Semantik (VerSem)
 Kata HARUS, TIDAK BOLEH, DIBUTUHKAN, SEHARUSNYA, JANGAN SAMPAI, SEBAIKNYA, SEBAIKNYA TIDAK,
 DIREKOMENDASIKAN, BISA, dan OPSIONAL di dokumen ini sesuai dengan [RFC 2119](http://tools.ietf.org/html/rfc2119).
 
-
 1. Perangkat lunak dengan Versi Semantik harus menentukan API public. Bisa
 dijelaskan dengan kode, atau ditulis di dokumentasi, ditulis dengan jelas dan akurat.
 
@@ -102,7 +101,6 @@ modul "Tangga" selama modul tersebut mempunyai versi antara 3.1.0 sampai dengan 
 Pemberian Versi Semantik adalah aturan baku yang bisa diikuti atau tidak diikuti, dan tugas dari standar pemberian versi semantik hanyalah untuk membantu supaya pemberian versi bisa lebih jelas.
 
 Jika menurut kalian aturan baku ini bagus, kalian bisa mulai menggunakan pemberian versi semantik. Tautkan situs ini dalam README kalian supaya orang lain bisa tahu mengenai aturan ini dan mulai menggunakannya juga.
-
 
 Pertanyaan Yang Sering Diajukan
 ---
@@ -161,8 +159,7 @@ Translasi Bahasa Indonesia ditulis oleh [Aditya Purwa](https://adityamyria.wordp
 
 Untuk saran dan kritik, [buka issue di GitHub](https://github.com/mojombo/semver/issues).
 
-
 Lisensi
 -------
 
-[Creative Commons - CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
+[Creative Commons ― CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
