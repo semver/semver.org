@@ -28,8 +28,10 @@ languages:
   hin: हिन्दी
   ca: català
   hu: magyar
+  vi: vietnamese
   hy: Հայերեն
   kab: taqbaylit
+  bg: Български
 versions:
   - 2.0.0
   - 2.0.0-rc.2
