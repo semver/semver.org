@@ -46,7 +46,7 @@ akým sa bude komunikovať s vaším systémom (ďalej len API). Môže byť zad
 formou dokumentácie, prípadne vynútené samotným kódom. Bez ohľadu na formu akou
 to bude, je
 dôležité aby toto API bolo presné a jasné. Akonáhle budete mať zadefinované vaše
-API, jeho zmeny budete oznamovať špecifickým zväčšením čísla verzie vašeho
+API, jeho zmeny budete oznamovať špecifickým zväčšením čísla verzie vášho
 systému. Uvažujme, že číslo verzie bude vo formáte MAJOR.MINOR.PATCH. Opravy
 chýb, ktoré nemenia vaše API, zväčšujú číslo PATCH verzie. Spätne kompatibilné
 zmeny API zväčšujú číslo MINOR verzie a spätne nekompatibilné zmeny API zväčšujú
