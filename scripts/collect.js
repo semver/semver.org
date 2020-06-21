@@ -2,7 +2,7 @@ const { promises: fs } = require("fs");
 const path = require("path");
 const { execSync } = require("child_process");
 const yaml = require("js-yaml");
-const semver = require('semver')
+const semver = require("semver");
 
 const REPO_LINK = "https://github.com/semver/semver.git";
 const ORIGINAL_DIR = path.resolve(__dirname, "semver");
@@ -38,6 +38,7 @@ const collect = async () => {
   cloneRepository(REPO_LINK);
   const version = await parseVersion(ORIGINAL_FILE);
   await fs.copyFile(ORIGINAL_FILE, path.resolve(TARGET_DIR, `v${version}.md`));
+  await fs.copyFile(ORIGINAL_FILE, path.resolve(__dirname, "../index.md"));
   await fs.rmdir(ORIGINAL_DIR, { recursive: true });
   await checkOrUpdateYaml(version);
 };
