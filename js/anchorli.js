@@ -7,7 +7,7 @@ const createAnchorLink = (id) => {
 
 window.onload = () => {
   let increment = 0;
-  [...document.querySelectorAll("h1, h2, h3, #spec li > p")].forEach((el) => {
+  [...document.querySelectorAll("h1, h2, h3, #spec > ol > li > p")].forEach((el) => {
     if (el.id) {
       const anchorLink = createAnchorLink(el.id);
       el.insertBefore(anchorLink, el.firstChild);
