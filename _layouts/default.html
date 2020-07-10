@@ -13,9 +13,14 @@
     <ul class="nav lang" dir="ltr">
       {% assign sorted_languages = site.languages | sort %}
       {% for language in sorted_languages %}
+        {% if language[0] == "en" %}
+          {% assign lang_href = "/" %}
+        {% else %}
+          {% assign lang_href = language[0] | prepend: "/lang/" %}
+        {% endif %}
         <li class="language language-{{ language[0] }}">
           <a rel="alternate" lang="{{ language[0] }}" hreflang="{{ language[0] }}"
-            href="{{ language[0] | prepend: "/lang/" }}"
+            href="{{ lang_href }}"
             >{{ language[1] | smartify }} ({{ language[0] }})</a>
         </li>
       {% endfor %}
