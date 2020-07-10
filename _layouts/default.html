@@ -16,7 +16,7 @@
         {% if language[0] == "en" %}
           {% assign lang_href = "/" %}
         {% else %}
-          {% assign lang_href = language[0] | prepend: "/lang/" %}
+          {% assign lang_href = language[0] | prepend: "/lang/" | append: "/" %}
         {% endif %}
         <li class="language language-{{ language[0] }}">
           <a rel="alternate" lang="{{ language[0] }}" hreflang="{{ language[0] }}"
