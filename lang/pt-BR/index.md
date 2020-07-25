@@ -62,8 +62,7 @@ Especificação de Versionamento Semântico (SemVer)
 
 As palavras-chaves "DEVE", "NÃO DEVE", "OBRIGATÓRIO", "DEVERÁ", "NÃO DEVERÁ",
 "PODEM", "NÃO PODEM", "RECOMENDADO", "PODE" e "OPCIONAL" no presente 
-documento devem ser interpretados como descrito na [RFC 2119] 
-(http://tools.ietf.org/html/rfc2119).
+documento devem ser interpretados como descrito na [RFC 2119](http://tools.ietf.org/html/rfc2119).
 
 1. Software usando Versionamento Semântico DEVE declarar uma API pública. Esta 
 API poderá ser declarada no próprio código ou existir estritamente na 
@@ -274,22 +273,22 @@ colaborativa pela [Wend Tecnologia](https://github.com/wendtecnologia) através
 de [Walker de Alencar Oliveira](https://github.com/walkeralencar) e teve a 
 participação de:
 
-* [William G. Comnisky](https://github.com/wcomnisky)
-* [Rafael Sirotheau](https://github.com/rafasirotheau)
-* [Arthur Almeida](https://github.com/arthuralmeidap)
-* [Alberto Guimarães Viana](https://github.com/albertogviana)
-* [Rafael Lúcio](https://github.com/poste9)
-* Josiel Rocha
-* Alessandro Leite
-* Vinícius Assef
-* [Silas Ribas Martins](https://github.com/silasrm)
+- [William G. Comnisky](https://github.com/wcomnisky)
+- [Rafael Sirotheau](https://github.com/rafasirotheau)
+- [Arthur Almeida](https://github.com/arthuralmeidap)
+- [Alberto Guimarães Viana](https://github.com/albertogviana)
+- [Rafael Lúcio](https://github.com/poste9)
+- Josiel Rocha
+- Alessandro Leite
+- Vinícius Assef
+- [Silas Ribas Martins](https://github.com/silasrm)
 
 Toda colaboração na tradução pode ser acompanhada no link:
 http://pad.okfn.org/p/Fh9hjBPVu9
 
-Caso queira deixar sua opinião, por favor [abra uma issue no GitHub](https://github.com/wendtecnologia/semver/issues).
+Caso queira deixar sua opinião, por favor [abra uma issue no GitHub](https://github.com/semver/semver/issues).
 
 Licença
 -------
 
-[Creative Commons - CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
+[Creative Commons ― CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
