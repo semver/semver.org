@@ -42,7 +42,7 @@ Kako bi ovaj sustav funkcionirao, potrebno je prvo objaviti javni API. Možemo
 to primijeniti u dokumentaciji ili u samom kodu. U svakom slučaju, važno je da
 API bude jasan i precizan. Jednom kad identificiramo javni API, komuniciramo
 promjene u njemu kroz specificirane inkrementacije u oznake/broja verzije.
-Uzmimo format verzije X.Y.Z (MANJA.VEĆA.ZAKRPA). Ispravci *bugova* koji ne utječu
+Uzmimo format verzije X.Y.Z (VEĆA.MANJA.ZAKRPA). Ispravci *bugova* koji ne utječu
 na API inkrementiraju oznaku zakrpe, unatrag-kompatibilni dodaci/promjene u
 APIju inkrementiraju manju verziju, a unatrag inkompatibilne promjene u APIju
 inkrementiraju veću verziju.
