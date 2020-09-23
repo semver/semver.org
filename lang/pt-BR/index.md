@@ -78,7 +78,7 @@ versão NÃO DEVE ser modificado. Qualquer modificação DEVE ser lançado como 
 nova versão.
 
 1. No início do desenvolvimento, a versão Maior DEVE ser zero (0.y.z). Qualquer
-coisa pode mudar a qualquer momento. A API pública não deve ser considerada
+coisa PODE mudar a qualquer momento. A API pública NÃO DEVE ser considerada
 estável.
 
 1. Versão 1.0.0 define a API como pública. A maneira como o número de versão é
@@ -93,12 +93,12 @@ nova e compatível for introduzida na API pública. DEVE ser incrementada se
 qualquer funcionalidade da API pública for definida como descontinuada. PODE ser
 incrementada se uma nova funcionalidade ou melhoria substancial for introduzida
 dentro do código privado. PODE incluir mudanças a nível de correção. A versão de
-Correção deve ser redefinida para 0(zero) quando a versão Menor for 
+Correção DEVE ser redefinida para 0(zero) quando a versão Menor for 
 incrementada.
 
 1. Versão Maior X (X.y.z | X > 0) DEVE ser incrementada se forem introduzidas
 mudanças incompatíveis na API pública. PODE incluir alterações a nível de versão
-Menor e de versão de Correção. Versão de Correção e Versão Menor devem ser 
+Menor e de versão de Correção. Versão de Correção e Versão Menor DEVEM ser 
 redefinidas para 0(zero) quando a versão Maior for incrementada.
 
 1. Uma versão de Pré-Lançamento (pre-release) PODE ser identificada adicionando
@@ -121,25 +121,34 @@ quando se determina a versão de precedência. Assim, duas versões que diferem
 apenas nos metadados de construção, têm a mesma precedência. Exemplos:
 1.0.0-alpha+001, 1.0.0+20130313144700, 1.0.0-beta+exp.sha.5114f85.
 
-1. A precedência refere como as versões são comparadas com cada outra quando 
-solicitado.  A precedência DEVE ser calculada separando identificadores de 
+1. A precedência refere como as versões são comparadas uma com a outra quando 
+solicitado.  
+
+    1. A precedência DEVE ser calculada separando identificadores de 
 versão em Maior, Menor, Correção e Pré-lançamento, nesta ordem (Metadados de 
-construção não figuram na precedência). A precedência é determinada pela 
-primeira diferença quando se compara cada identificador da esquerda para 
-direita, como se segue: Versões Maior, Menor e Correção são sempre comparadas 
-numericamente. Example: 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1. Quando Maior, Menor e 
-Correção são iguais, a versão de Pré-Lançamento tem precedência menor que a 
-versão normal. Example: 1.0.0-alpha < 1.0.0. A precedência entre duas versões 
-de Pré-lançamento com mesma versão Maior, Menor e Correção DEVE ser 
-determinada comparando cada identificador separado por ponto da esquerda para 
-direita até que seja encontrada diferença da seguinte forma: identificadores 
-consistindo apenas dígitos são comparados numericamente e identificadores com 
-letras ou hífen são comparados lexicalmente na ordem de classificação ASCII.
-Identificadores numéricos sempre têm menor precedência do que os não numéricos.
-Um conjunto maior de campos de pré-lançamento tem uma precedência maior do que
-um conjunto menor, se todos os identificadores anteriores são iguais.
-Example: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 
-1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
+construção não faz parte da precedência). 
+
+    1. A precedência é determinada pela primeira diferença quando se compara cada identificador da esquerda para 
+    direita, como se segue: Versões Maior, Menor e Correção são sempre comparadas numericamente. 
+
+        Exemplo: 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1. 
+
+    1. Quando Maior, Menor e Correção são iguais, a versão de Pré-Lançamento tem precedência menor que a versão normal. 
+
+        Exemplo: 1.0.0-alpha < 1.0.0. 
+
+    1. A precedência entre duas versões de Pré-lançamento com mesma versão Maior, Menor e Correção DEVE ser determinada comparando cada identificador separado por ponto da esquerda para direita até que seja encontrada diferença da seguinte forma: 
+
+        1. Identificadores consistindo apenas dígitos são comparados numericamente.
+
+        1. Identificadores com letras ou hífen são comparados lexicalmente na ordem de classificação ASCII.
+    
+        1. Identificadores numéricos sempre têm menor precedência do que os não numéricos.
+
+        1. Um conjunto maior de campos de pré-lançamento tem uma precedência maior do que
+           um conjunto menor, se todos os identificadores anteriores são iguais.
+
+    Exemplo: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
 
 Por que usar Versionamento Semântico?
 -------------------------------------
