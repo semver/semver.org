@@ -31,15 +31,15 @@ language: zh-TW
 語意化版本控制規範（SemVer）
 ----------------------------
 
-以下關鍵詞 MUST、MUST NOT、REQUIRED、SHALL、SHALL NOT、SHOULD、SHOULD NOT、RECOMMENDED、MAY、OPTIONAL 依照 RFC 2119 的敘述解讀。（譯著：為了保持語句順暢，以下文件遇到的關鍵詞將依照整句語意進行翻譯，在此先不進行個別翻譯。）
+以下關鍵詞「MUST」、「MUST NOT」、「REQUIRED」、「SHALL」、「SHALL NOT」、「SHOULD」、「SHOULD NOT」、「RECOMMENDED」、「MAY」、「OPTIONAL」依照 [RFC 2119](https://tools.ietf.org/html/rfc2119) 的敘述解讀。（譯著：為了保持語句順暢，以下文件遇到的關鍵詞將依照整句語意進行翻譯，在此先不進行個別翻譯。）
 
-1. 使用語意化版本控制的軟體「必須 `MUST`」定義公共 API。該 API 可以在程式碼中被定義或出現於嚴謹的文件內。無論何種形式都應該力求精確且完整。
+1. 使用語意化版本控制的軟體「必須 `MUST`」定義公共 API。該 API 可以在程式碼中被定義或出現於嚴謹的文件內。無論何種形式都「應該 `SHOULD`」力求精確且完整。
 
 2. 標準的版號「必須 `MUST`」採用 X.Y.Z 的格式，其中 X、Y 和 Z 為非負的整數，且「禁止 `MUST NOT`」在數字前方補零。X 是主版號、Y 是次版號、而 Z 為修訂號。每個元素「必須 `MUST`」以數值來遞增。例如：1.9.1 -> 1.10.0 -> 1.11.0。
 
 3. 標記版號的軟體發行後，「禁止 `MUST NOT`」改變該版本軟體的內容。任何修改都「必須 `MUST`」以新版本發行。
 
-4. 主版號為零（0.y.z）的軟體處於開發初始階段，一切都可能隨時被改變。這樣的公共API 不應該被視為穩定版。
+4. 主版號為零（0.y.z）的軟體處於開發初始階段，一切都「可以 `MAY`」隨時改變。這樣的公共 API「不應該 `SHOULD NOT`」被視為穩定版。
 
 5. 1.0.0 的版號用於界定公共 API 的形成。這一版本之後所有的版號更新都基於公共 API及其修改內容。
 
@@ -49,11 +49,99 @@ language: zh-TW
 
 8. 主版本號 X（X.y.z `|` X > 0）「必須 `MUST`」在有任何不相容的修改被加入公共 API 時遞增。其中「可以 `MAY`」包括次版號及修訂級別的改變。每當主版號遞增時，次版號和修訂號「必須 `MUST`」歸零。
 
-9. 先行版號「可以 `MAY`」被標注在修訂版之後，先加上一個連接號再加上一連串以句點分隔的標識符號來修飾。標識符號「必須 `MUST`」由 ASCII 碼的英數字和連接號[0-9A-Za-z-] 組成，且「禁止 `MUST NOT`」留白。數字型的標識符號「禁止 `MUSTNOT`」在前方補零。先行版的優先級低於相關聯的標準版本。被標上先行版號則表示這個版本並非穩定而且可能無法達到相容的需求。範例：1.0.0-alpha、1.0.0-alpha.1、1.0.0-0.3.7、1.0.0-x.7.z.92。
+9. 先行版號「可以 `MAY`」被標注在修訂版之後，先加上一個連接號再加上一連串以句點分隔的標識符號來修飾。標識符號「必須 `MUST`」由 ASCII 碼的英數字和連接號[0-9A-Za-z-] 組成，且「禁止 `MUST NOT`」留白。數字型的標識符號「禁止 `MUSTNOT`」在前方補零。先行版的優先級低於相關聯的標準版本。被標上先行版號則表示這個版本並非穩定而且可能無法達到相容的需求。範例：1.0.0-alpha、1.0.0-alpha.1、1.0.0-0.3.7、1.0.0-x.7.z.92、1.0.0-x-y-z.--。
 
-10. 版本編譯資訊「可以 `MAY`」被標注在修訂版或先行版號之後，先加上一個加號再加上一連串以句點分隔的標識符號來修飾。標識符號「必須 `MUST`」由 ASCII 的英數字和連接號 [0-9A-Za-z-]組成，且「禁止 `MUST NOT`」留白。當判斷版本的優先層級時，版本編譯資訊「可 `SHOULD`」被忽略。因此當兩個版本只有在版本編譯資訊有差別時，屬於相同的優先層級。範例：1.0.0-alpha+001、1.0.0+20130313144700、1.0.0-beta+exp.sha.5114f85。
+10. 版本編譯資訊「可以 `MAY`」被標注在修訂版或先行版號之後，先加上一個加號再加上一連串以句點分隔的標識符號來修飾。標識符號「必須 `MUST`」由 ASCII 的英數字和連接號 [0-9A-Za-z-]組成，且「禁止 `MUST NOT`」留白。當判斷版本的優先層級時，版本編譯資訊「必須 `MUST`」被忽略。因此當兩個版本只有在版本編譯資訊有差別時，屬於相同的優先層級。範例：1.0.0-alpha+001、1.0.0+20130313144700、1.0.0-beta+exp.sha.5114f85、1.0.0+21AF26D3----117B344092BD。
 
-11. 版本的優先層級指的是不同版本在排序時如何比較。判斷優先層級時，「必須 `MUST`」把版本依序拆分為主版號、次版號、修訂號及先行版號後進行比較（版本編譯資訊不在這份比較的列表中）。由左到右依序比較每個標識符號，第一個差異值用來決定優先層級：主版號、次版號及修訂號以數值比較，例如 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1。當主版號、次版號及修訂號都相同時，改以優先層級比較低的先行版號決定。例如：1.0.0-alpha <1.0.0。有相同主版號、次版號及修訂號的兩個先行版號，其優先層級「必須 `MUST`」透過由左到右的每個被句點分隔的標識符號來比較，直到找到一個差異值後決定：只有數字的標識符號以數值高低比較，有字母或連接號時則逐字以 ASCII 的排序來比較。數字的標識符號比非數字的標識符號優先層級低。若開頭的標識符號都相同時，欄位比較多的先行版號優先層級比較高。範例：1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta <1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0。
+11. 版本的優先層級指的是不同版本在排序時如何比較。
+
+    1. 判斷優先層級時，「必須 `MUST`」把版本依序拆分為主版號、次版號、修訂號及先行版號後進行比較（版本編譯資訊不在這份比較的列表中）。
+
+    2. 由左到右依序比較每個標識符號，第一個差異值用來決定優先層級：主版號、次版號及修訂號以數值比較。
+
+       例如： 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1。
+
+    3. 當主版號、次版號及修訂號都相同時，改以優先層級比較低的先行版號決定。
+
+       例如：1.0.0-alpha < 1.0.0。
+
+    4. 有相同主版號、次版號及修訂號的兩個先行版號，其優先層級「必須 `MUST`」透過由左到右的每個被句點分隔的標識符號來比較，直到找到一個差異值後決定：
+
+       1. 只有數字的標識符號以數值高低比較。
+
+       2. 有字母或連接號時則逐字以 ASCII 的排序來比較。
+
+       3. 數字的標識符號比非數字的標識符號優先層級低。
+
+       4. 若開頭的標識符號都相同時，欄位比較多的先行版號優先層級比較高。
+
+          範例：1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0。
+
+有效語意化版本的 Backus–Naur 範式語法
+-------------------------------------
+```
+<valid semver> ::= <version core>
+                 | <version core> "-" <pre-release>
+                 | <version core> "+" <build>
+                 | <version core> "-" <pre-release> "+" <build>
+
+<version core> ::= <major> "." <minor> "." <patch>
+
+<major> ::= <numeric identifier>
+
+<minor> ::= <numeric identifier>
+
+<patch> ::= <numeric identifier>
+
+<pre-release> ::= <dot-separated pre-release identifiers>
+
+<dot-separated pre-release identifiers> ::= <pre-release identifier>
+                                          | <pre-release identifier> "." <dot-separated pre-release identifiers>
+
+<build> ::= <dot-separated build identifiers>
+
+<dot-separated build identifiers> ::= <build identifier>
+                                    | <build identifier> "." <dot-separated build identifiers>
+
+<pre-release identifier> ::= <alphanumeric identifier>
+                           | <numeric identifier>
+
+<build identifier> ::= <alphanumeric identifier>
+                     | <digits>
+
+<alphanumeric identifier> ::= <non-digit>
+                            | <non-digit> <identifier characters>
+                            | <identifier characters> <non-digit>
+                            | <identifier characters> <non-digit> <identifier characters>
+
+<numeric identifier> ::= "0"
+                       | <positive digit>
+                       | <positive digit> <digits>
+
+<identifier characters> ::= <identifier character>
+                          | <identifier character> <identifier characters>
+
+<identifier character> ::= <digit>
+                         | <non-digit>
+
+<non-digit> ::= <letter>
+              | "-"
+
+<digits> ::= <digit>
+           | <digit> <digits>
+
+<digit> ::= "0"
+          | <positive digit>
+
+<positive digit> ::= "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+
+<letter> ::= "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J"
+           | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T"
+           | "U" | "V" | "W" | "X" | "Y" | "Z" | "a" | "b" | "c" | "d"
+           | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n"
+           | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x"
+           | "y" | "z"
+```
 
 為什麼要使用語意化的版本控制？
 ------------------------------
@@ -109,15 +197,36 @@ FAQ
 
 沒有，請自行做適當的判斷。舉例來說，長到 255 個字元的版本已過度誇張。再者，特定的系統對於字串長度可能會有他們自己的限制。
 
+### "v1.2.3" 是語意化版本嗎？
+
+不，"v1.2.3" 不是語意化版本。然而在語意化版本前加上 "v" 表示其為版本號是很常見的做法（就英文而言）。用 "v" 表示 "version" 的縮寫是版本控制的常見做法。例如：`git tag v1.2.3 -m "Release version 1.2.3"`，此例 "v1.2.3" 是標籤名稱，而語意化版本是 "1.2.3"。
+
+### 有建議用於檢查語意化版本的正規表示式（RegEx）嗎？
+
+有兩種。一種用命名群組，須在支援的系統上使用（PCRE [Perl Compatible Regular Expressions, i.e. Perl, PHP and R]、Python、以及 Go）。
+
+參見：<https://regex101.com/r/Ly7O1x/3/>
+
+```
+^(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?P<patch>0|[1-9]\d*)(?:-(?P<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$
+```
+
+另一種使用擷取群組編號（組1 = 主版號，組2 = 次版號，組3 = 修訂號，組4 = 先行版號，組5 = 編譯資訊），與 ECMA Script (JavaScript)、PCRE (Perl Compatible Regular Expressions, i.e. Perl, PHP and R)、Python、以及 Go 相容。
+
+參見：<https://regex101.com/r/vkijKf/1/>
+
+```
+^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$
+```
+
 關於
 ----
 
-語意化版本控制的規範是由 Gravatars 創辦者兼 GitHub 共同創辦者 [Tom Preston-Werner](http://tom.preston-werner.com) 所建立。
+語意化版本控制的規範最初是由 Gravatars 創辦者兼 GitHub 共同創辦者 [Tom Preston-Werner](https://tom.preston-werner.com) 建立。
 
-如果您有任何建議，請[到 GitHub 上提出您的問題](https://github.com/mojombo/semver/issues)。
+如果您有任何建議，請[到 GitHub 上提出問題](https://github.com/semver/semver/issues)。
 
 授權
----
+----
 
-創用 CC 姓名標示 3.0 Unported 授權條款
-http://creativecommons.org/licenses/by/3.0/
+[創用 CC 姓名標示 3.0 授權條款](https://creativecommons.org/licenses/by/3.0/)
