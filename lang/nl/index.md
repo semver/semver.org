@@ -191,7 +191,7 @@ Het uitfaseren van bestaande functionaliteit is een normaal onderdeel van softwa
 
 Nee, maar hou het realistisch. Een versie die 255 karakters bevat is waarschijnlijk overdreven. Bepaalde systemen kunnen ook eigen limieten stellen aan de lengte van de versienaam.
 
-### Is "v1.2.3" een semantische versie? Is "v.1.2.3" een semantische versie?
+### Is "v1.2.3" een semantische versie?
 
 Nee, "v.1.2.3" is geen semantische versie. Echter, het prefixen van een semantische versie met de letter "v" is een veel voorkomende manier (in het Engels) om aan te geven dat het een versienummer betreft. Het afkorten van "versie" met "v" wordt vaak gezien bij versiebeheer. Voorbeeld: `git tag v1.2.3 -m "Release version 1.2.3"`, in dit geval is "v.1.2.3" een naamtag en de semantische versie is "1.2.3".
 
