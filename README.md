@@ -1,4 +1,4 @@
-![logo](./asstets/1000x600(light).jpg)
+![logo](./assets/1000x600(light).jpg)
 
 This is the site at https://semver.org/ that describes the Semantic Versioning specification.
 
