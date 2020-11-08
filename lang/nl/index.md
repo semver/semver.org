@@ -1,5 +1,5 @@
 ---
-title: Semantisch Versiebeheer 2.0.0
+title: Semantisch Versioneren 2.0.0
 language: nl
 ---
 
@@ -20,48 +20,48 @@ Er zijn aanvullende labels beschikbaar voor pre-release en build-metadata om toe
 Introductie
 ------------
 
-In de wereld van softwarebeheer bestaat er een gevreesde plek genaamd "dependency hell" oftewel de "hel van afhankelijkheden". Hoe groter een systeem wordt en hoe meer packages er worden geïntegreerd in de software, des te aannemelijker is het dat je op een goede dag aanlandt op deze mistroostige plek.
+In de wereld van softwarebeheer bestaat er een gevreesde plek genaamd "dependency hell" oftewel de "hel van afhankelijkheden". Hoe groter een systeem wordt en hoe meer packages er worden geïntegreerd in de software, des te aannemelijker is het dat je op een zekere dag belandt op deze mistroostige plek.
 
-Het uitbrengen van een nieuwe packageversie kan al snel een nachtmerrie worden als systemen te maken hebben met een hoop afhankelijkheden. Als de afhankelijkheden te strikt gespecificeerd zijn, ontstaat het gevaar op "version lock": het is dan niet meer mogelijk om een package te upgraden zonder dat alle afhankelijke packages ook een versie verhoogd moeten worden. Als de afhankelijkheden te losjes zijn gespecificeerd, zul je onvermijdelijk worden teruggepakt door het fenomeen versievermenging: de verwachting dat er meer compatibiliteit is met toekomstige versies dan je redelijkerwijs mag verwachten. Je bevindt je in de hel van afhankelijkheden wanneer "version lock" en/of versievermenging zodanig in de weg zitten dat je project niet makkelijk en veilig kan worden voortgezet.
+Het uitbrengen van een nieuwe packageversie kan al snel een nachtmerrie worden als systemen te maken hebben met een hoop afhankelijkheden. Als de afhankelijkheden te strikt gespecificeerd zijn, ontstaat het gevaar op "version lock": het is dan niet meer mogelijk om een package te upgraden zonder dat alle afhankelijke packages ook een versie verhoogd moeten worden. Als de afhankelijkheden te losjes zijn gespecificeerd, zul je onvermijdelijk worden gebeten door het fenomeen versievermenging: de verwachting dat er meer compatibiliteit is met toekomstige versies dan je redelijkerwijs mag verwachten. Je bevindt je in de hel van afhankelijkheden wanneer "version lock" en/of versievermenging zodanig in de weg zitten dat je project niet makkelijk en veilig kan worden voortgezet.
 
-Als oplossing voor dit probleem stel ik een simpele set van regels en voorwaarden voor die beschrijven hoe versienummers toegewezen en verhoogd worden. Deze regels zijn gebaseerd op, maar niet noodzakelijk gelimiteerd tot reeds bestaande en weidverspreide gebruiken in zowel gesloten als opensource software. Om dit systeem succesvol te laten zijn, is het als eerste nodig om je publieke API te declareren. Of deze nu bestaat uit documentatie of wordt afgedwongen door de code zelf maakt niet uit, belangrijk is dat de API duidelijk en exact is. Zodra je je publieke API geidentificeerd hebt, worden wijzigingen gecommuniceerd met specifieke verhogingen in het versienummer. Gebruik een versieformaat van X.Y.Z (Majeur.Mineur.Patch). Bugfixes zonder effect op de API verhogen de patchversie, toevoegingen en wijzigingen aan de API die compatibel zijn met de vorige versie verhogen de mineurversie en wijzigingen aan de API die niet compatibel zijn met de vorige versie verhogen de majeurversie.
+Als oplossing voor dit probleem stel ik een simpele set van regels en voorwaarden voor die beschrijven hoe versienummers toegewezen en verhoogd worden. Deze regels zijn gebaseerd op, maar niet noodzakelijk beperkt tot reeds bestaande en wijdverspreide gebruiken in zowel gesloten als opensource-software. Om dit systeem succesvol te laten zijn, is het als eerste nodig om je API publiek te declareren. Of deze nu bestaat uit documentatie of wordt afgedwongen door de code zelf maakt niet uit: het belangrijkste is dat de API duidelijk en exact is. Zodra je je publieke API geïdentificeerd hebt, worden wijzigingen gecommuniceerd met specifieke verhogingen in het versienummer. Gebruik een versieformaat van X.Y.Z (Majeur.Mineur.Patch). Bugfixes zonder effect op de API verhogen de patchversie, toevoegingen en wijzigingen aan de API die compatibel zijn met de vorige versie verhogen de mineurversie en wijzigingen aan de API die niet compatibel zijn met de vorige versie verhogen de majeurversie.
 
 Ik noem dit systeem "Semantisch Versioneren", waarmee versienummers en de manier waarop ze veranderen en verhoogd worden duiding geven over de onderliggende code en wat er is aangepast tussen de verschillende versies.
 
 Specificatie Semantisch Versioneren (SemVer)
 ------------------------------------------
 
-De termen "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", en "OPTIONAL" in dit document dienen te worden geïnterpreteerd zoals beschreven in [RFC 2119](https://tools.ietf.org/html/rfc2119).
+De termen "MOET" ("MUST"), "MAG NIET" ("MUST NOT"), "VERPLICHT" ("REQUIRED"), "ZAL" ("SHALL"), "ZAL NIET" ("SHALL NOT"), "ZOU MOETEN" ("SHOULD"), "ZOU NIET MOETEN" ("SHOULD NOT"), "AANBEVOLEN" ("RECOMMENDED"), "MAG" ("MAY"), "OPTIONEEL" ("OPTIONAL") in dit document dienen te worden geïnterpreteerd zoals beschreven in [RFC 2119](https://tools.ietf.org/html/rfc2119).
 
-1. Software die gebruikmaakt van Semantisch Versioneren moet (MUST) een publieke API declareren. Deze API kan worden gepubliceerd in de code of strikt uit documentatie bestaan. Ongeacht de vorm zal (SHOULD) deze nauwkeurig en uitgebreid zijn.
+1. Software die gebruikmaakt van Semantisch Versioneren MOET een publieke API declareren. Deze API kan worden gepubliceerd in de code of strikt uit documentatie bestaan. Ongeacht de vorm zal (SHOULD) deze nauwkeurig en uitgebreid zijn.
 
-1. Een normaal versienummer moet (MUST) uit het formaat X.Y.Z. bestaan, waar X, Y en Z een niet-negatief geheel getal zijn. Voorloopnullen mogen niet (MUST NOT) aanwezig zijn. X is de majeurversie, Y is de mineurversie en Z is de patchversie. Elk element moet (MUST) numeriek ophogen. Bijvoorbeeld: 1.9.0 -> 1.10.0 -> 1.11.0.
+1. Een normaal versienummer MOET de structuur X.Y.Z. hebben, waar X, Y en Z een niet-negatief geheel getal zijn. Voorloopnullen MOGEN NIET aanwezig zijn. X is de majeurversie, Y is de mineurversie en Z is de patchversie. Elk element MOET numeriek ophogen. Bijvoorbeeld: 1.9.0 -> 1.10.0 -> 1.11.0.
 
-1. Wanneer een geversioneerde versie is uitgebracht, mag de inhoud niet (MUST NOT) worden aangepast. Alle wijzigingen moeten (MUST) worden gepubliceerd als een nieuwe versie.
+1. Wanneer een geversioneerd package is gepubliceerd, MAG de inhoud NIET worden aangepast. Alle wijzigingen MOETEN worden gepubliceerd als een nieuwe versie.
 
-1. Majeurversie nul (0.y.z) is voor de eerste ontwikkelfase. Alles kan (MAY) veranderen, op elk moment. De publieke API zal niet (SHOULD NOT) als stabiel worden beschouwd.
+1. Majeurversie nul (0.y.z) is voor de eerste ontwikkelfase. Alles MAG op ieder moment veranderen. De publieke API ZOU NIET als stabiel MOETEN worden beschouwd.
 
 1. Versie 1.0.0 definieert de publieke API. De manier waarop het versienummer wordt verhoogd na deze release is afhankelijk van de publieke API en hoe deze verandert.
 
-1. Patchversie Z (x.y.Z | x > 0) moet (MUST) worden verhoogd als wijzigingen zijn doorgevoerd die compatibel zijn met de vorige versie. De definitie van een bugfix is een interne wijziging welke foutief gedrag corrigeert.
+1. Patchversie Z (x.y.Z | x > 0) MOET worden verhoogd als wijzigingen zijn doorgevoerd die compatibel zijn met de vorige versie. De definitie van een bugfix is een interne wijziging welke foutief gedrag corrigeert.
 
-1. Mineurversie Y (x.Y.z | x > 0) moet (MUST) worden verhoogd als nieuwe, met de vorige versie compatibele wijzigingen worden gedaan aan de publieke API. Het moet (MUST) worden verhoogd op het moment dat publieke-API-functionaliteit wordt uitgefaseerd. Het mag (MAY) worden verhoogd als substantiële nieuwe functionaliteit of verbeteringen worden doorgevoerd in de afgeschermde code. Het mag (MAY) ook wijzigingen van niveau patch bevatten. De patchversie moet (MUST) op 0 worden teruggezet wanneer een mineurversie is verhoogd.
+1. Mineurversie Y (x.Y.z | x > 0) MOET worden verhoogd als nieuwe, met de vorige versie compatibele wijzigingen worden gedaan aan de publieke API. Het MOET worden verhoogd op het moment dat publieke-API-functionaliteit wordt uitgefaseerd. Het MAG worden verhoogd als substantiële nieuwe functionaliteit of verbeteringen worden doorgevoerd in de afgeschermde code. Het MAG ook wijzigingen van niveau patch bevatten. De patchversie MOET op 0 worden teruggezet wanneer een mineurversie is verhoogd.
 
-1. Majeurversie X (X.y.z | X > 0) moet (MUST) worden verhoogd als wijzigingen worden doorgevoerd niet compatibel zijn met de publieke API. Het mag (MAY) ook wijzigingen van niveau mineur en patch bevatten. De patch- en mineurversie moeten (MUST) op 0 worden teruggezet wanneer majeurversie is verhoogd.
+1. Majeurversie X (X.y.z | X > 0) MOET worden verhoogd als wijzigingen worden doorgevoerd niet compatibel zijn met de publieke API. Het MAG ook wijzigingen van niveau mineur en patch bevatten. De patch- en mineurversie MOETEN op 0 worden teruggezet wanneer majeurversie is verhoogd.
 
-1. Een prerelease-versie mag (MAY) worden aangeduid met de toevoeging van een koppelteken en een serie van puntgescheiden id's direct volgend op de patchversie. Id's moeten (MUST) slechts bestaan uit alfanumerieke ASCII karakters en koppeltekens [0-9A-Za-z-]. Id's mogen niet (MUST NOT) leeg zijn. Voorloopnullen mogen niet (MUST NOT) aanwezig zijn in numerieke id's. Prerelease-versies hebben een lagere prioriteit dan de bijbehorende reguliere versie. Een prerelease-versie impliceert instabiel te zijn en voldoet mogelijk niet aan de voorgenomen compatibiliteitseisen zoals aangeduid bij de bijbehorende reguliere versie. Voorbeelden: 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7, 1.0.0-x.7.z.92, 1.0.0-x-y-z.--.
+1. Een prerelease-versie MAG worden aangeduid met de toevoeging van een koppelteken en een serie van puntgescheiden id's direct volgend op de patchversie. Id's MOETEN slechts bestaan uit alfanumerieke ASCII karakters en koppeltekens [0-9A-Za-z-]. Id's MOGEN NIET leeg zijn. Voorloopnullen MOGEN NIET aanwezig zijn in numerieke id's. Prerelease-versies hebben een lagere prioriteit dan de bijbehorende reguliere versie. Een prerelease-versie impliceert instabiel te zijn en voldoet mogelijk niet aan de voorgenomen compatibiliteitseisen zoals aangeduid bij de bijbehorende reguliere versie. Voorbeelden: 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7, 1.0.0-x.7.z.92, 1.0.0-x-y-z.--.
 
-1. Build-metadata mag (MAY) worden aangeduid door het toevoegen van een plusteken en een serie van puntgescheiden id's direct volgend op de patch- of prereleaseversie. Id's moeten (MUST) slechts bestaan uit alfanumerieke ASCII-karakters en koppeltekens [0-9A-Za-z-]. Id's mogen niet (MUST NOT) leeg zijn. Build-metadata moet (MUST) genegeerd worden wanneer versieprioriteit wordt bepaald. Kortom, twee verschillende versies welke alleen verschillen in build-metadata hebben dezelfde prioriteit. Voorbeelden: 1.0.0-alpha+001, 1.0.0+20130313144700, 1.0.0-beta+exp.sha.5114f85, 1.0.0+21AF26D3----117B344092BD.
+1. Build-metadata MAG worden aangeduid door het toevoegen van een plusteken en een serie van puntgescheiden id's direct volgend op de patch- of prereleaseversie. Id's MOETEN slechts bestaan uit alfanumerieke ASCII-karakters en koppeltekens [0-9A-Za-z-]. Id's MOGEN NIET leeg zijn. Build-metadata MOET genegeerd worden wanneer versieprioriteit wordt bepaald. Kortom, twee verschillende versies welke alleen verschillen in build-metadata hebben dezelfde prioriteit. Voorbeelden: 1.0.0-alpha+001, 1.0.0+20130313144700, 1.0.0-beta+exp.sha.5114f85, 1.0.0+21AF26D3----117B344092BD.
 
 1. Prioriteit refereert naar hoe versies in relatie tot elkaar staan wanneer ze zijn gesorteerd.
     
-   1. Prioriteit moet (MUST) worden berekend door de versie te scheiden in de majeur-, mineur-, patch- en prerelease-id's, in die volgorde. (Build-metadata wordt niet meegenomen in het bepalen van prioriteit).
+   1. Prioriteit MOET worden berekend door de versie te scheiden in de majeur-, mineur-, patch- en prerelease-id's, in die volgorde. (Build-metadata wordt niet meegenomen in het bepalen van prioriteit).
    
    1. De prioriteit wordt bepaald door het eerste gevonden verschil wanneer elk van de id's van links naar rechts onderling vergeleken worden, op de volgende manier: majeur, mineur en patchversies worden altijd numeriek vergeleken. Voorbeeld: 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1.
    
    1. Wanneer majeur, mineur en patch gelijk zijn, heeft een prerelease-versie lagere prioriteit dan een normale versie. Voorbeeld: 1.0.0-alpha < 1.0.0.
    
-   1. Prioriteit voor twee prerelease-versies met dezelfde majeur-, mineur- en patchversie moet (MUST) worden bepaald door vergelijking van elk puntgescheiden id van links naar rechts tot een verschil is gevonden, en wel zo:
+   1. Prioriteit voor twee prerelease-versies met dezelfde majeur-, mineur- en patchversie MOET worden bepaald door vergelijking van elk puntgescheiden id van links naar rechts tot een verschil is gevonden, en wel zo:
 
       1. Id's alleen bestaand uit cijfers worden numeriek vergeleken.
 
@@ -71,7 +71,7 @@ De termen "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOUL
 
       1. Een grote reeks met prerelease-velden heeft een hogere prioriteit dan een kleinere als alle voorafgaande id's gelijk zijn. Voorbeeld:: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
 
-Backus–Naur form grammatica voor geldige SemVer-versies
+Backus–Naur Form grammatica voor geldige SemVer-versies
 --------------------------------------------------
 ```
 <valid semver> ::= <version core>
@@ -137,23 +137,23 @@ Backus–Naur form grammatica voor geldige SemVer-versies
            | "y" | "z"
 ```
 
-Waarom Semantisch Versioneren?
+Waarom semantisch versioneren?
 ----------------------------
 
-Dit is geen nieuw of revolutionair idee, waarschijnlijk gebruik je al iets wat hier erg op lijkt. En daar gaat het nu juist om: dat is niet goed genoeg. Zonder je aan een formele specificatie te houden zijn versienummers in den beginne nutteloos voor afhankelijkheidsbeheer. Door de bovenstaande ideeën een naam te geven en ze helder te definiëren, is het makkelijker om je bedoelingen over te brengen aan de gebruikers van je software. Pas als deze bedoelingen helder en flexibel (maar niet te flexibel) zijn, kunnen specificaties over afhankelijkheid worden gemaakt.
+Dit is geen nieuw of revolutionair idee, waarschijnlijk gebruik je al iets wat hier erg op lijkt. En daar gaat het nu juist om: dat is niet goed genoeg. Zonder je aan een formele specificatie te houden zijn versienummers in essentie nutteloos voor afhankelijkheidsbeheer. Door de bovenstaande ideeën een naam te geven en ze helder te definiëren, is het makkelijker om je bedoelingen over te brengen aan de gebruikers van je software. Pas als deze bedoelingen helder en flexibel (maar niet te flexibel) zijn, kunnen eindelijk specificaties over afhankelijkheid worden gemaakt.
 
-Een makkelijk voorbeeld toont aan hoe Semantisch Versipneren voorgoed afrekent met de hel van afhankelijkheden. Denk aan een library genaamd "Brandweerwagen". Deze heeft een SemVer-package genaamd "Ladder" nodig. Op het moment dat Brandweerwagen uitgebracht wordt, zit Ladder op versie 3.1.0. Omdat Brandweerwagen functionaliteit gebruikt die is geïntroduceerd in versie 3.1.0, kun je veilig vastleggen dat de afhankelijkheid van Ladder groter dan of gelijk is aan 3.1.0 maar kleiner dan 4.0.0. Als Ladder-versie 3.1.1 en 3.2.0 beschikbaar komen, kunnen deze worden gepubliceerd naar het package-beheersysteem wetend dat ze compatibel zijn met huidige, afhankelijke software.
+Een eenvoudig voorbeeld toont aan hoe Semantisch Versioneren voorgoed afrekent met de hel van afhankelijkheden. Denk aan een softwarebibliotheek genaamd "Brandweerwagen". Deze heeft een SemVer-package genaamd "Ladder" nodig. Op het moment dat Brandweerwagen uitgebracht wordt, zit Ladder op versie 3.1.0. Omdat Brandweerwagen functionaliteit gebruikt die is geïntroduceerd in versie 3.1.0, kun je veilig vastleggen dat de afhankelijkheid van Ladder groter dan of gelijk is aan 3.1.0 maar kleiner dan 4.0.0. Als Ladder-versie 3.1.1 en 3.2.0 beschikbaar komen, kunnen deze worden gepubliceerd naar het package-beheersysteem wetend dat ze compatibel zijn met huidige, afhankelijke software.
 
-Als een verantwoordelijke ontwikkelaar wil je natuurlijk nagaan dat alle package-upgrades functioneren zoals beschreven. De echte wereld is turbulent; daar kunnen we niets aan doen anders dan waakzaam zijn. Je kan Semantisch Versioneren laten voorzien in een verstandige en logische manier om packages uit te brengen en bij te werken, zonder nieuwe versies van afhankelijke packages uit te moeten brengen. Dat bespaart tijd en gedoe.
+Als een verantwoordelijke ontwikkelaar wil je natuurlijk nagaan dat alle package-upgrades functioneren zoals beschreven. De echte wereld is turbulent; daar kunnen we niets aan doen anders dan waakzaam zijn. Je kunt Semantisch Versioneren gebruiken als een verstandige en logische manier om packages uit te brengen en bij te werken, zonder nieuwe versies van afhankelijke packages uit te moeten brengen. Dat bespaart tijd en gedoe.
 
-Als bovenstaande aanlokkelijk klinkt, is het enige wat je hoeft te doen verklaren dat je Semantisch Versioneert en dan de regels volgen. Verwijs naar deze website vanuit je README zodat anderen deze regels ook kennen en er profijt van kunnen hebben.
+Als bovenstaande aantrekkelijk klinkt, is het enige wat je hoeft te doen verklaren dat je Semantisch Versioneert en dan de regels volgen. Verwijs naar deze website vanuit je README zodat anderen deze regels ook kennen en er profijt van kunnen hebben.
 
 FAQ
 ---
 
 ### Hoe kan ik omgaan met correcties in de 0.y.z eerste ontwikkelfase?
 
-Het makkelijkst is om te de release van de eerste ontwikkelfase te starten met 0.1.0 en vervolgens met een mineurversie ophogen voor elke volgende release.
+Het makkelijkst is om de release van de eerste ontwikkelfase te starten met 0.1.0 en vervolgens met een mineurversie ophogen voor elke volgende release.
 
 ### Hoe weet ik wanneer ik versie 1.0.0 kan uitbrengen?
 
@@ -161,7 +161,7 @@ Als de software reeds in productie gebruikt wordt, is hij waarschijnlijk al vers
 
 ### Werkt dit niet ontmoedigend voor snel ontwikkelen en snelle iteraties?
 
-Bij majeurversie nul draait het om snelle ontwikkeling. Als je de API dagelijks wijzigt zou je nog op versie 0.y.z moeten zitten of op een aparte ontwikkelbranch die de voor de volgende majeurversie.
+Bij majeurversie nul draait het om snelle ontwikkeling. Als je de API dagelijks wijzigt zou je nog op versie 0.y.z moeten zitten of op een aparte ontwikkelbranch voor de volgende majeurversie.
 
 ### Als zelfs kleine niet-compatibele wijzigingen aan de publieke API zorgen voor een verhoging van de majeurversie, zit ik dan niet binnen afzienbare tijd op versie 42.0.0?
 
@@ -169,7 +169,7 @@ Het gaat hier om verantwoordelijk ontwikkelen en voortschrijdend inzicht. Niet-c
 
 ### Het is veel te veel werk om de volledige publieke API te documenteren!
 
-Het is je verantwoordelijkheid als professioneel ontwikkelaar om software die door anderen gebruikt wordt adequaat te documenteren. Een essentieel onderdeel van een efficient softwareproject is om de complexiteit beheersbaar te houden, wat bijzonder lastig wordt als niemand weet hoe je software gebruikt moet worden en welke methoden veilig zijn aan te roepen. Op de lange duur zorgen Semantisch Versioneren samen met het aandringen op een goed gedocumenteerde API ervoor dat de zaken soepel lopen.
+Het is je verantwoordelijkheid als professioneel ontwikkelaar om software die door anderen gebruikt wordt adequaat te documenteren. Een essentieel onderdeel van een efficiënt softwareproject is om de complexiteit beheersbaar te houden, wat bijzonder lastig wordt als niemand weet hoe je software gebruikt moet worden en welke methoden veilig zijn aan te roepen. Op de lange duur zorgen Semantisch Versioneren en het hameren op een goed gedocumenteerde API ervoor dat de zaken soepel lopen.
 
 ### Wat als ik per ongeluk een niet-compatibele wijziging uitbreng als een mineurversie?
 
@@ -177,7 +177,7 @@ Als je je realiseert dat je de regels van Semantisch Versioneren overtreden hebt
 
 ### Wat moet ik doen als ik mijn eigen afhankelijkheden bijwerk zonder wijzigingen aan de publieke API?
 
-Dit wordt beschouwd als compatibel omdat het geen effect heeft op de publieke API. Software die expliciet afhankelijk is van dezelfde afhankelijkheden als jouw package, dient eigen specificaties over deze afhankelijkheden te hebben, waarbij de maker conflicten zal opmerken. Bepalen of de wijziging van het niveau patch of mineur is hangt af van het feit of je afhankelijkheden zijn bijgewerkt om een bug op te lossen of om nieuwe functionaliteit uit te brengen. Voor het tweede is er meestal nieuwe code toegevoegd, wat het zonder twijfel een mineure wijziging maakt.
+Dit wordt beschouwd als compatibel omdat het geen effect heeft op de publieke API. Software die expliciet afhankelijk is van dezelfde afhankelijkheden als jouw package, dient eigen specificaties over deze afhankelijkheden te hebben waarbij de maker conflicten zal opmerken. Bepalen of de wijziging van het niveau patch of mineur is hangt af van het feit of je afhankelijkheden zijn bijgewerkt om een bug op te lossen of om nieuwe functionaliteit uit te brengen. Voor het tweede is er meestal nieuwe code toegevoegd, wat het zonder twijfel een mineure wijziging maakt.
 
 ### Wat als ik per ongeluk de publieke API aanpas op een manier die niet strookt met de wijziging in het versienummer (bijvoorbeeld: de code introduceert een majeure niet-compatibele wijziging in een patchrelease)?
 
@@ -185,7 +185,7 @@ Gebruik je gezond verstand. Bij een groot publiek dat veel hinder ondervindt als
 
 ### Hoe moet ik omgaan met uitgefaseerde functionaliteit?
 
-Het uitfaseren van bestaande functionaliteit is een normaal onderdeel van softwareontwikkeling en wordt vaak beschouwd als nodig om voortgang te maken. Als een deel van je publieke API uitgefaseerd wordt, dienen er twee dingen te veranderen: (1) werk documentatie bij zodat gebruikers op de hoogte zijn van de wijziging, (2) breng een nieuwe mineurversie uit waaruit duidelijk wordt dat de functionaliteit wordt uitgefaseerd. Voordat je, met een majeure versie, de functionaliteit helemaal verwijdert, dient er tenminste één mineurversie uitgebracht te zijn die duidelijk maakt dat de functionaliteit wordt uitgefaseerd, zodat gebruikers een soepele overgang hebben naar de nieuwe API.
+Het uitfaseren van bestaande functionaliteit is een normaal onderdeel van softwareontwikkeling en is vaak vereist om voortgang te maken. Als een deel van je publieke API uitgefaseerd wordt, dienen er twee dingen te veranderen: (1) werk documentatie bij zodat gebruikers op de hoogte zijn van de wijziging, (2) breng een nieuwe mineurversie uit waaruit duidelijk wordt dat de functionaliteit wordt uitgefaseerd. Voordat je met een majeure versie de functionaliteit helemaal verwijdert, dient er tenminste één mineurversie uitgebracht te zijn die duidelijk maakt dat de functionaliteit wordt uitgefaseerd, zodat gebruikers een soepele overgang hebben naar de nieuwe API.
 
 ### Is er binnen SemVer een limiet op het aantal tekens van de versienaam?
 
@@ -197,7 +197,7 @@ Nee, "v.1.2.3" is geen semantische versie. Echter, het prefixen van een semantis
 
 ### Bestaat er een reguliere expressie (RegEx) om een SemVer-tekenreeks te controleren?
 
-Er zijn er twee. De ene bevat *named groups* voor systemen die dit ondersteunen (PCRE [Perl Compatible Regular Expressions, zoals Perl, PHP and R], Python
+Er zijn er twee. De ene bevat *named groups* voor systemen die dit ondersteunen (PCRE \[Perl Compatible Regular Expressions, zoals Perl, PHP and R\], Python
 en Go).
 
 Zie ook: <https://regex101.com/r/Ly7O1x/3/>
