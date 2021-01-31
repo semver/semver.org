@@ -62,7 +62,6 @@ Specifikace Sémantického verzování (SemVer)
 
 11. Priorita se vztahuje na to, jak se verze vzájemně porovnávají. Priorita MUSÍ být určována rozdělením verze na MAJOR, MINOR, PATCH a identifikátory předběžných verzí ― přesně v tomto pořadí (s metadaty se nepočítá). Priorita je daná prvním rozdílem při porovnání zleva doprava přičemž čísla MAJOR, MINOR a PATCH jsou vždy porovnávána jako čísla. Např.: 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1. Pokud jsou čísla MAJOR, MINOR a PATCH stejná, předběžná verze má menší prioritu, než normální. Např.: 1.0.0-alpha < 1.0.0. Priorita pro dvě předběžné verze, které se shodují v číslech MAJOR, MINOR a PATCH musí být počítána zleva doprava od tečky oddělených identifikátorů a to do doby, dokud se nenajde rozdíl a to následujícím způsobem: (1) Identifikátory obsahující pouze číslice, jsou porovnané číselně a identifikátory s písmeny nebo pomlčkami jsou porovnávané lexikálně, zařazené podle ASCII. (2) Číselné identifikátory mají vždy nižší prioritu jak nečíslené. (3) Jsou-li všechny předchozí identifikátory v předběžné verzi stejné, tak větší množství identifikátorů značí vyšší prioritu, než s menším počtem. Např.: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
 
-
 Proč používat Sémantické verzování?
 ------------------------------------
 
