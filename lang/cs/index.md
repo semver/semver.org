@@ -22,9 +22,9 @@ Pomocí předběžných verzí a přidáváním metadat je možné upřesnit inf
 Úvod
 ----
 
-Ve světě softwaru, jeho vývoje a správy existuje děsivé místo, kterému anglicky říkáme “dependency hell” (v překladu "peklo závislostí"). Čím větší a komplexnější váš projekt je, tím je větší šance, že se na tomto místě jednou ocitnete.
+Ve světě softwaru, jeho vývoje a správy existuje děsivé místo, kterému anglicky říkáme „dependency hell“ (v překladu „peklo závislostí“). Čím větší a komplexnější váš projekt je, tím je větší šance, že se na tomto místě jednou ocitnete.
 
-Když mají systémy mnoho závislostí, může se stát, že vydání nové verze je noční můrou pro obě strany. Pokud je specifikovaná závislost příliš striktní, hrozí, že zůstanete na jedné verzi (angl. "version lock") a nebudete mít možnost přejít na další verzi bez toho, abyste vydali další verze všech balíčků nebo knihoven, na kterých projekt stojí. Na druhou stranu, když je specifikovaná závislost příliš volná, přijdete na to, že váš program je kompatibilní s více verzemi než je nutné a potřebné. V pekle závislostí se nacházíte, jakmile jste vázaný určitou verzí nebo v případně, že není přesně specifikován rozsah verzí, které máte použít. Taková situace brání v bezpečném vývoji kupředu.
+Když mají systémy mnoho závislostí, může se stát, že vydání nové verze je noční můrou pro obě strany. Pokud je specifikovaná závislost příliš striktní, hrozí, že zůstanete na jedné verzi (angl. „version lock“) a nebudete mít možnost přejít na další verzi bez toho, abyste vydali další verze všech balíčků nebo knihoven, na kterých projekt stojí. Na druhou stranu, když je specifikovaná závislost příliš volná, přijdete na to, že váš program je kompatibilní s více verzemi než je nutné a potřebné. V pekle závislostí se nacházíte, jakmile jste vázaný určitou verzí nebo v případně, že není přesně specifikován rozsah verzí, které máte použít. Taková situace brání v bezpečném vývoji kupředu.
 
 Řešením tohoto problému je jednoduchý sled pravidel, které určují, jak budou čísla verzí přiřazována a navyšována. Tato pravidla jsou založena (ale nikoliv omezena) na již ověřené praxi a to ve vývoji otevřeného i uzavřeného softwaru. Pro správné fungování systému, si musíte nejdříve nadefinovat způsob, jakým se bude komunikovat s Vaší aplikací (dále API). Toto API může být nadefinováno pomocí rozsáhlé dokumentace nebo zapsáno přímo ve zdrojovém kódu. Nezáleží na způsobu zápisu, je důležité, aby bylo srozumitelné a snadno čitelné. Je třeba mít kompletní dokumentaci, způsob oznamovaní a čitelné rozdíly v nových verzích. Zápis verzí je ve formátu MAJOR.MINOR.PATCH. Opravy chyb, které nezměnily Vaše API, zvyšují číslo PATCH verze. Zpětně kompatibilní změny v API zvyšují hodnotu MINOR verze a rozdílné verze API, které nejsou zpětně kompatibilní, zvyšují číslo MAJOR verze.
 
@@ -33,11 +33,11 @@ Tímto způsobem je nastavený systém Sémantického verzování.
 Specifikace Sémantického verzování (SemVer)
 --------------------------------------------
 
-“MUSÍ” (angl. MUST, REQUIRED, SHALL)
-“NESMÍ” (angl. MUST NOT, SHALL NOT)
-“MĚLO BY” (angl. SHOULD, RECOMMENDED)
-“NEMĚLO BY” (angl. SHOULD NOT)
-“MŮŽE” (angl. MAY, OPTIONAL)
+„MUSÍ“ (angl. MUST, REQUIRED, SHALL)
+„NESMÍ“ (angl. MUST NOT, SHALL NOT)
+„MĚLO BY“ (angl. SHOULD, RECOMMENDED)
+„NEMĚLO BY“ (angl. SHOULD NOT)
+„MŮŽE“ (angl. MAY, OPTIONAL)
 (výrazy jsou interpretované z dokumentu: [RFC 2119](http://tools.ietf.org/html/rfc2119))
 
 1. Software používající Sémantické verzování, MUSÍ mít nadefinované API, buďto přímo ve zdrojovém kódu a nebo v externí dokumentaci. V obou případech to musí být hlavně přesné a komplexní.
@@ -65,9 +65,9 @@ Specifikace Sémantického verzování (SemVer)
 Proč používat Sémantické verzování?
 ------------------------------------
 
-Sémantické verzování není revoluční myšlenka a když vydáváte software, tak už pravděpodobně děláte něco podobného. Problém je, že “něco podobného” nestačí. Bez dodržování daných formálních specifikací jsou čísla pro managment závislostí v podstatě na nic. Tím, že výše uvedeným myšlenkám dáváme přesnou a jasnou definici, je lehčí komunikovat záměry Vašeho softwaru jeho uživatelům. Jakmile jsou záměry jasné a flexibilní (ale ne příliš), specifikace závislostí může začít.
+Sémantické verzování není revoluční myšlenka a když vydáváte software, tak už pravděpodobně děláte něco podobného. Problém je, že „něco podobného“ nestačí. Bez dodržování daných formálních specifikací jsou čísla pro managment závislostí v podstatě na nic. Tím, že výše uvedeným myšlenkám dáváme přesnou a jasnou definici, je lehčí komunikovat záměry Vašeho softwaru jeho uživatelům. Jakmile jsou záměry jasné a flexibilní (ale ne příliš), specifikace závislostí může začít.
 
-Následující příklad ilustruje, jak se díky Sémantickému verzování můžete snadno vyhnout problémům se závislostmi (tzv. "dependency hell"). Mějme knihovnou "Firetruck" (česky požární vůz). Ta závisí na Sémanticky verzované knihovně "Ladder" (česky žebřík). Ve době vzniku knihovny Firetruck je aktuální verze knihovny Ladder 3.1.0. Protože Firetruck využívá některé funkce knihovny Ladder, které do ni byly přidány až ve verzi 3.1.0, můžete bez rizika nadefinovat závislost na knihovně Ladder ve verzi vyšší nebo rovno 3.1.0 a menší než 4.0.0. Jakmile bude vydána verze Ladder 3.2.0, můžete se spolehnout na to, že s ní bude knihovna Firetruck kompatibilní.
+Následující příklad ilustruje, jak se díky Sémantickému verzování můžete snadno vyhnout problémům se závislostmi (tzv. „dependency hell“). Mějme knihovnou „Firetruck“ (česky požární vůz). Ta závisí na Sémanticky verzované knihovně „Ladder“ (česky žebřík). Ve době vzniku knihovny Firetruck je aktuální verze knihovny Ladder 3.1.0. Protože Firetruck využívá některé funkce knihovny Ladder, které do ni byly přidány až ve verzi 3.1.0, můžete bez rizika nadefinovat závislost na knihovně Ladder ve verzi vyšší nebo rovno 3.1.0 a menší než 4.0.0. Jakmile bude vydána verze Ladder 3.2.0, můžete se spolehnout na to, že s ní bude knihovna Firetruck kompatibilní.
 
 Jako zodpovědní vývojáři určitě budete chtít kontrolovat, že všechno funguje podle Vašich předpokladů. Sématické verzování vám umožní rozumný způsob, jak vydávat a aktualizovat knihovny tak, abyste nemuseli řešit nové verze závislostí, ušetřili si čas a vyhnuli se zmatkům.
 
@@ -110,7 +110,7 @@ Posuďte, co je nejlepší. Jestli máte velkou skupinu uživatelů, která by b
 
 ### Jak se vypořádat se zastaralými funkcionalitami?
 
-Označení funkcionality jako zastaralé je standardní část softwarového vývoje a většinou je to potřeba k tomu, aby šel vývoj kupředu. Když zestárne část API, měli by jste udělat dvě věci: (1) upravit dokumentaci, aby uživatelé věděli o změně, (2) vydat další MINOR verzi, která funkcionalitu “zestárne”. Předtím, než funkcionalitu kompletně odstraníte v další MAJOR verzi, měli byste vytvořit alespoň jednu MINOR verzi, která obsahuje “zestárnutí”. To umožní uživatelům hladký a snadný přechod nebo převod na nové API.
+Označení funkcionality jako zastaralé je standardní část softwarového vývoje a většinou je to potřeba k tomu, aby šel vývoj kupředu. Když zestárne část API, měli by jste udělat dvě věci: (1) upravit dokumentaci, aby uživatelé věděli o změně, (2) vydat další MINOR verzi, která funkcionalitu „zestárne“. Předtím, než funkcionalitu kompletně odstraníte v další MAJOR verzi, měli byste vytvořit alespoň jednu MINOR verzi, která obsahuje „zestárnutí“. To umožní uživatelům hladký a snadný přechod nebo převod na nové API.
 
 ### Má Sémantické verzování nějaký limit délky označení verzí?
 
@@ -128,9 +128,10 @@ Pokud chcete zanechat zpětnou vazbu, prosím
 ### Český překlad
 
 [Jakub Křižka](https://github.com/jakubkrizka) (autor),
-[Zuzana Bertová](https://www.facebook.com/suzanna.bertova) (korektor)
-[Aleš Pařízek](https://www.facebook.com/ales.parizek.1) (korektor)
-[Jan Barášek](http://baraja.cz) (korektor)
+[Zuzana Bertová](https://www.facebook.com/suzanna.bertova) (korektor),
+[Aleš Pařízek](https://www.facebook.com/ales.parizek.1) (korektor),
+[Jan Barášek](http://baraja.cz) (korektor),
+[R3gi](https://www.r3gi.cz) (korektor)
 
 Licence
 --------
