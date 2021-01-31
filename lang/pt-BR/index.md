@@ -62,8 +62,7 @@ Especificação de Versionamento Semântico (SemVer)
 
 As palavras-chaves "DEVE", "NÃO DEVE", "OBRIGATÓRIO", "DEVERÁ", "NÃO DEVERÁ",
 "PODEM", "NÃO PODEM", "RECOMENDADO", "PODE" e "OPCIONAL" no presente 
-documento devem ser interpretados como descrito na [RFC 2119] 
-(http://tools.ietf.org/html/rfc2119).
+documento devem ser interpretados como descrito na [RFC 2119](http://tools.ietf.org/html/rfc2119).
 
 1. Software usando Versionamento Semântico DEVE declarar uma API pública. Esta 
 API poderá ser declarada no próprio código ou existir estritamente na 
@@ -79,7 +78,7 @@ versão NÃO DEVE ser modificado. Qualquer modificação DEVE ser lançado como 
 nova versão.
 
 1. No início do desenvolvimento, a versão Maior DEVE ser zero (0.y.z). Qualquer
-coisa pode mudar a qualquer momento. A API pública não deve ser considerada
+coisa PODE mudar a qualquer momento. A API pública NÃO DEVE ser considerada
 estável.
 
 1. Versão 1.0.0 define a API como pública. A maneira como o número de versão é
@@ -94,12 +93,12 @@ nova e compatível for introduzida na API pública. DEVE ser incrementada se
 qualquer funcionalidade da API pública for definida como descontinuada. PODE ser
 incrementada se uma nova funcionalidade ou melhoria substancial for introduzida
 dentro do código privado. PODE incluir mudanças a nível de correção. A versão de
-Correção deve ser redefinida para 0(zero) quando a versão Menor for 
+Correção DEVE ser redefinida para 0(zero) quando a versão Menor for 
 incrementada.
 
 1. Versão Maior X (X.y.z | X > 0) DEVE ser incrementada se forem introduzidas
 mudanças incompatíveis na API pública. PODE incluir alterações a nível de versão
-Menor e de versão de Correção. Versão de Correção e Versão Menor devem ser 
+Menor e de versão de Correção. Versão de Correção e Versão Menor DEVEM ser 
 redefinidas para 0(zero) quando a versão Maior for incrementada.
 
 1. Uma versão de Pré-Lançamento (pre-release) PODE ser identificada adicionando
@@ -122,28 +121,35 @@ quando se determina a versão de precedência. Assim, duas versões que diferem
 apenas nos metadados de construção, têm a mesma precedência. Exemplos:
 1.0.0-alpha+001, 1.0.0+20130313144700, 1.0.0-beta+exp.sha.5114f85.
 
-1. A precedência refere como as versões são comparadas com cada outra quando 
-solicitado.  A precedência DEVE ser calculada separando identificadores de 
-versão em Maior, Menor, Correção e Pré-lançamento, nesta ordem (Metadados de 
-construção não figuram na precedência). A precedência é determinada pela 
-primeira diferença quando se compara cada identificador da esquerda para 
-direita, como se segue: Versões Maior, Menor e Correção são sempre comparadas 
-numericamente. Example: 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1. Quando Maior, Menor e 
-Correção são iguais, a versão de Pré-Lançamento tem precedência menor que a 
-versão normal. Example: 1.0.0-alpha < 1.0.0. A precedência entre duas versões 
-de Pré-lançamento com mesma versão Maior, Menor e Correção DEVE ser 
-determinada comparando cada identificador separado por ponto da esquerda para 
-direita até que seja encontrada diferença da seguinte forma: identificadores 
-consistindo apenas dígitos são comparados numericamente e identificadores com 
-letras ou hífen são comparados lexicalmente na ordem de classificação ASCII.
-Identificadores numéricos sempre têm menor precedência do que os não numéricos.
-Um conjunto maior de campos de pré-lançamento tem uma precedência maior do que
-um conjunto menor, se todos os identificadores anteriores são iguais.
-Example: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 
-1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
+1. A precedência refere como as versões são comparadas uma com a outra quando 
+solicitado.  
+
+1. A precedência DEVE ser calculada separando identificadores de versão em Maior, Menor, Correção e Pré-lançamento, nesta ordem. (Metadados de construção não faz parte da precedência). 
+
+   1. A precedência é determinada pela primeira diferença quando se compara cada identificador da esquerda para 
+    direita, como se segue: Versões Maior, Menor e Correção são sempre comparadas numericamente. 
+
+      Exemplo: 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1.
+
+   1. Quando Maior, Menor e Correção são iguais, a versão de Pré-Lançamento tem precedência menor que a versão normal. 
+
+      Exemplo: 1.0.0-alpha < 1.0.0. 
+
+   1. A precedência entre duas versões de Pré-lançamento com mesma versão Maior, Menor e Correção DEVE ser determinada comparando cada identificador separado por ponto da esquerda para direita até que seja encontrada diferença da seguinte forma: 
+
+      1. Identificadores consistindo apenas dígitos são comparados numericamente.
+
+      1. Identificadores com letras ou hífen são comparados lexicalmente na ordem de classificação ASCII.
+    
+      1. Identificadores numéricos sempre têm menor precedência do que os não numéricos.
+
+      1. Um conjunto maior de campos de pré-lançamento tem uma precedência maior do que
+           um conjunto menor, se todos os identificadores anteriores são iguais.
+
+        Exemplo: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
 
 Por que usar Versionamento Semântico?
--------------------------------------
+------------------------------------
 Esta não é uma ideia nova ou revolucionária. De fato, você provavelmente já faz
 algo próximo a isso. O problema é que "próximo" não é bom o bastante. Sem a
 aderência a algum tipo de especificação formal, os números de versão são
@@ -274,22 +280,22 @@ colaborativa pela [Wend Tecnologia](https://github.com/wendtecnologia) através
 de [Walker de Alencar Oliveira](https://github.com/walkeralencar) e teve a 
 participação de:
 
-* [William G. Comnisky](https://github.com/wcomnisky)
-* [Rafael Sirotheau](https://github.com/rafasirotheau)
-* [Arthur Almeida](https://github.com/arthuralmeidap)
-* [Alberto Guimarães Viana](https://github.com/albertogviana)
-* [Rafael Lúcio](https://github.com/poste9)
-* Josiel Rocha
-* Alessandro Leite
-* Vinícius Assef
-* [Silas Ribas Martins](https://github.com/silasrm)
+- [William G. Comnisky](https://github.com/wcomnisky)
+- [Rafael Sirotheau](https://github.com/rafasirotheau)
+- [Arthur Almeida](https://github.com/arthuralmeidap)
+- [Alberto Guimarães Viana](https://github.com/albertogviana)
+- [Rafael Lúcio](https://github.com/poste9)
+- Josiel Rocha
+- Alessandro Leite
+- Vinícius Assef
+- [Silas Ribas Martins](https://github.com/silasrm)
 
 Toda colaboração na tradução pode ser acompanhada no link:
 http://pad.okfn.org/p/Fh9hjBPVu9
 
-Caso queira deixar sua opinião, por favor [abra uma issue no GitHub](https://github.com/wendtecnologia/semver/issues).
+Caso queira deixar sua opinião, por favor [abra uma issue no GitHub](https://github.com/semver/semver/issues).
 
 Licença
 -------
 
-[Creative Commons - CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
+[Creative Commons ― CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)

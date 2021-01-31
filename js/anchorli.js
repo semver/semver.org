@@ -1,29 +1,27 @@
-document.onreadystatechange = function () {
-  if (this.readyState === "complete") {
+const createAnchorLink = (id) => {
+  const anchor = document.createElement("a");
+  anchor.className = "anchor-link";
+  anchor.href = "#" + id;
+  return anchor;
+};
 
-    var createAnchorLink = function (id) {
-      var anchor = document.createElement("a");
-      anchor.className = "anchor-link";
-      anchor.href      = "#" + id;
-      return anchor;
-    };
-
-    // Add IDs to all spec li elements
-    var specItems = document.querySelectorAll("#spec ol")[1]
-      .querySelectorAll('li');
-    for (var i = 0; i < specItems.length; i++)
-    {
-      var li = specItems[i];
-      li.id = 'spec-item-' + (i + 1);
+window.onload = () => {
+  let increment = 0;
+  [...document.querySelectorAll("h1, h2, h3, #spec > ol > li > p")].forEach((el) => {
+    if (el.id) {
+      const anchorLink = createAnchorLink(el.id);
+      el.insertBefore(anchorLink, el.firstChild);
+    } else {
+      increment++;
+      el.parentElement.id = "spec-item-" + increment;
+      const anchorLink = createAnchorLink(el.parentElement.id);
+      el.parentElement.insertBefore(anchorLink, el);
     }
+  });
 
-    // Add anchor link to all elemens with an ID in the spec
-    var headers = document.querySelectorAll('#spec [id]');
-    for (var i = 0; i < headers.length; i++)
-    {
-      var element = headers[i];
-      var anchorLink = createAnchorLink(element.id);
-      element.insertBefore(anchorLink, element.firstChild)
-    }
+  const hash = window.location.hash;
+  if (hash) {
+    const targetElTop = document.querySelector(hash).offsetTop;
+    window.scrollTo(0, targetElTop);
   }
 };

@@ -42,7 +42,7 @@ Kako bi ovaj sustav funkcionirao, potrebno je prvo objaviti javni API. Možemo
 to primijeniti u dokumentaciji ili u samom kodu. U svakom slučaju, važno je da
 API bude jasan i precizan. Jednom kad identificiramo javni API, komuniciramo
 promjene u njemu kroz specificirane inkrementacije u oznake/broja verzije.
-Uzmimo format verzije X.Y.Z (MANJA.VEĆA.ZAKRPA). Ispravci *bugova* koji ne utječu
+Uzmimo format verzije X.Y.Z (VEĆA.MANJA.ZAKRPA). Ispravci *bugova* koji ne utječu
 na API inkrementiraju oznaku zakrpe, unatrag-kompatibilni dodaci/promjene u
 APIju inkrementiraju manju verziju, a unatrag inkompatibilne promjene u APIju
 inkrementiraju veću verziju.
@@ -50,7 +50,6 @@ inkrementiraju veću verziju.
 Ovaj sam sustav nazvao "Semantičko verzioniranje". Unutar ove sheme, oznake
 verzije i način na koji se mijenjaju prenose određene informacije o kodu koji
 se nalazi ispod i što se mijenjalo od jedne do druge verzije.
-
 
 Specifikacija semantičkog verzioniranja (SemVer)
 ------------------------------------------
@@ -163,7 +162,6 @@ Semantičko verzioniranje je da navedete da ga koristite i slijedite pravila.
 Stavite poveznicu na ovu stranicu u svoju README datoteku, kako bi i ostali bili
 svjesni pravila i mogli imati koristi od njih.
 
-
 Česta pitanja
 ---
 
@@ -243,7 +241,6 @@ bi korisnici glatko prešli na novu verziju APIja.
 Ne, ali budite razumni. Oznaka verzije od 255 znakova je vjerojatno pretjerana,
 na primjer. Također, neki sustavi mogu imati svoja ograničenja veličine oznake.
 
-
 O projektu
 -----
 
@@ -251,12 +248,10 @@ Autor specifikacije Semantičkog Verzioniranja je [Tom
 Preston-Werner](http://tom.preston-werner.com), izumitelj Gravatara i suosnivač
 GitHuba.
 
-
 Ako želite ostaviti povratne informacije, molimo [otvorite issue na
 GitHubu](https://github.com/mojombo/semver/issues).
-
 
 Licenca
 -------
 
-[Creative Commons - CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
+[Creative Commons ― CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
