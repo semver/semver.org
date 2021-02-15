@@ -33,7 +33,7 @@ Specificatie Semantisch Versioneren (SemVer)
 
 De termen "MOET" ("MUST"), "MAG NIET" ("MUST NOT"), "VERPLICHT" ("REQUIRED"), "ZAL" ("SHALL"), "ZAL NIET" ("SHALL NOT"), "ZOU MOETEN" ("SHOULD"), "ZOU NIET MOETEN" ("SHOULD NOT"), "AANBEVOLEN" ("RECOMMENDED"), "MAG" ("MAY"), "OPTIONEEL" ("OPTIONAL") in dit document dienen te worden geïnterpreteerd zoals beschreven in [RFC 2119](https://tools.ietf.org/html/rfc2119).
 
-1. Software die gebruikmaakt van Semantisch Versioneren MOET een publieke API declareren. Deze API kan worden gepubliceerd in de code of strikt uit documentatie bestaan. Ongeacht de vorm zal (SHOULD) deze nauwkeurig en uitgebreid zijn.
+1. Software die gebruikmaakt van Semantisch Versioneren MOET een publieke API declareren. Deze API kan worden gepubliceerd in de code of strikt uit documentatie bestaan. Ongeacht de vorm is het de bedoeling dat deze nauwkeurig en uitgebreid ZOU MOETEN zijn.
 
 1. Een normaal versienummer MOET de structuur X.Y.Z. hebben, waar X, Y en Z een niet-negatief geheel getal zijn. Voorloopnullen MOGEN NIET aanwezig zijn. X is de majeurversie, Y is de mineurversie en Z is de patchversie. Elk element MOET numeriek ophogen. Bijvoorbeeld: 1.9.0 -> 1.10.0 -> 1.11.0.
 
