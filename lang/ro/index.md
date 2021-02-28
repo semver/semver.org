@@ -394,7 +394,6 @@ Traducerea în română a fost realizată de catre echipele de dezvoltatori soft
 [Moneeva](https://www.moneeva.com/) și 
 [Lux Rehabs](https://www.luxrehabs.com/).
 
-
 Licență
 -------
 
