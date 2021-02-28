@@ -33,6 +33,7 @@ languages:
   kab: taqbaylit
   bg: Български
   nl: Nederlands
+  ro: Română
 versions:
   - 2.0.0
   - 2.0.0-rc.2
