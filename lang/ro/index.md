@@ -126,39 +126,38 @@ care diferă doar prin metadatele de build au aceeași precedență. Exemple:
 1. Precedența se referă la cum versiunile sunt comparate una cu alta atunci când 
 se sortează.
 
-   1. Precedența trebuie calculată separând versiunea in identificatori major, 
-      minor, corecți și pre-lansare în această ordine (metadata de build nu este 
-      luată în considerare la calculul precedenței).
+1. Precedența trebuie calculată separând versiunea in identificatori major, 
+minor, corecți și pre-lansare în această ordine (metadata de build nu este 
+luată în considerare la calculul precedenței).
 
-   1. Precedența este determinată de prima diferență când se compară fiecare 
-      dintre acești identificatori de la stânga la dreapta după cum urmează: major, 
-      minor și corecție sunt întotdeauna comparate numeric.
+1. Precedența este determinată de prima diferență când se compară fiecare 
+dintre acești identificatori de la stânga la dreapta după cum urmează: major, 
+minor și corecție sunt întotdeauna comparate numeric.
 
-      Exemplu: 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1.
+   Exemplu: 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1.
 
-   1. Când numerele versiunii majore, minore și de corecție sunt egale, o versiune 
-      de pre-lansare are precedență mai mică decât o versiune normală.
+1. Când numerele versiunii majore, minore și de corecție sunt egale, o versiune 
+de pre-lansare are precedență mai mică decât o versiune normală.
 
-      Exemplu: 1.0.0-alpha < 1.0.0.
+   Exemplu: 1.0.0-alpha < 1.0.0.
 
-   1. Precedența a două versiuni pre-lansare cu aceeași versiune majoră, minoră și 
-      de corecție TREBUIE determinată comparând fiecare identificator separat cu 
-      punct, de la stânga la dreapta până când o diferență este găsită, după cum 
-      urmează:
+1. Precedența a două versiuni pre-lansare cu aceeași versiune majoră, minoră și 
+   de corecție TREBUIE determinată comparând fiecare identificator separat cu 
+   punct, de la stânga la dreapta până când o diferență este găsită, după cum 
+   urmează:
 
-      1. Identificatorii care consistă in cifre sunt comparați numeric.
+   1. Identificatorii care consistă in cifre sunt comparați numeric.
 
-      1. Identificatorii cu litere sau liniuță sunt comparați lexical in ordinea 
+   1. Identificatorii cu litere sau liniuță sunt comparați lexical in ordinea 
          de sortare ASCII.
 
-      1. Identificatorii numerici au întotdeauna precedență mai mică decât cei 
-         non-numerici.
+   1. Identificatorii numerici au întotdeauna precedență mai mică decât cei 
+      non-numerici.
 
-      1. Un set mai mare de câmpuri pre-lansare are o precedență mai mare decât 
-         un set mai mic, daca toți identificatorii precedenți sunt egali.
+   1. Un set mai mare de câmpuri pre-lansare are o precedență mai mare decât 
+      un set mai mic, daca toți identificatorii precedenți sunt egali.
 
-         Exemplu: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 
-         1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
+      Exemplu: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
 
 Forma gramaticală Backus–Naur pentru versiuni SemVer valide
 -----------------------------------------------------------
