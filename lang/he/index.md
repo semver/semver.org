@@ -122,7 +122,6 @@ language_dir: rtl
 PCRE, Perl, PHP, R, Python ו-Go).
 
 כאן: <https://regex101.com/r/Ly7O1x/3>
- 
 
 ואחד עם קבוצות לכידה ממוספרות (תואם ל-ECMA Script (JavaScript), PCRE, Perl, PHP, R, Python ו-Go)
 
