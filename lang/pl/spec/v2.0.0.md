@@ -54,7 +54,6 @@ Nazywam ten system „wersjonowaniem semantycznym”. W tym układzie numery wer
 i sposób, w jaki się zmieniają, przenoszą informacje o kodzie pod spodem i co
 było zmieniane z wersji na wersję.
 
-
 Specyfikacja wersjonowania semantycznego (SemVer)
 -------------------------------------------------
 
@@ -140,7 +139,6 @@ o ile wszystkie poprzedzające identyfikatory są sobie równe. Przykład:
 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-beta.2 <
 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
 
-
 Dlaczego warto stosować wersjonowanie semantyczne?
 --------------------------------------------------
 
@@ -175,7 +173,6 @@ Jeśli to wszystko brzmi zachęcająco, wszystko, co musisz zrobić, aby korzyst
 z wersjonowania semantycznego, to zadeklarować się, że będziesz to robić,
 a następnie przestrzegać zasad. Podlinkuj tę stronę w swoim README, aby inni
 znali te zasady i mogli z nich korzystać.
-
 
 Często zadawane pytania
 -----------------------
@@ -263,7 +260,6 @@ Nie, ale miej zdrowy rozsądek. Na przykład numer wersji długi na 255 znaków 
 prawdopodobnie przesada. Ponadto konkretne systemy mogą narzucać swoje własne
 ograniczenia na rozmiar tego ciągu znaków.
 
-
 O specyfikacji
 --------------
 
@@ -273,7 +269,6 @@ i współzałożyciel GitHuba.
 
 Jeśli chcesz podzielić się opinią, prosimy
 o [otworzenie zgłoszenia na GitHubie](https://github.com/mojombo/semver/issues).
-
 
 Licencja
 --------

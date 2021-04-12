@@ -53,7 +53,6 @@ Ta sistem se imenuje "Semantične verzije." Pod to shemo, številke verzij
 in način, kako spreminjajo poslani pomen o podležeči kodi in kaj je bilo
 spremenjeno iz ene verzije v naslednji.
 
-
 Specifikacija semantičnih verzij (SemVer)
 -----------------------------------------
 
@@ -165,7 +164,6 @@ verzije, razglasitev, da to tako delate in nato slediti pravilom. Povežite
 na to spletno stran iz vaše datoteke README, da ostali vedo pravila in jih lahko
 koristijo.
 
-
 Pogosta vprašanja
 -----------------
 
@@ -258,14 +256,13 @@ soustanovitelja GitHub-a.
 
 Slovenski prevod so prispevali:
 
-* [Peter Kokot](https://github.com/peterkokot)
-* [Aleš Šarkanj](https://github.com/alsar)
+- [Peter Kokot](https://github.com/peterkokot)
+- [Aleš Šarkanj](https://github.com/alsar)
 
 Če želite pustiti povratne informacije, prosimo, da [odprete vprašanje na
 GitHub-u](https://github.com/mojombo/semver/issues).
 
-
 Licenca
 -------
 
-[Creative Commons - CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
+[Creative Commons ― CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
