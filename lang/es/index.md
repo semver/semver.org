@@ -79,68 +79,69 @@ Las palabras clave "DEBE", "NO DEBE", "OBLIGATORIO", "DEBERÁ", "NO DEBERÁ", "D
 Forma Gramatical Backus–Naur para Versiones Válidas SemVer
 ----------------------------------------------------------
 
-    <semver válido> ::= <versión núcleo>
-                      | <versión núcleo> "-" <prelanzamiento>
-                      | <versión núcleo> "+" <compilación>
-                      | <versión núcleo> "-" <prelanzamiento> "+" <compilación>
+```
+<semver válido> ::= <versión núcleo>
+                  | <versión núcleo> "-" <prelanzamiento>
+                  | <versión núcleo> "+" <compilación>
+                  | <versión núcleo> "-" <prelanzamiento> "+" <compilación>
 
-    <versión núcleo> ::= <major> "." <menor> "." <parche>
+<versión núcleo> ::= <major> "." <menor> "." <parche>
 
-    <major> ::= <identificador numérico>
+<major> ::= <identificador numérico>
 
-    <menor> ::= <identificador numérico>
+<menor> ::= <identificador numérico>
 
-    <parche> ::= <identificador numérico>
+<parche> ::= <identificador numérico>
 
-    <prelanzamiento> ::= <identificadores prelanzamiento separados-por-puntos>
+<prelanzamiento> ::= <identificadores prelanzamiento separados-por-puntos>
 
-    <identificadores prelanzamiento separados-por-puntos> ::= <identificador prelanzamiento>
-                                                            | <identificador prelanzamiento> "." <identificadores prelanzamiento separados-por-puntos>
+<identificadores prelanzamiento separados-por-puntos> ::= <identificador prelanzamiento>
+                                                        | <identificador prelanzamiento> "." <identificadores prelanzamiento separados-por-puntos>
 
-    <compilación> ::= <identificadores compilación separados-por-puntos>
+<compilación> ::= <identificadores compilación separados-por-puntos>
 
-    <identificadores compilación separados-por-puntos> ::= <identificador compilación>
-                                                         | <identificador compilación> "." <identificadores compilación separados-por-puntos>
+<identificadores compilación separados-por-puntos> ::= <identificador compilación>
+                                                     | <identificador compilación> "." <identificadores compilación separados-por-puntos>
 
-    <identificador prelanzamiento> ::= <identificador alfanumérico>
-                                     | <identificador numérico>
+<identificador prelanzamiento> ::= <identificador alfanumérico>
+                                 | <identificador numérico>
 
-    <identificador compilación> ::= <identificador alfanumérico>
-                                  | <dígitos>
+<identificador compilación> ::= <identificador alfanumérico>
+                              | <dígitos>
 
-    <identificador alfanumérico> ::= <no-dígito>
-                                   | <no-dígito> <caracteres identificadores>
-                                   | <caracteres identificadores> <no-dígito>
-                                   | <caracteres identificadores> <no-dígito> <caracteres identificadores>
+<identificador alfanumérico> ::= <no-dígito>
+                               | <no-dígito> <caracteres identificadores>
+                               | <caracteres identificadores> <no-dígito>
+                               | <caracteres identificadores> <no-dígito> <caracteres identificadores>
 
-    <identificador numérico> ::= "0"
-                               | <dígito positivo>
-                               | <dígito positivo> <dígitos>
+<identificador numérico> ::= "0"
+                           | <dígito positivo>
+                           | <dígito positivo> <dígitos>
 
-    <caracteres identificadores> ::= <carácter identificador>
-                                   | <carácter identificador> <caracteres identificadores>
+<caracteres identificadores> ::= <carácter identificador>
+                               | <carácter identificador> <caracteres identificadores>
 
-    <identificador caracter> ::= <dígito>
-                               | <no-dígito>
+<identificador caracter> ::= <dígito>
+                           | <no-dígito>
 
-    <no-dígito> ::= <letra>
-                  | "-"
+<no-dígito> ::= <letra>
+              | "-"
 
-    <dígitos> ::= <dígito>
-                | <dígito> <dígitos>
+<dígitos> ::= <dígito>
+            | <dígito> <dígitos>
 
-    <dígito> ::= "0"
-               | <dígito positivo>
+<dígito> ::= "0"
+           | <dígito positivo>
 
-    <dígito positivo> ::= "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+<dígito positivo> ::= "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
 
-    <letra> ::= "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J"
-              | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T"
-              | "U" | "V" | "W" | "X" | "Y" | "Z" | "a" | "b" | "c" | "d"
-              | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n"
-              | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x"
-              | "y" | "z"
-
+<letra> ::= "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J"
+          | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T"
+          | "U" | "V" | "W" | "X" | "Y" | "Z" | "a" | "b" | "c" | "d"
+          | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n"
+          | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x"
+          | "y" | "z"
+```
 
 Porqué usar Versionado Semántico
 ---------------------------------
@@ -233,4 +234,4 @@ Esta traducción ha sido realizada por [Italo Baeza Cabrera](https://italobc.com
 Licencia
 --------
 
-[Creative Commons - CC BY 3.0](http://creativecommons.org/licenses/by/3.0/) ([en español])[https://creativecommons.org/licenses/by/3.0/deed.es]
+[Creative Commons ― CC BY 3.0](http://creativecommons.org/licenses/by/3.0/) ([en español])[https://creativecommons.org/licenses/by/3.0/deed.es]
