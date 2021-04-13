@@ -85,9 +85,9 @@ Forma Gramatical Backus–Naur para Versiones Válidas SemVer
                   | <versión núcleo> "+" <compilación>
                   | <versión núcleo> "-" <prelanzamiento> "+" <compilación>
 
-<versión núcleo> ::= <major> "." <menor> "." <parche>
+<versión núcleo> ::= <mayor> "." <menor> "." <parche>
 
-<major> ::= <identificador numérico>
+<mayor> ::= <identificador numérico>
 
 <menor> ::= <identificador numérico>
 
