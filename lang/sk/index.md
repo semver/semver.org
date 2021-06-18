@@ -1,9 +1,9 @@
 ---
-title: Sémantické verzovanie 2.0.0
+title: Sémantické verziovanie 2.0.0
 language: sk
 ---
 
-Sémantické verzovanie 2.0.0
+Sémantické verziovanie 2.0.0
 ===========================
 
 Zhrnutie
@@ -52,11 +52,11 @@ chýb, ktoré nemenia vaše API, zväčšujú číslo PATCH verzie. Spätne komp
 zmeny API zväčšujú číslo MINOR verzie a spätne nekompatibilné zmeny API zväčšujú
 číslo MAJOR verzie.
 
-Tento systém je nazývaný Sémantické verzovanie. Čísla verzií v tomto systéme a
+Tento systém je nazývaný Sémantické verziovanie. Čísla verzií v tomto systéme a
 spôsob, akým sa menia nesú so sebou informáciu o použitom kóde a zmenách medzi
 jednotlivými verziami.
 
-Špecifikácia sémantického verzovania (SemVer)
+Špecifikácia sémantického verziovania (SemVer)
 ---------------------------------------------
 
 Kľúčové slová "MUSÍ" *(angl. MUST, REQUIRED, SHALL)*, "NESMIE" *(angl. MUST NOT,
@@ -64,7 +64,7 @@ SHALL NOT)*, "MALO BY" *(angl. SHOULD, RECOMMENDED)*, "NEMALO BY" *(angl. SHOULD
 NOT)* a "MÔŽE" *(angl. MAY, OPTIONAL)* sú interpretovené ako je popísané
 v dokumente [RFC 2119](http://tools.ietf.org/html/rfc2119).
 
-1. Softvér používajúci Sémentické verzovanie MUSÍ mať zadefinované API. Toto API
+1. Softvér používajúci Sémentické verziovanie MUSÍ mať zadefinované API. Toto API
 môže byť definované priamo v kóde, prípadne môže existovať v dokumentácii. Nech
 už to je tak alebo onak, malo by byť presné a komplexné.
 
@@ -132,10 +132,10 @@ identifikátory v predbežnej verzii rovnaké, tak väčšie množstvo identifik
 značí vyššiu prioritu ako menšie množstvo. Napr.: 1.0.0-alpha < 1.0.0-alpha.1 <
 1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
 
-Prečo používať Sémantické verzovanie?
+Prečo používať Sémantické verziovanie?
 -------------------------------------
 
-Sémantické verzovanie nie je revolučná myšlienka a ak vydávate softvér,
+Sémantické verziovanie nie je revolučná myšlienka a ak vydávate softvér,
 pravdepodobne robíte niečo podobné. Problémom je, že "niečo podobné" nestačí.
 Bez dodržiavania akejsi formálnej špecifikácie sú čísla pre manažment závislostí
 v podstate nanič. Tým, že hore uvedeným myšlienkam dávame presnú a jasnú
@@ -145,7 +145,7 @@ môže začať.
 
 Jednoduchým príkladom demonštrujeme, že peklo závislostí môže byť pre vás ľahko
 minulosťou. Predstavte si, že máte knižnicu Hasičské auto. Táto knižnica
-vyžaduje sémanticky verzovanú knižnicu Rebrík. V čase, kedy je Hasičské auto
+vyžaduje sémanticky verziovanú knižnicu Rebrík. V čase, kedy je Hasičské auto
 vytvorené, verzia Rebríka je 3.1.0. Keďže Hasičské auto používa funkcie,
 ktoré boli pridané vo verzii 3.1.0, môžete bezpečne špecifikovať, že potrebujete
 verziu Rebríka väčšiu alebo rovnú 3.1.0, no menšiu ako 4.0.0. A potom, keď vyjde
@@ -155,12 +155,12 @@ a budete vedieť, že je s ním kompatibilná.
 Ako zodpovední developeri si určite budete chcieť skontrolovať, či všetko
 funguje podľa predpokladov. V skutočnosti je však všade neporiadok; tam nám
 pomôže iba dávať si pozor. Čo však môžete spraviť je nechať Sémantické
-verzovanie aby vám umožnilo rozumný spôsob ako vydávať a aktualizovať
+verziovanie aby vám umožnilo rozumný spôsob ako vydávať a aktualizovať
 knižnice tak, aby ste nemuseli riešiť nové verzie závislostí, ušetrili čas
 a vyhli sa zmätkom.
 
 Ak to znie rozumne, všetko čo potrebujete spraviť pre začatie používania
-Sémantického verzovania je povedať, že to robíte a následne dodržiavať pravidlá.
+Sémantického verziovania je povedať, že to robíte a následne dodržiavať pravidlá.
 Odkážte z README vášho softvéru na tieto stránky, nech aj ostatní vedia, aké
 pravidlá používate a majú z nich prospech.
 
@@ -199,12 +199,12 @@ Je vašou zodpovednosťou, ako profesionálnych developerov, správne dokumentov
 softvér, ktorý je určený na používanie aj pre ostatných. Spravovanie zložitosti
 softvéru je veľmi dôležitá časť, ak chcete projekt udržať efektívny. A to nebude
 možné, ak nikto nebude vedieť ako váš softvér používať alebo ktoré metódy je
-bezpečné volať. Z dlhodobého hľadiska sa Sémantické verzovanie a dôraz na dobre
+bezpečné volať. Z dlhodobého hľadiska sa Sémantické verziovanie a dôraz na dobre
 definované API ukázali ako správna voľba umožňujúca bežať veciam hladko.
 
 ### Čo spraviť, keď vydám spätne nekompatibilnú verziu ako MINOR?
 
-Akonáhle zistíte, že ste porušili pravidlá Sémantického verzovania, opravte
+Akonáhle zistíte, že ste porušili pravidlá Sémantického verziovania, opravte
 problém a vydajte ďalšiu MINOR verziu, ktorá opäť vráti spätnú kompatibilitu.
 Napriek takejto situácii, je neprípustné aby ste menili už vydanú verziu. A ak
 je to možné a vhodné, informujte používateľov o zlej verzii, aby vedeli, že sa
@@ -225,7 +225,7 @@ verzie.
 Usúďte, čo je najlepšie. Ak máte veľkú skupinu používateľov, ktorá by bola
 ovplyvnená zmenou späť, tak asi bude najlepšie vydať MAJOR verziu, napriek tomu,
 že oprava späť by mala byť súčasťou PATCH verzie. Pamätajte, že Sémantické
-verzovanie je o tom, ako sa verzie menia. Ak sú zmeny pre vašich používateľov
+verziovanie je o tom, ako sa verzie menia. Ak sú zmeny pre vašich používateľov
 dôležité, použite také číslo verzie, aby ste ich informovali.
 
 ### Ako sa vysporiadať so zastarávaním funkcionality?
@@ -238,7 +238,7 @@ zastaráva. A teda, predtým ako funkcionalitu kompletne odstránite v ďalšej
 MAJOR verzii, mali by ste spraviť aspoň jednu MINOR verziu, ktorá obsahuje
 zastaranie a používatelia mohli ľahko prejsť na nové API.
 
-### Má Sémantické verzovanie nejaký limit na dĺžku označenia verzie?
+### Má Sémantické verziovanie nejaký limit na dĺžku označenia verzie?
 
 Nie, no použite zdravý rozum. Číslo verzie, ktoré má 255 znakov je už asi moc,
 no špecifické systémy môžu mať vlastné limity na dĺžku čísla verzie.
@@ -246,7 +246,7 @@ no špecifické systémy môžu mať vlastné limity na dĺžku čísla verzie.
 O špecifikácii
 --------------
 
-Autorom špecifikácie sémantického verzovania je
+Autorom špecifikácie sémantického verziovania je
 [Tom Preston-Werner](http://tom.preston-werner.com), autor projektu Gravatar a
 spoluzakladateľ projektu Github.
 
