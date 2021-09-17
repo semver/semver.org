@@ -208,7 +208,7 @@ FAQ
 
 ### 是否有推荐的正则表达式用以检查语义化版本号的正确性？
 
-有两个推荐的正则表达式。第一个用于支持按组名称提取的语言（PCRE[Perl兼容正则表达式，比如 Perl、PHP和R]、Python 和 Go）。
+有两个推荐的正则表达式。第一个用于支持按组名称提取的语言（PCRE[Perl 兼容正则表达式，比如 Perl、PHP 和 R]、Python 和 Go）。
 
 参见：<https://regex101.com/r/Ly7O1x/3/>
 
@@ -216,7 +216,7 @@ FAQ
 ^(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?P<patch>0|[1-9]\d*)(?:-(?P<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$
 ```
 
-第二个用于支持按编号提取的语言（与第一个对应的提取项按顺序分别为：major、minor、patch、prerelease、buildmetadata）。主要包括 ECMA Script(JavaScript)、PCRE (Perl兼容正则表达式，比如 Perl、PHP 和 R)、Python 和 Go。
+第二个用于支持按编号提取的语言（与第一个对应的提取项按顺序分别为：major、minor、patch、prerelease、buildmetadata）。主要包括 ECMA Script（JavaScript）、PCRE（Perl 兼容正则表达式，比如 Perl、PHP 和 R）、Python 和 Go。
 参见：<https://regex101.com/r/vkijKf/1/>
 
 ```
