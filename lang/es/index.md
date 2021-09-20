@@ -191,7 +191,7 @@ Usa tu mejor juicio. Si tienes una gran audiencia que será drásticamente impac
 
 ### ¿Cómo debería manejar funcionalidad obsoleta?
 
-Desechar funcionalidad existente es algo normal en el desarrollo de software y es usualmente requerido para progresar. Cuando desechas parte de tu API público, deberías hacer dos cosas: (1) actualizar tu documentación para avisar a tus usuarios sobre el cambio, (2) lanzar una nueva versión menor mateniendo la obsolescencia en su lugar. Antes que remuevas completamente la funcionalidad en una nueva versión mayor debería haber al menos una versión menor anterior que contenga la obsolescencia para que todos los usuarios puedan planear una transición sin sobresaltos al nuevo API.
+Desechar funcionalidad existente es algo normal en el desarrollo de software y es usualmente requerido para progresar. Cuando desechas parte de tu API público, deberías hacer dos cosas: (1) actualizar tu documentación para avisar a tus usuarios sobre el cambio, (2) lanzar una nueva versión menor manteniendo la obsolescencia en su lugar. Antes que remuevas completamente la funcionalidad en una nueva versión mayor debería haber al menos una versión menor anterior que contenga la obsolescencia para que todos los usuarios puedan planear una transición sin sobresaltos al nuevo API.
 
 ### ¿Tiene SemVer una longitud límite en el texto de la versión?
 
