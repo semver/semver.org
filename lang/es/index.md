@@ -12,7 +12,7 @@ Resumen
 Dado un número de versión MAYOR.MENOR.PARCHE, se incrementa:
 
 1. la versión MAYOR cuando realizas un cambio incompatible en el API,
-2. la versión MENOR cuando añades funcionalidad que compatible con versiones anteriores, y
+2. la versión MENOR cuando añades funcionalidad que es compatible con versiones anteriores, y
 3. la versión PARCHE cuando reparas errores compatibles con versiones anteriores.
 
 Hay disponibles etiquetas para prelanzamiento y metadata de compilación como extensiones al formato MAYOR.MENOR.PARCHE.
