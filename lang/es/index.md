@@ -234,4 +234,4 @@ Esta traducción ha sido realizada por [Italo Baeza Cabrera](https://italobc.com
 Licencia
 --------
 
-[Creative Commons ― CC BY 3.0](http://creativecommons.org/licenses/by/3.0/) ([en español])[https://creativecommons.org/licenses/by/3.0/deed.es]
+[Creative Commons ― CC BY 3.0](http://creativecommons.org/licenses/by/3.0/) ([en español](https://creativecommons.org/licenses/by/3.0/deed.es))
