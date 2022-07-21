@@ -269,14 +269,14 @@ Quant a
 -------
 
 L'especificació de la gestió semàntica de versions està escrita per [Tom
-Preston-Werner] (http://tom.preston-werner.com), inventor de Gravatars i
+Preston-Werner](http://tom.preston-werner.com), inventor de Gravatars i
 cofundador de GitHub.
 
 Traducció d'aquest document a càrrec de:
 - [Jordi Sanfeliu](https://github.com/mikaku)
 
 Si voleu deixar comentaris, si us plau [obre un tiquet a
-GitHub] (https://github.com/mojombo/semver/issues).
+GitHub](https://github.com/mojombo/semver/issues).
 
 Llicència
 ---------
