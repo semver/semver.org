@@ -4,40 +4,92 @@ CSS for semver.org
 @link http://mathiasbynens.be/
 */
 
-h1, h2, ol, ul { margin: 0; padding: 0; }
+h1,
+h2,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+}
 
-html { font: 14.4px/1.5 Helvetica, Arial, sans-serif; }
-body { margin: 0 auto; padding: 0 10%; max-width: 710px; color: #000; background-color: #fff; }
+html {
+  font: 14.4px/1.5 Helvetica, Arial, sans-serif;
+}
+body {
+  margin: 0 auto;
+  padding: 0 10%;
+  max-width: 710px;
+  color: #000;
+  background-color: #fff;
+}
 
 pre {
-  overflow:auto;
+  overflow: auto;
 }
 
-@-ms-viewport { width: device-width; }
-html { -webkit-text-size-adjust: 100%; }
+@-ms-viewport {
+  width: device-width;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+}
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   text-align: center;
 }
- h1 { font-size: 43px; margin: 1.1em 0 .7em; }
- h2 { margin: 2.1em 0 .7em; font-size: 24px; }
- h3 { text-align: left; font-size: 15.8px; margin-bottom: .6em; }
- html[dir="rtl"] h3 { text-align: right; }
-
-a { color: #009; }
-a:hover, a:focus { color: #000; }
-ol, ul { padding-left: 1.5em; }
-html[dir="rtl"] ol, html[dir="rtl"] ul {
-    padding-left: 0;
-    padding-right: 1.5em;
+h1 {
+  font-size: 43px;
+  margin: 1.1em 0 0.7em;
+}
+h2 {
+  margin: 2.1em 0 0.7em;
+  font-size: 24px;
+}
+h3 {
+  text-align: left;
+  font-size: 15.8px;
+  margin-bottom: 0.6em;
+}
+html[dir="rtl"] h3 {
+  text-align: right;
 }
 
-p { margin: 0 0 1em; }
+a {
+  color: #009;
+}
+a:hover,
+a:focus {
+  color: #000;
+}
+ol,
+ul {
+  padding-left: 1.5em;
+}
+html[dir="rtl"] ol,
+html[dir="rtl"] ul {
+  padding-left: 0;
+  padding-right: 1.5em;
+}
+
+p {
+  margin: 0 0 1em;
+}
 
 @media print {
- body { width: 100%; }
- h1, h2, h3 { font-weight: bold; }
- a:after { content: ' <' attr(href) '>'; font-size: 90%; }
+  body {
+    width: 100%;
+  }
+  h1,
+  h2,
+  h3 {
+    font-weight: bold;
+  }
+  a:after {
+    content: " <" attr(href) ">";
+    font-size: 90%;
+  }
 }
 
 /* Nav */
@@ -88,11 +140,11 @@ ul.lang li a {
 }
 
 html[dir="rtl"] #spec a.anchor-link {
-   background-position-x: right;
-   margin-left: 0;
-   margin-right: -1em;
-   padding-right: 0;
-   padding-left: 0.5em;
+  background-position-x: right;
+  margin-left: 0;
+  margin-right: -1em;
+  padding-right: 0;
+  padding-left: 0.5em;
 }
 
 #spec h1 a.anchor-link,
@@ -105,7 +157,7 @@ html[dir="rtl"] #spec a.anchor-link {
   margin-left: -0.6em;
 }
 
- html[dir="rtl"] #spec h1 a.anchor-link {
+html[dir="rtl"] #spec h1 a.anchor-link {
   margin-right: -0.6em;
   margin-left: 0;
 }
@@ -114,7 +166,7 @@ html[dir="rtl"] #spec a.anchor-link {
   margin-left: -1.5em;
 }
 
- html[dir="rtl"] #spec h3 a.anchor-link {
+html[dir="rtl"] #spec h3 a.anchor-link {
   margin-left: 0;
   margin-right: -1.5em;
 }
@@ -124,7 +176,7 @@ html[dir="rtl"] #spec a.anchor-link {
   margin-left: -3em;
 }
 
- html[dir="rtl"] #spec li a.anchor-link {
+html[dir="rtl"] #spec li a.anchor-link {
   margin-left: 0;
   margin-right: -3em;
 }
@@ -133,6 +185,7 @@ html[dir="rtl"] #spec a.anchor-link {
   position: relative;
 }
 
-#spec [id]:hover > .anchor-link, .anchor-link:focus {
+#spec [id]:hover > .anchor-link,
+.anchor-link:focus {
   opacity: 1;
 }

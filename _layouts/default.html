@@ -35,13 +35,13 @@
         {% assign found = site.pages | where: "path", expected | first %}
         {% if found %}
           <li class="version version-{{ version }}">
-            <a href="{{ found.url }}">{{ version}}</a>
+            <a href="{{ found.url }}">{{ version }}</a>
           </li>
         {% endif %}
       {% endfor %}
     </ul>
     <div id="spec">
-     {{ content }}
+      {{ content }}
     </div>
     <script src="/js/anchorli.js"></script>
   </body>
