@@ -5,8 +5,9 @@
   "main": "scripts/collect.js",
   "scripts": {
     "collect": "node scripts/collect.js",
-    "lint": "remark -qf lang spec index.md",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "remark -qf lang spec index.md && prettier --check .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "fmt": "prettier --write ."
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
   "homepage": "https://github.com/semver/semver.org#readme",
   "devDependencies": {
     "js-yaml": "^3.14.0",
+    "prettier": "^2.7.1",
     "remark-cli": "^11.0.0",
     "remark-frontmatter": "^2.0.0",
     "remark-lint-mdash-style": "^1.1.1",
