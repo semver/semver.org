@@ -143,8 +143,8 @@ Forma Gramatical Backus–Naur para Versiones Válidas SemVer
           | "y" | "z"
 ```
 
-Porqué usar Versionado Semántico
----------------------------------
+¿Por qué usar Versionado Semántico?
+-----------------------------------
 
 Esto no es una idea nueva o revolucionaria. De hecho, probablemente ya tengas algo parecido a ésto. El problema es que "parecido" no significa suficientemente bueno. Sin el cumplimiento de alguna especie de especificación formal, los números de versión son esencialmente inútiles para el manejo de dependencias. Dándole un nombre y una definición clara a las ideas anteriores, se hace fácil comunicar tus intenciones a los usuarios de tu software. Una vez estas intenciones son claras y flexibles (pero no tanto) las especificaciones de dependencia finalmente se pueden generar.
 
