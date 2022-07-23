@@ -34,6 +34,7 @@ languages:
   bg: Български
   nl: Nederlands
   ro: Română
+  da: Dansk
 versions:
   - 2.0.0
   - 2.0.0-rc.2
