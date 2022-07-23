@@ -1,7 +1,7 @@
 ---
-titel: Semantisk versionsstyring 2.0.0
-sprog: da
-forfatter: Jens Kristian Villadsen
+title: Semantisk versionsstyring 2.0.0
+language: da
+author: Jens Kristian Villadsen
 ---
 
 Semantisk version 2.0.0
