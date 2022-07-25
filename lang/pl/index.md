@@ -316,7 +316,7 @@ Wycofywanie istniejącej funkcjonalności jest normalną częścią programowani
 i często jest konieczne, by móc rozwijać oprogramowanie. Gdy wycofujesz część
 swojego publicznego API, powinieneś zrobić dwie rzeczy: (1) zaktualizować
 dokumentację, by użytkownicy wiedzieli o tej zmianie, (2) wypuścić nowe wydanie
-minor z informacją o wycofaniu. Zanim całkowicie usuniesz funkcjonalność
+minor z informacją o wycofywaniu. Zanim całkowicie usuniesz funkcjonalność
 w nowym wydaniu major, powinno być co najmniej jedno wydanie minor zawierające
 informację o wycofaniu, aby użytkownicy mogli płynnie przejść na nowe API.
 
