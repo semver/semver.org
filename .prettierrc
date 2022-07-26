@@ -1,2 +1,7 @@
 trailingComma: "es5"
 semi: true
+overrides:
+  - files: "_config.yml"
+    options:
+      semi: false
+      singleQuote: true
