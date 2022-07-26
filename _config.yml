@@ -49,6 +49,6 @@ plugins:
   - jekyll-redirect-from
 defaults:
   - scope:
-      path: ""
+      path: ''
     values:
       layout: default
