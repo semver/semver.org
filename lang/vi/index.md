@@ -1,6 +1,6 @@
 ---
 title: Ý nghĩa việc đánh số phiên bản 2.0.0
-language: Tiếng Việt
+language: vi
 ---
 
 Đánh số phiên bản 2.0.0

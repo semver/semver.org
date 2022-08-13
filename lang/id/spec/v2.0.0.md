@@ -1,5 +1,6 @@
 ---
 title: Versi Semantik 2.0.0
+language: id
 redirect_from: /lang/id/
 author: Aditya Purwa
 ---
