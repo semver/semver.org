@@ -137,7 +137,7 @@ diferència, de la següent manera: els identificadors compostos només de nombr
 es comparen numèricament, i els identificadors que contenen lletres o guions es
 comparen en ordre ASCII. Els identificadors numèrics sempre són menys importants
 que els identificadors no numèrics. Un conjunt més llarg d'identificadors de
-pre-llençament té major prioritat sobre un conjunt més curt, si tots els identificadors
+pre-llançament té major prioritat sobre un conjunt més curt, si tots els identificadors
 anteriors són idèntics. Exemple: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta <
 1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
 
@@ -204,7 +204,7 @@ Es tracta d'un desenvolupament responsable i d'una anticipació. Els canvis
 incompatibles no s'han d'introduir a la lleugera en un programari amb un
 gran nombre de codi font depenent. El cost d'una actualització a una nova versió
 pot ser important. La necessitat d'augmentar la versió principal per publicar
-els canvis que no siguin compatibles amb amb versions anteriors, significa que
+els canvis que no siguin compatibles amb versions anteriors, significa que
 haureu mesurat les implicacions dels canvis i avaluada la relació entre el seu
 cost i els seus beneficis.
 
