@@ -90,7 +90,7 @@ w [RFC 2119](http://tools.ietf.org/html/rfc2119).
 7. Wersja minor Y (x.Y.z | x > 0) MUSI zostać zwiększona, jeśli nowa,
    kompatybilna wstecz funkcjonalność zostaje wprowadzona do publicznego API. MUSI
    zostać zwiększona, jeśli jakakolwiek funkcjonalność publicznego API zostaje
-   wycofane. MOŻE zostać zwiększona, jeśli wprowadzone zostają nowe znaczące
+   zdezaprobowana. MOŻE zostać zwiększona, jeśli wprowadzone zostają nowe znaczące
    funkcjonalności lub ulepszenia w obrębie prywatnego kodu. MOŻE ona zawierać
    zmiany na poziomie patch. Numer wersji patch MUSI być ustawiony na 0, gdy wersja
    minor jest zwiększana.
@@ -310,15 +310,15 @@ w semantycznym wersjonowaniu chodzi przede wszystkim o przekazanie znaczenia
 zmiany poprzez zmianę numeru wersji. Jeśli zmiany są ważne dla użytkowników,
 poinformuj ich o tym poprzez numer wersji.
 
-### Jak powinienem radzić sobie z wycofywaniem funkcjonalności?
+### Jak powinienem radzić sobie z dezaprobowaniem funkcjonalności?
 
-Wycofywanie istniejącej funkcjonalności jest normalną częścią programowania
+Dezaprobowanie istniejącej funkcjonalności jest normalną częścią programowania
 i często jest konieczne, by móc rozwijać oprogramowanie. Gdy wycofujesz część
 swojego publicznego API, powinieneś zrobić dwie rzeczy: (1) zaktualizować
 dokumentację, by użytkownicy wiedzieli o tej zmianie, (2) wypuścić nowe wydanie
-minor z informacją o wycofywaniu. Zanim całkowicie usuniesz funkcjonalność
+minor z informacją o zdezaprobowaniu. Zanim całkowicie usuniesz funkcjonalność
 w nowym wydaniu major, powinno być co najmniej jedno wydanie minor zawierające
-informację o wycofaniu, aby użytkownicy mogli płynnie przejść na nowe API.
+informację o zdezaprobowanie, aby użytkownicy mogli płynnie przejść na nowe API.
 
 ### Czy SemVer ma limit długości na oznaczenie wersji?
 
