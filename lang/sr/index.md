@@ -70,14 +70,15 @@ u svakom trenutku. Ovaj public (javni) API SHOULD NOT (NE TREBA) smatrati stabil
 1. Verzija 1.0.0 definiše public (javni) API. Način na koji će se oznaka verzije
 inkrementirati nakon ove objave zavisi od ovog public (javnog) API-ja i izmena na njemu.
 
-1. Patch (zakrpa) verzija Z (x.y.Z | x > 0) MUST (MORA) se inkrementirati kada se dodaju samo unazad kompatibilne ispravke bagova (gresaka). Ispravke bugova (gresaka) su definisane kao promene koda koje ispravljaju nepravilno ponašanje.
+1. Patch (zakrpa) verzija Z (x.y.Z | x > 0) MUST (MORA) se inkrementirati kada se dodaju samo unazad kompatibilne ispravke bagova (gresaka). Ispravke bugova (gresaka) su definisane kao promene koda
+koje ispravljaju nepravilno ponašanje.
 
-1. Minor (manja) verzija Y (x.Y.z | x > 0) MUST (MORA) se inkrementirati ako je nova, unazad kompatibilna funkcionalnost uvedena u javni API. Takođe MUST (MORA) se inkrementirati kada se neka od funkcionalnosti API-ja označi kao deprecated (zastarela).
-MAY (MOŽE) biti inkrementirana ukoliko se uvedu substancijalno nove funkcionalnosti ili
-poboljšanja u okviru privatnog koda. MAY (MOŽE) uključivati promene nivoa zakrpe.
+1. Minor (manja) verzija Y (x.Y.z | x > 0) MUST (MORA) se inkrementirati ako je nova, unazad kompatibilna funkcionalnost uvedena u javni API. Takođe MUST (MORA) se inkrementirati kada se neka od funkcionalnosti API-ja označi kao deprecated (zastarela).MAY (MOŽE) biti inkrementirana ukoliko se uvedu substancijalno nove funkcionalnosti ili poboljšanja u okviru privatnog koda. MAY (MOŽE) uključivati promene nivoa zakrpe
 PATCH (ZAKRPA) verzija MUST (MORA) se resetovati na 0 kada se minor (manja) verzija inkrementira.
 
-1. Major (glavna) verzija X (X.y.z | X > 0) MUST (MORA) se inkrementirati ako se unazad nekompatibilne promene uvode u javni API. MAY (MOŽE) uključivati i promene minor (manje) i promene na nivou patch (zakrpe) verzije. Patch (zakrpe) i minor (manje) verzije MUST (MORA) da se resetuju na 0 kada se major (glavna) verzija inkrementira.
+1. Major (glavna) verzija X (X.y.z | X > 0) MUST (MORA) se inkrementirati ako se unazad nekompatibilne promene uvode u javni API. MAY (MOŽE) uključivati i promene minor (manje) i promene na nivou patch
+(zakrpe) verzije. Patch (zakrpe) i minor (manje) verzije MUST (MORA) da se resetuju na 0 kada se 
+major (glavna) verzija inkrementira.
 
 1. Verzija predizdanja MAY (MOŽE) biti označena dodavanjem hyphena (povlake) i serijom identifikatora razdvojenih tačkom neposredno nakon patch (zakrpe) verzije.Identifikatori MUST (MORAJU) sadržati samo ASCII alfanumeričke znakove i hyphene (povlake)
 [0-9A-Za-z-]. Identifikatori MUST NOT (NE SMEJU) biti prazni. Numerički identifikatori MUST NOT (NE SMEJU) počinjati nulom. Verzije predizdanja imaju niži prioritet od povezane normalne verzije. Verzija predizdanja označava da je verzija nestabilna i da možda neće biti zadovoljeni predviđeni zahtevi kompatibilnosti kao što je označeno njegovim povezanim
@@ -92,31 +93,34 @@ i niza identifikatora odvojenih tačkom, koji se odmah nastavljaju na patch (zak
 1. Prioritet se odnosi na način kojim se verzije u poretku međusobno upoređuju.
 
    1. Prioritet se MUST (MORA) izračunati odvajanjem verzije na major (glavne),
- minor (manje), patch (zakrpe) i identifikatora predizdanja (metadata (metapodaci) builda (izrade) nemaju ulogu u odredjivanju prioriteta).
+    minor (manje), patch (zakrpe) i identifikatora predizdanja (metadata (metapodaci) builda (izrade) nemaju ulogu u odredjivanju prioriteta).
 
-   1. Prioritet se određuje prvom razlikom kada se upoređuje svaki od identifikatora
-   s leva na desno: major (glavni), minor (manji) i patch (zakrpa). Verzije se uvek upoređuju brojčano.
+   1. Prioritet se određuje prvom razlikom kada se upoređuje svaki od identifikatora sa leva na desno:
+      major (glavni), minor (manji) i patch (zakrpa). Verzije se uvek upoređuju brojčano.
 
-   Primer: 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1.
+        Primer: 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1.
 
-   1. Kada su major (glavna), minor (manja) i patch (zakrpa) jednake, verzija predizdanja ima niži prioritet od normalne verzije:
+   1. Kada su major (glavna), minor (manja) i patch (zakrpa) jednake, verzija predizdanja ima niži
+      prioritet od normalne verzije.
 
-   Primer: 1.0.0-alpha < 1.0.0.
+        Primer: 1.0.0-alpha < 1.0.0.
 
-   1. Prioritet između dve verzije predizdanja sa jednakim major (glavnom), minor (manjom) i patch (zakrpom) MUST (MORA) biti određen upoređivanjem svakog identifikatora razdvojenog tačkama sa leva na desno dok se ne pronađe razlika na sledeći način:
+   1. Prioritet između dve verzije predizdanja sa jednakim major (glavnom), minor (manjom) i patch
+      (zakrpom) MUST (MORA) biti određen upoređivanjem svakog identifikatora razdvojenog tačkama sa leva na desno dok se ne pronađe razlika na sledeći način:
 
       1. Identifikatori koji se sastoje samo od cifara upoređuju se numerički.
 
       1. Identifikatori sa slovima ili hyphenima (povlakama) se upoređuju leksički u ASCII
-      poretku.
+        poretku.
 
       1. Numerički identifikatori uvek imaju nizi prioritet od nenumeričkih
-      identifikatora.
+        identifikatora.
 
-      1. Veći skup oznaka predizdanja ima visi prioritet od manjeg skupa, ako su svi prethodni identifikatori jednaki.
-
-      Primer: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 
-      1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
+      1. Veći skup oznaka predizdanja ima visi prioritet od manjeg skupa, ako su svi prethodni
+        identifikatori jednaki.
+          
+        Primer: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 
+        1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
 
 
 Backus–Naur Gramatički Obrazac za Validne SemVer Verzije
@@ -205,8 +209,8 @@ Ono što možemo uciniti je da usvojimo Semantičko Verzionisanje koje nam pruž
 Ako vam ovo zvuči poželjno, sve što je potrebno uraditi da biste počeli da koristite Semantičko Verzionisanje je da se deklariste kao korisnik i da potom
 sledite pravila. Linkujte ovaj website sa vašim README-ma tako da bi i drugi bili svesni pravila i mogu imati koristi od njih.
 
-Često Postavljana Pitanja
--------------------------
+FAQ
+---
 
 ### Kako se nositi sa revizijama 0.y.z u inicijalnoj fazi razvoja?
 
