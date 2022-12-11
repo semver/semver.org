@@ -397,7 +397,7 @@ PCRE (Perl Compatible Regular Expressions, δηλαδή Perl, PHP και R), Pyt
 τον [Tom Preston-Werner](https://tom.preston-werner.com), δημιουργό του Gravatar
 και συνιδρυτή του GitHub.
 
-Την αρχική μετάφραση στα Ελληνικά έκανε ο [Ευάγγελος Σκαρμούτσος](https://skarmoutsosv.gr)
+Την αρχική μετάφραση στα Ελληνικά έκανε ο [Ευάγγελος Σκαρμούτσος](https://github.com/skarmoutsosv)
 
 Αν θέλετε να αφήσετε τα σχόλιά σας, παρακαλώ [ανοίξτε ένα issue στο
 GitHub](https://github.com/semver/semver/issues).
