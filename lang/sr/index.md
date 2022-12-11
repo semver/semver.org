@@ -306,7 +306,7 @@ Autor specifikacije Semantičkog Verzionisanja je [Tom
 Preston-Werner](http://tom.preston-werner.com), pronalazač Gravatar-a i suosnivač GitHub-a.
 
 Ako želite ostaviti povratne informacije, molimo [otvorite issue na
-GitHub-u](https://github.com/mojombo/semver/issues).
+GitHub-u](https://github.com/semver/semver/issues).
 
 
 Licenca
