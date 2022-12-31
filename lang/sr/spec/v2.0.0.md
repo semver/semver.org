@@ -38,11 +38,11 @@ Kao rešenje ovog problema, predlažemo jednostavan skup pravila i
 zahteva koji diktiraju kako se brojevi verzija dodeljuju i inkrementiraju.
 Ova pravila su zasnovana, ali nisu nužno ograničena na već postojeće i
 široko rasprostranjene uobičajene prakse koje se koriste u closed i open-source
-softveru. Kako bi ovaj sistem funkcionisao, neophodno je prvo objaviti public (javni) API. 
+softveru. Kako bi ovaj sistem funkcionisao, neophodno je prvo objaviti public (javni) API.
 Možemo to primeniti u dokumentaciji ili u samom kodu. U svakom slučaju, važno je da
-API bude jasan i precizan. Jednom kad identifkujemo public API, izmene prenosimo 
+API bude jasan i precizan. Jednom kad identifkujemo public API, izmene prenosimo
 kroz specifikovane inkrementacije broja verzije.
-Razmotrimo format verzije X.Y.Z (Major.Minor.Patch). Ispravke bugova (grešaka) koji 
+Razmotrimo format verzije X.Y.Z (Major.Minor.Patch). Ispravke bugova (grešaka) koji
 ne utiču na API inkrementiraju patch (zakrpa) verziju, a unazad nekompatibilne promene API-ju inkrementiraju major (glavnu) verziju.
 
 Ovaj sistem nazivamo „Semantičko Verzionisanje“. Prema ovoj šemi, brojevi verzija
@@ -77,7 +77,7 @@ koje ispravljaju nepravilno ponašanje.
 PATCH (ZAKRPA) verzija MUST (MORA) se resetovati na 0 kada se minor (manja) verzija inkrementira.
 
 1. Major (glavna) verzija X (X.y.z | X > 0) MUST (MORA) se inkrementirati ako se unazad nekompatibilne promene uvode u javni API. MAY (MOŽE) uključivati i promene minor (manje) i promene na nivou patch
-(zakrpe) verzije. Patch (zakrpe) i minor (manje) verzije MUST (MORA) da se resetuju na 0 kada se 
+(zakrpe) verzije. Patch (zakrpe) i minor (manje) verzije MUST (MORA) da se resetuju na 0 kada se
 major (glavna) verzija inkrementira.
 
 1. Verzija predizdanja MAY (MOŽE) biti označena dodavanjem hyphena (povlake) i serijom identifikatora razdvojenih tačkom neposredno nakon patch (zakrpe) verzije.Identifikatori MUST (MORAJU) sadržati samo ASCII alfanumeričke znakove i hyphene (povlake)
@@ -86,7 +86,7 @@ normalnim verzijama. Primeri: 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7,
 1.0.0-x.7.z.92, 1.0.0-x-y-z.\-\-.
 
 1. Metadata (metapodaci) builda (izrade) MAY (MOGU) biti označeni dodavanjem znaka plus
-i niza identifikatora odvojenih tačkom, koji se odmah nastavljaju na patch (zakrpu) verziju ili verziju predizdanja. Identifikatori MUST (MORAJU) da sadrže iskljucivo ASCII alfanumeričke znakove i hyphene (povlake) [0-9A-Za-z-]. Identifikatori MUST NOT (NE SMEJU) da budu prazni. Metadata (metapodaci) o buildu (izgradnji) MUST (MORAJU) se zanemariti prilikom određivanja prioriteta verzije. Prema tome dve verzije koje se razlikuju samo u metapodacima builda (izrade), imaju isti prioritet. Primeri: 
+i niza identifikatora odvojenih tačkom, koji se odmah nastavljaju na patch (zakrpu) verziju ili verziju predizdanja. Identifikatori MUST (MORAJU) da sadrže iskljucivo ASCII alfanumeričke znakove i hyphene (povlake) [0-9A-Za-z-]. Identifikatori MUST NOT (NE SMEJU) da budu prazni. Metadata (metapodaci) o buildu (izgradnji) MUST (MORAJU) se zanemariti prilikom određivanja prioriteta verzije. Prema tome dve verzije koje se razlikuju samo u metapodacima builda (izrade), imaju isti prioritet. Primeri:
 1.0.0-alpha+001, 1.0.0+20130313144700, 1.0.0-beta+exp.sha.5114f85,
 1.0.0+21AF26D3\-\-\-\-117B344092BD.
 
@@ -118,13 +118,13 @@ i niza identifikatora odvojenih tačkom, koji se odmah nastavljaju na patch (zak
 
       1. Veći skup oznaka predizdanja ima visi prioritet od manjeg skupa, ako su svi prethodni
         identifikatori jednaki.
-          
-        Primer: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 
-        1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
 
+        Primer: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta <
+        1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
 
 Backus–Naur Gramatički Obrazac za Validne SemVer Verzije
 --------------------------------------------------------
+
 ```
 <valid semver> ::= <version core>
                  | <version core> "-" <pre-release>
@@ -189,8 +189,6 @@ Backus–Naur Gramatički Obrazac za Validne SemVer Verzije
            | "y" | "z"
 ```
 
-
-
 Zašto koristiti Semantičko Verzionisanje?
 -----------------------------------------
 
@@ -233,7 +231,7 @@ Ovo je pitanje odgovornog razvoja i predviđanja. U softver koji ima puno
 zavisnog koda, nekompatibilne promene ne treba olako uvoditi. Troškovi
 nadogradnje mogu biti značajni. Ako morate povećati major (glavnu) verziju, kako biste objavili verziju sa nekompatibilnim izmenama, morate razmisliti o uticaju tih izmena i proceniti odnos uključenih troškova i koristi.
 
-### Dokumentacija celokupnog public (javnog) API-ja zahteva previše posla!
+### Dokumentacija celokupnog public (javnog) API-ja zahteva previše posla
 
 Vaša je odgovornost kao profesionalnih programera da pravilno dokumentujete
 softver koji je namenjen korisnicima. Upravljanje složenošću softvera je izuzetno važan deo održavanja efikasnosti projekta, što je teško ako korisnici ne znaju kako koristiti vaš softver ili koje metode mogu bezbedno pozvati. Dugoročno, Semantičko Verzionisanje i insistiranje na kvalitetno definisanom API-ju omogućiće da svi i sve rade glatko.
@@ -298,7 +296,6 @@ Pogledajte: <https://regex101.com/r/vkijKf/1/>
 ^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$
 ```
 
-
 O projektu
 ----------
 
@@ -307,7 +304,6 @@ Preston-Werner](http://tom.preston-werner.com), pronalazač Gravatar-a i suosniv
 
 Ako želite ostaviti povratne informacije, molimo [otvorite issue na
 GitHub-u](https://github.com/semver/semver/issues).
-
 
 Licenca
 -------
