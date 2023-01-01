@@ -11,9 +11,9 @@ Sommario
 
 Dato un numero di versione MAJOR.MINOR.PATCH, incrementate la:
 
-1. versione MAJOR quando modificate l'API in modo non retrocompatibile,
-1. versione MINOR quando aggiungete funzionalità in modo retrocompatibile, e
-1. versione PATCH quando correggete bug in modo retrocompatibile.
+1. versione MAJOR quando modificate l'API in modo non retrocompatibile
+1. versione MINOR quando aggiungete funzionalità in modo retrocompatibile
+1. versione PATCH quando correggete bug in modo retrocompatibile
 
 Sono disponibili etichette aggiuntive per il pre-release e i metadati di build come
 estensioni al formato MAJOR.MINOR.PATCH.
