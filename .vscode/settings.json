@@ -1,0 +1,5 @@
+{
+    "yaml.schemas": {
+        "https://gitlab.com/appsemble/appsemble/-/raw/HEAD/packages/cli/assets/appsemblerc.schema.json": "vscode-vfs://github/semver/semver.org/.github/workflows/sync.yml"
+    }
+}
