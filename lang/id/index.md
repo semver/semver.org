@@ -1,14 +1,13 @@
 ---
 title: Pemversian Semantik 2.0.0
 language: id
-redirect_from: /lang/id/
 ---
 
 Pemversian Semantik 2.0.0
 =========================
 
 Ringkasan
--------
+---------
 
 Versi semantik ditulis dalam bentuk MAJOR.MINOR.PATCH, dengan:
 
@@ -33,15 +32,15 @@ Standar ini bernama "Pemversian Semantik". Dengan skema ini, setiap orang yang m
 Spesifikasi Pemversian Semantik (SemVer)
 ----------------------------------------
 
-Kata HARUS, TIDAK BOLEH, DIBUTUHKAN, SEHARUSNYA, JANGAN SAMPAI, SEBAIKNYA, SEBAIKNYA TIDAK, DIREKOMENDASIKAN, BISA, dan OPSIONAL di dokumen ini sesuai dengan [RFC 2119](http://tools.ietf.org/html/rfc2119).
+Kata HARUS, TIDAK BOLEH, DIBUTUHKAN, SEHARUSNYA, JANGAN SAMPAI, SEBAIKNYA, SEBAIKNYA TIDAK, DIREKOMENDASIKAN, BISA, dan OPSIONAL di dokumen ini sesuai dengan [RFC 2119](https://tools.ietf.org/html/rfc2119).
 
 1. Perangkat lunak dengan Pemversian Semantik HARUS menentukan API public. Bisa dijelaskan dengan kode, atau ditulis di dokumentasi saja. Apapun itu HARUS ditulis dengan jelas dan akurat.
 
-1. Versi normal HARUS ditulis dalam bentuk X.Y.Z, dengan X, Y, Z adalah bilangan bulat nonnegatif, dan TIDAK BOLEH didahului angka 0 (contoh 01.02.03). X adalah versi *major*, Y adalah *minor*, dan Z adalah *patch*.
+1. Versi normal HARUS ditulis dalam bentuk X.Y.Z, dengan X, Y, Z adalah bilangan bulat nonnegatif, dan TIDAK BOLEH didahului angka 0 (contoh 01.02.03). X adalah versi *major*, Y adalah *minor*, dan Z adalah *patch*. Setiap elemen HARUS bertambah secara numerik dengan kenaikan sebesar satu. Contohnya: 1.9.0 -> 1.10.0 -> 1.11.0
 
 1. Setelah versi dirilis, isi dari versi tersebut TIDAK BOLEH dirubah. Setiap perubahan HARUS dirilis sebagai versi baru.
 
-1. Versi *major* 0 (0.y.z) adalah untuk pengembangan awal. Apapun BISA bisa berubah kapan saja. API publik
+1. Versi *major* 0 (0.y.z) adalah untuk pengembangan awal. Apapun BISA bisa berubah kapan saja. API publik SEBAIKNYA
 dianggap tidak stabil di versi ini.
 
 1. Versi 1.0.0 adalah titik awal API publik. Cara nomor versi ini dinaikkan setelah rilis ini adalah tergantung dengan API publik ini dan bagaimana ia berubah.
@@ -53,45 +52,41 @@ dianggap tidak stabil di versi ini.
 1. Versi *major* X (X.y.z | X > 0) HARUS dinaikkan jika ada perubahan yang membuat versi baru
 tidak kompatibel dengan versi lama pada API publik. Ini juga BISA diubah bersama dengan versi *patch* dan *minor*. Jika versi *major* dinaikkan, maka versi *minor* dan *patch* HARUS dikembalikan ke angka 0.
 
-1. Versi prarilis BISA ditulis dengan menambahkan tanda hubung dan rangkaian pengenal dengan pemisah titik tepat setelah versi *patch*. pengenal ini HARUS terdiri dari alfanumerik ASCII dan tanda pisah [0-9A-Za-z]. pengenal TIDAK BOLEH kosong. pengenal numerik TIDAK BOLEH didahului angka 0. Versi prarilis dianggap tidak stabil dan mungkin tidak memuaskan persyaratan kompatibilitas yang dimaksudkan seperti yang ditunjukkan oleh versi normal yang terkait. Contoh: 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7, 1.0.0-x.7.z.92, 1.0.0-x-y-z.\-\-.
+1. Versi prarilis BISA ditulis dengan menambahkan tanda hubung dan rangkaian pengenal dengan pemisah titik tepat setelah versi *patch*. Pengenal ini HARUS terdiri dari alfanumerik ASCII dan tanda pisah [0-9A-Za-z]. Pengenal TIDAK BOLEH kosong. Pengenal numerik TIDAK BOLEH didahului angka 0. Versi prarilis memiliki presendens yang lebih rendah dibandingkan dengan versi normal yang terkait. Versi prarilis dianggap tidak stabil dan mungkin tidak memuaskan persyaratan kompatibilitas yang dimaksudkan seperti yang ditunjukkan oleh versi normal yang terkait. Contoh: 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7, 1.0.0-x.7.z.92, 1.0.0-x-y-z.\-\-.
 
 1. *Build metadata* BISA ditulis didahului dengan tanda tambah dan rangkaian pengenal dengan pemisah titik setelah versi *patch* atau prarilis. *Build metadata* HARUS ditulis dengan huruf ASCII alfanumerik dan tanda hubung [0-9A-Za-z]. pengenal ini HARUS terdiri dari alfanumerik ASCII dan tanda pisah [0-9A-Za-z]. pengenal TIDAK BOLEH kosong. *Build metadata* HARUS diabaikan saat menentukan presedens versi. Dengan begitu, dua versi yang berbada hanya di *build metadata*-nya memiliki preseden yang sama. Contoh: 1.0.0-alpha+001, 1.0.0+20130313144700, 1.0.0-beta+exp.sha.5114f85, 1.0.0+21AF26D3\-\-\-\-117B344092BD.
 
 1. Presedens mengacu pada bagaimana versi-versi dibandingkan satu sama lain ketika diurutkan.
 
-   1. Presedens HARUS dihitung dengan memisahkan versi menjadi pengenal *major*,
-      *minor*, *patch*, dan pra-rilis dalam urutan tersebut (*Build metadata*
-      tidak diperhitungkan dalam pengurutan).
+   1. Presedens HARUS dihitung dengan memisahkan versi menjadi pengenal *major*, *minor*, *patch*, dan prarilis dalam urutan tersebut (*Build metadata* tidak diperhitungkan dalam pengurutan).
 
-   1. Presedens ditentukan oleh perbedaan pertama saat membandingkan masing-masing
+   2. Presedens ditentukan oleh perbedaan pertama saat membandingkan masing-masing
       pengenal ini dari kiri ke kanan sebagai berikut: *Major*, *minor*, dan *patch*
       selalu dibandingkan secara numerik.
 
       Contoh: 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1.
 
-   1. Saat versi *major*, *minor*, dan *patch* sama, versi prarilis lebih rendah
+   3. Saat versi *major*, *minor*, dan *patch* sama, versi prarilis lebih rendah
       memiliki presedens lebih rendah dibandingkan dengan versi normal:
 
       Contoh: 1.0.0-alpha < 1.0.0.
 
-   1. Prioritas untuk dua versi prarilis dengan versi *major*, *minor*, dan
+   4. Prioritas untuk dua versi prarilis dengan versi *major*, *minor*, dan
       *patch* HARUS ditentukan dengan membandingkan setiap pengenal yang dipisahkan titik
       dari kiri ke kanan hingga ditemukan perbedaan sebagai berikut:
 
       1. Pengenal yang hanya terdiri dari angka dibandingkan secara numerik.
 
-      1. Pengenal dengan huruf atau tanda hubung dibandingkan secara leksikal dalam
-         urutan pengurutan ASCII.
+      2. Pengenal dengan huruf atau tanda hubung dibandingkan secara leksikal dalam urutan pengurutan ASCII.
 
-      1. Pengenal numerik selalu memiliki presedens yang lebih rendah daripada pengenal non-numerik pengenal non-numerik.
+      3. Pengenal numerik selalu memiliki presedens yang lebih rendah daripada pengenal non-numerik pengenal non-numerik.
 
-      1. Suatu set yang lebih besar dari bidang prarilis memiliki presedens yang lebih tinggi daripada yang set yang lebih kecil, jika semua pengenal sebelumnya sama.
+      4. Suatu set yang lebih besar dari bidang prarilis memiliki presedens yang lebih tinggi daripada yang set yang lebih kecil, jika semua pengenal sebelumnya sama.
 
-      Contoh: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta <
-      1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
+      Contoh: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
 
-Kenapa Menggunakan Pemversian Semantik
---------------------------------------
+Kenapa Menggunakan Pemversian Semantik?
+---------------------------------------
 
 Ini bukanlah ide baru yang revolusioner. Faktanya, kalian mungkin sudah menggunakan standar ini, hanya saja tidak terlalu ketat. Masalahnya, "tidak teralu ketat" saja tidak cukup bagus. Tanpa kepatuhan terhadap beberapa jenis spesifikasi formal, nomor versi adalah pada dasarnya tidak berguna untuk manajemen dependensi. Dengan memberikan nama dan definisi yang jelas definisi yang jelas untuk ide-ide tersebut, mengkomunikasikan maksud Anda kepada pengguna perangkat lunak Anda menjadi lebih mudah. Setelah maksud ini jelas, spesifikasi ketergantungan yang fleksibel (tetapi tidak terlalu fleksibel) akhirnya dapat dibuat.
 
@@ -132,11 +127,9 @@ Setelah Anda menyadari bahwa Anda telah melanggar spesifikasi Pemversian Semanti
 
 Hal tersebut dianggap kompatibel karena tidak mempengaruhi API publik. Perangkat lunak yang secara eksplisit bergantung pada dependensi yang sama dengan paket Anda harus memiliki spesifikasi dependensi mereka sendiri dan pembuatnya akan memberi tahu konflik yang ada. Menentukan apakah perubahan tersebut merupakan tingkat *patch* atau tingkat *minor*  tergantung pada apakah Anda memperbarui dependensi untuk memperbaiki *bug* atau memperkenalkan fungsionalitas baru. Kami biasanya mengharapkan kode tambahan untuk contoh yang kedua, yang dalam hal ini jelas merupakan kenaikan tingkat *minor*.
 
-### Bagaimana jika perubahan yang terjadi ternyata sangat besar dan sudah dirilis di versi *patch*?
+### Bagaimana jika saya secara tidak sengaja mengubah API publik dengan cara yang tidak sesuai dengan perubahan nomor versi (misalnya, kode secara tidak benar memperkenalkan perubahan besar dalam rilis patch)?
 
-Gunakan kebijakan terbaik Anda. 
-
-Jika Anda memiliki audiens yang sangat besar yang akan terpengaruh secara drastis dengan apa yang dimaksudkan oleh API publik, maka lebih baik melakukan rilis versi *major*, meskipun perbaikannya dapat sangat dianggap sebagai rilis *patch*. Ingat, Pemversian Semantik adalah segalanya tentang menyampaikan makna melalui perubahan nomor versi. Jika perubahan ini perubahan ini penting bagi pengguna Anda, gunakan nomor versi itu untuk memberi tahu mereka.
+Gunakan kebijakan terbaik Anda. Jika Anda memiliki audiens yang sangat besar yang akan terpengaruh secara drastis dengan apa yang dimaksudkan oleh API publik, maka lebih baik melakukan rilis versi *major*, meskipun perbaikannya dapat sangat dianggap sebagai rilis *patch*. Ingat, Pemversian Semantik adalah segalanya tentang menyampaikan makna melalui perubahan nomor versi. Jika perubahan ini perubahan ini penting bagi pengguna Anda, gunakan nomor versi itu untuk memberi tahu mereka.
 
 ### Bagaimana cara menangani fungsionalitas yang sudah diusangkan?
 
@@ -165,13 +158,13 @@ yaitu Perl, PHP dan R), Python dan Go.
 Tentang
 -------
 
-Spesifikasi Pemversian Semantik dibuat oleh [Tom Preston-Werner](http://tom.preston-werner.com), pembuat Gravatar dan
+Spesifikasi Pemversian Semantik awalnya dibuat oleh [Tom Preston-Werner](http://tom.preston-werner.com), pembuat Gravatar dan
 *cofounder* dari GitHub.
 
 Translasi Bahasa Indonesia ditulis oleh [Aditya Purwa](https://adityamyria.wordpress.com) dan dikoreksi oleh
 [Christian B. Wibowo](https://github.com/cwibowo) dan [Hans5958](https://github.com/Hans5958).
 
-Untuk saran dan kritik, dilahkan [buka issue di GitHub](https://github.com/mojombo/semver/issues).
+Untuk saran dan kritik, silahkan [buka issue di GitHub](https://github.com/semver/semver/issues).
 
 Lisensi
 -------
