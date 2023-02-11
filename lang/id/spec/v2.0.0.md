@@ -52,26 +52,26 @@ dianggap tidak stabil di versi ini.
 1. Versi *major* X (X.y.z | X > 0) HARUS dinaikkan jika ada perubahan yang membuat versi baru
 tidak kompatibel dengan versi lama pada API publik. Ini juga BISA diubah bersama dengan versi *patch* dan *minor*. Jika versi *major* dinaikkan, maka versi *minor* dan *patch* HARUS dikembalikan ke angka 0.
 
-1. Versi prarilis BISA ditulis dengan menambahkan tanda hubung dan rangkaian pengenal dengan pemisah titik tepat setelah versi *patch*. Pengenal ini HARUS terdiri dari alfanumerik ASCII dan tanda pisah [0-9A-Za-z]. Pengenal TIDAK BOLEH kosong. Pengenal numerik TIDAK BOLEH didahului angka 0. Versi prarilis memiliki presendens yang lebih rendah dibandingkan dengan versi normal yang terkait. Versi prarilis dianggap tidak stabil dan mungkin tidak memuaskan persyaratan kompatibilitas yang dimaksudkan seperti yang ditunjukkan oleh versi normal yang terkait. Contoh: 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7, 1.0.0-x.7.z.92, 1.0.0-x-y-z.\-\-.
+1. Versi prarilis BISA ditulis dengan menambahkan tanda hubung dan rangkaian pengenal dengan pemisah titik tepat setelah versi *patch*. Pengenal ini HARUS terdiri dari hanya alfanumerik ASCII dan tanda hubung [0-9A-Za-z]. Pengenal TIDAK BOLEH kosong. Pengenal numerik TIDAK BOLEH didahului angka 0. Versi prarilis memiliki presendens yang lebih rendah dibandingkan dengan versi normal yang terkait. Versi prarilis dianggap tidak stabil dan mungkin tidak memuaskan persyaratan kompatibilitas yang dimaksudkan seperti yang ditunjukkan oleh versi normal yang terkait. Contoh: 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7, 1.0.0-x.7.z.92, 1.0.0-x-y-z.\-\-.
 
-1. *Build metadata* BISA ditulis didahului dengan tanda tambah dan rangkaian pengenal dengan pemisah titik setelah versi *patch* atau prarilis. *Build metadata* HARUS ditulis dengan huruf ASCII alfanumerik dan tanda hubung [0-9A-Za-z]. pengenal ini HARUS terdiri dari alfanumerik ASCII dan tanda pisah [0-9A-Za-z]. pengenal TIDAK BOLEH kosong. *Build metadata* HARUS diabaikan saat menentukan presedens versi. Dengan begitu, dua versi yang berbada hanya di *build metadata*-nya memiliki preseden yang sama. Contoh: 1.0.0-alpha+001, 1.0.0+20130313144700, 1.0.0-beta+exp.sha.5114f85, 1.0.0+21AF26D3\-\-\-\-117B344092BD.
+1. *Build metadata* BISA ditulis didahului dengan tanda tambah dan rangkaian pengenal dengan pemisah titik setelah versi *patch* atau prarilis. *Build metadata* HARUS ditulis dengan huruf ASCII alfanumerik dan tanda hubung [0-9A-Za-z]. Pengenal ini HARUS terdiri dari hanya alfanumerik ASCII dan tanda hubung [0-9A-Za-z]. Pengenal TIDAK BOLEH kosong. *Build metadata* HARUS diabaikan saat menentukan presedens versi. Dengan begitu, dua versi yang berbada hanya di *build metadata*-nya memiliki preseden yang sama. Contoh: 1.0.0-alpha+001, 1.0.0+20130313144700, 1.0.0-beta+exp.sha.5114f85, 1.0.0+21AF26D3\-\-\-\-117B344092BD.
 
 1. Presedens mengacu pada bagaimana versi-versi dibandingkan satu sama lain ketika diurutkan.
 
    1. Presedens HARUS dihitung dengan memisahkan versi menjadi pengenal *major*, *minor*, *patch*, dan prarilis dalam urutan tersebut (*Build metadata* tidak diperhitungkan dalam pengurutan).
 
-   2. Presedens ditentukan oleh perbedaan pertama saat membandingkan masing-masing
+   1. Presedens ditentukan oleh perbedaan pertama saat membandingkan masing-masing
       pengenal ini dari kiri ke kanan sebagai berikut: *Major*, *minor*, dan *patch*
       selalu dibandingkan secara numerik.
 
       Contoh: 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1.
 
-   3. Saat versi *major*, *minor*, dan *patch* sama, versi prarilis lebih rendah
+   1. Saat versi *major*, *minor*, dan *patch* sama, versi prarilis lebih rendah
       memiliki presedens lebih rendah dibandingkan dengan versi normal:
 
       Contoh: 1.0.0-alpha < 1.0.0.
 
-   4. Prioritas untuk dua versi prarilis dengan versi *major*, *minor*, dan
+   1. Prioritas untuk dua versi prarilis dengan versi *major*, *minor*, dan
       *patch* HARUS ditentukan dengan membandingkan setiap pengenal yang dipisahkan titik
       dari kiri ke kanan hingga ditemukan perbedaan sebagai berikut:
 
@@ -121,7 +121,7 @@ Sudah tanggung jawab Anda sebagai pengembang profesional untuk mendokumentasikan
 
 ### Bagaimana jika secara tidak sengaja membuat perubahan yang menjadikan versi lama tidak bisa dipakai?
 
-Setelah Anda menyadari bahwa Anda telah melanggar spesifikasi Pemversian Semantik, perbaiki dan rilis versi *minor* baru yang memperbaiki masalah dan mengembalikan kompatibilitas versi lama. Bahkan dalam kondisi ini, memodifikasi rilis yang diberi versi adalah dilarang. Jika mau, dokumentasikan versi yang bermasalah dan memberi tahu pengguna Anda tentang masalah tersebut sehingga mereka mengetahui versi yang bermasalah.
+Setelah Anda menyadari bahwa Anda telah melanggar spesifikasi Pemversian Semantik, perbaiki dan rilis versi *minor* baru yang memperbaiki masalah dan mengembalikan kompatibilitas versi lama. Bahkan dalam kondisi ini, memodifikasi rilis yang telah diberi versi adalah dilarang. Jika mau, dokumentasikan versi yang bermasalah dan memberi tahu pengguna Anda tentang masalah tersebut sehingga mereka mengetahui versi yang bermasalah.
 
 ### Apa yang harus saya lakukan jika saya memperbarui dependensi saya sendiri tanpa mengubah API publik?
 
