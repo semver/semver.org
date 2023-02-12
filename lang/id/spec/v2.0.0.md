@@ -126,7 +126,7 @@ Setelah Anda menyadari bahwa Anda telah melanggar spesifikasi Pemversian Semanti
 
 Hal tersebut dianggap kompatibel karena tidak mempengaruhi API publik. Perangkat lunak yang secara eksplisit bergantung pada dependensi yang sama dengan paket Anda harus memiliki spesifikasi dependensi mereka sendiri dan pembuatnya akan memberi tahu konflik yang ada. Menentukan apakah perubahan tersebut merupakan tingkat *patch* atau tingkat *minor*  tergantung pada apakah Anda memperbarui dependensi untuk memperbaiki *bug* atau memperkenalkan fungsionalitas baru. Kami biasanya mengharapkan kode tambahan untuk contoh yang kedua, yang dalam hal ini jelas merupakan kenaikan tingkat *minor*.
 
-### Bagaimana jika saya secara tidak sengaja mengubah API publik dengan cara yang tidak sesuai dengan perubahan nomor versi (misalnya, kode secara tidak benar memperkenalkan perubahan besar dalam rilis patch)?
+### Bagaimana jika saya secara tidak sengaja mengubah API publik dengan cara yang tidak sesuai dengan perubahan nomor versi (misalnya, kode secara tidak benar memperkenalkan perubahan besar dalam rilis *patch*)?
 
 Gunakan kebijakan terbaik Anda. Jika Anda memiliki audiens yang sangat besar yang akan terpengaruh secara drastis dengan apa yang dimaksudkan oleh API publik, maka lebih baik melakukan rilis versi *major*, meskipun perbaikannya dapat sangat dianggap sebagai rilis *patch*. Ingat, Pemversian Semantik adalah segalanya tentang menyampaikan makna melalui perubahan nomor versi. Jika perubahan ini perubahan ini penting bagi pengguna Anda, gunakan nomor versi itu untuk memberi tahu mereka.
 
