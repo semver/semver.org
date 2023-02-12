@@ -36,21 +36,21 @@ Kata "HARUS", "TIDAK BOLEH", "DIBUTUHKAN", "SEHARUSNYA", "JANGAN SAMPAI", "SEBAI
 
 1. Perangkat lunak dengan Pemversian Semantik HARUS menentukan API public. Bisa dijelaskan dengan kode, atau ditulis di dokumentasi saja. Apapun itu HARUS ditulis dengan jelas dan akurat.
 
-1. Versi normal HARUS ditulis dalam bentuk X.Y.Z, dengan X, Y, Z adalah bilangan bulat nonnegatif, dan TIDAK BOLEH didahului angka 0 (contoh 01.02.03). X adalah versi *major*, Y adalah *minor*, dan Z adalah *patch*. Setiap elemen HARUS bertambah secara numerik dengan kenaikan sebesar satu. Contohnya: 1.9.0 -> 1.10.0 -> 1.11.0
+1. Versi normal HARUS ditulis dalam bentuk X.Y.Z, dengan X, Y, dan Z adalah bilangan bulat nonnegatif, dan TIDAK BOLEH didahului angka 0 (contoh 01.02.03). X adalah versi *major*, Y adalah *minor*, dan Z adalah *patch*. Setiap elemen HARUS bertambah secara numerik dengan kenaikan sebesar satu. Contohnya: 1.9.0 -> 1.10.0 -> 1.11.0
 
-1. Setelah versi dirilis, isi dari versi tersebut TIDAK BOLEH dirubah. Setiap perubahan HARUS dirilis sebagai versi baru.
+1. Setelah sebuah paket berversi dirilis, isi dari versi tersebut TIDAK BOLEH diubah. Setiap perubahan HARUS dirilis sebagai versi baru.
 
 1. Versi *major* 0 (0.y.z) adalah untuk pengembangan awal. Apapun BISA bisa berubah kapan saja. API publik SEBAIKNYA
 dianggap tidak stabil di versi ini.
 
 1. Versi 1.0.0 adalah titik awal API publik. Cara nomor versi ini dinaikkan setelah rilis ini adalah tergantung dengan API publik ini dan bagaimana ia berubah.
 
-1. Versi *patch* Z (x.y.Z | x > 0) HARUS dinaikkan jika ada perbaikan bug yang kompatibel dengan versi lama. Sebuah perbaikan bug didefinisikan sebagai perubahan internal yang memperbaiki perilaku internal.
+1. Versi *patch* Z (x.y.Z | x > 0) HARUS dinaikkan jika ada perbaikan bug yang kompatibel dengan versi lama. Sebuah perbaikan bug didefinisikan sebagai perubahan internal yang memperbaiki perilaku yang salah.
 
-1. Versi *minor* Y (x.Y.z | x > 0) HARUS dinaikkan jika ada fitur baru yang kompatibel dengan versi lama dalam API publik. Ini HARUS dinaikkan jika sebuah fungsionalitas API publik dibuat usang. Versi ini BISA dinaikkan jika ada tambahan fungsionalitas substansial atau terjadi peningkatan di dalam kode privat. Versi ini BISA diubah bersama dengan perubahan tingkat *patch*. Versi *patch* HARUS dikembalikan ke angka 0 jika versi *minor* dinaikkan.
+1. Versi *minor* Y (x.Y.z | x > 0) HARUS dinaikkan jika ada fitur baru yang kompatibel dengan versi lama dalam API publik. Ini HARUS dinaikkan jika sebuah fungsionalitas API publik dibuat usang. Ini BISA dinaikkan jika ada tambahan fungsionalitas substansial atau terjadi peningkatan di dalam kode privat. Ini BISA diubah bersama dengan perubahan tingkat *patch*. Versi *patch* HARUS dikembalikan ke angka 0 jika versi *minor* dinaikkan.
 
-1. Versi *major* X (X.y.z | X > 0) HARUS dinaikkan jika ada perubahan yang membuat versi baru
-tidak kompatibel dengan versi lama pada API publik. Ini juga BISA diubah bersama dengan versi *patch* dan *minor*. Versi *minor* dan *patch* HARUS dikembalikan ke angka 0 jika versi *major* dinaikkan.
+1. Versi *major* X (X.y.z | X > 0) HARUS dinaikkan jika ada perubahan yang membuat versi baru tidak kompatibel dengan versi lama pada API publik. Ini juga BISA diubah bersama dengan perubahan tingkat *patch* dan *minor*. Versi *minor* dan *patch* HARUS dikembalikan ke angka 0 jika versi *major* dinaikkan.
+
 1. Versi prarilis BISA ditulis dengan menambahkan tanda hubung dan rangkaian pengenal dengan pemisah titik tepat setelah versi *patch*. Pengenal ini HARUS terdiri dari hanya alfanumerik ASCII dan tanda hubung [0-9A-Za-z]. Pengenal TIDAK BOLEH kosong. Pengenal numerik TIDAK BOLEH didahului angka 0. Versi prarilis memiliki presendens yang lebih rendah dibandingkan dengan versi normal yang terkait. Versi prarilis dianggap tidak stabil dan mungkin tidak memuaskan persyaratan kompatibilitas yang dimaksudkan seperti yang ditunjukkan oleh versi normal yang terkait. Contoh: 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7, 1.0.0-x.7.z.92, 1.0.0-x-y-z.\-\-.
 
 1. *Build metadata* BISA ditulis didahului dengan tanda tambah dan rangkaian pengenal dengan pemisah titik setelah versi *patch* atau prarilis. *Build metadata* HARUS ditulis dengan huruf ASCII alfanumerik dan tanda hubung [0-9A-Za-z]. Pengenal ini HARUS terdiri dari hanya alfanumerik ASCII dan tanda hubung [0-9A-Za-z]. Pengenal TIDAK BOLEH kosong. *Build metadata* HARUS diabaikan saat menentukan presedens versi. Dengan begitu, dua versi yang berbada hanya di *build metadata*-nya memiliki preseden yang sama. Contoh: 1.0.0-alpha+001, 1.0.0+20130313144700, 1.0.0-beta+exp.sha.5114f85, 1.0.0+21AF26D3\-\-\-\-117B344092BD.
