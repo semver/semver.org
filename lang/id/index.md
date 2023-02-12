@@ -150,6 +150,7 @@ Lihat: <https://regex101.com/r/Ly7O1x/3/>
 
 Dan satu lagi dengan kelompok tangkapan bernomor (jadi cg1 = *major*, cg2 = *minor*, cg3 = *patch*, cg4 = prarilis dan cg5 = *build metadata*) yang kompatibel dengan ECMA Script (JavaScript), PCRE (Perl Compatible Regular Expressions,
 yaitu Perl, PHP dan R), Python dan Go.
+
 ```
 ^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$
 ```
