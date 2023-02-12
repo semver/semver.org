@@ -237,7 +237,7 @@ Specifikationen för Semantisk versionshantering är skriven av [Tom
 Preston-Werner](http://tom.preston-werner.com), skapare av Gravatars och medgrundare av
 GitHub.
 
-Om du vill lämna feedback, [öppna en fråga på GitHub](https://github.com/mojombo/semver/issues).
+Om du vill lämna feedback, [öppna en fråga på GitHub](https://github.com/semver/semver/issues).
 
 Licens
 -------

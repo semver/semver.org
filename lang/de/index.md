@@ -180,7 +180,7 @@ Nein, aber sei vernünftig. Zum Beispiel, wäre ein 255 Zeichen langer Version S
 
 Die *Semantic Versioning* Spezifikation wurde von [Tom Preston-Werner](http://tom.preston-werner.com), Erfinder von Gravatars und Mitbegründer von GitHub, erstellt.
 
-Für Feedback, [eröffne bitte ein Issue auf GitHub](https://github.com/mojombo/semver/issues).
+Für Feedback, [eröffne bitte ein Issue auf GitHub](https://github.com/semver/semver/issues).
 
 Lizenz
 ------

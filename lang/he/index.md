@@ -132,7 +132,7 @@ PCRE, Perl, PHP, R, Python ו-Go).
 
 מפרט הגירסאות הסמנטיות נכתב על ידי [טום פרסון-ורנר](http://tom.preston-werner.com) ממציא ה Gravatars וממייסדי GitHub.
 
-אם את/ה רוצה להשאיר משוב, אנא [פתח/י issue ב GitHub](https://github.com/mojombo/semver/issues).
+אם את/ה רוצה להשאיר משוב, אנא [פתח/י issue ב GitHub](https://github.com/semver/semver/issues).
 
 רישיון
 -------

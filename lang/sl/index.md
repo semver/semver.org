@@ -260,7 +260,7 @@ Slovenski prevod so prispevali:
 - [Aleš Šarkanj](https://github.com/alsar)
 
 Če želite pustiti povratne informacije, prosimo, da [odprete vprašanje na
-GitHub-u](https://github.com/mojombo/semver/issues).
+GitHub-u](https://github.com/semver/semver/issues).
 
 Licenca
 -------

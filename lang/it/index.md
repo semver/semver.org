@@ -285,7 +285,7 @@ Traduzione a cura del [Java User Group Padova](http://www.jugpadova.it/):
 - [Anicet Foba Togue](https://twitter.com/atogue) (revisore)
 
 Per lasciare il vostro feedback per favore [aprite una segnalazione su 
-GitHub](https://github.com/mojombo/semver/issues).
+GitHub](https://github.com/semver/semver/issues).
 
 Licenza
 -------

@@ -251,7 +251,7 @@ Autorom špecifikácie sémantického verziovania je
 spoluzakladateľ projektu Github.
 
 Ak chcete zanechať spätnú väzbu, prosím
-[cez GitHub](https://github.com/mojombo/semver/issues).
+[cez GitHub](https://github.com/semver/semver/issues).
 
 ### Preklad
 
