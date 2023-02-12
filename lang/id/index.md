@@ -32,7 +32,7 @@ Standar ini bernama "Pemversian Semantik". Dengan skema ini, setiap orang yang m
 Spesifikasi Pemversian Semantik (SemVer)
 ----------------------------------------
 
-Kata HARUS, TIDAK BOLEH, DIBUTUHKAN, SEHARUSNYA, JANGAN SAMPAI, SEBAIKNYA, SEBAIKNYA TIDAK, DIREKOMENDASIKAN, BISA, dan OPSIONAL di dokumen ini sesuai dengan [RFC 2119](https://tools.ietf.org/html/rfc2119).
+Kata "HARUS", "TIDAK BOLEH", "DIBUTUHKAN", "SEHARUSNYA", "JANGAN SAMPAI", "SEBAIKNYA", "SEBAIKNYA TIDAK", "DIREKOMENDASIKAN", "BISA" di dokumen ini sesuai dengan [RFC 2119](https://tools.ietf.org/html/rfc2119).
 
 1. Perangkat lunak dengan Pemversian Semantik HARUS menentukan API public. Bisa dijelaskan dengan kode, atau ditulis di dokumentasi saja. Apapun itu HARUS ditulis dengan jelas dan akurat.
 
@@ -50,8 +50,7 @@ dianggap tidak stabil di versi ini.
 1. Versi *minor* Y (x.Y.z | x > 0) HARUS dinaikkan jika ada fitur baru yang kompatibel dengan versi lama dalam API publik. Ini HARUS dinaikkan jika sebuah fungsionalitas API publik dibuat usang. Versi ini BISA dinaikkan jika ada tambahan fungsionalitas substansial atau terjadi peningkatan di dalam kode privat. Versi ini BISA diubah bersama dengan perubahan tingkat *patch*. Versi *patch* HARUS dikembalikan ke angka 0 jika versi *minor* dinaikkan.
 
 1. Versi *major* X (X.y.z | X > 0) HARUS dinaikkan jika ada perubahan yang membuat versi baru
-tidak kompatibel dengan versi lama pada API publik. Ini juga BISA diubah bersama dengan versi *patch* dan *minor*. Jika versi *major* dinaikkan, maka versi *minor* dan *patch* HARUS dikembalikan ke angka 0.
-
+tidak kompatibel dengan versi lama pada API publik. Ini juga BISA diubah bersama dengan versi *patch* dan *minor*. Versi *minor* dan *patch* HARUS dikembalikan ke angka 0 jika versi *major* dinaikkan.
 1. Versi prarilis BISA ditulis dengan menambahkan tanda hubung dan rangkaian pengenal dengan pemisah titik tepat setelah versi *patch*. Pengenal ini HARUS terdiri dari hanya alfanumerik ASCII dan tanda hubung [0-9A-Za-z]. Pengenal TIDAK BOLEH kosong. Pengenal numerik TIDAK BOLEH didahului angka 0. Versi prarilis memiliki presendens yang lebih rendah dibandingkan dengan versi normal yang terkait. Versi prarilis dianggap tidak stabil dan mungkin tidak memuaskan persyaratan kompatibilitas yang dimaksudkan seperti yang ditunjukkan oleh versi normal yang terkait. Contoh: 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7, 1.0.0-x.7.z.92, 1.0.0-x-y-z.\-\-.
 
 1. *Build metadata* BISA ditulis didahului dengan tanda tambah dan rangkaian pengenal dengan pemisah titik setelah versi *patch* atau prarilis. *Build metadata* HARUS ditulis dengan huruf ASCII alfanumerik dan tanda hubung [0-9A-Za-z]. Pengenal ini HARUS terdiri dari hanya alfanumerik ASCII dan tanda hubung [0-9A-Za-z]. Pengenal TIDAK BOLEH kosong. *Build metadata* HARUS diabaikan saat menentukan presedens versi. Dengan begitu, dua versi yang berbada hanya di *build metadata*-nya memiliki preseden yang sama. Contoh: 1.0.0-alpha+001, 1.0.0+20130313144700, 1.0.0-beta+exp.sha.5114f85, 1.0.0+21AF26D3\-\-\-\-117B344092BD.
