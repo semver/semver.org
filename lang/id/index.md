@@ -47,7 +47,7 @@ dianggap tidak stabil di versi ini.
 
 1. Versi *patch* Z (x.y.Z | x > 0) HARUS dinaikkan jika ada perbaikan bug yang kompatibel dengan versi lama. Sebuah perbaikan bug didefinisikan sebagai perubahan internal yang memperbaiki perilaku internal.
 
-1. Versi *minor* Y (x.Y.z | x > 0) HARUS dinaikkan jika ada fitur baru yang kompatibel dengan versi lama dalam API publik. Ini HARUS dinaikkan jika fungsionalitas API publik dibuat usang. Versi ini BISA dinaikkan jika ada tambahan fungsionalitas substansial atau terjadi peningkatan di dalam kode privat. Versi ini BISA diubah bersama dengan perubahan tingkat *patch*. Versi *patch* HARUS dikembalikan ke angka 0 jika versi *minor* dinaikkan.
+1. Versi *minor* Y (x.Y.z | x > 0) HARUS dinaikkan jika ada fitur baru yang kompatibel dengan versi lama dalam API publik. Ini HARUS dinaikkan jika sebuah fungsionalitas API publik dibuat usang. Versi ini BISA dinaikkan jika ada tambahan fungsionalitas substansial atau terjadi peningkatan di dalam kode privat. Versi ini BISA diubah bersama dengan perubahan tingkat *patch*. Versi *patch* HARUS dikembalikan ke angka 0 jika versi *minor* dinaikkan.
 
 1. Versi *major* X (X.y.z | X > 0) HARUS dinaikkan jika ada perubahan yang membuat versi baru
 tidak kompatibel dengan versi lama pada API publik. Ini juga BISA diubah bersama dengan versi *patch* dan *minor*. Jika versi *major* dinaikkan, maka versi *minor* dan *patch* HARUS dikembalikan ke angka 0.
