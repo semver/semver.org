@@ -32,7 +32,7 @@ Standar ini bernama "Pemversian Semantik". Dengan skema ini, setiap orang yang m
 Spesifikasi Pemversian Semantik (SemVer)
 ----------------------------------------
 
-Kata "HARUS", "TIDAK BOLEH", "DIBUTUHKAN", "SEHARUSNYA", "JANGAN SAMPAI", "SEBAIKNYA", "SEBAIKNYA TIDAK", "DIREKOMENDASIKAN", "BISA" di dokumen ini sesuai dengan [RFC 2119](https://tools.ietf.org/html/rfc2119).
+Kata/frasa "HARUS" ("MUST"), "TIDAK BOLEH" ("MUST NOT"), "DIBUTUHKAN" ("REQUIRED"), "SEHARUSNYA" ("SHALL"), "JANGAN SAMPAI" ("SHALL NOT"), "SEBAIKNYA" ("SHOULD"), "SEBAIKNYA TIDAK" ("SHOULD NOT"), "DIREKOMENDASIKAN" ("RECOMMENDED"), "BISA" ("MAY") di dokumen ini sesuai dengan [RFC 2119](https://tools.ietf.org/html/rfc2119).
 
 1. Perangkat lunak dengan Pemversian Semantik HARUS menentukan API public. Bisa dijelaskan dengan kode, atau ditulis di dokumentasi saja. Apapun itu HARUS ditulis dengan jelas dan akurat.
 
@@ -59,30 +59,91 @@ dianggap tidak stabil di versi ini.
 
    1. Presedens HARUS dihitung dengan memisahkan versi menjadi pengenal *major*, *minor*, *patch*, dan prarilis dalam urutan tersebut (*Build metadata* tidak diperhitungkan dalam pengurutan).
 
-   1. Presedens ditentukan oleh perbedaan pertama saat membandingkan masing-masing
-      pengenal ini dari kiri ke kanan sebagai berikut: *Major*, *minor*, dan *patch*
-      selalu dibandingkan secara numerik.
+   1. Presedens ditentukan oleh perbedaan pertama saat membandingkan masing-masing pengenal ini dari kiri ke kanan sebagai berikut: *Major*, *minor*, dan *patch* selalu dibandingkan secara numerik.
 
       Contoh: 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1.
 
-   1. Saat versi *major*, *minor*, dan *patch* sama, versi prarilis lebih rendah
-      memiliki presedens lebih rendah dibandingkan dengan versi normal:
+   1. Saat versi *major*, *minor*, dan *patch* sama, versi prarilis lebih rendah memiliki presedens lebih rendah dibandingkan dengan versi normal:
 
       Contoh: 1.0.0-alpha < 1.0.0.
 
-   1. Prioritas untuk dua versi prarilis dengan versi *major*, *minor*, dan
-      *patch* HARUS ditentukan dengan membandingkan setiap pengenal yang dipisahkan titik
-      dari kiri ke kanan hingga ditemukan perbedaan sebagai berikut:
+   1. Prioritas untuk dua versi prarilis dengan versi *major*, *minor*, dan *patch* HARUS ditentukan dengan membandingkan setiap pengenal yang dipisahkan titik dari kiri ke kanan hingga ditemukan perbedaan sebagai berikut:
 
       1. Pengenal yang hanya terdiri dari angka dibandingkan secara numerik.
 
-      2. Pengenal dengan huruf atau tanda hubung dibandingkan secara leksikal dalam urutan pengurutan ASCII.
+      1. Pengenal dengan huruf atau tanda hubung dibandingkan secara leksikal dalam urutan pengurutan ASCII.
 
-      3. Pengenal numerik selalu memiliki presedens yang lebih rendah daripada pengenal non-numerik pengenal non-numerik.
+      1. Pengenal numerik selalu memiliki presedens yang lebih rendah daripada pengenal non-numerik pengenal non-numerik.
 
-      4. Suatu set yang lebih besar dari bidang prarilis memiliki presedens yang lebih tinggi daripada yang set yang lebih kecil, jika semua pengenal sebelumnya sama.
+      1. Suatu set yang lebih besar dari bidang prarilis memiliki presedens yang lebih tinggi daripada yang set yang lebih kecil, jika semua pengenal sebelumnya sama.
 
       Contoh: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
+
+Grammar Bentuk Backus–Naur untuk Versi SemVer Valid
+---------------------------------------------------
+```
+<semver valid> ::= <inti versi>
+                 | <inti versi> "-" <prarilis>
+                 | <inti versi> "+" <build>
+                 | <inti versi> "-" <prarilis> "+" <build>
+
+<inti versi> ::= <major> "." <minor> "." <patch>
+
+<major> ::= <pengenal numerik>
+
+<minor> ::= <pengenal numerik>
+
+<patch> ::= <pengenal numerik>
+
+<prarilis> ::= <pengenal prarilis dengan pemisah titik>
+
+<pengenal prarilis dengan pemisah titik> ::= <pengenal prarilis>
+                                           | <pengenal prarilis> "." <pengenal prarilis dengan pemisah titik>
+
+<build> ::= <pengenal buld dengan pemisah titik>
+
+<pengenal buld dengan pemisah titik> ::= <pengenal build>
+                                       | <pengenal build> "." <pengenal buld dengan pemisah titik>
+
+<pengenal prarilis> ::= <pengenal alfanumerik>
+                      | <pengenal numerik>
+
+<pengenal build> ::= <pengenal alfanumerik>
+                   | <angka-angka>
+
+<pengenal alfanumerik> ::= <nonangka>
+                         | <nonangka> <karakter-karakter pengenal>
+                         | <karakter-karakter pengenal> <nonangka>
+                         | <karakter-karakter pengenal> <nonangka> <karakter-karakter pengenal>
+
+<pengenal numerik> ::= "0"
+                     | <angka positif>
+                     | <angka positif> <angka-angka>
+
+<karakter-karakter pengenal> ::= <karakter pengenal>
+                               | <karakter pengenal> <karakter-karakter pengenal>
+
+<karakter pengenal> ::= <angka>
+                      | <nonangka>
+
+<nonangka> ::= <huruf>
+             | "-"
+
+<angka-angka> ::= <angka>
+                | <angka> <angka-angka>
+
+<angka> ::= "0"
+          | <angka positif>
+
+<angka positif> ::= "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+
+<huruf> ::= "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J"
+          | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T"
+          | "U" | "V" | "W" | "X" | "Y" | "Z" | "a" | "b" | "c" | "d"
+          | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n"
+          | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x"
+          | "y" | "z"
+```
 
 Kenapa Menggunakan Pemversian Semantik?
 ---------------------------------------
@@ -112,7 +173,7 @@ Versi *major* nol adalah tentang pengembangan yang cepat. Jika Anda mengubah API
 
 ### Jika perubahan terkecil yang tidak kompatibel dengan API publik memerlukan kenaikkan versi *major*, bukankah saya akan berakhir di versi 42.0.0 dengan sangat cepat?
 
-Ini adalah pertanyaan tentang pengembangan yang bertanggung jawab dan pandangan ke depan. Perubahan yang tidak kompatibel tidak boleh diperkenalkan dengan mudah ke perangkat lunak yang memiliki banyak kode dependen. Biaya yang harus dikeluarkan untuk meng-upgrade bisa sangat besar. Kewajiban mengganti versi utama untuk merilis perubahan yang tidak kompatibel seharusnya membuat Anda memikirkan dampak dari perubahan Anda, dan mengevaluasi perbandingan biaya dan manfaat yang terkait.
+Ini adalah pertanyaan tentang pengembangan yang bertanggung jawab dan pandangan ke depan. Perubahan yang tidak kompatibel tidak boleh diperkenalkan dengan mudah ke perangkat lunak yang memiliki banyak kode dependen. Biaya yang harus dikeluarkan untuk meng-upgrade bisa sangat besar. Kewajiban mengganti versi *major* untuk merilis perubahan yang tidak kompatibel seharusnya membuat Anda memikirkan dampak dari perubahan Anda, dan mengevaluasi perbandingan biaya dan manfaat yang terkait.
 
 ### Mendokumentasikan seluruh API publik sangatlah merepotkan!
 
