@@ -362,7 +362,7 @@ Autorem specyfikacji wersjonowania semantycznego jest
 i współzałożyciel GitHuba.
 
 Jeśli chcesz podzielić się opinią, prosimy
-o [otworzenie zgłoszenia na GitHubie](https://github.com/mojombo/semver/issues).
+o [otworzenie zgłoszenia na GitHubie](https://github.com/semver/semver/issues).
 
 Licencja
 --------

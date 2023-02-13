@@ -224,7 +224,7 @@ FAQ
 
 语义化版本控制的规范是由 Gravatars 创办者兼 GitHub 共同创办者 [Tom Preston-Werner](http://tom.preston-werner.com) 所建立。
 
-如果您有任何建议，请到 [GitHub 上提出您的问题](https://github.com/mojombo/semver/issues)。
+如果您有任何建议，请到 [GitHub 上提出您的问题](https://github.com/semver/semver/issues)。
 
 许可证
 ---

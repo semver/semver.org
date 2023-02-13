@@ -249,7 +249,7 @@ Preston-Werner](http://tom.preston-werner.com), izumitelj Gravatara i suosnivač
 GitHuba.
 
 Ako želite ostaviti povratne informacije, molimo [otvorite issue na
-GitHubu](https://github.com/mojombo/semver/issues).
+GitHubu](https://github.com/semver/semver/issues).
 
 Licenca
 -------

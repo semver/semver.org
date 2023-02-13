@@ -123,7 +123,7 @@ Preston-Werner](http://tom.preston-werner.com), مُبتكر خدمة Gravatars 
 راجعه ودققه لغويا: [يوغرطة بن علي](https://twitter.com/djug).
 
 لديك اقتراح؟ يُرجى [فتح "خطب" على
-GitHub](https://github.com/mojombo/semver/issues).
+GitHub](https://github.com/semver/semver/issues).
 
 لديك مُلاحظات/مُساهمات حول الترجمة؟ افتح خطبًا [من هنا](https://github.com/01walid/semver.org/issues).
 
