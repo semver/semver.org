@@ -9,3 +9,7 @@ This file contains the translation contributors who are willing to help translat
 ## Portuguese-Brazil
 
 - [@LucasHT22](https://github.com/LucasHT22)
+
+## Chinese Simplified
+
+- [@liulyxandy-codemao](https://github.com/liulyxandy-codemao)
