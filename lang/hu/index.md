@@ -1,5 +1,6 @@
 ---
 title: Szemantikus Verziószámozás 2.0.0
+language: hu
 redirect_from: /lang/hu/
 ---
 
@@ -242,7 +243,7 @@ Infó
 
 A Semantic Versioning specifikáció szerzője [Tom Preston-Werner](http://tom.preston-werner.com), a Gravatars feltalálója és a GitHub társalapítója.
 
-Észrevételekért [nyiss egy issue-t a GitHub-on](https://github.com/mojombo/semver/issues).
+Észrevételekért [nyiss egy issue-t a GitHub-on](https://github.com/semver/semver/issues).
 
 Fordította:
 [Rebeka Marton](https://github.com/esztermarton) (szerző),

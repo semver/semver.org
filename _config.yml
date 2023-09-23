@@ -7,13 +7,14 @@ languages:
   uk: українська
   es: español
   it: italiano
-  id: bahasa Indonesia
+  id: Bahasa Indonesia
   pt-BR: português brasileiro
   zh-TW: 繁體中文
   zh-CN: 简体中文
   ko: 한국어
   sk: slovensky
   sl: slovenščina
+  sr: srpski
   ar: العربية
   ja: 日本語
   tr: Türkçe
@@ -28,11 +29,14 @@ languages:
   hin: हिन्दी
   ca: català
   hu: magyar
-  vi: vietnamese
+  vi: Tiếng Việt
   hy: Հայերեն
   kab: taqbaylit
   bg: Български
   nl: Nederlands
+  ro: Română
+  da: Dansk
+  el: Ελληνικά
 versions:
   - 2.0.0
   - 2.0.0-rc.2

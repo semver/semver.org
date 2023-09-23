@@ -203,7 +203,7 @@ See: <https://regex101.com/r/vkijKf/1/>
 유의적 버전 명세는 그라바타(Gravatars)의 창시자이자 깃헙(GitHub)의 공동창업자인 [톰 프레스턴-베르너(Tom
 Preston-Werner)](http://tom.preston-werner.com)가 작성했다.
 
-원문에 대한 의견을 남기고자 한다면, [원문 깃헙에 이슈를 작성](https://github.com/mojombo/semver/issues)해 주기 바란다.
+원문에 대한 의견을 남기고자 한다면, [원문 깃헙에 이슈를 작성](https://github.com/semver/semver/issues)해 주기 바란다.
 
 한국어 번역은 [김대현](http://hatemogi.com)이 했고, 관련한 의견은 [한국어판 깃헙에 이슈로 남겨주기](https://github.com/hatemogi/semver/issues) 바란다.
 

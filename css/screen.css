@@ -9,9 +9,14 @@ html {
   width: 710px;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-top: 1em;
-  margin-bottom: .75em;
+  margin-bottom: 0.75em;
   line-height: 1.5em;
 }
 
@@ -37,13 +42,13 @@ p {
 pre {
   margin: 1em 0;
   border: 1px solid #ddd;
-  padding: .25em .25em;
+  padding: 0.25em 0.25em;
   background-color: #eef;
 }
 
 code {
   border: 1px solid #ddd;
-  padding: 0 .2em;
+  padding: 0 0.2em;
   background-color: #eef;
 }
 
@@ -56,5 +61,5 @@ ol {
 }
 
 td {
-  padding: .25em 1em .25em 0;
+  padding: 0.25em 1em 0.25em 0;
 }

@@ -121,7 +121,7 @@ Hakkında
 
 Anlamsal Sürümlendirme şartnamesi, Gravatar'ların kaşifi ve GitHub'un kurucu ortaklarından olan [Tom Preston-Werner](http://tom.preston-werner.com) tarafından yazılmıştır.
 
-Yorum bırakmak isterseniz, lütfen [GitHub'da bir konu açın](https://github.com/mojombo/semver/issues).
+Yorum bırakmak isterseniz, lütfen [GitHub'da bir konu açın](https://github.com/semver/semver/issues).
 
 Lisans
 ------

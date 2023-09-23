@@ -272,7 +272,7 @@ Sobre
 -----
 
 A Especificação da Semântica de Versionamento é autoria de [Tom
-Preston-Werner](http://tom.preston-werner.com), criador do Gravatars e 
+Preston-Werner](http://tom.preston-werner.com), criador do Gravatar e 
 co-fundador do GitHub.
 
 A tradução deste documento para Português-Brasil foi iniciada de forma 
@@ -289,6 +289,7 @@ participação de:
 - Alessandro Leite
 - Vinícius Assef
 - [Silas Ribas Martins](https://github.com/silasrm)
+- [Lucas Honda Tonini](https://github.com/LucasHT22)
 
 Toda colaboração na tradução pode ser acompanhada no link:
 http://pad.okfn.org/p/Fh9hjBPVu9

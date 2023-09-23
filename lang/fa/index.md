@@ -117,7 +117,7 @@ language_dir: rtl
  بنیان‌گذار GitHub.
 
 اگر مایل به ارائهٔ بازخورد خود هستید، لطفاً یک مورد در بخش issue سایت GitHub باز کنید.
- [open an issue on GitHub](https://github.com/mojombo/semver/issues).
+ [open an issue on GitHub](https://github.com/semver/semver/issues).
  
 مترجم بخش فارسی : مجید حاجیان [Majid Hajian](https://www.majidhajian.com) 
 ویراستار: فرزاد قانعی [Farzad Ghanei]( http://www.ghanei.net) 

@@ -10,19 +10,13 @@ jobs:
     if: github.repository == 'semver/semver.org'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v3
         with:
-          node-version: "12.x"
+          node-version: 16
+          cache: 'npm'
 
-      - name: Cache node modules
-        uses: actions/cache@v1
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
       - name: Install
         run: npm ci
 
@@ -30,7 +24,7 @@ jobs:
         run: npm run collect
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
+        uses: peter-evans/create-pull-request@v4.0.4
         with:
           commit-message: 'feat: Updated SemVer spec'
           title: Original specification updates

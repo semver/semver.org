@@ -256,7 +256,7 @@ FAQ
 соучредителю GitHub.
 
 Если вы хотите оставить отзыв, пожалуйста, [создайте запрос на
-GitHub](https://github.com/mojombo/semver/issues).
+GitHub](https://github.com/semver/semver/issues).
 
 Лицензия
 --------

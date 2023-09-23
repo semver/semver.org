@@ -253,7 +253,7 @@ Firetruck იყენებს ფუნქციონალს, რომე�
 და GitHub-ის თანადამფუძნებელი.
 
 თუ გსურთ დატოვოთ თქვენი გამოხმაურება, გთხოვთ შექმნათ
-[დაამატოთ თემა GitHub-ზე](https://github.com/mojombo/semver/issues).
+[დაამატოთ თემა GitHub-ზე](https://github.com/semver/semver/issues).
 
 ### ქართული თარგმანი
 

@@ -350,7 +350,7 @@ API֊ի նախկին ֆունկցիոնալի վերականգման փաստի 
 
 Կա երկու եղանակ.
 
-1) անվանական խմբերի միջոցով (named groups)։ (PCRE [Perl համատեղելի ռեգուլյար
+1. անվանական խմբերի միջոցով (named groups)։ (PCRE [Perl համատեղելի ռեգուլյար
 արտահայտություններ, օրինակ՝ Perl, PHP և R], Python և Go)։
 
 Տես՝ <https://regex101.com/r/Ly7O1x/3/>
@@ -359,7 +359,7 @@ API֊ի նախկին ֆունկցիոնալի վերականգման փաստի 
 ^(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?P<patch>0|[1-9]\d*)(?:-(?P<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$
 ```
 
-2) թվային խմբերի (numbered capture groups) միջոցով (cg1 = major, cg2 = minor,
+2. թվային խմբերի (numbered capture groups) միջոցով (cg1 = major, cg2 = minor,
 cg3 = patch, cg4 = prerelease and cg5 = buildmetadata)։ Այս եղանակը համատեղելի է
 ECMA Script֊ի (JavaScript), PCRE֊ի (Perl համատեղելի ռեգուլյար
 արտահայտություններ, օրինակ՝ Perl, PHP և R), Python և Go.
