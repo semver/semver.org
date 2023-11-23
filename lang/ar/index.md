@@ -118,14 +118,8 @@ language_dir: rtl
 مُواصفات الإدارة الدلالية لنُسخ البرمجيات من تأليف [Tom
 Preston-Werner](http://tom.preston-werner.com), مُبتكر خدمة Gravatars وأحد مؤسسي GitHub.
 
-ترجمه إلى اللغة العربية: [وليد زيوش](//www.01walid.com).
-
-راجعه ودققه لغويا: [يوغرطة بن علي](https://twitter.com/djug).
-
 لديك اقتراح؟ يُرجى [فتح "خطب" على
 GitHub](https://github.com/semver/semver/issues).
-
-لديك مُلاحظات/مُساهمات حول الترجمة؟ افتح خطبًا [من هنا](https://github.com/01walid/semver.org/issues).
 
 الرُخصة
 -------

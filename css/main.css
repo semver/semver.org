@@ -13,7 +13,10 @@ ul {
 }
 
 html {
-  font: 14.4px/1.5 Helvetica, Arial, sans-serif;
+  font:
+    14.4px/1.5 Helvetica,
+    Arial,
+    sans-serif;
 }
 body {
   margin: 0 auto;
