@@ -13,3 +13,7 @@ This file contains the translation contributors who are willing to help translat
 ## Chinese Simplified
 
 - [@liulyxandy-codemao](https://github.com/liulyxandy-codemao)
+
+## Hebrew
+
+- [@ShlomoCode](https://github.com/ShlomoCode)
