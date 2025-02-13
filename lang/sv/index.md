@@ -219,7 +219,7 @@ nya API:t.
 
 ### Har SemVer en storleksbegränsning på versionssträngen?
 
-Nej, men använd sunt förnuft. En versionssträng på t.ex. 255 tecken är förmodligen overkill.
+Nej, men använd sunt förnuft. En versionssträng på t.ex. 255 tecken är förmodligen överdrivet.
 Dessutom kan vissa system ha egna begränsningar på hur lång den får vara.
 
 ### Är "v1.2.3" en semantisk version?
