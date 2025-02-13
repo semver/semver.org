@@ -9,3 +9,19 @@ This file contains the translation contributors who are willing to help translat
 ## Portuguese-Brazil
 
 - [@LucasHT22](https://github.com/LucasHT22)
+
+## Chinese Simplified
+
+- [@liulyxandy-codemao](https://github.com/liulyxandy-codemao)
+
+## Hebrew
+
+- [@ShlomoCode](https://github.com/ShlomoCode)
+
+## Italian
+
+- [@LorenzoAncora](https://github.com/LorenzoAncora)
+
+## Serbian
+
+- [@rammba](https://github.com/rammba)
