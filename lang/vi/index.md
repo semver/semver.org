@@ -9,24 +9,38 @@ Semantic Versioning 2.0.0
 Tổng quan
 ---------
 
-Đưa ra một cấu trúc phiên bản MAJOR.MINOR.PATCH, gia tăng như sau:
+Với một phiên bản có dạng MAJOR.MINOR.PATCH, hãy tăng:
 
-1. Số phiên bản MAJOR khi bạn có những thay đổi API lớn, không tương thích với phiên bản trước
-2. Số phiên bản MINOR khi bạn thêm chức năng tương thích ngược với phiên bản trước
-3. Số phiên bản PATCH khi bạn làm một bản vá lỗi tương thích ngược với phiên bản trước
+1. MAJOR khi bạn thực hiện thay đổi lớn, không tương thích với API cũ
+2. MINOR khi bạn thêm chức năng mà vẫn tương thích ngược
+3. PATCH khi bạn sửa lỗi mà vẫn tương thích ngược
 
-Các nhãn (labels) bổ sung cho pre-release và các build metadata về quá trình dựng đươc coi là tiện ích mở rộng cho định dạng MAJOR.MINOR.PATCH.
+Ngoài ra, bạn có thể thêm các nhãn bổ sung cho bản phát hành thử nghiệm (pre-release) và thông tin dựng bản (build metadata) như một phần mở rộng của định dạng MAJOR.MINOR.PATCH.
 
 Giới thiệu
 ----------
 
-Trong thế giới của quản lý phần mềm, ở đó tồn tại một nơi đáng sợ, được gọi là "địa ngục phụ thuộc". Hệ thống của bạn ngày càng lớn hơn và bạn càng tích hợp nhiều gói vào trong phần mềm của mình hơn, đồng nghĩa với việc bạn càng lún sâu một cách tuyệt vọng vào địa ngục này.
+Trong thế giới quản lý phần mềm, có một nơi kinh hoàng được gọi là "địa ngục phụ thuộc" (dependency hell). 
+Khi hệ thống của bạn càng ngày càng lớn, và càng bao gồm nhiều gói thư viện khác nhau, khả năng bạn rơi vào nơi hỗn loạn này sẽ tăng theo cấp số nhân.
 
-Trong các hệ thống phụ thuộc nhiều vào các yếu tố khác (gói, hệ thống,...), phát hành một phiên bản mới có thể nhanh chóng trở thành một cơn ác mộng. Nếu các thông số kỹ thuật phụ thuộc quá chặt chẽ với nhau, bạn có nguy cơ bị khóa phiên bản (không có khả năng nâng cấp một gói mà không phải phát hành các phiên bản mới của mỗi gói phụ thuộc). Nếu các yếu tố phụ thuộc được chỉ định quá lỏng lẻo, chắc chắn bạn sẽ bị ảnh hưởng bởi tính hỗn tạp của phiên bản (giả định khả năng tương thích với nhiều phiên bản trong tương lai là hợp lý). Cả hai trường hợp này đều đưa bạn đến đích đến là địa ngục phụ thuộc, ngăn dự án của bạn tiếp tục phát triển.
+Trong các hệ thống có nhiều phụ thuộc, việc phát hành phiên bản mới cho một gói có thể nhanh chóng trở thành cơn ác mộng. 
+Nếu bạn ràng buộc phiên bản quá chặt, bạn sẽ rơi vào tình trạng “khóa phiên bản” (version lock) - tức là bạn không thể nâng cấp một gói mà không phải cập nhật thêm toàn bộ các gói phụ thuộc liên quan khác. 
+Ngược lại, nếu bạn để sự phụ thuộc phiên bản quá lỏng lẻo, bạn sẽ dính phải “phiên bản một cách bừa bãi” - tức là bạn tưởng rằng mọi phiên bản tương lai đều sẽ tương thích.
+“Địa ngục phụ thuộc” chính là lúc mà cả việc “khóa phiên bản” và/hoặc “phiên bản bừa bãi” khiến bạn không thể tiếp tục phát triển dự án một cách dễ dàng và an toàn.
 
-Để giải quyết vấn đề này, chúng tôi đề xuất một bộ quy tắc và quy định để đánh phiên bản. Các quy tắc này không nhất thiết dựa trên các quy tắc đã phổ biến rộng rãi trong cả phần mềm nguồn đóng và nguồn mở. Để bộ quy tắc này hoạt động, đầu tiên bạn cần xác định một tập public API, bao gồm tài liệu mô tả hoặc chính mã nguồn của API. Điều quan trọng là API phải rõ ràng và chính xác. Một khi bạn đã xác định được tập public API, bạn thông báo các thay đổi của API bằng cách đánh các phiên bản tương ứng. Bạn hãy xem lại định dạng phiên bản ban đầu, X.Y.Z (Major.Minor.Patch). Đối với những bản vá lỗi không làm thay đổi API, chúng ta tăng phiên bản Patch (Vá lỗi); với các thay đổi liên quan API, có thể tương thích ngược với phiên bản trước, tăng phiên bản Minor (Phụ); còn lại, đối với các thay đổi API mà không thể tương thích ngược với phiên bản trước, tăng phiên bản Major (Chính).
+Để giải quyết vấn đề này, chúng tôi đã đề xuất một bộ quy tắc đơn giản sau đây - gọi là Semantic Versioning (phiên bản ngữ nghĩa) - nhằm xác định cách đặt và tăng số phiên bản phần mềm. 
+Những quy tắc này dựa trên các cách đánh số phần mềm đã và đang được dùng phổ biến rộng rãi trong phần mềm mã nguồn đóng lẫn mã nguồn mở.
+Để áp dụng được hệ thống này, trước hết bạn cần công bố rõ ràng API công khai của mình. 
+API này có thể được mô tả bằng tài liệu bên ngoài hoặc được viết sẵn trực tiếp trong mã nguồn.
+Dù bằng cách nào, việc làm rõ và nhất quán API là một điều rất quan trọng.
+Sau khi xác định được API, bạn cần sử dụng các thay đổi có ý nghĩa trong số phiên bản để truyền đạt sự khác biệt giữa các lần cập nhật. 
+Hãy sử dụng định dạng phiên bản X.Y.Z (Major.Minor.Patch):
+* Sửa lỗi không ảnh hưởng đến API → tăng số Patch
+* Thêm hoặc thay đổi tính năng tương thích ngược → tăng số Minor
+* Thay đổi không tương thích với API cũ → tăng số Major
 
-Chúng tôi gọi hệ thống này là "Sematic Versioning", hay "Phiên bản ngữ nghĩa". Theo hệ thống này, số phiên bản và sự thay đổi của chúng truyền đạt lại sự thay đổi của mã nguồn giữa các phiên bản.
+Chúng tôi gọi hệ thống này là Semantic Versioning. Theo đó, cách đặt số phiên bản không chỉ là những con số, mà nó còn truyền tải ý nghĩa về mã nguồn và những thay đổi giữa các phiên bản.
+
 
 Thông số của Sematic Versioning (SemVer)
 ----------------------------------------
