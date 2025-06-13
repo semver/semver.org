@@ -29,3 +29,7 @@ This file contains the translation contributors who are willing to help translat
 ## Danish
 
 - [@symegac](https://github.com/symegac)
+
+## Tamil
+
+- [@sathishs4r](https://github.com/sathishs4r)
