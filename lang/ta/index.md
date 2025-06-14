@@ -336,8 +336,7 @@ git tag v1.2.3 -m "Release version 1.2.3"
 ஆம், இரண்டு RegEx மாதிரிகள் உள்ளன.
 அதில் ஒன்று named groups-ஐ பயன்படுத்துகிறது — இது Perl, PHP, R, Python, Go போன்ற named group-ஐ ஆதரிக்கும் systems-க்கு பொருத்தமானது.
 
-இங்கே காணலாம்:
-🔗 https://regex101.com/r/Ly7O1x/3/
+இங்கே காணலாம்: <https://regex101.com/r/Ly7O1x/3/>
 
 ```
 ^(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?P<patch>0|[1-9]\d*)(?:-(?P<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$
