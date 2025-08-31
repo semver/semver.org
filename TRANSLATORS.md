@@ -24,6 +24,7 @@ This file contains the translation contributors who are willing to help translat
 
 ## Serbian
 
+- [@lxmarinkovic](https://github.com/lxmarinkovic)
 - [@rammba](https://github.com/rammba)
 
 ## Danish
