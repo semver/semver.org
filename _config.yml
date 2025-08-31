@@ -14,7 +14,8 @@ languages:
   ko: 한국어
   sk: slovensky
   sl: slovenščina
-  sr: srpski
+  sr-Cyrl: српски
+  sr-Latn: srpski
   ar: العربية
   ja: 日本語
   ta: தமிழ்
