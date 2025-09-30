@@ -33,3 +33,7 @@ This file contains the translation contributors who are willing to help translat
 ## Tamil
 
 - [@sathishs4r](https://github.com/sathishs4r)
+
+## Bangla/Bengali
+
+- [@forhadakhan](https://github.com/forhadakhan)
