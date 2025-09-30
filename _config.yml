@@ -38,6 +38,7 @@ languages:
   ro: Română
   da: Dansk
   el: Ελληνικά
+  bn: বাংলা
 versions:
   - 2.0.0
   - 2.0.0-rc.2
