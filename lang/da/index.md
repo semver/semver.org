@@ -1,280 +1,283 @@
 ---
-title: Semantisk versionsstyring 2.0.0
+title: Semantisk Versionering 2.0.0
 language: da
-author: Jens Kristian Villadsen
+author: Jens Kristian Villadsen; Symegac
 ---
 
-Semantisk version 2.0.0
-===============================
+Semantisk Versionering 2.0.0
+============================
 
 Resumé
--------
+------
 
-Givet et versionsnummer MAJOR.MINOR.PATCH, skal du øge:
+Givet et versionsnummer MAJOR.MINOR.PATCH, skal du trinvist øge:
 
-1. STOR version, når du foretager inkompatible API-ændringer,
-2. MINOR version, når du tilføjer funktionalitet i en bagudkompatibel
+1. MAJOR-versionen, når du foretager inkompatible API-ændringer,
+2. MINOR-versionen, når du tilføjer funktionalitet på en bagudkompatibel
    måde, og
-3. PATCH-version, når du laver bagudkompatible fejlrettelser.
+3. PATCH-versionen, når du laver bagudkompatible fejlrettelser.
 
-Yderligere etiketter til pre-release og build-metadata er tilgængelige som udvidelser
+Yderligere mærkater til pre-release og build-metadata er tilgængelige som udvidelser
 til MAJOR.MINOR.PATCH-formatet.
 
 Introduktion
 ------------
 
-I verden af ​​software management findes der et frygtet sted kaldet
-"afhængighedshelvede." Jo større dit system vokser, og jo flere pakker du
-integreres i din software, jo større sandsynlighed er der for, at du finder dig selv, en
-dag, i denne fortvivlelses hule.
+I ​​softwaremanagementverden findes der et frygtet sted kaldt
+"afhængighedshelvede". Jo større dit system vokser sig, og jo flere pakker du
+integrerer i din software, desto større sandsynlighed er der for, at du en dag finder
+dig selv i dette hul af fortvivlelse.
 
-I systemer med mange afhængigheder kan frigivelse af nye pakkeversioner hurtigt
-blive et mareridt. Hvis afhængighedsspecifikationerne er for stramme, er du med
-fare for versionslås (manglende evne til at opgradere en pakke uden at skulle
-frigive nye versioner af hver afhængig pakke). Hvis afhængigheder er
+I systemer med mange afhængigheder kan udgivelse af nye pakkeversioner hurtigt
+blive et mareridt. Hvis afhængighedsspecifikationerne er for stramme, er du i
+fare for versionslåsning (manglende evne til at opgradere en pakke uden at skulle
+udgive nye versioner af hver afhængig pakke). Hvis afhængigheder er
 specificeret for løst, vil du uundgåeligt blive bidt af versionspromiskuitet
-(forudsat kompatibilitet med flere fremtidige versioner end rimeligt).
-Afhængighedshelvede er, når versionslås og/eller versionspromiskuitet
-forhindrer dig i nemt og sikkert at komme videre med dit projekt.
+(antagelse af kompatibilitet med flere fremtidige versioner end rimeligt).
+Afhængighedshelvede er der, hvor du befinder dig, når versionslåsning og/eller
+versionspromiskuitet forhindrer dig i nemt og sikkert at komme videre med dit projekt.
 
 Som en løsning på dette problem foreslår vi et simpelt sæt regler og
 krav, der dikterer, hvordan versionsnumre tildeles og øges.
 Disse regler er baseret på, men ikke nødvendigvis begrænset til, allerede eksisterende
 udbredt almindelig praksis i brug i både lukket og open source-software.
-For at dette system skal fungere, skal du først erklære en offentlig API. Dette kan evt
+For at dette system fungerer, skal du først erklære en offentlig API. Dette kan evt.
 bestå af dokumentation eller håndhæves af selve koden. Uanset hvad er det
-vigtigt, at dette API er klar og præcis. Når du identificerer dit offentlige
-API, kommunikerer du ændringer til det med specifikke ændringer til dit versionsnummer.
-Overvej et versionsformat af X.Y.Z (Major.Minor.Patch). Fejlrettelser der ikke
-påvirker API'et øger patchversionen (Z), bagudkompatibelt API
-med tilføjelser/ændringer øger den mindre version (Y) og bagud inkompatible API
-ændringer øger hovedversionen (X).
+vigtigt, at denne API er tydelig og præcis. Når du identificerer din offentlige
+API, kommunikerer du ændringer af den med specifikke forøgelser af dit versionsnummer.
+Forestil dig et versionsformat med formen X.Y.Z (Major.Minor.Patch).
+Fejlrettelser, der ikke påvirker API'en, øger patch-versionen (Z),
+bagudkompatible API-tilføjelser/-ændringer øger minor-versionen (Y),
+og bagudinkompatible API-ændringer øger major-versionen (X).
 
-Vi kalder dette system "Semantisk versionering." Under denne ordning, formidler versionsnumrene mening om den underliggende kode og hvad der har blevet ændret fra den ene version til den næste.
+Vi kalder dette system "Semantisk versionering". Under denne ordning formidler versionsnumrene
+og måden, hvorpå de ændrer sig, meningen bag den underliggende kode, og hvad der er blevet ændret
+fra en version til den næste.
 
-Semantisk versionsspecifikation (SemVer)
-------------------------------------------
+Specifikation af Semantisk Versionering (SemVer)
+------------------------------------------------
 
-Nøgleordene "MÅ", "MÅ IKKE", "PÅKRÆVET", "SKAL", "MÅ IKKE", "BØR",
-"BØR IKKE", "ANBEFALET", "KAN" og "VALGFRI" i dette dokument skal være
-fortolket som beskrevet i [RFC 2119](https://tools.ietf.org/html/rfc2119).
+Nøgleordene "MÅ"/"SKAL" ("MUST"/"SHALL"), "MÅ IKKE" ("MUST NOT"/"SHALL NOT"),
+"PÅKRÆVET" ("REQUIRED"), "BØR" ("SHOULD"), "BØR IKKE" ("SHOULD NOT"),
+"ANBEFALET" ("RECOMMEDED"), "KAN" ("MAY") og "VALGFRI" ("OPTIONAL") i dette dokument skal
+fortolkes som beskrevet i [RFC 2119](https://tools.ietf.org/html/rfc2119).
 
-1. Software, der bruger semantisk versionering SKAL erklære et offentlig API. Dette API
-kan være erklæret i selve koden eller udelukkende eksistere i dokumentationen.
-Uanset hvordan det gøres, SKAL det være præcist og omfattende.
+1. Software, der bruger semantisk versionering SKAL erklære en offentlig API. Denne API
+kan erklæres i selve koden eller udelukkende eksistere i dokumentationen.
+Uanset hvordan det gøres, BØR det være præcist og omfattende.
 
-2. Et normalt versionsnummer SKAL have formen X.Y.Z, hvor X, Y og Z er
-ikke-negative heltal og MÅ IKKE indeholde indledende nuller. X er
-større version, Y er den mindre version, og Z er patch-versionen.
+1. Et normalt versionsnummer SKAL have formen X.Y.Z, hvor X, Y og Z er
+ikke-negative heltal, og det MÅ IKKE indeholde indledende nuller. X er
+major-versionen, Y er minor-versionen, og Z er patch-versionen.
 Hvert element SKAL øges numerisk. For eksempel: 1.9.0 -> 1.10.0 -> 1.11.0.
 
-3. Når en versioneret pakke er blevet frigivet, MÅ indholdet IKKE ændres i den version.
-Eventuelle ændringer SKAL frigives som en ny version.
+1. Når en versioneret pakke er blevet udgivet, MÅ indholdet IKKE ændres i den version.
+Eventuelle ændringer SKAL udgives som en ny version.
 
-4. Større version nul (0.y.z) er til indledende udvikling. Alt KAN ændre sig
-når som helst. Det offentlige API BØR IKKE betragtes som stabilt.
+1. Nulte major-version (0.y.z) er til indledende udvikling. Alt KAN ændre sig
+når som helst. Den offentlige API BØR IKKE betragtes som stabil.
 
-5. Version 1.0.0 definerer det offentlige API. Den måde, hvorpå versionsnummeret
-øges efter denne udgivelse er afhængig af dette offentlige API og hvordan den
+1. Version 1.0.0 definerer den offentlige API. Måden, hvorpå versionsnummeret
+øges efter denne udgivelse, afhænger af denne offentlige API, og hvordan den
 ændrer sig.
 
-6. Patchversion Z (x.y.Z | x > 0) SKAL øges, hvis kun baglæns
+1. Patch-version Z (x.y.Z | x > 0) SKAL øges, hvis kun baglæns
 kompatible fejlrettelser introduceres. En fejlrettelse er defineret som en intern
 ændring, der retter ukorrekt adfærd.
 
-7. Mindre version Y (x.Y.z | x > 0) SKAL øges, hvis ny, baglæns
-kompatibel funktionalitet introduceres til det offentlige API. Det må 
-øges, hvis noget offentlig API-funktionalitet er markeret som forældet. Det BØR øges,
-hvis der indføres væsentlig ny funktionalitet eller forbedringer inden for den private kode. Det KAN omfatte ændringer af patch-niveau. Patch version SKAL nulstilles til 0, når mindre version øges.
+1. Minor-version Y (x.Y.z | x > 0) SKAL øges, hvis ny, baglæns
+kompatibel funktionalitet introduceres til den offentlige API. Den SKAL 
+øges, hvis en offentlig API-funktionalitet markeres som forældet. Den KAN øges,
+hvis der indføres væsentlig ny funktionalitet eller forbedringer inden for den private kode.
+Den KAN omfatte ændringer af patch-niveau. Patch-versionen SKAL nulstilles til 0, når minor-versionen øges.
 
-8. Større version X (X.y.z | X > 0) SKAL øges, hvis der er nogen baglæns
-inkompatible ændringer der introduceres til det offentlige API. Det MÅ også omfatte mindre 
-ændringer i patch-niveau. Patch og mindre versioner SKAL nulstilles til 0, når de er større
-version er øget.
+1. Major-version X (X.y.z | X > 0) SKAL øges, hvis baglæns
+inkompatible ændringer introduceres til den offentlige API. Den KAN også omfatte ændringer af
+minor- og patch-niveau. Patch- og minor-versioner SKAL nulstilles til 0, når major-versionen øges.
 
-9. En pre-release version KAN angives ved at tilføje en bindestreg og en
-serie af punktseparerede identifikatorer umiddelbart efter patchen
-version. Identifikatorer SKAL kun omfatte ASCII alfanumeriske tegn og bindestreger
-[0-9A-Za-z-]. Identifikatorer MÅ IKKE være tomme. Numeriske identifikatorer SKAL
-Inkluder IKKE foranstillede nuller. Pre-release versioner har en lavere
-forrang end den tilhørende normale version. En pre-release version
+1. En pre-release-version KAN angives ved at tilføje en bindestreg og en
+række punktadskilte identifikatorer umiddelbart efter patch-versionen.
+Identifikatorer MÅ kun omfatte alfanumeriske ASCII-tegn og bindestreger
+[0-9A-Za-z-]. Identifikatorer MÅ IKKE være tomme. Numeriske identifikatorer MÅ
+IKKE inkludere foranstillede nuller. Pre-release-versioner har en lavere
+forrang end den tilhørende normale version. En pre-release-version
 angiver, at versionen er ustabil og muligvis ikke opfylder
-tilsigtede kompatibilitetskrav som angivet af dets tilknyttede
-normal version. Eksempler: 1.0.0-alfa, 1.0.0-alfa.1, 1.0.0-0.3.7,
+tilsigtede kompatibilitetskrav som angivet af dens tilknyttede
+normale version. Eksempler: 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7,
 1.0.0-x.7.z.92, 1.0.0-x-y-z.--.
 
-10. Byggemetadata KAN angives ved at tilføje et plustegn og en række prikker
-adskilte identifikatorer umiddelbart efter patchen eller pre-release-versionen.
-Identifikatorer SKAL kun omfatte ASCII alfanumeriske tegn og bindestreger [0-9A-Za-z-].
-Identifikatorer MÅ IKKE være tomme. Byggemetadata SKAL ignoreres ved bestemmelse
-versions forrang. Således to versioner, der kun adskiller sig i byggemetadataene,
-har samme forrang. Eksempler: 1.0.0-alfa+001, 1.0.0+20130313144700,
+1. Build-metadata KAN angives ved at tilføje et plustegn og en række punktadskilte
+identifikatorer umiddelbart efter patch- eller pre-release-versionen.
+Identifikatorer MÅ kun omfatte alfanumeriske ASCII-tegn og bindestreger [0-9A-Za-z-].
+Identifikatorer MÅ IKKE være tomme. Build-metadata SKAL ignoreres ved bestemmelse af
+versionsforrang. Således har to versioner, der kun adskiller sig i build-metadataene,
+samme forrang. Eksempler: 1.0.0-alpha+001, 1.0.0+20130313144700,
 1.0.0-beta+exp.sha.5114f85, 1.0.0+21AF26D3----117B344092BD.
 
-1. Forrang henviser til, hvordan versioner sammenlignes med hinanden, når de bestilles.
+1. Forrang henviser til, hvordan versioner sammenlignes med hinanden, når de sættes i rækkefølge.
 
-   1. Forrang SKAL beregnes ved at adskille versionen i større,
-      mindre, patch og pre-release identifikatorer i den rækkefølge (Byggemetadata
-      har ikke forrang).
+   1. Forrang SKAL beregnes ved at adskille versionen i major-,
+      minor-, patch- og pre-release-identifikatorer i den rækkefølge (build-metadata
+      tælles ikke med i forrang).
 
    1. Forrang bestemmes af den første forskel, når man sammenligner hver af
-      disse identifikatorer fra venstre mod højre som følger: Større, mindre og patch
-      versioner sammenlignes altid numerisk.
+      disse identifikatorer fra venstre mod højre, på følgende vis: Major-, minor- og
+      patch-versioner sammenlignes altid numerisk.
 
       Eksempel: 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1.
 
-   1. Når større, mindre og patch er ens, har en pre-release version lavere
+   1. Når major, minor og patch er ens, har en pre-release-version lavere
       forrang end en normal version:
 
-      Eksempel: 1.0.0-alfa < 1.0.0.
+      Eksempel: 1.0.0-alpha < 1.0.0.
 
-   1. Forrang for to pre-release versioner med samme større, mindre og
-      patch-version SKAL bestemmes ved at sammenligne hver punktsepareret identifikator
-      fra venstre mod højre, indtil en forskel er fundet som følger:
+   1. Forrang for to pre-release-versioner med samme major-, minor- og
+      patch-version SKAL bestemmes ved at sammenligne hver punktadskilte identifikator
+      fra venstre mod højre, indtil en forskel findes, på følgende vis:
 
       1. Identifikatorer, der kun består af cifre, sammenlignes numerisk.
 
-      1. Identifikatorer med bogstaver eller bindestreger sammenlignes leksikalsk i ASCII
-         sorteringsrækkefølge.
+      1. Identifikatorer med bogstaver eller bindestreger sammenlignes leksikalsk i
+         ASCII-sorteringsrækkefølge.
 
       1. Numeriske identifikatorer har altid lavere forrang end ikke-numeriske
          identifikatorer.
 
-      1. Et større sæt præ-udgivelsesfelter har en højere prioritet end en
-         mindre sæt, hvis alle de foregående identifikatorer er ens.
+      1. Et større sæt pre-release-felter har en højere forrang end et
+         mindre sæt, hvis alle de forudgående identifikatorer er ens.
 
       Eksempel: 1.0.0-alfa < 1.0.0-alfa.1 < 1.0.0-alfa.beta < 1.0.0-beta <
       1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
 
-Hvorfor bruge semantisk versionering?
-----------------------------
+Hvorfor bruge Semantisk Versionering?
+-------------------------------------
 
-Dette er ikke en ny eller revolutionær idé. Faktisk gør du sikkert noget
-tæt på dette allerede. Problemet er, at "tæt" ikke er godt nok. Uden
-overensstemmelse med en form for formel specifikation, versionsnumre er
-i det væsentlige ubrugelig til afhængighedsstyring. Ved at give et navn og klart
-definition til ovenstående ideer, bliver det nemt at kommunikere dine hensigter
-til brugerne af din software. Når først disse intentioner er klare, fleksible (men
-ikke for fleksible) kan der endelig laves afhængighedsspecifikationer.
+Dette er ikke en ny eller revolutionerende idé. Faktisk gør du sikkert allerede
+noget tæt på dette allerede. Problemet er, at "tæt på" ikke er godt nok. Uden
+overensstemmelse med en form for formel specifikation, er versionsnumre
+essentielt set ubrugelige til afhængighedsstyring. Ved at give et navn og en klar
+definition til ovenstående ideer bliver det nemt at kommunikere dine hensigter
+til brugerne af din software. Når først disse intentioner er tydelige, kan fleksible (men
+ikke for fleksible) afhængighedsspecifikationer endelig laves.
 
-Et simpelt eksempel vil vise, hvordan semantisk versionering kan gøre afhængighed
-helvede hører fortiden til. Overvej et bibliotek kaldet "Brandbil." Det kræver en
-Semantisk versioneret pakke med navnet "Ladder." På det tidspunkt, hvor Firetruck er
-oprettet, er Ladder i version 3.1.0. Da Firetruck bruger nogle funktioner
-som først blev introduceret i 3.1.0, kan du roligt angive stigen
-afhængighed som større end eller lig med 3.1.0, men mindre end 4.0.0. Nu, hvornår
-Ladder version 3.1.1 og 3.2.0 bliver tilgængelige, du kan frigive dem til din
-pakkestyringssystem og ved, at de vil være kompatible med eksisterende
+Et simpelt eksempel demonstrerer, hvordan Semantisk Versionering kan gøre
+afhængighedshelvede til en saga blot. Forestil dig et bibliotek kaldt "Firetruck". Det kræver en
+Semantisk Versioneret pakke ved navn "Ladder". På tidspunktet, hvor Firetruck
+skabes, er Ladder i version 3.1.0. Da Firetruck bruger nogle funktioner,
+som først blev introduceret i 3.1.0, kan du roligt angive afhængigheden til Ladder
+som større end eller lig med 3.1.0, men mindre end 4.0.0. Nu kan du, når
+Ladder version 3.1.1 og 3.2.0 bliver tilgængelige, udgive dem til dit
+pakkestyringssystem og vide, at de vil være kompatible med eksisterende
 afhængig software.
 
-Som ansvarlig udvikler vil du naturligvis gerne verificere, at evt
+Som ansvarlig udvikler vil du naturligvis gerne verificere, at
 pakkeopgraderinger fungerer som annonceret. Den virkelige verden er et rodet sted;
-der er ikke noget, vi kan gøre ved det, end at være årvågne. Hvad du kan gøre er at lade
-Semantisk versionering giver dig en fornuftig måde at frigive og opgradere
-pakker uden at skulle rulle nye versioner af afhængige pakker, hvilket sparer dig
+der er ikke andet, vi kan gøre ved det, end at være årvågne. Det, du kan gøre, er at lade
+Semantisk Versionering give dig en fornuftig måde at udgive og opgradere
+pakker på uden at skulle udrulle nye versioner af afhængige pakker, hvilket sparer dig
 tid og bøvl.
 
-Hvis alt dette lyder ønskeligt, er alt hvad du skal gøre for at begynde at bruge Semantic
-Versionering er at erklære, at du gør det og derefter følge reglerne. Link
+Hvis alt dette lyder ønskeligt, er alt, hvad du skal gøre for at begynde at bruge Semantisk
+Versionering, at erklære, at du gør det, og derefter følge reglerne. Link
 til denne hjemmeside fra din README, så andre kender reglerne og kan drage fordel af
 dem.
 
 FAQ
 ---
 
-### Hvordan skal jeg håndtere revisioner i 0.y.z indledende udviklingsfase?
+### Hvordan bør jeg håndtere revisioner i den indledende udviklingsfase 0.y.z?
 
-Den enkleste ting at gøre er at starte din første udviklingsudgivelse på 0.1.0
-og øg derefter den mindre version for hver efterfølgende udgivelse.
+Det enkleste at gøre er at starte din første udviklingsudgivelse på 0.1.0
+og derefter øge minor-versionen for hver efterfølgende udgivelse.
 
 ### Hvordan ved jeg, hvornår jeg skal udgive 1.0.0?
 
-Hvis din software bliver brugt i produktionen, burde den sandsynligvis allerede være det
-1.0.0. Hvis du har et stabilt API, som brugerne er blevet afhængige af, bør du
-være 1.0.0. Hvis du bekymrer dig meget om bagudkompatibilitet, bør du
-sandsynligvis allerede være 1.0.0.
+Hvis din software bliver brugt i produktion, burde den sandsynligvis allerede være
+1.0.0. Hvis du har en stabil API, som brugerne er blevet afhængige af, bør du
+være på 1.0.0. Hvis du bekymrer dig meget om bagudkompatibilitet, bør du
+sandsynligvis allerede være på 1.0.0.
 
 ### Afskrækker dette ikke hurtig udvikling og hurtig iteration?
 
-Større version nul handler om hurtig udvikling. Hvis du ændrer API
-hver dag bør du enten stadig være i version 0.y.z eller på en separat
-udviklingsgren arbejder på den næste store version.
+Nulte major-version handler om hurtig udvikling. Hvis du ændrer API
+hver dag, bør du enten stadig være på version 0.y.z eller på en separat
+udviklingsgren, hvor du arbejder på næste major-version.
 
-### Hvis selv de mindste bagud-inkompatible ændringer af det offentlige API kræver et større versionsbump, vil jeg så ikke ende med version 42.0.0 meget hurtigt?
+### Hvis selv de mindste bagudinkompatible ændringer af den offentlige API kræver et bump af major-versionen, vil jeg så ikke utroligt hurtigt ramme version 42.0.0?
 
-Dette er et spørgsmål om ansvarlig udvikling og fremsyn. Uforenelig
-ændringer bør ikke introduceres let til software, der har en masse
+Dette er et spørgsmål om ansvarlig udvikling og fremsyn. Inkompatible
+ændringer bør ikke introduceres uden omtanke til software, der har en masse
 afhængig kode. De omkostninger, der skal afholdes for at opgradere, kan være betydelige.
-At skulle bumpe større versioner for at frigive inkompatible ændringer betyder, at du vil
-gennemtænk virkningen af ​​dine ændringer, og evaluer cost/benefit-forholdet
+At skulle bumpe major-versionen for at udgive inkompatible ændringer betyder, at du vil
+komme til at gennemtænke virkningen af ​​dine ændringer og evaluere cost/benefit-forholdet
 involveret.
 
-### Det er for meget arbejde at dokumentere hele det offentlige API!
+### Det er for meget arbejde at dokumentere hele den offentlige API!
 
-Det er dit ansvar som professionel udvikler at dokumentere ordentligt
+Det er dit ansvar som professionel udvikler ordentligt at dokumentere
 software, der er beregnet til brug af andre. Håndtering af softwarekompleksitet er en
-enormt vigtig del af at holde et projekt effektivt, og det er svært at gøre hvis
-ingen ved, hvordan man bruger din software, eller hvilke metoder der er sikre at kalde. I
-på lang sigt, semantisk versionering og insisteren på en veldefineret offentlighed
-API kan holde alle og alt kørende.
+enormt vigtig del af det at holde et projekt effektivt, og det er svært at gøre, hvis
+ingen ved, hvordan man bruger din software, eller hvilke metoder, der er sikre at kalde.
+På lang sigt kan Semantisk Versionering og en insisteren på en veldefineret offentlig
+API holde alle og alt velkørende.
 
-### Hvad gør jeg, hvis jeg ved et uheld frigiver en bagudinkompatibel ændring som en mindre version?
+### Hvad gør jeg, hvis jeg ved et uheld frigiver en bagudinkompatibel ændring som en minor-version?
 
-Så snart du indser, at du har brudt Semantic Versioning-specifikationen, skal du rette det
-problemet og frigive en ny mindre version, der retter problemet og
+Så snart du indser, at du har brudt specifikationen for Semantisk Versionering, skal du fikse
+problemet og udgive en ny minor-version, der retter problemet og
 genopretter bagudkompatibilitet. Selv under denne omstændighed er det
 uacceptabelt at ændre versionerede udgivelser. Hvis det er passende,
-dokumentere den krænkende version og informere dine brugere om problemet, således at
-de er opmærksomme på den krænkende version.
+så dokumentér den fejlagtige version og informér dine brugere om problemet, således at
+de er opmærksomme på den fejlagtige version.
 
-### Hvad skal jeg gøre, hvis jeg opdaterer mine egne afhængigheder uden at ændre det offentlige API?
+### Hvad skal jeg gøre, hvis jeg opdaterer mine egne afhængigheder uden at ændre den offentlige API?
 
-Det ville blive betragtet som kompatibelt, da det ikke påvirker der offentlige API.
-Software, der eksplicit afhænger af de samme afhængigheder som din pakke
-bør have deres egne afhængighedsspecifikationer, og forfatteren vil bemærke evt
-konflikter. Afgør, om ændringen er et patch-niveau eller et mindre niveau
-ændring afhænger af, om du har opdateret dine afhængigheder for at rette
-en fejl eller introducere ny funktionalitet. Vi ville normalt forvente yderligere kode
-i sidstnævnte tilfælde, i hvilket tilfælde det åbenbart er en mindre niveaustigning.
+Det ville blive betragtet som kompatibelt, da det ikke påvirker den offentlige API.
+Software, der eksplicit afhænger af de samme afhængigheder som din pakke,
+bør have deres egne afhængighedsspecifikationer, og forfatteren vil bemærke eventuelle
+konflikter. Afgørelsen af, hvorvidt ændringen er en ændring på patch-niveau eller minor-niveau,
+afhænger af, om du har opdateret dine afhængigheder for at rette
+en fejl eller introducere ny funktionalitet. Man ville normalt forvente yderligere kode
+i sidstnævnte tilfælde, i hvilket tilfælde det åbenlyst er en øgning på minor-niveau.
 
-### Hvad hvis jeg utilsigtet ændrer den offentlige API på en måde, der ikke er i overensstemmelse med ændringen af ​​versionsnummeret (dvs. at koden fejlagtigt introducerer en større brydende ændring i en patch-udgivelse)?
+### Hvad hvis jeg utilsigtet ændrer den offentlige API på en måde, der ikke er i overensstemmelse med ændringen af ​​versionsnummeret (dvs. at koden fejlagtigt introducerer en større kompabilitetsbrydende ændring i en patch-udgivelse)?
 
-Brug din bedste dømmekraft. Hvis du har et stort publikum, vil det være drastisk
-påvirket af at ændre adfærden tilbage til, hvad den offentlige API havde til hensigt
-det kan være bedst at udføre en større versionsudgivelse, selvom rettelsen kunne
-strengt taget betragtes som en patch-udgivelse. Husk, Semantisk versionering er alt
-om at formidle mening ved, hvordan versionsnummeret ændres. Hvis disse ændringer
+Brug din bedste dømmekraft. Hvis du har et stort publikum, som vil blive drastisk
+påvirket af en ændring af adfærden tilbage til, hvad den offentlige API havde til hensigt,
+så kan det være bedst at foretage en major-versionsudgivelse, selvom rettelsen
+strengt taget kunne betragtes som en patch-udgivelse. Husk på, at Semantisk Versionering
+handler om at formidle meningen bag, hvordan versionsnummeret ændres. Hvis disse ændringer
 er vigtige for dine brugere, skal du bruge versionsnummeret til at informere dem.
 
 ### Hvordan skal jeg håndtere udfasning af funktionalitet?
 
-Forringelse af eksisterende funktionalitet er en normal del af softwareudvikling og
-er ofte påkrævet for at gøre fremskridt. Når du fraskriver en del af din
+Udfasning af eksisterende funktionalitet er en normal del af softwareudvikling og
+er ofte påkrævet for at gøre fremskridt. Når du udfaser en del af din
 offentlige API, bør du gøre to ting: (1) opdatere din dokumentation for at lade
-brugere kender til ændringen, (2) udsteder en ny mindre udgivelse med afskrivningen
-på plads. Før du helt fjerner funktionaliteten i en ny større udgivelse
-der bør være mindst én mindre udgivelse, der indeholder udfasningen så
-at brugerne problemfrit kan skifte til den nye API.
+brugere kende til ændringen, (2) udstede en ny minor-udgivelse med udfasningen
+gennemført. Før du helt fjerner funktionaliteten i en ny major-udgivelse,
+bør der være mindst én minor-udgivelse, der indeholder udfasningen, så
+brugerne problemfrit kan skifte til den nye API.
 
-### Har SemVer en størrelsesbegrænsning på versionsstrengen?
+### Har SemVer en størrelsesbegrænsning på versionstekststrengen?
 
-Nej, men brug god dømmekraft. En version på 255 tegn er sandsynligvis overkill,
-for eksempel. Også specifikke systemer kan pålægge deres egne grænser for størrelsen af
-strengen.
+Nej, men brug god dømmekraft. For eksempel er en version på 255 tegn sandsynligvis overkill.
+Derudover kan specifikke systemer desuden pålægge deres egne grænser for størrelsen af
+tekststrengen.
 
 ### Er "v1.2.3" en semantisk version?
 
-Nej, "v1.2.3" er ikke en semantisk version. Dog foran en semantisk version
-med et "v" er en almindelig måde (på engelsk) at angive, at det er et versionsnummer.
+Nej, "v1.2.3" er ikke en semantisk version. Dog er præfigering af en semantisk version
+med et "v" en almindelig måde (på engelsk) at angive på, at det er et versionsnummer.
 At forkorte "version" som "v" ses ofte med versionskontrol. Eksempel:
-`git tag v1.2.3 -m "Release version 1.2.3"`, i hvilket tilfælde "v1.2.3" er et tag
-navn og den semantiske version er "1.2.3".
+`git tag v1.2.3 -m "Release version 1.2.3"`, hvor "v1.2.3" i dette tilfælde er et
+tag-navn, og den semantiske version er "1.2.3".
 
-### Er der et foreslået regulært udtryk (RegEx) til at kontrollere en SemVer-streng?
+### Er der et foreslået regulært udtryk (RegEx) til at kontrollere en SemVer-tekststreng?
 
 Der er to. En med navngivne grupper for de systemer, der understøtter dem
 (PCRE [Perl-kompatible regulære udtryk, dvs. Perl, PHP og R], Python
-og gå).
+og Go).
 
 Se: <https://regex101.com/r/Ly7O1x/3/>
 
@@ -282,9 +285,9 @@ Se: <https://regex101.com/r/Ly7O1x/3/>
 ^(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?P<patch>0|[1-9]\d*)(?:-(?P<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))$
 ```
 
-Og en med nummererede optagelsesgrupper i stedet (så cg1 = større, cg2 = mindre,
-cg3 = patch, cg4 = prerelease og cg5 = byggemetadata), der er kompatibel
-med ECMA Script (JavaScript), PCRE (Perl Compatible Regular Expressions,
+Og en med nummererede optagelsesgrupper i stedet (så at cg1 = major, cg2 = minor,
+cg3 = patch, cg4 = prerelease og cg5 = buildmetadata), der er kompatibel
+med ECMA Script (JavaScript), PCRE (Perl-kompatible regulære udtryk,
 dvs. Perl, PHP og R), Python og Go.
 
 Se: <https://regex101.com/r/vkijKf/1/>
@@ -294,16 +297,16 @@ Se: <https://regex101.com/r/vkijKf/1/>
 ```
 
 Om
------
+---
 
-Den semantiske versionsspecifikation blev oprindeligt skrevet af [Tom
+Specifikationen for Semantisk Versionering blev oprindeligt skrevet af [Tom
 Preston-Werner](https://tom.preston-werner.com), opfinder af Gravatar og
 medstifter af GitHub.
 
-Hvis du gerne vil give feedback, bedes du [åbn et issue på
+Hvis du gerne vil give feedback, bedes du [åbne et issue på
 GitHub](https://github.com/semver/semver/issues).
 
 Licens
--------
+------
 
 [Creative Commons ― CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)

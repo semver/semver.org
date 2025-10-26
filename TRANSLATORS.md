@@ -17,3 +17,19 @@ This file contains the translation contributors who are willing to help translat
 ## Hebrew
 
 - [@ShlomoCode](https://github.com/ShlomoCode)
+
+## Italian
+
+- [@LorenzoAncora](https://github.com/LorenzoAncora)
+
+## Serbian
+
+- [@rammba](https://github.com/rammba)
+
+## Danish
+
+- [@symegac](https://github.com/symegac)
+
+## Tamil
+
+- [@sathishs4r](https://github.com/sathishs4r)

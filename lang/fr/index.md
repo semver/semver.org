@@ -77,7 +77,7 @@ Exemple : 1.9.0 -> 1.10.0 -> 1.11.0.
 être modifié. Toute modification DOIT être publiée dans une nouvelle version.
 
 1. L'identifiant de version majeure zéro (0.y.z) est destiné au développement initial.
-Tout ou partie peut être modifié à tout moment. L'API publique ne devrait pas
+Tout PEUT être modifié à tout moment. L'API publique NE DEVRAIT PAS
 être considérée comme stable.
 
 1. La version 1.0.0 définit l'API publique. La façon dont le numéro de version
