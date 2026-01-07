@@ -392,9 +392,11 @@ Dacă dorești să oferi feedback, te rugăm [înaintează o sesizare pe GitHub]
 
 Traducerea în română a fost realizată de catre echipele de dezvoltatori software ai
 [Epigrade](https://www.epigrade.com/),
-[Locatorix](https://www.locatorix.com/),
-[Moneeva](https://www.moneeva.com/) și
-[Lux Rehabs](https://www.luxrehabs.com/).
+[Bioenergetician](https://www.bioenergetician.ro/),
+[Curatare Energetica](https://www.curatareenergetica.ro/),
+[Lux Rehabs](https://www.luxrehabs.com/) și
+[All Pets Directory](https://www.allpetsdirectory.com/).
+
 
 Licență
 -------
