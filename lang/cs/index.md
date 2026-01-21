@@ -128,10 +128,10 @@ Pokud chcete zanechat zpětnou vazbu, prosím
 ### Český překlad
 
 [Jakub Křižka](https://github.com/jakubkrizka) (autor),
-[Zuzana Bertová](https://www.facebook.com/suzanna.bertova) (korektor),
-[Aleš Pařízek](https://www.facebook.com/ales.parizek.1) (korektor),
-[Jan Barášek](http://baraja.cz) (korektor),
-[R3gi](https://www.r3gi.cz) (korektor)
+Zuzana Bertová (korektor),
+Aleš Pařízek (korektor),
+Jan Barášek (korektor),
+R3gi (korektor)
 
 Licence
 --------

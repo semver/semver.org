@@ -291,9 +291,6 @@ participação de:
 - [Silas Ribas Martins](https://github.com/silasrm)
 - [Lucas Honda Tonini](https://github.com/LucasHT22)
 
-Toda colaboração na tradução pode ser acompanhada no link:
-http://pad.okfn.org/p/Fh9hjBPVu9
-
 Caso queira deixar sua opinião, por favor [abra uma issue no GitHub](https://github.com/semver/semver/issues).
 
 Licença
