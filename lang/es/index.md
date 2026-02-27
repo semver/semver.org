@@ -229,7 +229,7 @@ Si quieres dejar comentarios, porfavor [abre un problema (issue) en Github](http
 Traducción
 ----------
 
-Esta traducción ha sido realizada por [Italo Baeza Cabrera](https://italobc.com). Si deseas editar esta traducción, puedes [dirigirte al respectivo repositorio en Github](https://github.com/semver/semver.org/blob/gh-pages/lang/es/index.md)
+Esta traducción ha sido realizada por Italo Baeza Cabrera. Si deseas editar esta traducción, puedes [dirigirte al respectivo repositorio en Github](https://github.com/semver/semver.org/blob/gh-pages/lang/es/index.md)
 
 Licencia
 --------

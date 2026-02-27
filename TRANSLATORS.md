@@ -13,6 +13,7 @@ This file contains the translation contributors who are willing to help translat
 ## Chinese Simplified
 
 - [@liulyxandy-codemao](https://github.com/liulyxandy-codemao)
+- [@DuckDuckStudio](https://github.com/DuckDuckStudio)
 
 ## Hebrew
 
@@ -29,3 +30,14 @@ This file contains the translation contributors who are willing to help translat
 ## Dutch
 
 - [@niekvangalen](https://github.com/niekvangalen)
+## Danish
+
+- [@symegac](https://github.com/symegac)
+
+## Tamil
+
+- [@sathishs4r](https://github.com/sathishs4r)
+
+## Bangla/Bengali
+
+- [@forhadakhan](https://github.com/forhadakhan)

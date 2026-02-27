@@ -1,7 +1,4 @@
 .github/
-css/blueprint/
-lang/
-spec/
 package-lock.json
 *.md
 _layouts/default.html

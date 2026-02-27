@@ -1,0 +1,80 @@
+/* Load from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;700&display=swap");
+
+/* CSS variables for easy adjustment */
+:root {
+  --bn-sans: "Noto Sans Bengali", "Noto Sans", system-ui, -apple-system,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --bn-base-size: 16px;
+  --bn-line-height: 1.45;
+}
+
+/* Global defaults — set the default font family and basic typographic rules */
+html,
+body {
+  font-family: var(--bn-sans) !important;
+  font-size: var(--bn-base-size);
+  line-height: var(--bn-line-height);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  color: inherit;
+}
+
+/* Headings, paragraphs, lists — inherit the Bengali UI font */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+ul,
+ol,
+li,
+dl,
+dt,
+dd {
+  margin: 0;
+  font-family: var(--bn-sans) !important;
+}
+
+/* Slightly increased line-height for headings for Bengali readability */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.25;
+}
+
+/* Utility: apply font specifically for elements marked as Bengali content
+   (useful when a page is multilingual). Prefer this to global override if possible. */
+:lang(bn),
+[lang="bn"],
+[data-lang="bn"] {
+  font-family: var(--bn-sans) !important;
+}
+
+/* Form controls — ensure Bengali font is applied */
+input,
+textarea,
+select,
+button,
+optgroup,
+option {
+  font-family: var(--bn-sans) !important;
+  font-size: 1rem;
+  line-height: var(--bn-line-height);
+}
+
+/* Code and monospace elements — keep standard monospace fonts */
+code,
+pre,
+kbd,
+samp {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono",
+    "Courier New", monospace;
+}

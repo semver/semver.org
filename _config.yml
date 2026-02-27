@@ -17,6 +17,7 @@ languages:
   sr: srpski
   ar: العربية
   ja: 日本語
+  ta: தமிழ்
   tr: Türkçe
   cs: čeština
   de: Deutsch
@@ -34,9 +35,9 @@ languages:
   kab: taqbaylit
   bg: Български
   nl: Nederlands
-  ro: Română
   da: Dansk
   el: Ελληνικά
+  bn: বাংলা
 versions:
   - 2.0.0
   - 2.0.0-rc.2
@@ -54,3 +55,5 @@ defaults:
       path: ''
     values:
       layout: default
+sass:
+  style: compressed
