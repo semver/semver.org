@@ -69,7 +69,7 @@ ne-negativni celi brojevi koji MUST NOT (NE SMEJU) počinjati sa nulom. X označ
 glavnu verziju, Y manju verziju, a Z zakrpu.
 Svaki element MUST (MORA) se numerički inkrementirati. Na primer: 1.9.0 -> 1.10.0 -> 1.11.0.
 
-1. Jednom kad je verzionisani paket objavljen, sadržaj te verzije MUST NOT (NE SME) 
+1. Jednom kad je verzionisani paket objavljen, sadržaj te verzije MUST NOT (NE SME)
 se menjati. Svaka izmena MUST (MORA) se objaviti kao nova verzija.
 
 1. Major (glavna) verzija nula (0.y.z) je za inicijalni razvoj. Bilo šta se MAY (MOŽE) menjati
@@ -145,7 +145,7 @@ samo u metapodacima build-a (izrade), imaju isti prioritet. Primeri: 1.0.0-alpha
       1. Veći skup oznaka predizdanja ima viši prioritet od manjeg skupa
          ako su svi prethodni identifikatori jednaki.
 
-      Primer: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 
+      Primer: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta <
       1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
 
 Bakus–Naurova forma za validne SemVer verzije
