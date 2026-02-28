@@ -1,9 +1,6 @@
 ---
 title: Semantičko Verzionisanje 2.0.0
 language: sr-Latn
-redirect_from:
-  - /lang/sr/
-  - /lang/sr/index.html
 author: Aleksandar Marinković, Radoš Milićev
 ---
 
