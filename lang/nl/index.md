@@ -43,11 +43,11 @@ De termen "MOET/VERPLICHT" ("MUST"), "MAG NIET" ("MUST NOT"), "VEREIST/NOODZAKEL
 
 1. Versie 1.0.0 definieert de publieke API. De manier waarop het versienummer wordt verhoogd na deze release is afhankelijk van de publieke API en hoe deze verandert.
 
-1. Patchversie Z (x.y.Z | x > 0) MOET worden verhoogd als wijzigingen zijn doorgevoerd die backward compatibel zijn. De definitie van een bugfix is een interne wijziging die foutief gedrag corrigeert.
+1. Patchversie Z (x.y.Z \| x > 0) MOET worden verhoogd als wijzigingen zijn doorgevoerd die backward compatibel zijn. De definitie van een bugfix is een interne wijziging die foutief gedrag corrigeert.
 
-1. Minorversie Y (x.Y.z | x > 0) MOET worden verhoogd als nieuwe, backward compatibele wijzigingen worden gedaan aan de publieke API. Het MOET worden verhoogd op het moment dat publieke-API-functionaliteit wordt uitgefaseerd. Het MAG worden verhoogd als substantiële nieuwe functionaliteit of verbeteringen worden doorgevoerd in de afgeschermde code. Het MAG ook wijzigingen van niveau patch bevatten. De patchversie MOET op 0 worden teruggezet wanneer de minorversie is verhoogd.
+1. Minorversie Y (x.Y.z \| x > 0) MOET worden verhoogd als nieuwe, backward compatibele wijzigingen worden gedaan aan de publieke API. Het MOET worden verhoogd op het moment dat publieke-API-functionaliteit wordt uitgefaseerd. Het MAG worden verhoogd als substantiële nieuwe functionaliteit of verbeteringen worden doorgevoerd in de afgeschermde code. Het MAG ook wijzigingen van niveau patch bevatten. De patchversie MOET op 0 worden teruggezet wanneer de minorversie is verhoogd.
 
-1. Majorversie X (X.y.z | X > 0) MOET worden verhoogd als wijzigingen worden doorgevoerd die backward incompatibel zijn met de publieke API. Het MAG ook wijzigingen van niveau minor en patch bevatten. De patch- en minorversie MOETEN op 0 worden teruggezet wanneer de majorversie is verhoogd.
+1. Majorversie X (X.y.z \| X > 0) MOET worden verhoogd als wijzigingen worden doorgevoerd die backward incompatibel zijn met de publieke API. Het MAG ook wijzigingen van niveau minor en patch bevatten. De patch- en minorversie MOETEN op 0 worden teruggezet wanneer de majorversie is verhoogd.
 
 1. Een prerelease-versie MAG worden aangeduid met de toevoeging van een koppelteken en een serie van puntgescheiden id's direct volgend op de patchversie. Id's MOETEN slechts bestaan uit alfanumerieke ASCII-karakters en -koppeltekens [0-9A-Za-z-]. Id's MOGEN NIET leeg zijn. Voorloopnullen MOGEN NIET aanwezig zijn in numerieke id's. Prerelease-versies hebben een lagere prioriteit dan de bijbehorende reguliere versie. Een prerelease-versie impliceert instabiel te zijn en voldoet mogelijk niet aan de voorgenomen compatibiliteitseisen zoals aangeduid bij de bijbehorende reguliere versie. Voorbeelden: 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7, 1.0.0-x.7.z.92, 1.0.0-x-y-z.\-\-.
 
