@@ -38,7 +38,6 @@ const collect = async () => {
   cloneRepository(REPO_LINK);
   const version = await parseVersion(ORIGINAL_FILE);
   await fs.copyFile(ORIGINAL_FILE, path.resolve(TARGET_DIR, `v${version}.md`));
-  await fs.copyFile(ORIGINAL_FILE, path.resolve(__dirname, "../index.md"));
   await fs.rmdir(ORIGINAL_DIR, { recursive: true });
   await checkOrUpdateYaml(version);
 };
