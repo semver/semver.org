@@ -268,6 +268,36 @@ Não, mas use o bom senso. Uma string de versão com 255 caracteres por exemplo,
 provavelmente é um exagero. Porém, sistemas específicos podem definir seus 
 prórios limites para o tamanho da string.
 
+### "v1.2.3" é uma versão semântica?
+
+Não, "v1.2.3" não é uma versão semântica. Entretanto, prefixar uma versão semântica
+com um "v" é uma maneira comum (no inglês) de indicar que ela é um número de versão.
+Abreviar "versão" ("version") como "v" é frequentemente visto no gerencialmente de
+versões. Por exemplo: `git tag v1.2.3 -m "Release version 1.2.3"` — nesse caso,
+"v1.2.3" é um nome de etiqueta (tag name) e "1.2.3" é a versão semântica.
+
+### Há alguma sugestão de expressão regular (RegEx) para validar versões semânticas?
+
+Sim, duas. Uma com grupos nomeados (named groups) para sistemas que os suportam (PCRE
+[Perl Compatible Regular Expressions, como Perl, PHP e R], Python e Go).
+
+Veja: <https://regex101.com/r/Ly7O1x/3/>
+
+```
+^(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?P<patch>0|[1-9]\d*)(?:-(?P<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$
+```
+
+E outra com grupos de captura numerados (numered capture groups) (onde: cg1 = major,
+cg2 = minor, cg3 = patch, cg4 = prerelease e cg5 = buildmetadata) que é compatível
+com ECMA Script (JavaScript), PCRE (Perl Compatible Regular Expressions, como Perl,
+PHP e R), Python e Go.
+
+Veja: <https://regex101.com/r/vkijKf/1/>
+
+```
+^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$
+```
+
 Sobre
 -----
 
@@ -290,6 +320,7 @@ participação de:
 - Vinícius Assef
 - [Silas Ribas Martins](https://github.com/silasrm)
 - [Lucas Honda Tonini](https://github.com/LucasHT22)
+- [Bruno C. S. Silva (DuckAfire)](https://github.com/duckafire)
 
 Caso queira deixar sua opinião, por favor [abra uma issue no GitHub](https://github.com/semver/semver/issues).
 
